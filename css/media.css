@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,400');
+
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+
+@keyframes content {
+    from {
+      opacity: 0;
+      transform: translateY(5%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  
+  @media (max-width: 1000px) {
+    .tabs ul li label {
+      white-space: initial;
+    }
+  
+    .tabs ul li label br {
+      display: initial;
+    }
+  
+    .tabs ul li label svg {
+      height: 1.5em;
+    }
+
+  }
+
+  
+@media (max-width: 991.98px) {
+  .offcanvas-collapse {
+    position: fixed;
+    top: 56px; /* Height of navbar */
+    bottom: 0;
+    left: 100%;
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    overflow-y: auto;
+    visibility: hidden;
+    background-color: #343a40;
+    transition: transform .3s ease-in-out, visibility .3s ease-in-out;
+  }
+  .offcanvas-collapse.open {
+    visibility: visible;
+    transform: translateX(-100%);
+  }
+}
+  
+  @media (max-width: 600px) {
+    .tabs ul li label {
+      padding: 1px;
+      border-radius: 5px;
+    }
+  
+    .tabs ul li label span {
+      display: none;
+    }
+  
+    .tabs .slider {
+      display: none;
+    }
+  
+    .tabs .content {
+      margin-top: 20px;
+    }
+  
+    .tabs .content section h2 {
+      display: block;
+    }
+  }
+  

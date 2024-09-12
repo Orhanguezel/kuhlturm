@@ -1,0 +1,290 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    /* Flex yönünü sütun olarak ayarlar */
+    min-height: 100vh;
+    /* Minimum yüksekliği 100vh olarak ayarlar */
+}
+
+.container {
+    display: flex;
+    flex: auto;
+    /* Konteynerin kalan alanı kaplamasını sağlar */
+    width: 100%;
+}
+
+.sidebar {
+    position: relative;
+    width: auto;
+    min-width: 350px;
+    /* Minimum genişlik */
+    background-color: #2591DB;
+    color: white;
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+
+.sidebar li {
+    margin: 1px;
+    flex: 1 1 calc(50% - 20px);
+    /* İki satır düzeni için */
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    word-wrap: break-word;
+    /* Uzun kelimelerin satır kaydırmasını sağlar */
+}
+
+.sidebar a:hover {
+    background-color: #0056b3;
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+#article-title {
+    margin-top: 10px;
+}
+
+#article-content {
+    line-height: 1.6;
+}
+
+table {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    overflow-x: auto;
+    /* Yatay taşmayı engeller */
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #2591DB;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+h1 {
+    text-align: center;
+}
+
+.a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.a:hover {
+    text-decoration: underline;
+}
+
+#container {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    margin-top: auto;
+    width: 100%;
+}
+
+#contact .contact-form {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#contact .contact-form ul {
+    list-style-type: none;
+    display: flex;
+    margin-top: 1rem;
+    align-self: center;
+}
+
+#contact .contact-form ul li a {
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+#contact .contact-form ul li a:hover {
+    opacity: 0.8;
+}
+
+/* Medya sorguları */
+
+/* Küçük ekranlar için (mobil cihazlar) */
+@media (max-width: 767px) {
+    body {
+        padding: 0;
+        /* Ekranın tamamını kullanmak için kenar boşluklarını kaldırır */
+    }
+
+    .container {
+        flex-direction: column;
+        /* Konteyneri sütun olarak düzenler */
+        margin-top: 50px;
+        width: 100%;
+        /* Konteynerin tam genişlikte olmasını sağlar */
+        padding: 0;
+        /* Konteynerin iç boşluklarını kaldırır */
+    }
+
+    .sidebar {
+        width: auto;
+        /* Yan menüyü otomatik genişlik yapar */
+        min-width: 300px;
+        margin-top: 30px;
+        order: 0;
+        /* Sidebar'ı orijinal konumuna taşır */
+        padding: 1px;
+    }
+
+    .sidebar li {
+        flex: 1 1 100%;
+        margin: 0;
+    }
+
+    .sidebar a {
+        padding: 2px;
+    }
+
+    .content {
+        padding: 5px;
+    }
+
+    th,
+    td {
+        padding: 5px;
+    }
+
+    table {
+        display: block;
+        /* Tabloyu blok eleman yapar */
+        overflow-x: auto;
+        /* Yatay taşmayı engeller */
+    }
+
+    #contact .contact-form {
+        padding: 5px;
+    }
+
+    #contact .contact-form ul li a {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+    }
+}
+
+/* Orta boy ekranlar için (tabletler) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        flex-direction: row; /* Konteyneri sütun olarak düzenler */
+        margin-top: 30px; /* Üst marjı ayarlar */
+        width: 100%; /* Konteynerin tam genişlikte olmasını sağlar */
+        padding: 0; /* Konteynerin iç boşluklarını kaldırır */
+      }
+    
+      .sidebar {
+        width: 100%; /* Yan menüyü tam genişlik yapar */
+        min-width: auto; /* Minimum genişliği kaldırır */
+        margin-top: 60px; /* Üst marjı ayarlar */
+        order: -1; /* Sidebar'ı yukarı taşır */
+        padding: 10px; /* Padding'i ayarlar */
+      }
+    
+      .sidebar li {
+        flex: 1 1 calc(50% - 20px);
+        margin: 0;
+      }
+    
+      .content {
+        padding: 15px; /* İçerik padding'ini ayarlar */
+      }
+    
+      th, td {
+        padding: 15px; /* Hücre padding'ini ayarlar */
+      }
+    
+      table {
+        display: block; /* Tabloyu blok eleman yapar */
+        overflow-x: auto; /* Yatay taşmayı engeller */
+      }
+    
+      #contact .contact-form {
+        padding: 15px; /* İletişim formu padding'ini ayarlar */
+      }
+    
+      #contact .contact-form ul li a {
+        font-size: 1.8rem; /* İkon boyutunu ayarlar */
+        padding: 0.8rem; /* İkon padding'ini ayarlar */
+    }
+}
+
+/* Büyük ekranlar için (masaüstü bilgisayarlar) */
+@media (min-width: 1025px) {
+    .container {
+        flex-direction: row; /* Konteyneri yan yana düzenler */
+        margin-top: 40px; /* Üst marjı ayarlar */
+      }
+    
+      .sidebar {
+        width: auto; /* Yan menüyü otomatik genişlik yapar */
+        min-width: 350px;
+        margin-top: 60px;
+        order: 0; /* Sidebar'ı orijinal konumuna taşır */
+        padding: 10px; /* Padding'i ayarlar */
+      }
+    
+      .sidebar li {
+        flex: 1 1 100%;
+        margin: 10px 0;
+      }
+    
+      .content {
+        padding: 40px; /* İçerik padding'ini ayarlar */
+      }
+    
+      th, td {
+        padding: 20px; /* Hücre padding'ini ayarlar */
+      }
+    
+      #contact .contact-form {
+        padding: 20px; /* İletişim formu padding'ini ayarlar */
+      }
+    
+      #contact .contact-form ul li a {
+        font-size: 2rem; /* İkon boyutunu ayarlar */
+        padding: 1rem; /* İkon padding'ini ayarlar */
+    }
+}

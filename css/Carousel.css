@@ -1,0 +1,354 @@
+/* Genel kutu modelini belirler. Tüm öğeler için kutu boyutlandırma kurallarını uygular. */
+* {
+  box-sizing: border-box;
+}
+
+/* HTML ve body etiketlerinin genişlik ve yüksekliklerini %100 olarak ayarlar. */
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+/* Ana kaydırıcı konteyneri ve içindeki öğelerin yükseklik ayarlarını yapar. */
+#owlCarousel, 
+.owl-stage-outer, 
+.owl-stage,
+.owl-item-bg,
+.owl-item { 
+  height: 100%;
+  min-height: 200px;
+}
+
+/* Kaydırıcı konteynerinin genişlik, yerleşim ve taşma kontrollerini ayarlar. */
+#owlCarousel {
+  width: 100%;
+  position: relative;
+  max-width: 100%;
+  max-height: 100vh; /* Tam ekran yüksekliğine uyum sağlar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Taşan kısımları gizler */
+}
+
+/* Kaydırıcı konteyneri üzerinde fare ile gezildiğinde navigasyon kontrollerinin görünürlüğünü artırır. */
+#owlCarousel:hover .owl-nav {
+  opacity: 1;
+}
+
+/* Kaydırıcı öğesinin görünümünü ayarlar. */
+.owl-item {
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Resmin kaydırıcı arka planı olarak en-boy oranını koruyarak görünmesini sağlar. */
+.owl-item .owl-item-bg {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  position: absolute;
+  background-size: cover; /* En-boy oranını korur ve kapsar */
+  background-position: center center;
+}
+
+/* Yeni: Kaydırıcı resimlerinin en-boy oranını korumasını sağlamak için resim öğesi kullanımı. */
+.owl-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* En-boy oranını korur ve kesme yapar */
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Önceki/sonraki kaydırıcı kontrol konteynerinin yerleşimini ve görünürlüğünü ayarlar. */
+.owl-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-80px);
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: all .3s;
+}
+
+/* Önceki/sonraki kaydırıcı kontrol butonlarının boyut ve konumlarını ayarlar. */
+.owl-prev,
+.owl-next {
+  width: 200px;
+  height: 100px;
+  line-height: 70px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(50%);
+  overflow: hidden;
+  transition: all 1s ease;
+}
+
+/* Önceki kaydırıcı kontrol butonunun konumunu belirler. */
+.owl-prev {
+  left: 10px;
+}
+
+/* Sonraki kaydırıcı kontrol butonunun konumunu belirler. */
+.owl-next {
+  right: 10px;
+}
+
+/* Önceki/sonraki kaydırıcı kontrol butonlarındaki küçük resim ve ikonların boyutlarını ayarlar. */
+.owl-prev-thump,
+.owl-prev-icon,
+.owl-next-thump,
+.owl-next-icon {
+  height: 100%;
+}
+
+/* Önceki/sonraki kaydırıcı kontrol butonlarındaki küçük resimlerin görünümünü ayarlar. */
+.owl-prev-thump,
+.owl-next-thump {
+  width: 100%;
+  background-size: cover;
+  transition: all 1s ease-in-out;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Önceki/sonraki kaydırıcı kontrol butonlarındaki ikonların görünümünü ayarlar. */
+.owl-prev-icon,
+.owl-next-icon {
+  width: 40%;
+  height: 100%;
+  background-color: rgba(0,0,0,.4);
+  position: absolute;
+  top: 0;
+  padding-top: 8%;
+  text-align: center;
+  transition: all 1s ease;
+}
+
+/* Önceki/sonraki kaydırıcı kontrol butonlarındaki font-awesome ikonlarının stilini belirler. */
+.owl-prev-icon:before,
+.owl-next-icon:before {
+  font-family: FontAwesome;
+  color: rgba(255,255,255,.7);
+  font-size: 30px;
+  transition: all 1s ease;
+}
+
+/* Sol ok ikonu */
+.owl-prev-icon:before {
+  content: '\f104';
+}
+
+/* Sağ ok ikonu */
+.owl-next-icon:before {
+  content: '\f105';
+}
+
+/* Sol ok ikonunun konumunu ayarlar. */
+.owl-prev-icon {
+  left: 0;
+}
+
+/* Sağ ok ikonunun konumunu ayarlar. */
+.owl-next-icon {
+  right: 0;
+}
+
+/* Navigasyon kontrollerine hover efekti ekler. */
+.owl-prev:hover,
+.owl-next:hover {
+  animation: navShadow 4s ease-in-out infinite;
+}
+
+/* Navigasyon kontrollerine hover efekti sırasında ikon genişliğini ayarlar. */
+.owl-prev:hover .owl-prev-icon,
+.owl-next:hover .owl-next-icon {
+  width: 25%;
+}
+
+/* Döngü modu kapalıyken animasyonu engeller. */
+.owl-prev.disabled:hover, 
+.owl-next.disabled:hover {
+  animation: none;
+}
+
+/* Döngü modu kapalıyken ikon genişliğini ayarlar. */
+.owl-prev.disabled:hover .owl-prev-icon, 
+.owl-next.disabled:hover .owl-next-icon {
+  width: 50%;
+}
+
+/* Kaydırıcı içeriği stilini belirler. */
+.slide-content {
+  position: absolute;
+  right: 0;
+  top: 35%;
+  width: 45%;
+  height: 300px;
+  padding: 70px 70px 0;
+  text-align: center;
+  transform-origin: top;
+  background-color: rgba(0,0,0,.4);
+  color: #fff;
+}
+
+/* Kaydırıcı içeriği ve alt elemanlarına geçiş efektleri ekler. */
+.slide-content, 
+.slide-content h3,
+.slide-content h2,
+.slide-content p,
+.slide-content h3:before,
+.slide-content h3:after {
+  transition: all 2s ease;
+}
+
+/* Kaydırıcı içeriğindeki h3 başlık stilini belirler. */
+.slide-content h3 {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.95);
+}
+
+/* Kaydırıcı içeriğindeki h3 başlığın öncesi ve sonrası çizgileri ayarlar. */
+.slide-content h3:before,
+.slide-content h3:after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 2px;
+  position: absolute;
+  top: 49%;
+  background-color: #f1f1f1;
+}
+
+/* h3 başlığının solundaki çizginin konumunu ayarlar. */
+.slide-content h3:before {
+  left: -90px;
+}
+
+/* h3 başlığının sağındaki çizginin konumunu ayarlar. */
+.slide-content h3:after {
+  right: -90px;
+}
+
+/* Kaydırıcı içeriğindeki h2 başlık stilini belirler. */
+.slide-content h2 {
+  color: #f9f9f9;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+/* Kaydırıcı içeriğindeki paragraf stilini belirler. */
+.slide-content p {
+  line-height: 1.4em;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  color: rgba(255,255,255,.8);
+}
+
+/* Aktif olan kaydırıcı öğesindeki içeriği animasyonla ortaya çıkarır. */
+.owl-item.active .slide-content {
+  transform: translate(-20%, 0%) rotate3d(1, 0, 0, 0);
+  transition-delay: .7s;
+}
+
+/* Aktif olan kaydırıcı öğesindeki başlık ve paragrafın animasyonla ortaya çıkmasını sağlar. */
+.owl-item.active h3,
+.owl-item.active h2,
+.owl-item.active p,
+.owl-item.active h3:before,
+.owl-item.active h3:after {
+  transform: translate3d(0, 0, 1px);
+  transition-delay: 1s;
+}
+
+/* Medya sorguları */
+
+/* Küçük ekranlar için (mobil cihazlar) */
+@media (max-width: 767px) {
+  .slide-content {
+    width: 80%; /* İçerik genişliğini küçültür */
+    padding: 20px; /* İçeriğin iç boşluğunu azaltır */
+    top: 50%; /* İçeriğin konumunu ayarlar */
+    transform: translateY(-50%);
+  }
+
+  .slide-content h3,
+  .slide-content h2,
+  .slide-content p {
+    font-size: 1.2em; /* Yazı boyutlarını küçültür */
+  }
+
+  .owl-prev,
+  .owl-next {
+    width: 100px; /* Navigasyon butonlarının genişliğini azaltır */
+    height: 50px; /* Navigasyon butonlarının yüksekliğini azaltır */
+    line-height: 50px; /* Navigasyon butonlarının satır yüksekliğini ayarlar */
+  }
+
+  .owl-prev-icon:before,
+  .owl-next-icon:before {
+    font-size: 20px; /* İkon boyutlarını küçültür */
+  }
+}
+
+/* Orta boy ekranlar için (tabletler) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .slide-content {
+    width: 60%; /* İçerik genişliğini ayarlar */
+    padding: 40px; /* İçeriğin iç boşluğunu ayarlar */
+    top: 50%; /* İçeriğin konumunu ayarlar */
+    transform: translateY(-50%);
+  }
+
+  .slide-content h3,
+  .slide-content h2,
+  .slide-content p {
+    font-size: 1.5em; /* Yazı boyutlarını ayarlar */
+  }
+
+  .owl-prev,
+  .owl-next {
+    width: 150px; /* Navigasyon butonlarının genişliğini ayarlar */
+    height: 75px; /* Navigasyon butonlarının yüksekliğini ayarlar */
+    line-height: 75px; /* Navigasyon butonlarının satır yüksekliğini ayarlar */
+  }
+
+  .owl-prev-icon:before,
+  .owl-next-icon:before {
+    font-size: 25px; /* İkon boyutlarını ayarlar */
+  }
+}
+
+/* Büyük ekranlar için (masaüstü bilgisayarlar) */
+@media (min-width: 1025px) {
+  .slide-content {
+    width: 45%; /* İçerik genişliğini ayarlar */
+    padding: 70px; /* İçeriğin iç boşluğunu ayarlar */
+    top: 35%; /* İçeriğin konumunu ayarlar */
+  }
+
+  .slide-content h3,
+  .slide-content h2,
+  .slide-content p {
+    font-size: 2em; /* Yazı boyutlarını ayarlar */
+  }
+
+  .owl-prev,
+  .owl-next {
+    width: 200px; /* Navigasyon butonlarının genişliğini ayarlar */
+    height: 100px; /* Navigasyon butonlarının yüksekliğini ayarlar */
+    line-height: 100px; /* Navigasyon butonlarının satır yüksekliğini ayarlar */
+  }
+
+  .owl-prev-icon:before,
+  .owl-next-icon:before {
+    font-size: 30px; /* İkon boyutlarını ayarlar */
+  }
+}

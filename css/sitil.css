@@ -1,0 +1,282 @@
+/* Genel yazı stilleri */
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 1em;
+}
+
+/* Bölüm arka plan renkleri */
+#Aktivit {
+    background-color: #f5f5f5; /* Hafif gri */
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 20px 0;
+}
+
+#Neuigkeiten {
+    background-color: #e6f7ff; /* Hafif mavi */
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 20px 0;
+}
+
+#Referenzen {
+    background-color: #f0f0f0; /* Biraz daha koyu gri */
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 20px 0;
+}
+
+#Uber-uns {
+    background-color: #e0f7fa; /* Hafif turkuaz */
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 20px 0;
+}
+
+#unser-Team {
+    background-color: #fff3e0; /* Hafif turuncu */
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 20px 0;
+}
+
+#vision {
+    background-color: #f1f8e9; /* Hafif yeşil */
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 20px 0;
+}
+
+#Geschichte {
+    background-color: #eceff1; /* Hafif mavi-gri */
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 20px 0;
+}
+
+#Zertifikate {
+    background-color: #ede7f6; /* Hafif mor */
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 20px 0;
+}
+
+#Galerie {
+    background-color: #fffde7; /* Hafif sarı */
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 20px 0;
+}
+
+#Kontakt {
+    background-color: #fafafa; /* Beyazımsı gri */
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 20px 0;
+}
+
+/* Responsive başlık ve metin stilleri */
+@media (max-width: 1200px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+    }
+
+    h4 {
+        font-size: 1.4rem;
+    }
+
+    h5 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 992px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        font-size: 1.3rem;
+    }
+
+    h5 {
+        font-size: 1.1rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    h4 {
+        font-size: 1.1rem;
+    }
+
+    h5 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    h4 {
+        font-size: 1rem;
+    }
+
+    h5 {
+        font-size: 0.9rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Ekstra küçük cihazlar için yazı stilleri */
+@media (max-width: 360px) {
+    h1 {
+        font-size: 1.25rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    h4 {
+        font-size: 0.9rem;
+    }
+
+    h5 {
+        font-size: 0.8rem;
+    }
+
+    p {
+        font-size: 0.75rem;
+    }
+}
+
+/* Ekstra stil ayarlamaları */
+.akt h2, .akt h4 {
+    margin: 1em 0;
+    padding: 0;
+}
+
+footer h4 {
+    font-size: 1rem;
+}
+
+.team-description h4 {
+    font-size: 1rem;
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 576px) {
+    .team-description, .text, .container-zertifikate img {
+        padding: 1rem;
+    }
+
+    .team-description h4, .text h4, .text h3 {
+        font-size: 1rem;
+    }
+
+    .contact-icon h5, .contact-icon h6 {
+        font-size: 0.85rem;
+    }
+
+    .form-control, .btn-primary {
+        padding: 0.5rem;
+    }
+
+    footer h4 {
+        font-size: 0.85rem;
+    }
+}

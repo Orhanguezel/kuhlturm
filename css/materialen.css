@@ -1,0 +1,60 @@
+/* Genel düzenleme */
+#article-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #article-title {
+    text-align: center;
+    color: #428BFF;
+    font-weight: 300;
+    font-size: 1.8rem;
+    padding-bottom: 0px;
+    padding-top: 40px;
+    margin: 0;
+  }
+  
+  /* Metin düzenlemesi */
+  #article-content .text {
+    width: 100%;
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+  
+  #article-content .product-text {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    
+  }
+  
+  /* Resimlerin düzenlenmesi */
+  #article-content .product-images {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    width: 100%;
+  }
+  
+  /* Küçük Ekranlar (mobil) */
+  @media only screen and (max-width: 767px) {
+    #article-content .product-images {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  #article-content .product-images div {
+    text-align: center;
+  }
+  
+  #article-content .product-images img {
+    width: 100%;
+    height: auto;
+  }
+  
+  #article-content .product-images p {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  
