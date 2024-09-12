@@ -1,0 +1,175 @@
+/* Genel Stiller */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#Referenzen {
+    padding: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+}
+
+h1, h2 {
+    font-size: 20px;
+    text-align: center;
+    padding: 0rem;
+    margin: 0 0 20px 0;
+}
+
+.refe {
+    padding: 0;
+    margin: 0;
+}
+
+.fixed-buttons {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    padding: 10px 0;
+}
+
+.btn-group-vertical .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.btn-group .btn {
+    flex: 1 1 auto;
+    margin: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    text-align: center;
+    white-space: nowrap; /* Butonların içindeki metnin tek satırda kalmasını sağlar */
+}
+
+/* Küçük Ekranlar İçin (Mobil) */
+@media (max-width: 470px) {
+    h1 {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 0.7rem;
+    }
+
+    .btn-group-vertical .btn-group {
+        flex-direction: row;
+    }
+
+    .btn-group .btn {
+        flex: 1 1 auto;
+        font-size: 0.75rem;
+        padding: 5px;
+    }
+}
+
+/* Orta Büyüklükteki Ekranlar İçin (Tablet) */
+@media (min-width: 471px) and (max-width: 991px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .btn-group-vertical .btn-group {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .btn-group .btn {
+        flex: 1 1 auto;
+        margin: 5px;
+    }
+}
+
+/* Büyük Ekranlar İçin (Masaüstü) */
+@media (min-width: 992px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    .btn-group-vertical .btn-group {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .btn-group .btn {
+        flex: 1 1 auto;
+        margin: 10px;
+    }
+}
+
+
+
+/* Mevcut CSS kodlarınızı koruyun */
+
+/* Galeri Stili */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    margin-left: 10px;  /* Sol kenar boşluğu */
+    margin-right: 10px; /* Sağ kenar boşluğu */
+}
+
+.gallery-cell {
+    flex: 1 1 100px;
+    max-width: 100px;
+    text-align: center;
+}
+
+.gallery-cell img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Küçük Ekranlar İçin (Mobil) */
+@media (max-width: 600px) {
+    .gallery-cell {
+        flex: 1 1 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+    }
+}
+
+/* Orta Büyüklükteki Ekranlar İçin (Tablet) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .gallery-cell {
+        flex: 1 1 calc(33.33% - 10px);
+        max-width: calc(33.33% - 10px);
+    }
+}
+
+/* Büyük Ekranlar İçin (Masaüstü) */
+@media (min-width: 1025px) {
+    .gallery-cell {
+        flex: 1 1 calc(16.66% - 10px);
+        max-width: calc(16.66% - 10px);
+    }
+}
+
+/* Kenar boşlukları eklemek için düğme grubuna stil ekleyin */
+.fixed-buttons {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    padding: 5px 5px; /* Sağdan ve soldan 10px kenar boşluğu ekleyin */
+}

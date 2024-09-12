@@ -1,0 +1,246 @@
+/* Genel Stiller */
+body {
+  font-family: Arial, sans-serif;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#Aktivit {
+  background-color: #f9f9f9;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.akt {
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+  background: #f9f9f9;
+  padding: 10px; /* Paddingleri azalttık */
+  padding-bottom: 10px;
+  width: 100%;
+  max-width: 1200px; /* Maksimum genişlik ayarladık */
+  height: auto;
+  border-radius: 5px;
+  min-width: 240px;
+}
+
+.akt input[name="tab-control"] {
+  display: none;
+}
+
+.akt .content section h4,
+.akt ul li label {
+  font-size: 1.2rem;
+  
+}
+
+.akt .content section h2,
+.akt ul li label {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #428BFF;
+}
+
+.akt ul {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.akt ul li {
+  box-sizing: border-box;
+  width: 15%;
+  padding: 0 5px;
+  text-align: justify;
+}
+
+.akt ul li label {
+  transition: all 0.3s ease-in-out;
+  color: #c2dafb;
+  padding: 5px auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+.akt ul li label br {
+  display: none;
+}
+
+.akt ul li label i {
+  font-size: 1em;
+  margin-bottom: 2px;
+  color: #c2dafb;
+  transition: color 0.2s ease-in-out;
+}
+
+.akt ul li label:hover i,
+.akt ul li label:focus i,
+.akt ul li label:active i {
+  color: #f2e4e5;
+}
+
+.akt ul li label:hover,
+.akt ul li label:focus,
+.akt ul li label:active {
+  outline: 0;
+  color: #f2e4e5;
+}
+
+.akt .slider {
+  position: relative;
+  width: 25%;
+  transition: all 0.33s cubic-bezier(0.38, 0.8, 0.32, 1.07);
+}
+
+.akt .slider .indicator {
+  position: relative;
+  display: none;
+  width: 50px;
+  max-width: 100%;
+  margin: 0 auto;
+  height: 4px;
+  background: #428BFF;
+  border-radius: 1px;
+}
+
+.akt .content {
+  margin-top: 10px;
+  margin-left: 0;
+}
+
+.akt .content section {
+  display: none;
+  animation: content 0.3s ease-in-out;
+  line-height: 1.4;
+  padding: 0px;
+}
+
+.akt .content section img {
+  position: relative;
+  width: 250px;
+  max-width: 100%;
+  margin: 5px;
+  height: auto;
+  border-radius: 5%;
+  display: block;
+  animation: content 0.3s ease-in-out;
+}
+
+.akt .content section h2 {
+  color: #428BFF;
+  display: flex;
+}
+
+.akt .content section h2::after {
+  content: "";
+  position: relative;
+  display: none;
+  width: auto;
+  height: 5px;
+  background: #428BFF;
+  margin-top: 5px;
+  left: 1px;
+}
+
+.akt input:nth-of-type(1):checked ~ .slider .indicator {
+  transform: translateX(0%);
+}
+
+.akt input:nth-of-type(2):checked ~ .slider .indicator {
+  transform: translateX(100%);
+}
+
+.akt input:nth-of-type(3):checked ~ .slider .indicator {
+  transform: translateX(200%);
+}
+
+.akt input:nth-of-type(4):checked ~ .slider .indicator {
+  transform: translateX(300%);
+}
+
+.akt input:nth-of-type(5):checked ~ .slider .indicator {
+  transform: translateX(400%);
+}
+
+.akt input:nth-of-type(6):checked ~ .slider .indicator {
+  transform: translateX(500%);
+}
+
+.akt input:nth-of-type(1):checked ~ .content section:nth-of-type(1),
+.akt input:nth-of-type(2):checked ~ .content section:nth-of-type(2),
+.akt input:nth-of-type(3):checked ~ .content section:nth-of-type(3),
+.akt input:nth-of-type(4):checked ~ .content section:nth-of-type(4),
+.akt input:nth-of-type(5):checked ~ .content section:nth-of-type(5),
+.akt input:nth-of-type(6):checked ~ .content section:nth-of-type(6) {
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .akt ul li {
+      width: 30%;
+  }
+  .akt .slider {
+      width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .akt ul li {
+      width: 45%;
+  }
+  .akt .slider {
+      width: 70%;
+  }
+}
+
+@media (max-width: 576px) {
+  .akt {
+      padding: 1px; /* Paddingleri azaltıyoruz */
+  }
+
+  .akt ul {
+      justify-content: flex-start;
+      padding: 0;
+      margin: 0;
+  }
+
+  .akt ul li {
+      width: auto;
+      flex: 1 1 auto;
+      text-align: left;
+      padding: 0 1px; /* Paddingleri azaltıyoruz */
+  }
+
+  .akt ul li label {
+      font-size: 1rem; /* Yazı boyutunu küçültüyoruz */
+      margin: 0;
+      padding: 5px 0; /* Paddingleri azaltıyoruz */
+  }
+
+  .akt .slider {
+      width: 100%;
+  }
+
+  .akt .content section h4{
+      padding: 0.2px; /* Paddingleri azaltıyoruz */
+      margin:0px;
+      font-size: 1rem;
+  }
+}

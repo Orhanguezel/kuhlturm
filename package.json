@@ -1,0 +1,14 @@
+{
+  "name": "kuhlturm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d ."
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "gh-pages": "^6.1.1"
+  }
+}

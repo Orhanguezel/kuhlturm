@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.hover-effect {
+    display: inline-block;
+    padding: 10px;
+    position: relative;
+    transition: transform 0.3s, color 0.3s;
+    background-color: white; /* Beyaz arka plan */
+    z-index: 1; /* Diğer öğelerin üstünde yer almasını sağlar */
+    margin-bottom: 20px; /* Altındaki elemanlarla mesafe oluşturur */
+}
+
+.hover-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent;
+    z-index: -1;
+    transition: border-color 0.3s;
+}
+
+.hover-effect:hover::before {
+    border-color: black;
+}
+
+.hover-effect:hover {
+    color: black;
+    transform: scale(1.1);
+    z-index: 2; /* Üzerinde bulunduğu öğenin daha üstte görünmesini sağlar */
+}
+.image-container {
+    margin: 0px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Ekran genişliğine göre sarma yap */
+    justify-content: space-around; /* Resimleri eşit aralıklarla dağıt */
+    position: relative; /* Hover sırasında resimleri üstte gösterebilmek için göreli konumlandır */
+  }
+  
+  .image-container img {
+    text-align: center;
+    width: 200px;
+    height: auto;
+    border-radius: 5%;
+    transition: transform 0.3s ease-in-out; /* Animasyonun pürüzsüz geçişini sağlar */
+    cursor: pointer; /* Mouse imlecini pointer yap */
+    z-index: 1; /* Başlangıç z-index değeri */
+  }
+  
+  .image-container img:hover {
+    transform: scale(2); /* Mouse üzerine geldiğinde 2 katına büyüt */
+    z-index: 10; /* Hover sırasında resmi üstte gösterir */
+  }
+  
+  /* Büyük ekranlar için (masaüstü bilgisayarlar) */
+  @media (min-width: 1025px) {
+    .image-container img {
+      flex: 1 1 calc(16.666% - 10px); /* Büyük ekranlarda her satırda 6 resim göster */
+    }
+  }
+  
+  /* Orta boy ekranlar için (tabletler) */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .image-container img {
+      flex: 1 1 calc(33.333% - 10px); /* Orta boyutlu ekranlarda her satırda 3 resim göster */
+    }
+  }
+  
+  /* Küçük ekranlar için (mobil cihazlar) */
+  @media (max-width: 767px) {
+    .image-container img {
+      flex: 1 1 calc(50% - 10px); /* Küçük ekranlarda her satırda 2 resim göster */
+    }
+  }
