@@ -1,0 +1,260 @@
+/* Temel Stiller */
+#Kontakt {
+  font-family: 'Arial', sans-serif;
+  background-color: #DFD6BB;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+#Kontakt h1, #Kontakt h2, #Kontakt h5 {
+  text-align: center;
+  color: black;
+}
+
+#Kontakt h5 {
+  font-size: 0.8em;
+}
+
+#Kontakt h6 {
+  color: black;
+  font-size: 0.8em;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.logo .logo3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.logo .logo3 img {
+  max-width: 30%;
+  height: auto;
+}
+
+/* Grid Düzeni */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.grid-item {
+  padding: 10px;
+  box-sizing: border-box;
+  border: 0.7px solid #ddd;
+}
+
+.contact-icon {
+  margin: 10px 0;
+}
+
+.single-icon {
+  margin: 10px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-icon i {
+  font-size: 24px;
+  margin-bottom: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.copyright {
+  font-size: 1em;
+  text-align: center;
+}
+
+/* Responsif Tasarım */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-item {
+    order: initial;
+  }
+
+  .grid-item:nth-child(1), .grid-item:nth-child(4) {
+    order: 1;
+  }
+
+  .grid-item:nth-child(2), .grid-item:nth-child(5) {
+    order: 2;
+  }
+
+  .grid-item:nth-child(3), .grid-item:nth-child(6) {
+    order: 3;
+  }
+
+  #message-item {
+    order: 5;
+  }
+
+  #form-item {
+    order: 6;
+  }
+}
+
+@media (max-width: 576px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-item {
+    order: initial;
+  }
+
+  .grid-item:nth-child(1), .grid-item:nth-child(4) {
+    order: 1;
+  }
+
+  .grid-item:nth-child(2), .grid-item:nth-child(5) {
+    order: 2;
+  }
+
+  .grid-item:nth-child(3), .grid-item:nth-child(6) {
+    order: 3;
+  }
+
+  #message-item {
+    order: 5;
+  }
+
+  #form-item {
+    order: 6;
+  }
+
+  #Kontakt h1 {
+    font-size: 1.4rem;
+  }
+
+  #Kontakt h2 {
+    font-size: 1.2rem;
+  }
+  #Kontakt h5 {
+    font-size: 1rem;
+  }
+  #Kontakt h6 {
+    font-size: 1rem;
+  }
+
+  .logo .logo3 img {
+    max-width: 40%;
+  }
+
+  .contact-icon i {
+    font-size: 20px;
+  }
+
+  .form-control {
+    padding: 8px;
+  }
+
+  .btn-primary {
+    padding: 0.3rem 0.8rem;
+  }
+}
+
+/* WhatsApp İletişim İkonu */
+#whatsapp-contact {
+  position: fixed;
+  bottom: 40px;
+  left: 20px;
+  z-index: 1000;
+}
+
+#whatsapp-contact i {
+  font-size: 48px;
+  color: #25D366;
+  border-radius: 50%;
+}
+
+/* Alt Bilgi */
+footer {
+  background-color: black;
+  color: white;
+  padding: 0.1rem;
+  text-align: center;
+}
+
+footer .social-icons {
+  margin-bottom: 0.2rem; /* İkonlar ile copyright arasında boşluk ekleme */
+}
+
+footer .social-icons ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+footer .social-icons li {
+  margin: 0 5px;
+}
+
+footer .social-icons a {
+  color: white;
+  font-size: 1.5rem;
+}
+
+footer .copyright h4{
+  text-align: center;
+  justify-content: center;
+  margin-top: 0.8rem; /* İkonlar üstünde boşluk ekleme */
+}
+
+@media (max-width: 768px) {
+  footer .social-icons a {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  footer .social-icons a {
+    font-size: 1.2rem;
+    justify-content: center;
+  }
+
+  footer .social-icons {
+    margin-top: 0.1rem;
+  }
+
+  footer .social-icons ul {
+    justify-content: center;
+  }
+
+  footer .copyright {
+    margin-top: 0.5rem; /* İkonlar üstünde boşluk ekleme */
+  }
+}

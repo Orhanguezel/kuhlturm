@@ -1,0 +1,82 @@
+/* Grundlegende Stildefinitionen */
+#Zertifikate {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+#Zertifikate h4{
+font-size: 1em;
+}
+
+/* Container für Zertifikate */
+.container-zertifikate {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Ortalanmış düzen */
+  gap: 10px;
+}
+
+/* Stil für Zertifikatbilder */
+.container-zertifikate img {
+  width: 10%;
+  max-width: 200px; /* Varsayılan resim boyutu */
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover-Effekt für Bilder */
+.container-zertifikate img:hover {
+  transform: scale(1.5); /* Hafif büyütme efekti */
+  z-index: 10;
+}
+
+/* Media Queries für verschiedene Bildschirmgrößen */
+
+/* Küçük Ekranlar (max-width: 576px) */
+@media (max-width: 576px) {
+  .container-zertifikate {
+    justify-content: center;
+  }
+
+  .container-zertifikate img {
+    max-width: 40%; /* Küçük ekranlarda resim boyutunu küçültme */
+    flex: 0 0 calc(50% - 10px); /* Satırda iki resim */
+  }
+
+  #Zertifikate {
+    padding: 5px; /* Küçük ekranlarda padding azaltma */
+  }
+}
+
+/* Orta Ekranlar (577px - 992px) */
+@media (min-width: 577px) and (max-width: 992px) {
+  .container-zertifikate img {
+    max-width: 60%; /* Orta ekranlarda resim boyutunu ayarlama */
+    flex: 0 0 calc(25% - 10px); /* Satırda dört resim */
+    
+  }
+  #Zertifikate h1 {
+  font-size: 1.6em;
+  }
+  #Zertifikate h4 {
+    font-size: 1em;
+    }
+  #Zertifikate {
+    padding: 10px; /* Orta ekranlarda padding ayarlama */
+  }
+}
+
+/* Büyük Ekranlar (min-width: 993px) */
+@media (min-width: 993px) {
+  .container-zertifikate img {
+    max-width: 20%; /* Büyük ekranlarda resim boyutunu artırma */
+    flex: 0 0 calc(16.66% - 10px); /* Satırda altı resim */
+  }
+
+  #Zertifikate {
+    padding: 20px; /* Büyük ekranlarda padding ayarlama */
+  }
+}

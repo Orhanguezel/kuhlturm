@@ -1,0 +1,55 @@
+#Uber-uns{
+ font-family: Arial, sans-serif;
+background-color: #f9f9f9;
+margin-left: 10px;
+margin-right: 10px;  
+}
+
+
+/* Genel Stiller */
+#Uber-uns .row {
+  font-family: 'Arial', sans-serif;
+  padding: 5px;
+  text-align: center;
+}
+
+#Uber-uns .h3 {
+  font-family: 'Arial', sans-serif;
+  padding: 5px;
+  text-align: center;
+}
+
+#uns .h4 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 576px) {
+
+    #Uber-uns img {
+    margin-top:2px; 
+    height: 80%;
+    width: 80%;
+      }
+
+  }

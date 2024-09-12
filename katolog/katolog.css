@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Mevcut CSS değişmeyecek */
+
+.sidebar {
+    height: calc(100% - 28px); /* Sidebar yüksekliğini hesaplıyoruz */
+    width: 300px; /* Sidebar genişliğini sabit belirliyoruz */
+    position: fixed;
+    top: 48px; /* Üstten 28px margin */
+    right: -300px; /* Başlangıçta sidebar gizli */
+    background-color: #0056B3;
+    overflow-x: hidden;
+    overflow-y: auto; /* Dikey kaydırma çubuğu */
+    transition: 0.5s;
+    padding-top: 60px;
+    color: white;
+    z-index: 1000;
+}
+
+.sidebar.active {
+    right: 0; /* Sidebar açıldığında */
+}
+
+/* Açma düğmesi stili */
+.openbtn {
+    font-size: 0.8rem;
+    cursor: pointer;
+    background-color: rgba(0, 86, 179, 0.5); /* Yarı şeffaf arka plan */
+    color: white;
+    border: none;
+    padding: 5px;
+    width: 50px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    margin: 0; /* Arasındaki boşluğu kaldırıyoruz */
+    transition: 0.3s;
+}
+
+.openbtn:hover {
+    background-color: rgba(0, 86, 179, 0.9); /* Hover durumda biraz daha opak */
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 36px;
+}
+
+.openbtn {
+    font-size: 0.8rem;
+    cursor: pointer;
+    background-color: rgba(0, 86, 179, 0.5); /* Yarı şeffaf arka plan */
+    color: white;
+    border: none;
+    padding: 5px;
+    width: 50px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    margin: 0; /* Arasındaki boşluğu kaldırıyoruz */
+    transition: 0.3s;
+}
+
+.openbtn:hover {
+    background-color: rgba(0, 86, 179, 0.9); /* Hover durumda biraz daha opak */
+}
+
+.form-container {
+    padding: 5px;
+}
+
+.form-control {
+    margin-bottom: 5px;
+}
+
+.additional-fields {
+    display: none;
+}
+
+.sidebar-buttons {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px; /* Düğmeler arasındaki boşluğu kaldırıyoruz */
+}
