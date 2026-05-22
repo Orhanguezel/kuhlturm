@@ -1,0 +1,46 @@
+{
+  "title": "Kühlturm",
+  "slug": "kuhlturm",
+  "summary": "Corporate website for cooling tower (Kühlturm) solutions, built on a Next.js stack with shared workspace packages; a dedicated shared-backend-based API and database are planned.",
+  "category": "CORPORATE WEBSITE",
+  "services": [
+    "Frontend Development",
+    "Architecture & Optimization",
+    "DevOps & Deployment"
+  ],
+  "techs": [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "next-intl",
+    "Tailwind CSS",
+    "React Query",
+    "Zod",
+    "Bun",
+    "Nginx"
+  ],
+  "features": [
+    "Multi-language content",
+    "SEO-optimized pages",
+    "Shared workspace packages"
+  ],
+  "designHighlights": [
+    "Shared UI/config packages via workspace",
+    "Locale-aware content flows"
+  ],
+  "featured": false,
+  "displayOrder": 5,
+  "clientName": "Own Project",
+  "status": "in-development",
+  "startDate": "2025-04-01",
+  "completeDate": null,
+  "completionTimeLabel": "Ongoing",
+  "repoUrl": "https://github.com/Orhanguezel/kuhlturm",
+  "websiteUrl": "https://kuhlturm.com",
+  "demoUrl": null,
+  "featuredImage": "/assets/imgs/work/projects/kuhlturm.png",
+  "featuredImageAlt": "Kühlturm Corporate Website",
+  "resumeTitle": "Kühlturm",
+  "resumeSubtitle": "Cooling Tower Corporate Website",
+  "excludeFromPortfolio": false
+}
