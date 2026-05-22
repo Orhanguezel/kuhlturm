@@ -1,10 +1,11 @@
 {
   "title": "Kühlturm",
   "slug": "kuhlturm",
-  "summary": "Corporate website for cooling tower (Kühlturm) solutions, built on a Next.js stack with shared workspace packages; a dedicated shared-backend-based API and database are planned.",
-  "category": "CORPORATE WEBSITE",
+  "summary": "B2B cooling tower platform for the German and English markets — full Fastify + Next.js stack cloned from ensotek_de architecture, with its own database (kuhlturm) and brand.",
+  "category": "B2B PLATFORM",
   "services": [
     "Frontend Development",
+    "Backend Development",
     "Architecture & Optimization",
     "DevOps & Deployment"
   ],
@@ -12,21 +13,32 @@
     "Next.js",
     "React",
     "TypeScript",
+    "Fastify",
+    "Drizzle ORM",
+    "MySQL",
+    "Bun",
+    "Zod",
     "next-intl",
     "Tailwind CSS",
     "React Query",
-    "Zod",
-    "Bun",
+    "Redux Toolkit",
+    "Cloudinary",
+    "JWT",
+    "Swagger",
     "Nginx"
   ],
   "features": [
-    "Multi-language content",
-    "SEO-optimized pages",
+    "Admin panel",
+    "Catalog management",
+    "Customer document handling",
+    "Multi-language (DE/EN)",
+    "Swagger API docs",
     "Shared workspace packages"
   ],
   "designHighlights": [
-    "Shared UI/config packages via workspace",
-    "Locale-aware content flows"
+    "Mirrors ensotek_de architecture",
+    "Own database — fully isolated from other sites",
+    "DE/EN locale-aware content flows"
   ],
   "featured": false,
   "displayOrder": 5,
@@ -39,8 +51,8 @@
   "websiteUrl": "https://kuhlturm.com",
   "demoUrl": null,
   "featuredImage": "/assets/imgs/work/projects/kuhlturm.png",
-  "featuredImageAlt": "Kühlturm Corporate Website",
+  "featuredImageAlt": "Kühlturm B2B Cooling Tower Platform",
   "resumeTitle": "Kühlturm",
-  "resumeSubtitle": "Cooling Tower Corporate Website",
+  "resumeSubtitle": "B2B Cooling Tower Platform (DE/EN)",
   "excludeFromPortfolio": false
 }
