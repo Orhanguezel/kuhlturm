@@ -42,7 +42,7 @@ export const DEFAULT_BRANDING: AdminBrandingConfig = {
     og_title: "Kühlturm - Industrielle Kühlturm-Lösungen",
     og_description:
       "Professionelle Kühlturm-Lösungen für Industrie und Gewerbe.",
-    og_image: "/logo/png/kuhlturm_logo_512.png",
+    og_image: "/logo/kuhlturm-logo.svg",
     twitter_card: "summary_large_image",
   },
 };

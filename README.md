@@ -8,7 +8,7 @@ Soğutma kulesi (Kühlturm) çözümleri için **B2B web platformu** — Almanca
 
 | Klasör | Açıklama | Stack | Port |
 |--------|----------|-------|------|
-| `frontend/` | Genel kullanıcı sitesi | Next.js 16, React 19, next-intl (DE+EN), React Query, Tailwind v4 | mevcut |
+| `frontend/` | Genel kullanıcı sitesi | Next.js 16, React 19, next-intl (DE+EN), React Query, Tailwind v4 | 3025 |
 | `backend/` | REST API | Fastify 5, Drizzle ORM, MySQL, Zod | 8089 |
 | `admin_panel/` | Yönetim paneli | Next.js 16, Redux Toolkit, Tailwind v4 | 3023 |
 
@@ -18,7 +18,7 @@ Veritabanı: MySQL — **`kuhlturm`** (ensotek_de'nin `ensotek` DB'sinden tamame
 
 ```bash
 # frontend
-cd frontend && bun install && bun run dev
+cd frontend && bun install && bun run dev    # port 3025
 
 # backend
 cd backend && bun install && bun run dev
@@ -46,8 +46,8 @@ cd admin_panel && bun install && bun run dev    # port 3023
 
 ## Köken (Origin) — ensotek_de'den klonlandı
 
-backend ve admin_panel iskeletleri `ensotek_de`'den kopyalandı; kritik configler (paket isimleri, portlar, ecosystem cwd, env, DB adı) kuhlturm'a göre uyarlandı. Marka ismi (Ensotek → Kühlturm), TR locale temizliği ve `packages/shared-backend` ortak modül entegrasyonu **Codex'e brief edildi**: [`docs/kuhlturm-codex-brief.md`](docs/kuhlturm-codex-brief.md).
+backend ve admin_panel iskeletleri `ensotek_de`'den kopyalandı; kritik configler (paket isimleri, portlar, ecosystem cwd, env, DB adı) kuhlturm'a göre uyarlandı. Marka ismi (Ensotek → Kühlturm), TR locale temizliği, seed branding normalizasyonu ve frontend PM2 konfigürasyonu Codex tarafında ele alındı. `backend/src/modules` tekrarlarını shared-backend'e taşıma işi Claude kapsamındadır: [`docs/kuhlturm-codex-brief.md`](docs/kuhlturm-codex-brief.md).
 
 ## Ortak Paketler
 
-`Ensotek/packages/` altındaki `shared-backend`, `shared-config`, `shared-types`, `shared-ui` paketleri root `bun` workspace üzerinden kullanılır. Detay entegrasyon Codex tarafından tamamlanır.
+`Ensotek/packages/` altındaki `shared-backend`, `shared-config`, `shared-types`, `shared-ui` paketleri root `bun` workspace üzerinden kullanılır. `kuhlturm/backend` ve `kuhlturm/admin_panel` root workspace'e eklidir.

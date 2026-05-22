@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import { useGetSiteSettingByKeyQuery } from "@/integrations/hooks";
 
-const LOGO_FALLBACK = "/logo/png/kuhlturm_logo_512.png";
+const LOGO_FALLBACK = "/logo/kuhlturm-logo.svg";
 
 type Props = {
   heading: string;

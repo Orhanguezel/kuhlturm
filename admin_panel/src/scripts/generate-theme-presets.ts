@@ -108,7 +108,13 @@ const updated = fileContent.replace(
 );
 
 async function main() {
-  const formatted = execFileSync("npx", ["@biomejs/biome", "format", "--stdin-file-path", outputPath], {
+  const biomeBin = [
+    path.resolve(__dirname, "../../node_modules/.bin/biome"),
+    path.resolve(__dirname, "../../../node_modules/.bin/biome"),
+    path.resolve(__dirname, "../../../../node_modules/.bin/biome"),
+  ].find((candidate) => fs.existsSync(candidate));
+
+  const formatted = execFileSync(biomeBin ?? "biome", ["format", "--stdin-file-path", outputPath], {
     input: updated,
     encoding: "utf8",
   });

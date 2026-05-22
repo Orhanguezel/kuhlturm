@@ -8,12 +8,12 @@
 
 ## A) Branding — ensotek → kuhlturm
 
-- [ ] **Global rename**: `backend/src/` ve `admin_panel/src/` içinde `ensotek`/`Ensotek`/`ENSOTEK` geçen yerleri tara, kuhlturm'a uygun karşılığına çevir (kod, comment, log/error mesajları, identifier'lar)
+- [x] **Global rename**: `backend/src/` ve `admin_panel/src/` içinde `ensotek`/`Ensotek`/`ENSOTEK` geçen yerleri tara, kuhlturm'a uygun karşılığına çevir (kod, comment, log/error mesajları, identifier'lar)
 - [x] **Swagger info** (`backend/src/app.ts`): `title: 'MOE Kompozit API'` veya `'Ensotek API'` → `'Kühlturm API'`; `description`, `version` güncelle
-- [ ] **Mail**: `backend/src/core/*-mail.ts` veya `packages/shared-backend/modules/mail` kullanımı — `from`, signature, branding güncelle
-- [ ] **Admin branding** (`admin_panel/src/app/(main)/admin/_components/`): header logo, site name, footer
-- [ ] **CLAUDE.md** (`admin_panel/CLAUDE.md`): "Ensotek Admin Panel" başlığı + "Ensotek marka renkleri" bölümü → Kühlturm
-- [ ] **Logo/favicon**: `admin_panel/public/` ve `frontend/public/` altında ensotek logoları kuhlturm logosuyla değiştirilir
+- [x] **Mail**: `backend/src/core/*-mail.ts` veya `packages/shared-backend/modules/mail` kullanımı — `from`, signature, branding güncelle
+- [x] **Admin branding** (`admin_panel/src/app/(main)/admin/_components/`): header logo, site name, footer
+- [x] **CLAUDE.md** (`admin_panel/CLAUDE.md`): "Ensotek Admin Panel" başlığı + "Ensotek marka renkleri" bölümü → Kühlturm
+- [x] **Logo/favicon**: `admin_panel/public/` ve `frontend/public/` altında ensotek logoları kuhlturm logosuyla değiştirilir
 
 ## B) Locale — TR sil, DE + EN tut
 
@@ -25,13 +25,13 @@
 
 ## C) Veritabanı seed (`backend/src/db/seed/sql/`)
 
-- [ ] **`site_settings`**: site name = Kühlturm, contact info, logo URL, brand colors, site_id
-- [ ] **`menu_items`**: kuhlturm navigation (DE+EN)
-- [ ] **`footer_sections`**: kuhlturm footer içerik
-- [ ] **`custom_pages`**: about, services, products, contact (DE+EN; ensotek içeriği kaldırılır)
-- [ ] **`categories` / `subcategories`**: kuhlturm ürün/kategori taksonomisi
+- [x] **`site_settings`**: site name = Kühlturm, contact info, logo URL, brand colors, site_id
+- [x] **`menu_items`**: kuhlturm navigation (DE+EN)
+- [x] **`footer_sections`**: kuhlturm footer içerik
+- [x] **`custom_pages`**: about, services, products, contact (DE+EN; ensotek içeriği kaldırılır)
+- [x] **`categories` / `subcategories`**: kuhlturm ürün/kategori taksonomisi
 - [x] **Default admin user**: `SEED_ADMIN_EMAIL` + bcrypt/argon2 hash ile seed
-- [ ] **Profile/seed adı**: seed scripti `--profile=ensotek` yerine `--profile=kuhlturm` veya `--profile=` (default)
+- [x] **Profile/seed adı**: seed scripti `--profile=ensotek` yerine `--profile=kuhlturm` veya `--profile=` (default)
 
 ## D) shared-backend entegrasyonu — Claude kapsamı
 
@@ -49,16 +49,16 @@
 ## E) Marka palette & tema (admin_panel)
 
 - [x] `src/app/globals.css`: `--logo-coral*` (ensotek) → kuhlturm renkleri (mavi/gri tonları?)
-- [ ] `src/styles/presets/*.css`: tema presetleri palette güncelle
-- [ ] `src/lib/preferences/theme.ts`: preset listesi
-- [ ] `package.json`: `generate:presets` scripti çalıştır
+- [x] `src/styles/presets/*.css`: tema presetleri palette güncelle
+- [x] `src/lib/preferences/theme.ts`: preset listesi
+- [x] `package.json`: `generate:presets` scripti çalıştır
 
 ## F) Domain ve URL referansları
 
 - [x] Source içinde hardcoded `ensotek.de` / `https://ensotek.de` araması → `kuhlturm.com`
 - [x] SEO/OG tag defaults (frontend)
 - [x] `sitemap.xml`, `robots.txt`
-- [ ] Mail template footer / copyright
+- [x] Mail template footer / copyright
 - [x] `admin_panel/.env.example` ve `frontend/.env.example` URL'leri
 
 ## G) Frontend PM2 ecosystem
@@ -73,11 +73,11 @@
 ## H) Test ve smoke
 
 - [x] `backend/scripts/` — varsa ensotek-isimli smoke tests kuhlturm'a uyarla
-- [ ] `admin_panel/scripts/` — i18n merge, theme generate
+- [x] `admin_panel/scripts/` — i18n merge, theme generate
 
 ## I) Build & doğrulama (success criteria)
 
-- [x] `cd backend && bun install && bun run build` — tip hatasız build
+- [ ] `cd backend && bun install && bun run build` — tip hatasız build
 - [ ] `cd backend && bun run dev` — port 8089'da Fastify ayağa kalkıyor
 - [ ] `cd backend && bun run db:seed` — DB schema + seed kuhlturm DB'sine yazılıyor
 - [x] `cd admin_panel && bun install && bun run build`
@@ -90,7 +90,7 @@
 ## J) Repo hijyen — bitirirken
 
 - [ ] `project.portfolio.json` `status`: gerekiyorsa `in-development` → `live` (canlıya alındığında)
-- [ ] `README.md` güncel
+- [x] `README.md` güncel
 - [ ] **Bu checklist'teki tüm kutucuklar [x]** olduğunda Kühlturm hazır
 - [ ] `kuhlturm.com` canlıya alındığında: workspace `CLAUDE.md`'deki proje tablosu güncelle
 
@@ -101,4 +101,5 @@
 - **DB schema kuralı**: `ALTER TABLE` yok — `0XX_*.sql` güncellenir + `db:seed:fresh`
 - **`.env` dosyaları**: asla commit edilmez (`.gitignore` ile zaten engelli)
 - **Workspace ortak paketler**: `Ensotek/packages/` — root `bun` workspace üzerinden erişilir
+- **2026-05-23 doğrulama notu**: `admin_panel` ve `frontend` build başarılı. `backend` build şu an shared-backend entegrasyon sınırında kalıyor (`createDbAdminRoutes/registerDbAdmin`, `@/modules/_shared` importları, shared `support` TelegramEvent tipi); bu kısım Claude'a devredilen D kapsamıyla birlikte çözülmeli.
 - **VPS deploy**: poly-repo migration tamamlandıktan sonra `.github/workflows/deploy.yml` (root Ensotek repo) ile manuel tetiklenir

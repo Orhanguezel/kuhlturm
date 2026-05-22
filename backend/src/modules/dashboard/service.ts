@@ -1,7 +1,7 @@
-import { and, eq, like, or } from "drizzle-orm";
+import { and, eq, like, or, sql } from "drizzle-orm";
 import { db } from "@/db/client";
 import { products, productI18n } from "@ensotek/shared-backend/modules/products/schema";
-import { services, servicesI18n } from "@/modules/services/schema";
+import { services, servicesI18n } from "@ensotek/shared-backend/modules/services/schema";
 import { customPages, customPagesI18n } from "@ensotek/shared-backend/modules/customPages/schema";
 import { chat_ai_knowledge } from "@/modules/chat/schema";
 
@@ -112,7 +112,7 @@ export async function buildDashboardKnowledgeContext(
   ]);
 
   const serviceConds = tokens.flatMap((t) => [
-    like(servicesI18n.name, `%${t}%`),
+    like(servicesI18n.title, `%${t}%`),
     like(servicesI18n.slug, `%${t}%`),
     like(servicesI18n.description, `%${t}%`),
   ]);
@@ -150,15 +150,15 @@ export async function buildDashboardKnowledgeContext(
       .select({
         id: services.id,
         is_active: services.is_active,
-        type: services.type,
+        type: services.module_key,
         locale: servicesI18n.locale,
-        name: servicesI18n.name,
+        name: servicesI18n.title,
         slug: servicesI18n.slug,
         description: servicesI18n.description,
-        material: servicesI18n.material,
-        price: servicesI18n.price,
-        includes: servicesI18n.includes,
-        warranty: servicesI18n.warranty,
+        material: servicesI18n.tags,
+        price: sql<string | null>`NULL`,
+        includes: servicesI18n.content,
+        warranty: sql<string | null>`NULL`,
       })
       .from(services)
       .innerJoin(servicesI18n, eq(servicesI18n.service_id, services.id))

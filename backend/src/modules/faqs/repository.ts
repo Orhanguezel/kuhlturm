@@ -28,7 +28,7 @@ import {
 import {
   subCategories,
   subCategoryI18n,
-} from "@/modules/subcategories/schema";
+} from "@ensotek/shared-backend/modules/subcategories/schema";
 
 type Sortable = "created_at" | "updated_at" | "display_order";
 

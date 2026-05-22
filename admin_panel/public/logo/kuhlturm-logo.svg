@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 180" role="img" aria-label="Kühlturm">
+  <rect width="720" height="180" rx="24" fill="#0f172a"/>
+  <g transform="translate(48 28)">
+    <path d="M28 104h128l-18 30H10z" fill="#38bdf8"/>
+    <path d="M54 12h86l-18 122H34z" fill="#e0f2fe"/>
+    <path d="M68 34h60l-12 84H48z" fill="#1f6feb"/>
+    <path d="M50 134h94l-12 26H38z" fill="#1158c7"/>
+    <path d="M54 12h86l-8 22H62z" fill="#93c5fd"/>
+    <path d="M96 0c-12 12-12 24 0 36 12-12 12-24 0-36zM126 0c-10 13-8 25 8 35 8-15 6-26-8-35zM66 0c-14 9-16 20-8 35 16-10 18-22 8-35z" fill="#7dd3fc"/>
+  </g>
+  <text x="220" y="108" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="800">Kühlturm</text>
+  <text x="224" y="140" fill="#93c5fd" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="600">Industrial Cooling Towers</text>
+</svg>

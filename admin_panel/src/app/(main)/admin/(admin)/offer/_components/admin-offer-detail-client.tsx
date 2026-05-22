@@ -565,7 +565,7 @@ export default function AdminOfferDetailClient({ id }: { id: string }) {
                   <Input
                     value={form.locale}
                     onChange={(e) => setField("locale", e.target.value)}
-                    placeholder="tr / en / de"
+                    placeholder="de / en"
                     disabled={busy}
                   />
                 </div>

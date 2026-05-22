@@ -6,7 +6,10 @@
 // - Fail-safe: never throws; logs errors for debugging
 // =============================================================
 
-import { getTelegramSettings, type TelegramEvent } from './settings';
+import {
+  getTelegramSettings,
+  type TelegramEvent,
+} from '@ensotek/shared-backend/modules/telegram/settings';
 
 type TelegramNotifyInput =
   | {

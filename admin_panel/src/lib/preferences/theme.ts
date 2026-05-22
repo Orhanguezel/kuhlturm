@@ -15,32 +15,32 @@ export const THEME_PRESET_OPTIONS = [
     label: "Default",
     value: "default",
     primary: {
-      light: "oklch(0.488 0.243 264.376)",
-      dark: "oklch(0.488 0.243 264.376)",
+      light: "var(--logo-coral)",
+      dark: "var(--logo-coral-medium)",
     },
   },
   {
-    label: "Brutalist",
+    label: "High Contrast",
     value: "brutalist",
     primary: {
-      light: "oklch(0.6489 0.237 26.9728)",
-      dark: "oklch(0.7044 0.1872 23.1858)",
+      light: "oklch(0.45 0.2 255)",
+      dark: "oklch(0.72 0.15 245)",
     },
   },
   {
-    label: "Soft Pop",
+    label: "Cool Air",
     value: "soft-pop",
     primary: {
-      light: "oklch(0.5106 0.2301 276.9656)",
-      dark: "oklch(0.6801 0.1583 276.9349)",
+      light: "oklch(0.58 0.16 235)",
+      dark: "oklch(0.74 0.13 235)",
     },
   },
   {
-    label: "Tangerine",
+    label: "Steel Blue",
     value: "tangerine",
     primary: {
-      light: "oklch(0.64 0.17 36.44)",
-      dark: "oklch(0.64 0.17 36.44)",
+      light: "oklch(0.52 0.18 252)",
+      dark: "oklch(0.7 0.14 245)",
     },
   },
 ] as const;

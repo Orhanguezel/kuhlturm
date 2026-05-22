@@ -45,7 +45,7 @@ export default async function AboutPage({ params }: Props) {
       iconBg: 'bg-blue-100',
       title: aboutPage?.title ?? 'Über Kühlturm',
       summary: aboutPage?.summary ?? 'Wer wir sind und was uns antreibt.',
-      href: `/${locale}/about/${aboutPage?.slug ?? 'ensotek-wasserkuehltuerme'}`,
+      href: `/${locale}/about/${aboutPage?.slug ?? 'kuhlturm-wasserkuehltuerme'}`,
       image: aboutPage?.featured_image ?? aboutPage?.image_url ?? null,
     },
     {

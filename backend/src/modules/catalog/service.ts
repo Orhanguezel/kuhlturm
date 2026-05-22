@@ -23,8 +23,8 @@ import { db } from "@/db/client";
 import { siteSettings } from "@ensotek/shared-backend/modules/siteSettings/schema";
 import { notifications, type NotificationType } from "@ensotek/shared-backend/modules/notifications/schema";
 import { userRoles } from "@ensotek/shared-backend/modules/userRoles/schema"; // ✅ role bazlı admin bulma
-import { renderEmailTemplateByKey } from "@/modules/email-templates/service";
-import { sendMail } from "@/modules/mail/service";
+import { renderEmailTemplateByKey } from "@ensotek/shared-backend/modules/emailTemplates/service";
+import { sendMail } from "@ensotek/shared-backend/modules/mail/service";
 import { telegramNotify } from "@/modules/telegram/telegram.notifier";
 
 import { updateCatalogRequest } from "./repository";

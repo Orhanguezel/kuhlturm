@@ -1,4 +1,4 @@
-# Ensotek Favicon Set
+# Kühlturm Favicon Set
 
 Dosyaları `public/` klasörüne kopyalayıp `<head>` bloğuna ekleyin:
 
