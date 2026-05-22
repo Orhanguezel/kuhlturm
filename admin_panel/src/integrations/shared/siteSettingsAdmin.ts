@@ -150,7 +150,7 @@ export const SITE_SETTINGS_GENERAL_KEYS: readonly string[] = [
 ] as const;
 
 export const SITE_SETTINGS_DEFAULTS_BY_KEY: Record<string, SettingValue> = {
-  site_name: "Ensotek",
+  site_name: "Kühlturm",
   site_tagline: "",
   site_logo: "",
   site_logo_dark: "",
@@ -175,8 +175,8 @@ export const SITE_SETTINGS_DEFAULTS_BY_KEY: Record<string, SettingValue> = {
     ui_about_stats_suffix_plus: "+",
     ui_about_stats_suffix_letter: "",
   },
-  offers_admin_email: "info@ensotek.de",
-  catalog_admin_email: "info@ensotek.de",
+  offers_admin_email: "info@kuhlturm.com",
+  catalog_admin_email: "info@kuhlturm.com",
 };
 
 export type GeneralSettingsRow = {
@@ -699,7 +699,7 @@ export function toStructuredObjectSeed<T extends Record<string, unknown>>(value:
 export const SITE_SETTINGS_AVAILABLE_LANGUAGES: { code: string; label: string }[] = [
   { code: "de", label: "Deutsch" },
   { code: "en", label: "English" },
-  { code: "tr", label: "Türkçe" },
+  { code: "de", label: "Deutsch" },
   { code: "fr", label: "Français" },
   { code: "es", label: "Español" },
   { code: "it", label: "Italiano" },

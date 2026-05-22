@@ -115,7 +115,7 @@ const emptyForm = (locale: string): FormValues => ({
 
 const dtoToForm = (dto: ReferenceDto): FormValues => ({
   id: String((dto as any).id ?? ""),
-  locale: normalizeLocale((dto as any).locale_resolved ?? (dto as any).locale ?? "tr"),
+  locale: normalizeLocale((dto as any).locale_resolved ?? (dto as any).locale ?? "de"),
   is_published: isTruthyBoolLike((dto as any).is_published),
   is_featured: isTruthyBoolLike((dto as any).is_featured),
   display_order: String((dto as any).display_order ?? 0),
@@ -146,7 +146,7 @@ export default function AdminReferenceDetailClient({ id }: { id: string }) {
   const { localeOptions, defaultLocaleFromDb, loading: localesLoading, fetching: localesFetching } = useAdminLocales();
 
   const apiLocaleFromDb = React.useMemo(() => {
-    return resolveAdminApiLocale(localeOptions as any, defaultLocaleFromDb, "tr");
+    return resolveAdminApiLocale(localeOptions as any, defaultLocaleFromDb, "de");
   }, [localeOptions, defaultLocaleFromDb]);
 
   const localeSet = React.useMemo(() => {
@@ -165,20 +165,20 @@ export default function AdminReferenceDetailClient({ id }: { id: string }) {
     setActiveLocale((prev) => {
       const p = localeShortClient(prev);
       const u = localeShortClient(urlLocale);
-      const def = localeShortClientOr(apiLocaleFromDb, "tr");
+      const def = localeShortClientOr(apiLocaleFromDb, "de");
       const canUse = (l: string) => !!l && (localeSet.size === 0 || localeSet.has(l));
       if (p && canUse(p)) return p;
       if (u && canUse(u)) return u;
       if (def && canUse(def)) return def;
       const first = localeShortClient((localeOptions as any)?.[0]?.value);
-      return first || "tr";
+      return first || "de";
     });
   }, [localeOptions, localeSet, urlLocale, apiLocaleFromDb]);
 
   const queryLocale = React.useMemo(() => {
     const l = localeShortClient(activeLocale);
     if (l && (localeSet.size === 0 || localeSet.has(l))) return l;
-    return localeShortClientOr(apiLocaleFromDb, "tr");
+    return localeShortClientOr(apiLocaleFromDb, "de");
   }, [activeLocale, localeSet, apiLocaleFromDb]);
 
   React.useEffect(() => {
@@ -215,7 +215,7 @@ export default function AdminReferenceDetailClient({ id }: { id: string }) {
   const busy = loading || saving;
   const disabled = loading || saving;
 
-  const [values, setValues] = React.useState<FormValues>(() => emptyForm(queryLocale || "tr"));
+  const [values, setValues] = React.useState<FormValues>(() => emptyForm(queryLocale || "de"));
   const [slugTouched, setSlugTouched] = React.useState(false);
   const [activeMode, setActiveMode] = React.useState<"form" | "json">("form");
   const [activeTab, setActiveTab] = React.useState<"content" | "images" | "seo">("content");
@@ -226,7 +226,7 @@ export default function AdminReferenceDetailClient({ id }: { id: string }) {
 
   React.useEffect(() => {
     if (isCreateMode) {
-      setValues(emptyForm(queryLocale || "tr"));
+      setValues(emptyForm(queryLocale || "de"));
       return;
     }
     if (reference) {
@@ -245,7 +245,7 @@ export default function AdminReferenceDetailClient({ id }: { id: string }) {
   const handleLocaleChange = (nextLocaleRaw: string) => {
     const next = normalizeLocale(nextLocaleRaw);
     const list = (localeOptions ?? []).map((x: any) => localeShortClient(x.value));
-    const resolved = next && list.includes(next) ? next : localeShortClientOr(queryLocale, "tr");
+    const resolved = next && list.includes(next) ? next : localeShortClientOr(queryLocale, "de");
     if (!resolved) {
       toast.error(t("admin.references.form.localeRequired"));
       return;
@@ -260,7 +260,7 @@ export default function AdminReferenceDetailClient({ id }: { id: string }) {
     };
 
   function onCancel() {
-    router.push(`/admin/references?locale=${encodeURIComponent(queryLocale || "tr")}`);
+    router.push(`/admin/references?locale=${encodeURIComponent(queryLocale || "de")}`);
   }
 
   const imageMetadata = React.useMemo(
@@ -276,13 +276,13 @@ export default function AdminReferenceDetailClient({ id }: { id: string }) {
   // AI
   const handleAIAction = async (action: AIAction) => {
     const targetLocales = (localeOptions ?? []).map((l: any) => String(l.value ?? "")).filter(Boolean);
-    if (!targetLocales.length) targetLocales.push(values.locale || "tr");
+    if (!targetLocales.length) targetLocales.push(values.locale || "de");
     const result = await aiAssist({
       title: values.title,
       summary: values.summary,
       content: values.content,
       tags: values.tags,
-      locale: values.locale || "tr",
+      locale: values.locale || "de",
       target_locales: targetLocales,
       module_key: "references",
       action,
@@ -825,7 +825,7 @@ export default function AdminReferenceDetailClient({ id }: { id: string }) {
                       </div>
                       <GooglePreview
                         title={values.meta_title || values.title}
-                        url={`https://ensotek.de/references/${values.slug || "referans-slug"}`}
+                        url={`https://kuhlturm.com/references/${values.slug || "referans-slug"}`}
                         description={values.meta_description || values.summary}
                         titleFallback={values.title || "Referans Basligi"}
                         descriptionFallback={values.summary || "Referans aciklamasi"}

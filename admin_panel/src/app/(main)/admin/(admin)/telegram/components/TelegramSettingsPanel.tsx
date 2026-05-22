@@ -1,7 +1,7 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/telegram/components/TelegramSettingsPanel.tsx
 // Telegram Settings Panel (B2B events, i18n)
-// Ensotek
+// Kühlturm
 // =============================================================
 
 "use client";
@@ -18,7 +18,7 @@ import type { SiteSettingRow, UpsertSettingBody, ValueType } from "@/integration
 
 import TelegramSettingsCard from "./TelegramSettingsCard";
 
-// --- Ensotek B2B keys (matches 202_telegram_templates.sql) ---
+// --- Kühlturm B2B keys (matches 202_telegram_templates.sql) ---
 const TELEGRAM_KEYS = [
   "telegram_notifications_enabled",
   "telegram_webhook_enabled",

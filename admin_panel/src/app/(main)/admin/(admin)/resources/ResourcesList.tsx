@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/components/admin/resources/ResourcesList.tsx
-// Ensotek – Admin Resources List (cards + table)
+// Kühlturm – Admin Resources List (cards + table)
 // FINAL — TR UI + NO ID + NO external_ref_id
 // - Responsive: cards default, table on very large screens
 // =============================================================

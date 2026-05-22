@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/i18n/localeShortClient.ts
-// Ensotek – Locale normalize helper (CLIENT SAFE, NO HOOKS)
+// Kühlturm – Locale normalize helper (CLIENT SAFE, NO HOOKS)
 // - NO toShortLocale
 // - Uses normLocaleTag
 // - Fallback: PREFERENCE_DEFAULTS.admin_locale üzerinden merkezi

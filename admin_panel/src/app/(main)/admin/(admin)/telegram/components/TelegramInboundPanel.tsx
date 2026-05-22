@@ -1,7 +1,7 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/telegram/components/TelegramInboundPanel.tsx
 // Inbound messages list (i18n, theme tokens)
-// Ensotek
+// Kühlturm
 // =============================================================
 
 "use client";

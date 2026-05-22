@@ -30,7 +30,7 @@ const STORAGE_DRIVER = (RAW_STORAGE_DRIVER === 'local' ? 'local' : 'cloudinary')
 
 export const env = {
   NODE_ENV: process.env.NODE_ENV ?? 'development',
-  PORT: toInt(process.env.PORT, 8086),
+  PORT: toInt(process.env.PORT, 8089),
 
   // Storage driver (fallback). Asıl driver site_settings.storage_driver ile gelebilir.
   STORAGE_DRIVER,
@@ -90,7 +90,7 @@ export const env = {
   GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID ?? '',
   GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET ?? '',
 
-  PUBLIC_URL: process.env.PUBLIC_URL || 'https://www.ensotek.de',
+  PUBLIC_URL: process.env.PUBLIC_URL || 'https://kuhlturm.com',
   FRONTEND_URL: FRONTEND_URL,
 
   // ✅ SMTP / Mail (sadece fallback; asıl değerler site_settings.smtp_* ile gelebilir)

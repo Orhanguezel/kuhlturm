@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/rtk/endpoints/admin/audit_admin.endpoints.ts
-// Ensotek – Admin Audit (RTK Query)
+// Kühlturm – Admin Audit (RTK Query)
 //   - List: request-logs, auth-events
 //   - Metrics: daily, geo-stats
 //   - Analytics: summary, top-endpoints, slowest-endpoints,

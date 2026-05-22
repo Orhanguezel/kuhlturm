@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/app/(main)/admin/_components/common/useAdminLocales.ts
-// Ensotek – Admin Locales (Centralized)
+// Kühlturm – Admin Locales (Centralized)
 // Source: site_settings.app_locales + site_settings.default_locale
 // - No static locale map
 // - Produces AdminLocaleOption[]
@@ -49,7 +49,7 @@ function buildLocaleLabel(item: AppLocaleItem): string {
 
   let dn: Intl.DisplayNames | null = null;
   try {
-    dn = new Intl.DisplayNames(["tr"], { type: "language" });
+    dn = new Intl.DisplayNames(["de"], { type: "language" });
   } catch {
     dn = null;
   }

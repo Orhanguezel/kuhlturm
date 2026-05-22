@@ -3,7 +3,7 @@
 // =============================================================
 const safeText = (v: unknown) => (v === null || v === undefined ? "" : String(v));
 
-export function formatDate(value: string | null | undefined, locale = "tr-TR"): string {
+export function formatDate(value: string | null | undefined, locale = "de-DE"): string {
   if (!value) return "-";
   try {
     const d = new Date(value);

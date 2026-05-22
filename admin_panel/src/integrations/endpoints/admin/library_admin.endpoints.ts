@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/rtk/endpoints/admin/library_admin.endpoints.ts
-// Ensotek – Admin Library RTK Endpoints (SCHEMA-SAFE)
+// Kühlturm – Admin Library RTK Endpoints (SCHEMA-SAFE)
 // Base URL: /api/admin (baseApi üzerinden)
 // Routes: src/modules/library/admin.routes.ts
 //

@@ -1,7 +1,7 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/telegram/components/TelegramSettingsCard.tsx
 // Telegram Settings Card (B2B events, i18n, theme tokens)
-// Ensotek
+// Kühlturm
 // =============================================================
 
 "use client";
@@ -124,7 +124,7 @@ export default function TelegramSettingsCard({ settings, setSettings }: Props) {
     () => ({
       // Catalog request
       customer_name: "Max Mustermann",
-      customer_email: "max@ensotek.de",
+      customer_email: "max@kuhlturm.com",
       customer_phone: "+49 170 1234567",
       company_name: "ACME GmbH",
       message: "Benötige Katalog für Kühlsysteme",
@@ -146,7 +146,7 @@ export default function TelegramSettingsCard({ settings, setSettings }: Props) {
       category: "Technischer Support",
 
       // Newsletter
-      locale: "tr",
+      locale: "de",
     }),
     [],
   );

@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/seo/seoSchema.ts
-// Ensotek — SEO Zod Schemas (sadece validation, icerik yok)
+// Kühlturm — SEO Zod Schemas (sadece validation, icerik yok)
 // =============================================================
 
 import { z } from "zod";

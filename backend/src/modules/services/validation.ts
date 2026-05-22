@@ -27,7 +27,7 @@ const LOCALE_SCHEMA = z
 
 /* ------- enums ------- */
 /**
- * Ensotek service tipleri (seed ile uyumlu):
+ * Kühlturm service tipleri (seed ile uyumlu):
  *
  *  - maintenance_repair
  *  - modernization

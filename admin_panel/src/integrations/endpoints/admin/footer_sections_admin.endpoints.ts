@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/endpoints/admin/footer_sections_admin.endpoints.ts
-// Ensotek – Admin Footer Sections RTK endpoints (FIXED)
+// Kühlturm – Admin Footer Sections RTK endpoints (FIXED)
 // =============================================================
 
 import { baseApi } from "@/integrations/baseApi";

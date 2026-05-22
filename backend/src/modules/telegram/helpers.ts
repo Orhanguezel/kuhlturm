@@ -1,7 +1,7 @@
 import { safeTrim, to01 } from '@/modules/_shared';
 
 export const DEFAULT_AUTOREPLY_TEMPLATE =
-  'Vielen Dank für Ihre Nachricht! Wir werden uns schnellstmöglich bei Ihnen melden.\n\nMesajınız için teşekkür ederiz. En kısa sürede size dönüş yapacağız.\n\n- Ensotek Team';
+  'Vielen Dank für Ihre Nachricht! Wir werden uns schnellstmöglich bei Ihnen melden.\n\nMesajınız için teşekkür ederiz. En kısa sürede size dönüş yapacağız.\n\n- Kühlturm Team';
 
 export function toTelegramChatId(v: unknown): string {
   if (typeof v === 'number' && Number.isFinite(v)) return String(v);

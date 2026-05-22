@@ -1,7 +1,7 @@
 import { getGlobalSiteSettingsMap, safeTrim, toBoolDefault } from '@/modules/_shared';
 
 /**
- * Ensotek Telegram Event Types
+ * Kühlturm Telegram Event Types
  */
 export type TelegramEvent =
   | 'new_catalog_request'

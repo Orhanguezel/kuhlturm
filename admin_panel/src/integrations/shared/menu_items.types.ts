@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/shared/menu_items.types.ts
-// Ensotek – Menu Items shared types (Admin + Public)
+// Kühlturm – Menu Items shared types (Admin + Public)
 // =============================================================
 import type { BoolLike } from "@/integrations/shared";
 

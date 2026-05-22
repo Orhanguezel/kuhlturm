@@ -16,7 +16,7 @@ interface Props {
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Wissensdatenbank (Knowledge Base) | Ensotek',
+    title: 'Wissensdatenbank (Knowledge Base) | Kühlturm',
     description: 'Technische Artikel, Anleitationsvideos, Fachinformationen und Whitepapers rund um Kühlturmtechnik.',
   };
 }

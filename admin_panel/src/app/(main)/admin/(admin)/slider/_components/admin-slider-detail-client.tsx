@@ -49,7 +49,7 @@ export default function AdminSliderDetailClient(props: Props) {
 
   const { localeOptions } = useAdminLocales();
   const urlLocale = norm(sp?.get("locale"));
-  const [activeLocale, setActiveLocale] = React.useState(urlLocale || adminLocale || "tr");
+  const [activeLocale, setActiveLocale] = React.useState(urlLocale || adminLocale || "de");
   const [activeTab, setActiveTab] = React.useState<"form" | "json">("form");
 
   // AI
@@ -121,7 +121,7 @@ export default function AdminSliderDetailClient(props: Props) {
 
   const handleAI = async (action: AIAction = "full") => {
     const targets = localesForSelect.map((l) => l.value).filter(Boolean);
-    if (!targets.length) targets.push(activeLocale || "tr");
+    if (!targets.length) targets.push(activeLocale || "de");
     const result = await aiAssist({
       title: f.title,
       summary: f.subtitle || f.description,
@@ -450,9 +450,9 @@ function SliderFormTabs({ f, set, isLoading }: { f: any; set: any; isLoading: bo
           <div className="space-y-1.5">
             <label className="text-muted-foreground text-xs">Google Onizlemesi</label>
             <div className="rounded-md border bg-background p-4">
-              <p className="text-muted-foreground text-xs">ensotek.de</p>
+              <p className="text-muted-foreground text-xs">kuhlturm.com</p>
               <p className="truncate font-medium text-[#1a0dab] text-sm">
-                {f.meta_title || f.title || "Slider"} | Ensotek
+                {f.meta_title || f.title || "Slider"} | Kühlturm
               </p>
               <p className="line-clamp-2 text-muted-foreground text-xs">
                 {f.meta_description || f.description || f.subtitle || "Aciklama"}

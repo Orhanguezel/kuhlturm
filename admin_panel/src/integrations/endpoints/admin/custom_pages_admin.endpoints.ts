@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/rtk/endpoints/admin/custom_pages_admin.endpoints.ts
-// Ensotek – Admin Custom Pages RTK Endpoints (FINAL)
+// Kühlturm – Admin Custom Pages RTK Endpoints (FINAL)
 // Base URL: /api (baseApi üzerinden)
 // Backend: src/modules/customPages/admin.routes.ts
 // =============================================================

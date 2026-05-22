@@ -64,8 +64,8 @@ export const SITE_SETTINGS_INLINE_SEO_DEFAULT_EXPANDED_KEYS: SiteSettingsInlineS
   "service",
 ];
 
-export const SITE_SETTINGS_INLINE_SEO_PREVIEW_HOST = "ensotek.de";
-export const SITE_SETTINGS_INLINE_SEO_PREVIEW_HOST_WWW = "www.ensotek.de";
+export const SITE_SETTINGS_INLINE_SEO_PREVIEW_HOST = "kuhlturm.com";
+export const SITE_SETTINGS_INLINE_SEO_PREVIEW_HOST_WWW = "kuhlturm.com";
 
 // ── Helpers ──
 

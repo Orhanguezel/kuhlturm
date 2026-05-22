@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import { useGetSiteSettingByKeyQuery } from "@/integrations/hooks";
 
-const LOGO_FALLBACK = "/logo/png/ensotek_logo_512.png";
+const LOGO_FALLBACK = "/logo/png/kuhlturm_logo_512.png";
 
 type Props = {
   heading: string;
@@ -20,7 +20,7 @@ export function AuthBrandPanel({ heading, subtext }: Props) {
 
   const logoUrl: string = logoVal?.url || LOGO_FALLBACK;
   const logoAlt: string = logoVal?.alt || "Logo";
-  const appName: string = configVal?.branding?.app_name || "Ensotek";
+  const appName: string = configVal?.branding?.app_name || "Kühlturm";
 
   return (
     <div className="hidden flex-col items-center justify-center bg-primary p-12 text-center lg:flex lg:w-1/3">

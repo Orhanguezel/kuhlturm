@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/chat/page.tsx
-// Admin Chat & AI Support Page (Ensotek)
+// Admin Chat & AI Support Page (Kühlturm)
 // =============================================================
 
 import ChatAdminPage from "./Chat";

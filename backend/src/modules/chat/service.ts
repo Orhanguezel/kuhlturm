@@ -46,11 +46,10 @@ function isEnabled(v: string | undefined, fallback: boolean): boolean {
   return ["1", "true", "yes", "on"].includes(v.toLowerCase());
 }
 
-function normalizeLocaleForOffer(v: string | undefined): "tr" | "en" | "de" {
+function normalizeLocaleForOffer(v: string | undefined): "en" | "de" {
   const s = String(v || "").toLowerCase();
   if (s.startsWith("en")) return "en";
-  if (s.startsWith("de")) return "de";
-  return "tr";
+  return "de";
 }
 
 function getOfferUrl(locale: string) {
@@ -104,7 +103,7 @@ function buildOfferLinkReply(userText: string, offerUrl: string) {
 function getSupportSystemPrompt(knowledgeText: string, sourcesCount: number) {
   const fromEnv = (process.env.AI_SUPPORT_SYSTEM_PROMPT || "").trim();
   const base = fromEnv || [
-    "You are an AI customer support assistant for Ensotek.",
+    "You are an AI customer support assistant for Kühlturm.",
     "Always provide short, practical, safe support answers in the same language as the user.",
     "If uncertainty is high, ask a clarifying question.",
     "If the issue is operationally risky or urgent, suggest escalating to a human admin."
@@ -284,7 +283,7 @@ export function chatService(app: FastifyInstance) {
         .reverse()
         .find((m) => m.sender_user_id !== AI_ASSISTANT_USER_ID)?.text ?? "";
 
-    const preferredLocale = String(thread.preferred_locale || "tr").toLowerCase();
+    const preferredLocale = String(thread.preferred_locale || "de").toLowerCase();
     const offerUrl = getOfferUrl(preferredLocale);
     const lastAssistantText =
       [...history]
@@ -407,7 +406,7 @@ export function chatService(app: FastifyInstance) {
         context_id: args.context_id,
         handoff_mode: "ai",
         ai_provider_preference: "auto",
-        preferred_locale: args.preferred_locale || "tr",
+        preferred_locale: args.preferred_locale || "de",
         assigned_admin_user_id: null,
         created_by_user_id: args.created_by.id,
         created_at: now,

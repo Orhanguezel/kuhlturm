@@ -1,6 +1,6 @@
 // ===================================================================
 // FILE: src/integrations/endpoints/admin/telegram_webhook.endpoints.ts
-// Telegram webhook admin endpoints (Ensotek)
+// Telegram webhook admin endpoints (Kühlturm)
 // ===================================================================
 
 import { baseApi } from "@/integrations/baseApi";

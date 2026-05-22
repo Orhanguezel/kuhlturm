@@ -32,7 +32,7 @@ export const projects = mysqlTable(
     featured_image: varchar('featured_image', { length: 500 }),
     featured_image_asset_id: char('featured_image_asset_id', { length: 36 }),
 
-    // ✅ Ensotek proje alanları
+    // ✅ Kühlturm proje alanları
     category: varchar('category', { length: 100 }),         // "Su Soğutma Kulesi", "HVAC", "Proses Soğutma"
     product_type: varchar('product_type', { length: 150 }), // "CTP Kaportalı Açık Tip", "Kapalı Tip"
     location: varchar('location', { length: 255 }),         // "İstanbul", "Kahramanmaraş"

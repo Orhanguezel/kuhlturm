@@ -20,7 +20,7 @@ import { askConfirm } from "../shared/confirm";
 import { buildDownloadName, triggerDownload } from "../shared/download";
 import { errorText } from "../shared/errorText";
 
-const LOCALES = ["tr", "en", "de"] as const;
+const LOCALES = ["de", "en", "de"] as const;
 
 export type SiteSettingsUiPanelProps = {
   disabled: boolean;
@@ -29,7 +29,7 @@ export type SiteSettingsUiPanelProps = {
 export const SiteSettingsUiPanel: React.FC<SiteSettingsUiPanelProps> = ({ disabled }) => {
   const t = useAdminT("admin.db.modules.ui");
 
-  const [exportLocale, setExportLocale] = useState("tr");
+  const [exportLocale, setExportLocale] = useState("de");
   const [onlyUiKeys, setOnlyUiKeys] = useState(true);
 
   const prefixes = useMemo(() => (onlyUiKeys ? ["ui_"] : []), [onlyUiKeys]);
@@ -40,7 +40,7 @@ export const SiteSettingsUiPanel: React.FC<SiteSettingsUiPanelProps> = ({ disabl
   );
 
   const [targetLocale, setTargetLocale] = useState("en");
-  const [sourceLocale, setSourceLocale] = useState("tr");
+  const [sourceLocale, setSourceLocale] = useState("de");
   const [overwrite, setOverwrite] = useState(false);
 
   const [bootstrap, { isLoading: isBootstrapping }] = useBootstrapSiteSettingsUiLocaleMutation();

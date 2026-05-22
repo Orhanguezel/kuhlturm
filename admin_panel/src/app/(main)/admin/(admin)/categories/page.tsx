@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/categories/page.tsx
-// Ensotek — Admin Categories Page
+// Kühlturm — Admin Categories Page
 // =============================================================
 
 import CategoriesPage from "./categories";

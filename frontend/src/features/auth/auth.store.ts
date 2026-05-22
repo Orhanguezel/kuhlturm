@@ -36,7 +36,7 @@ export const useAuthStore = create<AuthState>()(
       setHydrated: (hydrated) => set({ hydrated }),
     }),
     {
-      name: 'ensotek-auth',
+      name: 'kuhlturm-auth',
       partialize: (state) => ({ user: state.user, isAuthenticated: state.isAuthenticated }),
     },
   ),

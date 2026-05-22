@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/components/admin/subcategories/SubCategoriesList.tsx
-// Ensotek – SubCategory Listesi
+// Kühlturm – SubCategory Listesi
 //
 // Responsive Strategy (Bootstrap 5):
 // - < xxl: CARDS (tablet + mobile) ✅

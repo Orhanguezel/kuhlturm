@@ -119,13 +119,6 @@ export const DEFAULT_SITE_META_DEFAULT_BY_LOCALE: Record<string, SiteMetaDefault
     keywords:
       'cooling tower, cooling systems, industrial cooling, evaporative cooling, recooler, custom-built, energy-efficient',
   },
-  tr: {
-    title: 'Soğutma Kulesi — Endüstri İçin Profesyonel Soğutma Çözümleri',
-    description:
-      'Güçlü soğutma kuleleri ve soğutma sistemleri — güvenilir, enerji verimli ve ihtiyaçlarınıza özel üretim.',
-    keywords:
-      'soğutma kulesi, soğutma sistemleri, endüstriyel soğutma, buharlaşmalı soğutma, özel üretim',
-  },
 };
 
 /* ------------------------------------------------------------------

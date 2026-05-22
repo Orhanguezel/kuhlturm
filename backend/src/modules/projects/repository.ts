@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------
 // FILE: modules/projects/repository.ts
-// Ensotek endüstriyel proje modülü — whereExpr FIX + no-filter safe
+// Kühlturm endüstriyel proje modülü — whereExpr FIX + no-filter safe
 // ---------------------------------------------------------------------
 import { db } from '@/db/client';
 import {
@@ -69,7 +69,7 @@ function baseProjectSelect(reqI18n: any, defI18n: any) {
     featured_image: projects.featured_image,
     featured_image_asset_id: projects.featured_image_asset_id,
 
-    // Ensotek industrial fields
+    // Kühlturm industrial fields
     category: projects.category,
     product_type: projects.product_type,
     location: projects.location,

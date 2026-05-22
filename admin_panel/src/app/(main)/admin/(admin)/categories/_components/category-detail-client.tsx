@@ -1,7 +1,7 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/categories/[id]/CategoryDetailClient.tsx
 // Category Detail/Edit Form — JSON + i18n Support
-// Ensotek
+// Kühlturm
 // =============================================================
 
 "use client";
@@ -45,7 +45,7 @@ export default function CategoryDetailClient({ id }: Props) {
 
   // Locale management
   const { localeOptions } = useAdminLocales();
-  const [activeLocale, setActiveLocale] = React.useState<string>(adminLocale || "tr");
+  const [activeLocale, setActiveLocale] = React.useState<string>(adminLocale || "de");
   const [activeTab, setActiveTab] = React.useState<"form" | "json">("form");
 
   // RTK Query

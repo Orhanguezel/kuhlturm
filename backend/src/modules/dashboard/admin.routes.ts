@@ -1,6 +1,6 @@
 // ===================================================================
 // FILE: src/modules/dashboard/admin.routes.ts
-// Ensotek – Admin Dashboard Routes (Admin)
+// Kühlturm – Admin Dashboard Routes (Admin)
 // ===================================================================
 
 import type { FastifyInstance } from "fastify";

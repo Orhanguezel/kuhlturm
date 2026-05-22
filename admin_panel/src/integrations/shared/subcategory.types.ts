@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/types/subcategory.types.ts
-// Ensotek – SubCategory tipleri + normalizasyon helpers
+// Kühlturm – SubCategory tipleri + normalizasyon helpers
 // =============================================================
 
 export type SubCategoryId = string;
@@ -90,7 +90,7 @@ export const normalizeSubCategory = (row: ApiSubCategory): SubCategoryDto => {
   return {
     id: asStr(row.id),
     category_id: asStr(row.category_id),
-    locale: asStr(row.locale || "tr").toLowerCase(),
+    locale: asStr(row.locale || "de").toLowerCase(),
     name: asStr(row.name),
     slug: asStr(row.slug),
 

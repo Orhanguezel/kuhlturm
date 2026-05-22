@@ -23,7 +23,6 @@ function short(v: unknown): string {
  * Bu liste karar mekanizması değildir; DB’den gelen label varsa onu kullanın.
  */
 const DISPLAY_LABELS: Record<string, string> = {
-  tr: "Türkçe",
   en: "English",
   de: "Deutsch",
   fr: "Français",
@@ -36,7 +35,6 @@ const DISPLAY_LABELS: Record<string, string> = {
  * Bilinmeyen locale => ISO benzeri güvenli format.
  */
 const DISPLAY_DATE_FORMATS: Record<string, string> = {
-  tr: "dd.MM.yyyy",
   de: "dd.MM.yyyy",
   en: "yyyy-MM-dd",
 };
@@ -48,7 +46,6 @@ const DISPLAY_DATE_FORMATS: Record<string, string> = {
  * yine yoksa "en-US".
  */
 const DISPLAY_INTL_MAP: Record<string, string> = {
-  tr: "tr-TR",
   en: "en-US",
   de: "de-DE",
   fr: "fr-FR",

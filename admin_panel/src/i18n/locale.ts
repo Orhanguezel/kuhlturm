@@ -118,7 +118,7 @@ export function useResolvedLocale(explicitLocale?: string | null): string {
     const fromExplicit = normLocaleTag(explicitLocale);
     if (fromExplicit && activeSet.has(fromExplicit)) return fromExplicit;
 
-    // ✅ 4) Admin panel fallback (PREFERENCE_DEFAULTS.admin_locale = "tr")
+    // ✅ 4) Admin panel fallback (PREFERENCE_DEFAULTS.admin_locale = "de")
     //    DB default-locale is the *frontend* default (de), not the admin panel's.
     const adminFallback = normLocaleTag(FALLBACK_LOCALE);
     if (adminFallback && activeSet.has(adminFallback)) return adminFallback;
@@ -132,7 +132,7 @@ export function useResolvedLocale(explicitLocale?: string | null): string {
     if (firstActive) return firstActive;
 
     // ✅ 7) ultimate fallback
-    return adminFallback || "tr";
+    return adminFallback || "de";
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [explicitLocale, appLocalesMeta, defaultLocaleMeta]);
 }

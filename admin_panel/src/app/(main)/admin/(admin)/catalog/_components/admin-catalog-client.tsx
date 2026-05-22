@@ -43,7 +43,7 @@ function fmtDate(v: unknown): string {
   const s = typeof v === "string" ? v : String(v);
   const d = new Date(s);
   if (Number.isNaN(d.getTime())) return s || "-";
-  return d.toLocaleString("tr-TR");
+  return d.toLocaleString("de-DE");
 }
 
 /* ------------------------------------------------------------------ */
@@ -160,7 +160,7 @@ export default function AdminCatalogClient() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">{t("filters.localeAll")}</SelectItem>
-                <SelectItem value="tr">TR</SelectItem>
+                <SelectItem value="de">DE</SelectItem>
                 <SelectItem value="en">EN</SelectItem>
                 <SelectItem value="de">DE</SelectItem>
               </SelectContent>

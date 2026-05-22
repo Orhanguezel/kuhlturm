@@ -2,7 +2,7 @@
 
 import type { FastifyReply, FastifyRequest } from "fastify";
 import { db } from "@/db/client";
-import { userRoles } from "@/modules/userRoles/schema";
+import { userRoles } from "@ensotek/shared-backend/modules/userRoles/schema";
 import { and, eq } from "drizzle-orm";
 
 function hasAdminInPayload(u: any): boolean {

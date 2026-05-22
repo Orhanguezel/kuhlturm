@@ -43,7 +43,7 @@ function fmtDate(v: unknown): string {
   const s = typeof v === "string" ? v : String(v);
   const d = new Date(s);
   if (Number.isNaN(d.getTime())) return s || "-";
-  return d.toLocaleDateString("tr-TR");
+  return d.toLocaleDateString("de-DE");
 }
 
 function fmtMoney(amount: unknown, currency: unknown): string {

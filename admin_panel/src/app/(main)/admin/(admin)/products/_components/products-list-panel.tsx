@@ -1,7 +1,7 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/products/_components/products-list-panel.tsx
 // Products List Panel — Shadcn/UI + RTK Query
-// Ensotek Admin Panel Standartı
+// Kühlturm Admin Panel Standartı
 // =============================================================
 
 "use client";
@@ -59,7 +59,7 @@ export default function ProductsListPanel({ itemType }: Props) {
     if (!localeOptions?.length) return;
     setLocale((prev) => {
       if (prev) return prev;
-      const def = (defaultLocaleFromDb as string) || localeOptions[0]?.value || "tr";
+      const def = (defaultLocaleFromDb as string) || localeOptions[0]?.value || "de";
       return String(def);
     });
   }, [localeOptions, defaultLocaleFromDb]);
@@ -82,7 +82,7 @@ export default function ProductsListPanel({ itemType }: Props) {
     { skip: !locale },
   );
 
-  const { data: categories = [] } = useListProductCategoriesAdminQuery({ locale: locale || "tr" }, { skip: !locale });
+  const { data: categories = [] } = useListProductCategoriesAdminQuery({ locale: locale || "de" }, { skip: !locale });
 
   const items: AdminProductDto[] = productData?.items ?? [];
 
@@ -294,7 +294,7 @@ export default function ProductsListPanel({ itemType }: Props) {
                       </TableCell>
 
                       <TableCell className="text-right text-sm">
-                        {item.price != null ? Number(item.price).toLocaleString("tr-TR") : "—"}
+                        {item.price != null ? Number(item.price).toLocaleString("de-DE") : "—"}
                       </TableCell>
 
                       <TableCell className="text-center text-sm">{item.stock_quantity ?? "—"}</TableCell>

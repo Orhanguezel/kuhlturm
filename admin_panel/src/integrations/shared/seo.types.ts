@@ -20,7 +20,7 @@ export type SeoDefaults = {
   googlebot?: string;
 
   // RootLayout html lang
-  htmlLang?: string; // "tr"
+  htmlLang?: string; // "de"
 };
 
 export type SeoAppIcons = {
@@ -389,7 +389,7 @@ function envDefaultLocale(): string {
 }
 
 async function resolveRequestLocale(input?: LocaleResolveInput): Promise<string> {
-  const allowed = (input?.allowed?.length ? input.allowed : ["tr", "en", "de"]).map((x) => normLocale(x));
+  const allowed = (input?.allowed?.length ? input.allowed : ["de", "en", "de"]).map((x) => normLocale(x));
   const ALLOWED = new Set(allowed);
 
   const fromRoute = normLocale(input?.routeLocale);
@@ -400,7 +400,7 @@ async function resolveRequestLocale(input?: LocaleResolveInput): Promise<string>
     const env = envDefaultLocale();
     if (env && ALLOWED.has(env)) return env;
     // absolute last resort
-    return allowed[0] || "tr";
+    return allowed[0] || "de";
   }
 
   const { cookies, headers } = await import("next/headers");
@@ -423,7 +423,7 @@ async function resolveRequestLocale(input?: LocaleResolveInput): Promise<string>
   if (env && ALLOWED.has(env)) return env;
 
   // absolute last resort
-  return allowed[0] || "tr";
+  return allowed[0] || "de";
 }
 
 // ---------------------------
@@ -592,7 +592,7 @@ export async function fetchSiteSettingsStrict(
 
   const locale = await resolveRequestLocale({
     routeLocale: opts?.routeLocale ?? null,
-    allowed: opts?.allowedLocales ?? ["tr", "en", "de"],
+    allowed: opts?.allowedLocales ?? ["de", "en", "de"],
   });
 
   // 1) Split keys into: virtual, normal (with alias), and figure global/local fetch lists

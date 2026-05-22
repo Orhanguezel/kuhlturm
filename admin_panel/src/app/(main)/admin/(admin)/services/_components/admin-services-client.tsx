@@ -59,7 +59,7 @@ export default function AdminServicesClient() {
   const { localeOptions, defaultLocaleFromDb, loading: localesLoading, fetching: localesFetching } = useAdminLocales();
 
   const apiLocale = React.useMemo(() => {
-    return resolveAdminApiLocale(localeOptions as any, defaultLocaleFromDb, "tr");
+    return resolveAdminApiLocale(localeOptions as any, defaultLocaleFromDb, "de");
   }, [localeOptions, defaultLocaleFromDb]);
 
   const urlLocale = React.useMemo(() => {
@@ -81,7 +81,7 @@ export default function AdminServicesClient() {
     setFilters((prev) => {
       const prevLoc = localeShortClient(prev.locale);
       const urlLoc = localeShortClient(urlLocale);
-      const defLoc = localeShortClientOr(apiLocale, "tr");
+      const defLoc = localeShortClientOr(apiLocale, "de");
 
       const canUse = (l: string) => !!l && (localeOptions ?? []).some((x: any) => localeShortClient(x.value) === l);
 
@@ -91,7 +91,7 @@ export default function AdminServicesClient() {
 
       if (defLoc && canUse(defLoc)) return { ...prev, locale: defLoc };
 
-      return { ...prev, locale: localeShortClient((localeOptions as any)?.[0]?.value) || "tr" };
+      return { ...prev, locale: localeShortClient((localeOptions as any)?.[0]?.value) || "de" };
     });
   }, [localeOptions, urlLocale, apiLocale]);
 
@@ -183,12 +183,12 @@ export default function AdminServicesClient() {
   }
 
   function onCreate() {
-    const l = localeShortClientOr(effectiveLocale, "tr");
+    const l = localeShortClientOr(effectiveLocale, "de");
     router.push(`/admin/services/new?locale=${encodeURIComponent(l)}`);
   }
 
   function onEdit(id: string) {
-    const l = localeShortClientOr(effectiveLocale, "tr");
+    const l = localeShortClientOr(effectiveLocale, "de");
     router.push(`/admin/services/${encodeURIComponent(id)}?locale=${encodeURIComponent(l)}`);
   }
 

@@ -10,7 +10,6 @@ import { cn } from '@/lib/utils';
 const LOCALE_META: Record<string, { flag: string; label: string }> = {
   de: { flag: '🇩🇪', label: 'Deutsch' },
   en: { flag: '🇬🇧', label: 'English' },
-  tr: { flag: '🇹🇷', label: 'Türkçe' },
 };
 
 interface LanguageSwitcherProps {

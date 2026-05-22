@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/catalog/validation.ts
-// Ensotek – Catalog Request Module Validation (Zod schemas)
+// Kühlturm – Catalog Request Module Validation (Zod schemas)
 // =============================================================
 
 import { z } from "zod";

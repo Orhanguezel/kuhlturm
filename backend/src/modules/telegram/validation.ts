@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/telegram/validation.ts
-// Ensotek — Telegram validation schemas
+// Kühlturm — Telegram validation schemas
 // =============================================================
 
 import { z } from 'zod';
@@ -16,7 +16,7 @@ export const TelegramSendBodySchema = z.object({
 
 export type TelegramSendBody = z.infer<typeof TelegramSendBodySchema>;
 
-/* ---------------- event dispatcher (Ensotek) ---------------- */
+/* ---------------- event dispatcher (Kühlturm) ---------------- */
 
 const baseEvent = z.object({
   chat_id: z.string().trim().max(64).optional(),
@@ -104,7 +104,7 @@ const eventNewNewsletterSubscription = baseEvent.extend({
 });
 
 /**
- * Ensotek Telegram Event Body Schema
+ * Kühlturm Telegram Event Body Schema
  * discriminatedUnion => TS inference works correctly
  */
 export const TelegramEventBodySchema = z.discriminatedUnion('event', [

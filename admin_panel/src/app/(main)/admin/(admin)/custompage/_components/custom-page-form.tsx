@@ -73,9 +73,9 @@ const norm = (v: unknown) =>
     .split("-")[0]
     .trim();
 
-const getLocaleFromDto = (dto?: CustomPageDto, fallback = "tr") => {
+const getLocaleFromDto = (dto?: CustomPageDto, fallback = "de") => {
   const raw = dto?.locale_resolved ?? fallback;
-  return norm(raw) || norm(fallback) || "tr";
+  return norm(raw) || norm(fallback) || "de";
 };
 
 const buildInitialValues = (
@@ -83,7 +83,7 @@ const buildInitialValues = (
   fallbackLocale: string | undefined,
   initialModuleKey = "",
 ): CustomPageFormValues => {
-  const safeLocale = norm(fallbackLocale || "tr") || "tr";
+  const safeLocale = norm(fallbackLocale || "de") || "de";
 
   if (!initial) {
     return {
@@ -168,7 +168,7 @@ export const CustomPageForm: React.FC<CustomPageFormProps> = ({
   onCancel,
 }) => {
   const t = useAdminT();
-  const safeDefaultLocale = norm(defaultLocale || "tr") || "tr";
+  const safeDefaultLocale = norm(defaultLocale || "de") || "de";
 
   const [values, setValues] = useState<CustomPageFormValues>(
     buildInitialValues(initialData, safeDefaultLocale, initialModuleKey),
@@ -259,13 +259,13 @@ export const CustomPageForm: React.FC<CustomPageFormProps> = ({
 
   const handleAIAction = async (action: AIAction) => {
     const targetLocales = (locales ?? []).map((l: any) => String(l.value ?? "")).filter(Boolean);
-    if (!targetLocales.length) targetLocales.push(values.locale || "tr");
+    if (!targetLocales.length) targetLocales.push(values.locale || "de");
     const result = await aiAssist({
       title: values.title,
       summary: values.summary,
       content: values.content,
       tags: values.tags,
-      locale: values.locale || "tr",
+      locale: values.locale || "de",
       target_locales: targetLocales,
       module_key: values.module_key,
       action,
@@ -695,7 +695,7 @@ function FormTabs({
           </div>
           <GooglePreview
             title={values.meta_title || values.title}
-            url={`https://ensotek.de/${values.module_key || "page"}/${values.slug || "sayfa-slug"}`}
+            url={`https://kuhlturm.com/${values.module_key || "page"}/${values.slug || "sayfa-slug"}`}
             description={values.meta_description || values.summary}
             titleFallback={values.title || "Sayfa Basligi"}
             descriptionFallback={values.summary || "Sayfa aciklamasi"}

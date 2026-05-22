@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/endpoints/admin/ip_blocklist_admin.endpoints.ts
-// Ensotek – Admin IP Blocklist (RTK Query)
+// Kühlturm – Admin IP Blocklist (RTK Query)
 //   GET    /admin/ip-blocklist        → list
 //   POST   /admin/ip-blocklist        → add
 //   DELETE /admin/ip-blocklist/:id    → remove

@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/shared/footer_sections.types.ts
-// Ensotek – Footer Sections DTO & Payload Types
+// Kühlturm – Footer Sections DTO & Payload Types
 // =============================================================
 
 import type { ApiFooterSection } from "@/integrations/shared";

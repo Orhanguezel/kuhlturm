@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useForm } from "react-hook-form";
+import { type Resolver, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations, useLocale } from "next-intl";
 import { catalogRequestSchema, type CatalogRequestFormData } from "./catalog.schema";
@@ -23,7 +23,7 @@ export const CatalogForm: React.FC<CatalogFormProps> = ({ onSuccess }) => {
     reset,
     formState: { errors },
   } = useForm<CatalogRequestFormData>({
-    resolver: zodResolver(catalogRequestSchema),
+    resolver: zodResolver(catalogRequestSchema as any) as Resolver<CatalogRequestFormData>,
     defaultValues: {},
   });
 

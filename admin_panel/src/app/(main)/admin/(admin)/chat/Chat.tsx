@@ -1,7 +1,7 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/chat/Chat.tsx
 // Admin Chat & AI Support — Threads + Messages + Knowledge
-// Ensotek
+// Kühlturm
 // =============================================================
 
 "use client";

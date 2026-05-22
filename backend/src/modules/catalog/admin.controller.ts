@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/catalog/admin.controller.ts
-// Ensotek – Catalog Request Admin Controller
+// Kühlturm – Catalog Request Admin Controller
 //   - LIST / GET / PATCH / DELETE
 //   - RESEND: POST /catalog-requests/:id/resend
 // =============================================================

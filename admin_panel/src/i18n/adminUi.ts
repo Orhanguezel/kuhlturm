@@ -6,7 +6,6 @@
 
 import de from "@/locale/de.json";
 import en from "@/locale/en.json";
-import tr from "@/locale/tr.json";
 
 import { normLocaleTag } from "./localeUtils";
 import { buildTranslator, getValueByPath, type TranslateFn } from "./translation-utils";
@@ -41,7 +40,7 @@ function normalizeAdminLocaleJson(raw: unknown): PlainObject {
     admin.notifications = base.notifications as PlainObject;
   if (!isPlainObject(admin.mail) && isPlainObject(base.mail)) admin.mail = base.mail as PlainObject;
 
-  // tr.json gibi: admin.db.siteSettings / admin.db.audit (yanlış yerde)
+  // Legacy locale shape: admin.db.siteSettings / admin.db.audit (wrong level)
   const adminDb = isPlainObject(admin.db) ? (admin.db as PlainObject) : null;
   const nestedDbSiteSettings = getPlainChild(adminDb, "siteSettings");
   if (!isPlainObject(admin.siteSettings) && nestedDbSiteSettings) {
@@ -69,7 +68,7 @@ function normalizeAdminLocaleJson(raw: unknown): PlainObject {
     admin.emailTemplates = nestedEmailTemplates;
   }
 
-  // tr.json gibi: services key'leri root'ta dağınık (en.json admin.services ile uyumlu)
+  // Legacy locale shape: service keys can be spread at the root.
   const looksLikeServicesRoot =
     isPlainObject(base.header) &&
     isPlainObject(base.list) &&
@@ -95,7 +94,6 @@ function normalizeAdminLocaleJson(raw: unknown): PlainObject {
 }
 
 const translations = {
-  tr: normalizeAdminLocaleJson(tr),
   en: normalizeAdminLocaleJson(en),
   de: normalizeAdminLocaleJson(de),
 } as const;
@@ -103,7 +101,7 @@ const translations = {
 /**
  * Supported languages for admin panel
  */
-export type AdminLocale = "tr" | "en" | "de";
+export type AdminLocale = "en" | "de";
 
 /**
  * Dynamically derived list of available admin locales from translations JSON.
@@ -111,7 +109,6 @@ export type AdminLocale = "tr" | "en" | "de";
 export const ADMIN_LOCALE_LIST = Object.keys(translations) as AdminLocale[];
 
 const ADMIN_LOCALE_LABELS: Record<string, string> = {
-  tr: "Türkçe",
   en: "English",
   de: "Deutsch",
 };
@@ -128,11 +125,11 @@ function isAdminLocale(v: string): v is AdminLocale {
 /**
  * Get translation function for specific locale
  */
-export function getAdminTranslations(locale: AdminLocale = "tr"): TranslateFn {
+export function getAdminTranslations(locale: AdminLocale = "de"): TranslateFn {
   const normalized = normLocaleTag(locale);
-  const activeLocale: AdminLocale = isAdminLocale(normalized) ? normalized : "tr";
+  const activeLocale: AdminLocale = isAdminLocale(normalized) ? normalized : "de";
 
-  const fallbackChain = [activeLocale, "tr", "en", "de"] as const satisfies readonly AdminLocale[];
+  const fallbackChain = [activeLocale, "de", "en"] as const satisfies readonly AdminLocale[];
 
   return buildTranslator<AdminLocale>({
     translations,
@@ -147,14 +144,14 @@ export function getAdminTranslations(locale: AdminLocale = "tr"): TranslateFn {
  *        t('admin.common.save'); => "Kaydet" (tr) or "Save" (en)
  */
 export function useAdminTranslations(locale?: string): TranslateFn {
-  const normalized = normLocaleTag(locale) || "tr";
-  const adminLocale: AdminLocale = isAdminLocale(normalized) ? normalized : "tr";
+  const normalized = normLocaleTag(locale) || "de";
+  const adminLocale: AdminLocale = isAdminLocale(normalized) ? normalized : "de";
   return getAdminTranslations(adminLocale);
 }
 
 /**
  * Get all translations for a section
- * Usage: const seo = getAdminSection('tr', 'admin.siteSettings.seo');
+ * Usage: const seo = getAdminSection('de', 'admin.siteSettings.seo');
  */
 export function getAdminSection(locale: AdminLocale, section: string): Record<string, string> | undefined {
   const v = getValueByPath(translations[locale], section);

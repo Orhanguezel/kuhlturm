@@ -48,7 +48,7 @@ export default function AdminFaqsDetailClient({ id }: { id: string }) {
   const { localeOptions, defaultLocaleFromDb, loading: localesLoading, fetching: localesFetching } = useAdminLocales();
 
   const apiLocaleFromDb = React.useMemo(() => {
-    return resolveAdminApiLocale(localeOptions as any, defaultLocaleFromDb, "tr");
+    return resolveAdminApiLocale(localeOptions as any, defaultLocaleFromDb, "de");
   }, [localeOptions, defaultLocaleFromDb]);
 
   const localeSet = React.useMemo(() => {
@@ -66,14 +66,14 @@ export default function AdminFaqsDetailClient({ id }: { id: string }) {
       const p = localeShortClient(prev);
       if (p && localeSet.has(p)) return p;
       if (urlLocale && localeSet.has(urlLocale)) return urlLocale;
-      return localeShortClientOr(apiLocaleFromDb, "tr");
+      return localeShortClientOr(apiLocaleFromDb, "de");
     });
   }, [localeOptions, localeSet, apiLocaleFromDb, sp]);
 
   const queryLocale = React.useMemo(() => {
     const l = localeShortClient(activeLocale);
     if (l && localeSet.has(l)) return l;
-    return localeShortClientOr(apiLocaleFromDb, "tr");
+    return localeShortClientOr(apiLocaleFromDb, "de");
   }, [activeLocale, localeSet, apiLocaleFromDb]);
 
   const localesReady = !localesLoading && !localesFetching;
@@ -132,7 +132,7 @@ export default function AdminFaqsDetailClient({ id }: { id: string }) {
 
   const handleSubmit = async (values: FaqsFormValues) => {
     try {
-      const loc = localeShortClientOr(values.locale || queryLocale || apiLocaleFromDb, "tr");
+      const loc = localeShortClientOr(values.locale || queryLocale || apiLocaleFromDb, "de");
 
       if (localeSet.size > 0 && !localeSet.has(localeShortClient(loc))) {
         toast.error(t("errors.invalidLocale"));
@@ -232,8 +232,8 @@ export default function AdminFaqsDetailClient({ id }: { id: string }) {
       saving={saving}
       locales={localesForForm}
       localesLoading={localesLoading || localesFetching}
-      defaultLocale={queryLocale || apiLocaleFromDb || "tr"}
-      onLocaleChange={(l) => setActiveLocale(localeShortClientOr(l, "tr"))}
+      defaultLocale={queryLocale || apiLocaleFromDb || "de"}
+      onLocaleChange={(l) => setActiveLocale(localeShortClientOr(l, "de"))}
       onSubmit={handleSubmit}
       onCancel={onCancel}
     />

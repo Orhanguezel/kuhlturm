@@ -24,7 +24,7 @@ import { alias } from "drizzle-orm/mysql-core";
 import {
   categories,
   categoryI18n,
-} from "@/modules/categories/schema";
+} from "@ensotek/shared-backend/modules/categories/schema";
 import {
   subCategories,
   subCategoryI18n,

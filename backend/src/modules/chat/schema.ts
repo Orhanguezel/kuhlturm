@@ -26,7 +26,7 @@ export const chat_threads = mysqlTable(
     ai_provider_preference: varchar("ai_provider_preference", { length: 20 })
       .notNull()
       .default("auto"), // auto | openai | anthropic | grok
-    preferred_locale: varchar("preferred_locale", { length: 10 }).notNull().default("tr"),
+    preferred_locale: varchar("preferred_locale", { length: 10 }).notNull().default("de"),
     assigned_admin_user_id: varchar("assigned_admin_user_id", { length: 36 }),
 
     created_by_user_id: varchar("created_by_user_id", { length: 36 }),

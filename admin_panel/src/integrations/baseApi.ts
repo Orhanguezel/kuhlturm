@@ -86,9 +86,9 @@ function getDefaultLocale(): string {
   if (envLocale) return envLocale;
 
   if (typeof navigator !== "undefined") {
-    return (navigator.language || "tr").trim() || "tr";
+    return (navigator.language || "de").trim() || "de";
   }
-  return "tr";
+  return "de";
 }
 
 function safeGetLocalStorageItem(key: string): string {

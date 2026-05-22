@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/storage/cloudinary.ts
-// Ensotek – Storage Provider (LOCAL + Cloudinary)
+// Kühlturm – Storage Provider (LOCAL + Cloudinary)
 // -------------------------------------------------------------
 // Amaç: STORAGE_DRIVER (local | cloudinary) + Cloudinary key'leri
 //  - Öncelik: site_settings (runtime) → ENV (fallback)
@@ -17,7 +17,7 @@ import { v2 as cloudinary } from 'cloudinary';
 import { env } from '@/core/env';
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
-import { getStorageSettings, type StorageSettings } from '@/modules/siteSettings/service';
+import { getStorageSettings, type StorageSettings } from '@ensotek/shared-backend/modules/siteSettings/service';
 
 type Driver = 'local' | 'cloudinary';
 

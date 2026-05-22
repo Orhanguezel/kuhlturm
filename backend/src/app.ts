@@ -19,62 +19,62 @@ import { env } from '@/core/env';
 import { registerErrorHandlers } from '@/core/error';
 
 // Public modüller
-import { registerAuth } from '@/modules/auth/router';
+import { registerAuth } from '@ensotek/shared-backend/modules/auth/router';
 import { registerStorage } from '@/modules/storage/router';
-import { registerProfiles } from '@/modules/profiles/router';
-import { registerCustomPages } from '@/modules/customPages/router';
-import { registerSiteSettings } from '@/modules/siteSettings/router';
-import { registerUserRoles } from '@/modules/userRoles/router';
+import { registerProfiles } from '@ensotek/shared-backend/modules/profiles/router';
+import { registerCustomPages } from '@ensotek/shared-backend/modules/customPages/router';
+import { registerSiteSettings } from '@ensotek/shared-backend/modules/siteSettings/router';
+import { registerUserRoles } from '@ensotek/shared-backend/modules/userRoles/router';
 import { registerFaqs } from '@/modules/faqs/router';
 import { registerServices } from '@/modules/services/router';
-import { registerReferences } from '@/modules/references/router';
-import { registerMenuItems } from '@/modules/menuItems/router';
-import { registerSlider } from '@/modules/slider/router';
-import { registerCategories } from '@/modules/categories/router';
+import { registerReferences } from '@ensotek/shared-backend/modules/references/router';
+import { registerMenuItems } from '@ensotek/shared-backend/modules/menuItems/router';
+import { registerSlider } from '@ensotek/shared-backend/modules/slider/router';
+import { registerCategories } from '@ensotek/shared-backend/modules/categories/router';
 import { registerSubCategories } from '@/modules/subcategories/router';
-import { registerContacts } from '@/modules/contact/router';
+import { registerContacts } from '@ensotek/shared-backend/modules/contact/router';
 import { registerEmailTemplates } from '@/modules/email-templates/router';
-import { registerFooterSections } from '@/modules/footerSections/router';
-import { registerLibrary } from '@/modules/library/router';
+import { registerFooterSections } from '@ensotek/shared-backend/modules/footerSections/router';
+import { registerLibrary } from '@ensotek/shared-backend/modules/library/router';
 import { registerMail } from '@/modules/mail/router';
 import { registerNewsletter } from '@/modules/newsletter/router';
-import { registerNotifications } from '@/modules/notifications/router';
-import { registerProducts } from '@/modules/products/router';
-import { registerReviews } from '@/modules/review/router';
-import { registerSupport } from '@/modules/support/router';
+import { registerNotifications } from '@ensotek/shared-backend/modules/notifications/router';
+import { registerProducts } from '@ensotek/shared-backend/modules/products/router';
+import { registerReviews } from '@ensotek/shared-backend/modules/review/router';
+import { registerSupport } from '@ensotek/shared-backend/modules/support/router';
 import { registerChat } from '@/modules/chat/router';
-import { registerOffer } from '@/modules/offer/router';
+import { registerOffer } from '@ensotek/shared-backend/modules/offer/router';
 import { registerCatalog } from '@/modules/catalog/router';
 import { registerSites } from '@/modules/sites/router';
 import { registerProject } from '@/modules/projects/router';
 
 // ✅ Audit single entry
-import { registerAudit } from '@/modules/audit/router';
-import { shouldSkipAuditLog, writeRequestAuditLog, startRetentionJob } from '@/modules/audit/service';
+import { registerAudit } from '@ensotek/shared-backend/modules/audit/router';
+import { shouldSkipAuditLog, writeRequestAuditLog, startRetentionJob } from '@ensotek/shared-backend/modules/audit/service';
 
 // Admin modüller
-import { registerCustomPagesAdmin } from '@/modules/customPages/admin.routes';
-import { registerSiteSettingsAdmin } from '@/modules/siteSettings/admin.routes';
-import { registerUserAdmin } from '@/modules/auth/admin.routes';
+import { registerCustomPagesAdmin } from '@ensotek/shared-backend/modules/customPages/admin.routes';
+import { registerSiteSettingsAdmin } from '@ensotek/shared-backend/modules/siteSettings/admin.routes';
+import { registerUserAdmin } from '@ensotek/shared-backend/modules/auth/admin.routes';
 import { registerFaqsAdmin } from '@/modules/faqs/admin.routes';
 import { registerServicesAdmin } from '@/modules/services/admin.routes';
-import { registerReferencesAdmin } from '@/modules/references/admin.routes';
+import { registerReferencesAdmin } from '@ensotek/shared-backend/modules/references/admin.routes';
 import { registerStorageAdmin } from '@/modules/storage/admin.routes';
-import { registerMenuItemsAdmin } from '@/modules/menuItems/admin.routes';
-import { registerSliderAdmin } from '@/modules/slider/admin.routes';
-import { registerCategoriesAdmin } from '@/modules/categories/admin.routes';
+import { registerMenuItemsAdmin } from '@ensotek/shared-backend/modules/menuItems/admin.routes';
+import { registerSliderAdmin } from '@ensotek/shared-backend/modules/slider/admin.routes';
+import { registerCategoriesAdmin } from '@ensotek/shared-backend/modules/categories/admin.routes';
 import { registerSubCategoriesAdmin } from '@/modules/subcategories/admin.routes';
-import { registerContactsAdmin } from '@/modules/contact/admin.routes';
-import { registerDbAdmin } from '@/modules/db_admin/admin.routes';
+import { registerContactsAdmin } from '@ensotek/shared-backend/modules/contact/admin.routes';
+import { registerDbAdmin } from '@ensotek/shared-backend/modules/db_admin/admin.routes';
 import { registerEmailTemplatesAdmin } from '@/modules/email-templates/admin.routes';
-import { registerFooterSectionsAdmin } from '@/modules/footerSections/admin.routes';
-import { registerLibraryAdmin } from '@/modules/library/admin.routes';
+import { registerFooterSectionsAdmin } from '@ensotek/shared-backend/modules/footerSections/admin.routes';
+import { registerLibraryAdmin } from '@ensotek/shared-backend/modules/library/admin.routes';
 import { registerNewsletterAdmin } from '@/modules/newsletter/admin.routes';
-import { registerProductsAdmin } from '@/modules/products/admin.routes';
-import { registerReviewsAdmin } from '@/modules/review/admin.routes';
-import { registerSupportAdmin } from '@/modules/support/admin.routes';
+import { registerProductsAdmin } from '@ensotek/shared-backend/modules/products/admin.routes';
+import { registerReviewsAdmin } from '@ensotek/shared-backend/modules/review/admin.routes';
+import { registerSupportAdmin } from '@ensotek/shared-backend/modules/support/admin.routes';
 import { registerDashboardAdmin } from '@/modules/dashboard/admin.routes';
-import { registerOfferAdmin } from '@/modules/offer/admin.routes';
+import { registerOfferAdmin } from '@ensotek/shared-backend/modules/offer/admin.routes';
 import { registerCatalogAdmin } from '@/modules/catalog/admin.routes';
 import { registerSitesAdmin } from '@/modules/sites/admin.routes';
 import { registerProjectAdmin } from '@/modules/projects/admin.routes';
@@ -137,8 +137,8 @@ export async function createApp() {
   await app.register(fastifySwagger, {
     openapi: {
       info: {
-        title: 'Ensotek API',
-        description: 'Ensotek Backend API Documentation',
+        title: 'Kühlturm API',
+        description: 'Kühlturm Backend API Documentation',
         version: '0.1.0',
       },
       servers: [
@@ -269,7 +269,7 @@ export async function createApp() {
       await api.register(async (i) => registerIpBlocklist(i), { prefix: '/admin' });
 
       // AI Content Assist
-      const { aiContentAssist } = await import('@/modules/ai/content');
+      const { aiContentAssist } = await import('@ensotek/shared-backend/modules/ai/content');
       api.post('/admin/ai/content', aiContentAssist);
 
       // --- Public modüller: /api/...

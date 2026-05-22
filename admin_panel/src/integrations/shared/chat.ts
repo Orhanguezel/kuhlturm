@@ -1,6 +1,6 @@
 // ===================================================================
 // FILE: src/integrations/shared/chat.ts
-// Chat module types (Ensotek — AI support + admin takeover)
+// Chat module types (Kühlturm — AI support + admin takeover)
 // ===================================================================
 
 // ─── Enums ──────────────────────────────────────────────────

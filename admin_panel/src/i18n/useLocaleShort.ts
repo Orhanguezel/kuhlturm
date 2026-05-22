@@ -14,6 +14,6 @@ export function useLocaleShort(explicitLocale?: string | null): string {
   return useMemo(() => {
     // useResolvedLocale zaten activeLocales + defaultLocale validasyonunu yapıyor.
     // Burada sadece normalize ediyoruz.
-    return normLocaleTag(resolved) || "tr";
+    return normLocaleTag(resolved) || "de";
   }, [resolved]);
 }

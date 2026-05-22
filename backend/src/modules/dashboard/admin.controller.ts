@@ -1,6 +1,6 @@
 // ===================================================================
 // FILE: src/modules/dashboard/admin.controller.ts
-// Ensotek – Admin Dashboard Summary Controller
+// Kühlturm – Admin Dashboard Summary Controller
 // ===================================================================
 
 import type { RouteHandler } from "fastify";
@@ -9,26 +9,26 @@ import { sql } from "drizzle-orm";
 
 // Aşağıdaki import'larda tablo isimlerini proje şemanla eşleştir:
 // İsimler %99 bunlara çok yakın; farklıysa sadece import satırlarını düzeltmen yeterli.
-import { products } from "@/modules/products/schema";
-import { categories } from "@/modules/categories/schema";
+import { products } from "@ensotek/shared-backend/modules/products/schema";
+import { categories } from "@ensotek/shared-backend/modules/categories/schema";
 import { subCategories} from "@/modules/subcategories/schema";
 import { services } from "@/modules/services/schema";
 import { faqs } from "@/modules/faqs/schema";
-import { contact_messages } from "@/modules/contact/schema";
+import { contact_messages } from "@ensotek/shared-backend/modules/contact/schema";
 import { newsletterSubscribers } from "@/modules/newsletter/schema";
 import { emailTemplates } from "@/modules/email-templates/schema";
-import { siteSettings } from "@/modules/siteSettings/schema";
-import { customPages } from "@/modules/customPages/schema";
-import { menuItems } from "@/modules/menuItems/schema";
-import { slider } from "@/modules/slider/schema";
-import { footerSections } from "@/modules/footerSections/schema";
-import { library } from "@/modules/library/schema";
-import { reviews } from "@/modules/review/schema";
-import { supportTickets } from "@/modules/support/schema";
-import { users } from "@/modules/auth/schema";
-import { offersTable } from '@/modules/offer/schema';
+import { siteSettings } from "@ensotek/shared-backend/modules/siteSettings/schema";
+import { customPages } from "@ensotek/shared-backend/modules/customPages/schema";
+import { menuItems } from "@ensotek/shared-backend/modules/menuItems/schema";
+import { slider } from "@ensotek/shared-backend/modules/slider/schema";
+import { footerSections } from "@ensotek/shared-backend/modules/footerSections/schema";
+import { library } from "@ensotek/shared-backend/modules/library/schema";
+import { reviews } from "@ensotek/shared-backend/modules/review/schema";
+import { supportTickets } from "@ensotek/shared-backend/modules/support/schema";
+import { users } from "@ensotek/shared-backend/modules/auth/schema";
+import { offersTable } from '@ensotek/shared-backend/modules/offer/schema';
 import { storageAssets } from '@/modules/storage/schema';
-import { referencesTable } from '@/modules/references/schema';
+import { referencesTable } from '@ensotek/shared-backend/modules/references/schema';
 import { catalogRequestsTable } from '@/modules/catalog/schema';
 import { chat_threads } from '@/modules/chat/schema';
 

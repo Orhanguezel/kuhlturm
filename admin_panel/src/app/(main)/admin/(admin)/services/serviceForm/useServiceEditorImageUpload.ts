@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/services/_components/serviceForm/useServiceEditorImageUpload.ts
-// Ensotek – RichContentEditor image upload hook (services) (FINAL)
+// Kühlturm – RichContentEditor image upload hook (services) (FINAL)
 // =============================================================
 
 import { toast } from "sonner";

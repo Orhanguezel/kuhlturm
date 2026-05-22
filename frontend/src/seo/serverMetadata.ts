@@ -158,9 +158,7 @@ export async function buildMetadataFromSeo(
     rawDescription ||
     (locale === 'de'
       ? 'Leistungsstarke Kühltürme für Industrie und Gewerbe — zuverlässig, energieeffizient, maßgefertigt.'
-      : locale === 'tr'
-        ? 'Endüstri ve ticari kullanım için güçlü soğutma kuleleri — güvenilir, enerji verimli ve özel üretim.'
-        : 'High-performance cooling towers for industry and commerce — reliable, energy-efficient, custom-built.');
+      : 'High-performance cooling towers for industry and commerce — reliable, energy-efficient, custom-built.');
 
   const og = asObj(seo.open_graph) || {};
   const ogType = (asStr(og.type) || 'website') as 'website' | 'article' | 'profile';

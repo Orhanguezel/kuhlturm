@@ -1,7 +1,7 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/categories/components/CategoriesListPanel.tsx
 // Categories List Panel — Header + Filters + Table/Cards
-// Ensotek
+// Kühlturm
 // =============================================================
 
 "use client";
@@ -42,7 +42,7 @@ export default function CategoriesListPanel() {
   const { localeOptions, defaultLocaleFromDb, loading: localesLoading, fetching: localesFetching } = useAdminLocales();
 
   const apiLocale = React.useMemo(() => {
-    return resolveAdminApiLocale(localeOptions as any, defaultLocaleFromDb, "tr");
+    return resolveAdminApiLocale(localeOptions as any, defaultLocaleFromDb, "de");
   }, [localeOptions, defaultLocaleFromDb]);
 
   // Filters
@@ -58,7 +58,7 @@ export default function CategoriesListPanel() {
 
     setLocale((prev) => {
       if (prev) return prev;
-      return localeShortClientOr(apiLocale, "tr");
+      return localeShortClientOr(apiLocale, "de");
     });
   }, [localeOptions, apiLocale]);
 
@@ -81,7 +81,7 @@ export default function CategoriesListPanel() {
     const params: Record<string, string | boolean> = {};
 
     // Always include locale
-    params.locale = effectiveLocale || "tr";
+    params.locale = effectiveLocale || "de";
 
     if (search) params.q = search;
     if (moduleKey) params.module_key = moduleKey;

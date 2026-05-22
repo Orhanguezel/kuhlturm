@@ -17,9 +17,9 @@ export const siteSettingsService = {
     // return response.data;
     // Mock for now until API is ready or verified
     return {
-        site_title: 'Ensotek',
-        site_description: 'Ensotek - Endüstriyel Soğutma Sistemleri',
-        contact_email: 'info@ensotek.com',
+        site_title: 'Kühlturm',
+        site_description: 'Kühlturm - Endüstriyel Soğutma Sistemleri',
+        contact_email: 'info@kuhlturm.com',
         contact_phone: '+90 216 123 45 67',
         address: 'İstanbul, Türkiye',
     } as SiteSettings;
@@ -33,8 +33,8 @@ export const useSiteSettings = () => {
         queryKey: ['site-settings'],
         queryFn: siteSettingsService.get,
         initialData: {
-            site_title: 'Ensotek',
-            site_description: 'Ensotek',
+            site_title: 'Kühlturm',
+            site_description: 'Kühlturm',
         } as SiteSettings
     });
 };

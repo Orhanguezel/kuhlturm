@@ -115,7 +115,7 @@ export function AppSidebar({
             <LayoutDashboard className="size-5" />
           </div>
           <div className="flex flex-col gap-0.5 leading-none">
-            <span className="font-bold text-lg tracking-tight">{label || "ENSOTEK"}</span>
+            <span className="font-bold text-lg tracking-tight">{label || "KÜHLTURM"}</span>
             <span className="font-medium text-[10px] text-muted-foreground uppercase tracking-widest">Admin Panel</span>
           </div>
         </Link>

@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/components/admin/resources/ResourcesHeader.tsx
-// Ensotek – Admin Resources Header (Filters + Summary)
+// Kühlturm – Admin Resources Header (Filters + Summary)
 // FINAL — TR UI
 // =============================================================
 

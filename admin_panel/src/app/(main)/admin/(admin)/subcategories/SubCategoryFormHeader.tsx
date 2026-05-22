@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/components/admin/subcategories/SubCategoryFormHeader.tsx
-// Ensotek – Alt Kategori Form Header (Category pattern)
+// Kühlturm – Alt Kategori Form Header (Category pattern)
 // =============================================================
 
 import type React from "react";

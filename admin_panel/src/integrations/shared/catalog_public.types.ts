@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/types/catalog_public.types.ts
-// Ensotek – Public Catalog Request Types
+// Kühlturm – Public Catalog Request Types
 // - DTO & Status single source: ./catalog.types
 // =============================================================
 

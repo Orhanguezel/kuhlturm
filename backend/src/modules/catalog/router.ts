@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/catalog/router.ts
-// Ensotek – Catalog Request Public Routes
+// Kühlturm – Catalog Request Public Routes
 // =============================================================
 
 import type { FastifyInstance } from "fastify";

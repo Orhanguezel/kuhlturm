@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/components/admin/subcategories/SubCategoryFormFooter.tsx
-// Ensotek – Alt Kategori Form Footer (Butonlar)
+// Kühlturm – Alt Kategori Form Footer (Butonlar)
 // =============================================================
 
 import type React from "react";

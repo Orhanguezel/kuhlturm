@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/types/library.types.ts
-// Ensotek – Library tipleri (DB/DTO + payloadlar) [SCHEMA-SAFE]
+// Kühlturm – Library tipleri (DB/DTO + payloadlar) [SCHEMA-SAFE]
 // - Matches: src/modules/library/schema.ts + validation.ts
 // - Endpoints: public + admin routes (router.ts / admin.routes.ts)
 // =============================================================

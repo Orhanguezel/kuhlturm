@@ -1,7 +1,7 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/library/_components/library-list-panel.tsx
 // Library List Panel — Shadcn/UI + RTK Query
-// Ensotek Admin Panel Standartı
+// Kühlturm Admin Panel Standartı
 // =============================================================
 
 "use client";
@@ -60,7 +60,7 @@ export default function LibraryListPanel() {
     if (!localeOptions?.length) return;
     setLocale((prev) => {
       if (prev) return prev;
-      const def = (defaultLocaleFromDb as string) || localeOptions[0]?.value || "tr";
+      const def = (defaultLocaleFromDb as string) || localeOptions[0]?.value || "de";
       return String(def);
     });
   }, [localeOptions, defaultLocaleFromDb]);

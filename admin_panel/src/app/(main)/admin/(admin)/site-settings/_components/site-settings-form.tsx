@@ -2,7 +2,7 @@
 
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/site-settings/_components/site-settings-form.tsx
-// Ensotek – Site Settings Unified Form (shadcn/ui)
+// Kühlturm – Site Settings Unified Form (shadcn/ui)
 // - NO bootstrap classes
 // - Mode: Tabs (Structured / Raw)
 // - Raw: single textarea, JSON parse fallback

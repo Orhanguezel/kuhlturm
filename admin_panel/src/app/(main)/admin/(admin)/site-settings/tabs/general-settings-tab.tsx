@@ -32,7 +32,7 @@ export type GeneralSettingsTabProps = {
 export const GeneralSettingsTab: React.FC<GeneralSettingsTabProps> = ({ locale, settingPrefix }) => {
   const [updateSetting, { isLoading: isSaving }] = useUpdateSiteSettingAdminMutation();
 
-  const adminLocale = usePreferencesStore((s) => s.adminLocale) || "tr";
+  const adminLocale = usePreferencesStore((s) => s.adminLocale) || "de";
   const t = useAdminTranslations(adminLocale || undefined);
 
   const withPrefix = React.useCallback((key: string) => `${settingPrefix || ""}${key}`, [settingPrefix]);

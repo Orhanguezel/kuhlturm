@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/types/category.types.ts
-// Ensotek – Kategori tipleri (DB/DTO + payloadlar)
+// Kühlturm – Kategori tipleri (DB/DTO + payloadlar)
 // =============================================================
 
 /**

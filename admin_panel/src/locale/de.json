@@ -308,7 +308,7 @@
         "title": "Anmelden",
         "welcomeBack": "Willkommen zurück",
         "continueLogin": "Anmelden um fortzufahren",
-        "description": "Geben Sie Ihre E-Mail und Ihr Passwort ein, um auf das Ensotek Admin-Panel zuzugreifen.",
+        "description": "Geben Sie Ihre E-Mail und Ihr Passwort ein, um auf das Kühlturm Admin-Panel zuzugreifen.",
         "noAccess": "Haben Sie keinen Zugang?",
         "contactAdmin": "Administrator kontaktieren",
         "emailLabel": "E-Mail-Adresse",
@@ -2592,9 +2592,9 @@
         "localBaseUrl": "Local Base URL",
         "localBaseUrlPlaceholder": "/uploads oder https://cdn.site.com/uploads",
         "cdnPublicBase": "CDN Public Base",
-        "cdnPublicBasePlaceholder": "https://cdn.ensotek.de",
+        "cdnPublicBasePlaceholder": "https://cdn.kuhlturm.com",
         "publicApiBase": "Public API Base",
-        "publicApiBasePlaceholder": "https://api.ensotek.de",
+        "publicApiBasePlaceholder": "https://api.kuhlturm.com",
         "cloudName": "Cloudinary Cloud Name",
         "cloudNamePlaceholder": "cloud-name",
         "apiKey": "Cloudinary API Key",
@@ -2644,19 +2644,19 @@
           "twitterCard": "Twitter Card Typ"
         },
         "placeholders": {
-          "appNamePlaceholder": "Ensotek Admin",
-          "appCopyrightPlaceholder": "2024 Ensotek. Alle Rechte vorbehalten.",
+          "appNamePlaceholder": "Kühlturm Admin",
+          "appCopyrightPlaceholder": "2024 Kühlturm. Alle Rechte vorbehalten.",
           "htmlLangPlaceholder": "de",
           "themeColorPlaceholder": "#E8A598",
-          "ogImagePlaceholder": "https://www.ensotek.de/og-image.jpg",
+          "ogImagePlaceholder": "https://kuhlturm.com/og-image.jpg",
           "favicon16Placeholder": "/favicon-16x16.png",
           "favicon32Placeholder": "/favicon-32x32.png",
           "appleTouchIconPlaceholder": "/apple-touch-icon.png",
-          "metaTitlePlaceholder": "Ensotek - Kühltürme",
+          "metaTitlePlaceholder": "Kühlturm - Kühltürme",
           "metaDescriptionPlaceholder": "B2B-Plattform für Kühlturm-Lösungen",
-          "ogTitlePlaceholder": "Ensotek",
+          "ogTitlePlaceholder": "Kühlturm",
           "ogDescriptionPlaceholder": "Kühlturm-Lösungen",
-          "ogUrlPlaceholder": "https://www.ensotek.de",
+          "ogUrlPlaceholder": "https://kuhlturm.com",
           "twitterCardPlaceholder": "summary_large_image"
         }
       },
@@ -2791,7 +2791,7 @@
             "port": "587",
             "user": "user@example.com",
             "pass": "••••",
-            "from": "noreply@ensotek.de",
+            "from": "noreply@kuhlturm.com",
             "providerOrder": "groq,openai"
           }
         }
@@ -2888,7 +2888,7 @@
           "noindexBadge": "noindex",
           "googlePreview": "Google-Vorschau",
           "socialPreview": "Social-Media-Vorschau",
-          "siteName": "Ensotek",
+          "siteName": "Kühlturm",
           "noDescription": "Keine Beschreibung angegeben.",
           "noOgImage": "Kein OG-Bild"
         },
@@ -2931,7 +2931,7 @@
         "ogImage": "OG-Bild",
         "noindex": "Von Suchmaschinen ausschließen (noindex)",
         "googlePreview": "Google-Suche Vorschau",
-        "siteName": "Ensotek",
+        "siteName": "Kühlturm",
         "noDescription": "Keine Beschreibung festgelegt.",
         "socialPreview": "Social-Media-Vorschau",
         "noOgImage": "Kein OG-Bild festgelegt"
@@ -2961,7 +2961,7 @@
         "siteName": "Site Name",
         "titleDefault": "Standard-Titel",
         "titleTemplate": "Titel-Vorlage",
-        "titleTemplatePlaceholder": "%s | ensotek",
+        "titleTemplatePlaceholder": "%s | kuhlturm",
         "description": "Beschreibung",
         "ogType": "OpenGraph-Typ",
         "ogImages": "OpenGraph-Bilder (1 pro Zeile)",
@@ -2969,7 +2969,7 @@
         "twitterCard": "Twitter Card",
         "twitterCardRecommended": "Empfohlen für die meisten Sites: {card}",
         "twitterSite": "Twitter Site",
-        "twitterSitePlaceholder": "@ensotek",
+        "twitterSitePlaceholder": "@kuhlturm",
         "twitterCreator": "Twitter Creator",
         "twitterCreatorPlaceholder": "@creator",
         "robots": "Robots",
@@ -3117,7 +3117,7 @@
             "ogType": "OG-Typ"
           },
           "placeholders": {
-            "siteTitle": "Ensotek - Kühlturm-Lösungen",
+            "siteTitle": "Kühlturm - Kühlturm-Lösungen",
             "siteDescription": "Seitenbeschreibung...",
             "keywords": "Kühlung, Kühlturm, HVAC...",
             "ogImage": "/img/og-default.jpg"
@@ -3155,7 +3155,7 @@
             }
           },
           "placeholders": {
-            "titleTemplate": "%s | Ensotek"
+            "titleTemplate": "%s | Kühlturm"
           },
           "titleTemplateHelp": "%s wird durch den Seitentitel ersetzt"
         },
@@ -3318,10 +3318,10 @@
         "password": "Passwort",
         "passwordPlaceholder": "••••••••",
         "fromEmail": "Von E-Mail",
-        "fromEmailPlaceholder": "no-reply@ensotek.com",
+        "fromEmailPlaceholder": "no-reply@kuhlturm.com",
         "fromEmailHelp": "E-Mails in der Anwendung werden von dieser Adresse gesendet.",
         "fromName": "Von Name",
-        "fromNamePlaceholder": "ensotek",
+        "fromNamePlaceholder": "kuhlturm",
         "testEmail": "Test-E-Mail-Empfänger",
         "testEmailPlaceholder": "beispiel@beispiel.com",
         "testEmailHelp": "Wenn ausgefüllt, geht Test-E-Mail hierhin. Andernfalls wird zuerst Von-E-Mail verwendet, dann die E-Mail des angemeldeten Benutzers.",
@@ -4179,7 +4179,7 @@
     "totalLabel": "Toplam:",
     "activeLocale": "Aktif locale:",
     "loading": "Lädt...",
-    "headerDescription": "ensotek hizmet kayıtlarını yönet."
+    "headerDescription": "kuhlturm hizmet kayıtlarını yönet."
   },
   "list": {
     "title": "Slider Liste",

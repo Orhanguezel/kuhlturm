@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/services/_components/serviceForm/serviceForm.utils.ts
-// Ensotek – ServiceForm helpers (normalize/build) (FINAL)
+// Kühlturm – ServiceForm helpers (normalize/build) (FINAL)
 // - ✅ category/sub_category removed
 // - ✅ safe locale resolve
 // - ✅ slugify TR/DE safe

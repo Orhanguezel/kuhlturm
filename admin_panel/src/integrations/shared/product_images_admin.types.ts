@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/types/admin/product_images_admin.types.ts
-// Ensotek – Admin Product Images types (product_images)
+// Kühlturm – Admin Product Images types (product_images)
 // =============================================================
 
 import type { BoolLike } from "@/integrations/shared";

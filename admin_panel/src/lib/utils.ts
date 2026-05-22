@@ -29,7 +29,7 @@ export function formatCurrency(
     noDecimals?: boolean;
   },
 ) {
-  const { currency = "TRY", locale = "tr-TR", minimumFractionDigits, maximumFractionDigits, noDecimals } = opts ?? {};
+  const { currency = "TRY", locale = "de-DE", minimumFractionDigits, maximumFractionDigits, noDecimals } = opts ?? {};
 
   const formatOptions: Intl.NumberFormatOptions = {
     style: "currency",

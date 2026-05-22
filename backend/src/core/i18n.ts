@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/core/i18n.ts
-// Ensotek – Dynamic i18n core (LOCALES runtime from site_settings)
+// Kühlturm – Dynamic i18n core (LOCALES runtime from site_settings)
 //  - app_locales locale='*' priority
 //  - supports object[] [{code,label,is_active,is_default}, ...]
 //  - supports string[] and CSV and JSON string
@@ -10,13 +10,13 @@
 // =============================================================
 
 import { db } from '@/db/client';
-import { siteSettings } from '@/modules/siteSettings/schema';
+import { siteSettings } from '@ensotek/shared-backend/modules/siteSettings/schema';
 import { and, eq } from 'drizzle-orm';
 
 export const APP_LOCALES_SETTING_KEY = 'app_locales';
 export const DEFAULT_LOCALE_SETTING_KEY = 'default_locale';
 
-/** "tr-TR" → "tr" normalize */
+/** "de-DE" -> "de" normalize */
 export function normalizeLocale(input?: string | null): string | undefined {
   if (!input) return undefined;
   const s = String(input).trim().toLowerCase().replace('_', '-');
@@ -26,7 +26,7 @@ export function normalizeLocale(input?: string | null): string | undefined {
 }
 
 // ENV başlangıç
-const initialLocaleCodes = (process.env.APP_LOCALES || 'de,en,tr')
+const initialLocaleCodes = (process.env.APP_LOCALES || 'de,en')
   .split(',')
   .map((s) => normalizeLocale(s) || '')
   .filter(Boolean);
@@ -36,7 +36,7 @@ for (const l of initialLocaleCodes) {
   if (!uniqueInitial.includes(l)) uniqueInitial.push(l);
 }
 
-export const LOCALES: string[] = uniqueInitial.length ? uniqueInitial : ['tr', 'en', 'de'];
+export const LOCALES: string[] = uniqueInitial.length ? uniqueInitial : ['de', 'en'];
 export type Locale = (typeof LOCALES)[number];
 
 /**

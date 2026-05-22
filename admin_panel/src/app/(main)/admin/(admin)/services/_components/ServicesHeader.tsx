@@ -2,7 +2,7 @@
 
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/services/_components/ServicesHeader.tsx
-// Ensotek – Admin Services Header (filters + locale + summary)
+// Kühlturm – Admin Services Header (filters + locale + summary)
 // - shadcn/tailwind theme
 // - Locale source: useAdminLocales()
 // - NO Category/SubCategory

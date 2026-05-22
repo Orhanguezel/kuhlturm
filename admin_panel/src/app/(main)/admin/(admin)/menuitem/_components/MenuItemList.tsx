@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/components/admin/menuitem/MenuItemList.tsx
-// Ensotek – Admin Menu Items (Responsive + DnD + Pagination) (HEADER ONLY friendly)
+// Kühlturm – Admin Menu Items (Responsive + DnD + Pagination) (HEADER ONLY friendly)
 // =============================================================
 
 "use client";
@@ -106,7 +106,7 @@ export const MenuItemList: React.FC<MenuItemListProps> = ({
   onSaveOrder,
   savingOrder,
   localeLabelMap,
-  dateLocale = "tr-TR",
+  dateLocale = "de-DE",
   hideLocationColumn = false,
 }) => {
   const t = useAdminT("admin.menuitem");

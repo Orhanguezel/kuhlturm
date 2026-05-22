@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/navigation/sidebar/sidebar-items.ts
-// FINAL — Ensotek — Sidebar items (labels are dynamic via site_settings.ui_admin)
+// FINAL — Kühlturm — Sidebar items (labels are dynamic via site_settings.ui_admin)
 // - Dashboard base: /admin/dashboard
 // - Admin pages: /admin/...  (route group "(admin)" URL'e dahil olmaz)
 // =============================================================

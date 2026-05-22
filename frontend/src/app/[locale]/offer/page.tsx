@@ -24,7 +24,7 @@ interface Props {
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Angebot anfordern — Ensotek Kühlturm',
+    title: 'Angebot anfordern — Kühlturm Kühlturm',
     description:
       'Fordern Sie ein kostenloses und unverbindliches Angebot für Kühltürme, Wartung oder Engineering-Leistungen an.',
   };

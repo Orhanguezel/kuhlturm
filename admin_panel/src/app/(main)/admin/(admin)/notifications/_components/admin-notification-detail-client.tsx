@@ -42,7 +42,7 @@ function getErrMsg(e: unknown, t: (k: string) => string): string {
 }
 
 const localeMapping: Record<string, string> = {
-  tr: "tr-TR",
+  tr: "de-DE",
   en: "en-US",
   de: "de-DE",
 };
@@ -293,7 +293,7 @@ export default function AdminNotificationDetailClient({ id }: { id: string }) {
               <div>
                 <p className="font-medium text-muted-foreground text-sm">{t("notifications.details.createdAt")}</p>
                 <p className="text-sm">
-                  {new Date(item.created_at).toLocaleString(localeMapping[adminLocale] || "tr-TR")}
+                  {new Date(item.created_at).toLocaleString(localeMapping[adminLocale] || "de-DE")}
                 </p>
               </div>
             </div>

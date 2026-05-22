@@ -91,7 +91,7 @@ export default function UserRolesClient() {
       id: u.id,
       name: userName(u),
     }));
-    items.sort((a, b) => a.name.localeCompare(b.name, "tr"));
+    items.sort((a, b) => a.name.localeCompare(b.name, "de"));
     return items;
   }, [usersQ.data, userName]);
 

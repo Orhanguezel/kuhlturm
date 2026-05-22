@@ -8,24 +8,24 @@
 @import "../styles/presets/soft-pop.css";
 @import "../styles/presets/tangerine.css";
 
-/* Ensotek Brand Colors */
+/* Kühlturm Brand Colors */
 :root {
   /* Logo Primary Colors */
-  --logo-coral-light: #f4bdb3; /* Highlights, light bg text */
-  --logo-coral: #e8a598; /* Main brand color */
-  --logo-coral-medium: #d88d7e; /* Default logo on light */
-  --logo-coral-dark: #c77665; /* Logo on very light bg */
-  --logo-coral-darkest: #a6604f; /* Text, details */
+  --logo-coral-light: #d9ecff; /* Highlights, light bg text */
+  --logo-coral: #1f6feb; /* Main brand color */
+  --logo-coral-medium: #2f81f7; /* Default logo on light */
+  --logo-coral-dark: #0a58ca; /* Logo on very light bg */
+  --logo-coral-darkest: #083c8c; /* Text, details */
 
   /* Background Colors for Logo */
-  --logo-bg-light: #fdfcfb; /* Light mode primary */
+  --logo-bg-light: #f7fbff; /* Light mode primary */
   --logo-bg-white: #ffffff; /* Pure white */
-  --logo-bg-dark: #1a1512; /* Dark mode */
-  --logo-bg-black: #0a0806; /* Pure black */
+  --logo-bg-dark: #111827; /* Dark mode */
+  --logo-bg-black: #030712; /* Pure black */
 
   /* Logo Accents */
-  --logo-gold: #e8c57a; /* Accent touch */
-  --logo-shadow: rgba(232, 165, 152, 0.15); /* Soft glow */
+  --logo-gold: #9ca3af; /* Accent touch */
+  --logo-shadow: rgba(31, 111, 235, 0.15); /* Soft glow */
 }
 
 @custom-variant dark (&:is(.dark *));
@@ -93,9 +93,9 @@ These serve as the fallback; there is no separate default.css file. */
   --card-foreground: oklch(0.141 0.005 285.823);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.141 0.005 285.823);
-  /* Primary: Ensotek Coral */
+  /* Primary: Kühlturm blue */
   --primary: var(--logo-coral);
-  --primary-foreground: oklch(0.985 0 0); /* Light text on coral */
+  --primary-foreground: oklch(0.985 0 0); /* Light text on blue */
   --secondary: oklch(0.967 0.001 286.375);
   --secondary-foreground: oklch(0.21 0.006 285.885);
   --muted: oklch(0.967 0.001 286.375);
@@ -132,9 +132,9 @@ These serve as the fallback; there is no separate default.css file. */
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.21 0.006 285.885);
   --popover-foreground: oklch(0.985 0 0);
-  /* Primary Dark: Coral Light or Medium */
+  /* Primary Dark: Kühlturm blue */
   --primary: var(--logo-coral-medium);
-  --primary-foreground: oklch(0.141 0.005 285.823); /* Dark text on light coral */
+  --primary-foreground: oklch(0.985 0 0); /* Light text on blue */
   --secondary: oklch(0.274 0.006 286.033);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.274 0.006 286.033);

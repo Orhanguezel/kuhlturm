@@ -1,9 +1,9 @@
 // ===================================================================
 // FILE: src/integrations/shared/telegram.ts
-// Telegram Admin API types (Ensotek)
+// Telegram Admin API types (Kühlturm)
 // ===================================================================
 
-/** Telegram event types for Ensotek */
+/** Telegram event types for Kühlturm */
 export type TelegramEventType = "new_contact" | "new_catalog_request" | "new_offer_request" | "new_support_ticket";
 
 /**

@@ -1,7 +1,7 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/telegram/Telegram.tsx
 // Admin Telegram Page (Settings + Inbound + AutoReply)
-// Ensotek
+// Kühlturm
 // =============================================================
 
 "use client";

@@ -1,6 +1,6 @@
 // ===================================================================
 // FILE: src/integrations/shared/telegram_inbound.ts
-// Telegram inbound + auto-reply types (Ensotek)
+// Telegram inbound + auto-reply types (Kühlturm)
 // ===================================================================
 
 export type TelegramInboundMessage = {

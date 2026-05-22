@@ -15,7 +15,7 @@ import {
 import {
   getSmtpSettings,
   type SmtpSettings,
-} from "@/modules/siteSettings/service";
+} from "@ensotek/shared-backend/modules/siteSettings/service";
 
 // email_templates → çoklu dilli template render
 import { renderEmailTemplateByKey } from "@/modules/email-templates/service";
@@ -23,7 +23,7 @@ import { emitAppEvent } from '@/common/events/bus';
 
 // site_name fallback için site_settings
 import { db } from "@/db/client";
-import { siteSettings } from "@/modules/siteSettings/schema";
+import { siteSettings } from "@ensotek/shared-backend/modules/siteSettings/schema";
 import { eq } from "drizzle-orm";
 
 // Basit cache (aynı config için transporter'ı tekrar tekrar kurmamak için)
@@ -165,7 +165,7 @@ async function getSiteNameFromSettings(): Promise<string> {
   }
 
   // 3) Fallback
-  cachedSiteName = "Site";
+  cachedSiteName = "Kühlturm";
   cachedSiteNameLoadedAt = now;
   return cachedSiteName;
 }
@@ -675,4 +675,3 @@ export async function sendMailRaw(input: SendMailInput) {
     throw err;
   }
 }
-

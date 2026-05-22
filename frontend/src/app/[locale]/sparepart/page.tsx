@@ -16,7 +16,7 @@ interface Props {
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Ersatzteile — Ensotek Kühlturm',
+    title: 'Ersatzteile — Kühlturm Kühlturm',
     description: 'Original-Ersatzteile und Komponenten für Kühltürme — schnelle Lieferung und hohe Qualität.',
   };
 }

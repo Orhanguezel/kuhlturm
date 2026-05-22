@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/components/admin/menuitem/MenuItemForm.tsx
-// Ensotek – Admin Menu Item Create / Edit Form (HEADER ONLY)
+// Kühlturm – Admin Menu Item Create / Edit Form (HEADER ONLY)
 // =============================================================
 
 "use client";

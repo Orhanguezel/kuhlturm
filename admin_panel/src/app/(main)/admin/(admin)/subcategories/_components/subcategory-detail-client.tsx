@@ -3,7 +3,7 @@
 // Subcategory Detail/Edit Form — Shadcn/UI + RTK Query
 // - Form Tab: tüm alanlar + görsel sidebar
 // - JSON Tab: tüm formData + görsel sidebar
-// Ensotek Admin Panel Standartı
+// Kühlturm Admin Panel Standartı
 // =============================================================
 
 "use client";
@@ -51,7 +51,7 @@ export default function SubcategoryDetailClient({ id }: Props) {
   const isNew = id === "new";
 
   const { localeOptions } = useAdminLocales();
-  const [activeLocale, setActiveLocale] = React.useState<string>(adminLocale || "tr");
+  const [activeLocale, setActiveLocale] = React.useState<string>(adminLocale || "de");
   const [activeTab, setActiveTab] = React.useState<"form" | "json">("form");
 
   // ── RTK Query ──
@@ -61,7 +61,7 @@ export default function SubcategoryDetailClient({ id }: Props) {
     refetch,
   } = useGetSubCategoryAdminQuery({ id, locale: activeLocale }, { skip: isNew });
 
-  const { data: categories = [] } = useListCategoriesAdminQuery({ locale: activeLocale || "tr", limit: 200 } as any);
+  const { data: categories = [] } = useListCategoriesAdminQuery({ locale: activeLocale || "de", limit: 200 } as any);
 
   const [createSubCategory, { isLoading: isCreating }] = useCreateSubCategoryAdminMutation();
   const [updateSubCategory, { isLoading: isUpdating }] = useUpdateSubCategoryAdminMutation();

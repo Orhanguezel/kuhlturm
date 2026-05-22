@@ -27,7 +27,7 @@ export type LibraryFilesSectionProps = {
 const safeText = (v: unknown) => (v === null || v === undefined ? "" : String(v));
 const norm = (v: unknown) => String(v ?? "").trim();
 
-function normalizeLocale(raw?: string, fallback = "tr") {
+function normalizeLocale(raw?: string, fallback = "de") {
   const s = String(raw ?? "").trim();
   if (!s) return fallback;
   const [short] = s.split("-");
@@ -40,7 +40,7 @@ function extractErrMsg(err: any): string {
 }
 
 export const LibraryFilesSection: React.FC<LibraryFilesSectionProps> = ({ libraryId, locale, disabled = false }) => {
-  const effectiveLocale = useMemo(() => normalizeLocale(locale, "tr"), [locale]);
+  const effectiveLocale = useMemo(() => normalizeLocale(locale, "de"), [locale]);
 
   const {
     data: files,

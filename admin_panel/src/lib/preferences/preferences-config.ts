@@ -76,7 +76,7 @@ export const PREFERENCE_DEFAULTS: PreferenceValueMap = {
   navbar_style: "sticky",
   sidebar_variant: "inset",
   sidebar_collapsible: "icon",
-  admin_locale: "tr",
+  admin_locale: "de",
 };
 
 /**

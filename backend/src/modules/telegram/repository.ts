@@ -11,7 +11,7 @@ import type { SQL } from 'drizzle-orm';
 
 import { db } from '@/db/client';
 import { safeTrim, toBoolDefault } from '@/modules/_shared';
-import { siteSettings } from '@/modules/siteSettings/schema';
+import { siteSettings } from '@ensotek/shared-backend/modules/siteSettings/schema';
 import { telegramInboundMessages } from '@/modules/telegram/schema';
 import { getSiteSettingsMap } from './settings';
 import { decodeDateIdCursor, encodeDateIdCursor, DEFAULT_AUTOREPLY_TEMPLATE } from './helpers';

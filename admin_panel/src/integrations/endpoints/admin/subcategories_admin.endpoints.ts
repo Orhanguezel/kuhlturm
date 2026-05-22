@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/rtk/endpoints/admin/subcategories_admin.endpoints.ts
-// Ensotek – ADMIN SubCategories RTK endpoints
+// Kühlturm – ADMIN SubCategories RTK endpoints
 // Kategoriler ile aynı i18n + RTK pattern
 // =============================================================
 

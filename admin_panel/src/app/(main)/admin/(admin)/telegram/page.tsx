@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/telegram/page.tsx
-// Admin Telegram Page (Ensotek)
+// Admin Telegram Page (Kühlturm)
 // =============================================================
 
 import TelegramAdminPage from "./Telegram";

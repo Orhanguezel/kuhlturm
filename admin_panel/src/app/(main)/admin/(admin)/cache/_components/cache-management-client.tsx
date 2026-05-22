@@ -49,7 +49,7 @@ function buildFromCors(): FrontendEntry[] {
   });
 }
 
-const STORAGE_KEY = "ensotek_cache_frontends";
+const STORAGE_KEY = "kuhlturm_cache_frontends";
 
 function loadState(corsEntries: FrontendEntry[]): FrontendEntry[] {
   if (typeof window === "undefined") return corsEntries;

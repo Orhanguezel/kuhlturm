@@ -147,7 +147,7 @@ export default function AdminEmailTemplatesDetailClient({ id }: { id: string }) 
     variables: "",
     is_active: true,
     locale:
-      defaultLocaleFromDb || localeShortClientOr(typeof window !== "undefined" ? navigator.language : "tr", "tr") || "",
+      defaultLocaleFromDb || localeShortClientOr(typeof window !== "undefined" ? navigator.language : "de", "de") || "",
   });
 
   React.useEffect(() => {
@@ -167,7 +167,7 @@ export default function AdminEmailTemplatesDetailClient({ id }: { id: string }) 
     if (!isNew && existingItem) {
       const preferredLocale =
         defaultLocaleFromDb ||
-        localeShortClientOr(typeof window !== "undefined" ? navigator.language : "tr", "tr") ||
+        localeShortClientOr(typeof window !== "undefined" ? navigator.language : "de", "de") ||
         "";
       const initialTranslation = findTranslationByLocale(existingItem.translations, preferredLocale);
       const initialLocale = initialTranslation?.locale || preferredLocale;

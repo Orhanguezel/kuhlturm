@@ -3,7 +3,7 @@ import { AVAILABLE_LOCALES } from '@/i18n/locales';
 import { API_BASE_URL } from '@/i18n/locale-settings';
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ?? 'https://www.kuhlturm.com';
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ?? 'https://kuhlturm.com';
 
 const STATIC_ROUTES: Array<{
   path: string;

@@ -28,7 +28,7 @@ function charCount(text: string, limit: number) {
 export function GooglePreview({ title, url, description, titleFallback, descriptionFallback }: GooglePreviewProps) {
   const displayTitle = title || titleFallback || "Sayfa Başlığı";
   const displayDesc = description || descriptionFallback || "Sayfa açıklaması burada görünecek...";
-  const displayUrl = url || "https://ensotek.de";
+  const displayUrl = url || "https://kuhlturm.com";
 
   return (
     <div className="space-y-2">

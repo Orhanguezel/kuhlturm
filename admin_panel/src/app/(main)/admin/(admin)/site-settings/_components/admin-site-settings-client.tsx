@@ -123,7 +123,7 @@ export default function AdminSiteSettingsClient() {
   const t = useAdminTranslations(adminLocale || undefined);
 
   const initialLocale = React.useMemo(
-    () => pickInitialSiteSettingsLocale(localeRows as any, adminLocale || "tr"),
+    () => pickInitialSiteSettingsLocale(localeRows as any, adminLocale || "de"),
     [localeRows, adminLocale],
   );
 

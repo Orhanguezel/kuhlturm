@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/i18n/adminLocale.ts
-// Ensotek – Admin locale helpers (NO URL sync, NO prefix)
+// Kühlturm – Admin locale helpers (NO URL sync, NO prefix)
 // - Admin tarafında locale URL'e yazılmaz.
 // - API için güvenli locale seçer: adminLocale > db default > first option > ADMIN_DEFAULT_LOCALE.
 // =============================================================
@@ -11,9 +11,9 @@ import { localeShortClient, localeShortClientOr } from "./localeShortClient";
 
 /**
  * Tek merkezi admin fallback locale sabiti.
- * Tüm modüller bu değeri kullanmalı — hardcoded "de" veya "tr" YAZMAMALI.
+ * Tüm modüller bu değeri kullanmalı; hardcoded locale yazılmamalı.
  */
-export const ADMIN_DEFAULT_LOCALE = PREFERENCE_DEFAULTS.admin_locale; // "tr"
+export const ADMIN_DEFAULT_LOCALE = PREFERENCE_DEFAULTS.admin_locale; // "de"
 
 export function resolveAdminApiLocale(
   localeOptions?: Array<{ value: string } | { value: string; label?: string }> | null,

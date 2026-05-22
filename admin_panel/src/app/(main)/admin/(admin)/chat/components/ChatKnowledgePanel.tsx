@@ -1,7 +1,7 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/chat/components/ChatKnowledgePanel.tsx
 // AI Knowledge Base CRUD panel
-// Ensotek
+// Kühlturm
 // =============================================================
 
 "use client";
@@ -47,7 +47,7 @@ type FormState = {
 };
 
 const EMPTY_FORM: FormState = {
-  locale: "tr",
+  locale: "de",
   title: "",
   content: "",
   tags: "",
@@ -140,7 +140,7 @@ function KnowledgeFormDialog({
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="de">Deutsch</SelectItem>
-                  <SelectItem value="tr">Türkçe</SelectItem>
+                  <SelectItem value="de">Deutsch</SelectItem>
                   <SelectItem value="en">English</SelectItem>
                 </SelectContent>
               </Select>
@@ -276,7 +276,7 @@ export default function ChatKnowledgePanel() {
               <SelectContent>
                 <SelectItem value="all">{t("knowledge.allLocales")}</SelectItem>
                 <SelectItem value="de">Deutsch</SelectItem>
-                <SelectItem value="tr">Türkçe</SelectItem>
+                <SelectItem value="de">Deutsch</SelectItem>
                 <SelectItem value="en">English</SelectItem>
               </SelectContent>
             </Select>

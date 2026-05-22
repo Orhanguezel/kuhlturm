@@ -1,6 +1,6 @@
 // ===================================================================
 // FILE: src/integrations/endpoints/admin/chat_admin.endpoints.ts
-// Chat Admin RTK Query endpoints (Ensotek)
+// Chat Admin RTK Query endpoints (Kühlturm)
 // ===================================================================
 
 import type { FetchArgs } from "@reduxjs/toolkit/query";

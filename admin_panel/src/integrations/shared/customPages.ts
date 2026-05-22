@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/types/custom_pages.types.ts
-// Ensotek – Custom Pages (Sayfalar) RTK Tipleri (FINAL)
+// Kühlturm – Custom Pages (Sayfalar) RTK Tipleri (FINAL)
 // Backend: src/modules/customPages/*
 // - ✅ category_id / sub_category_id REMOVED (and related names/slugs)
 // =============================================================
@@ -31,7 +31,7 @@ export interface CustomPageListQueryParams {
 
   /** Liste locale override (örn. "de") */
   locale?: string;
-  /** Backend default_locale override (örn. "tr") */
+  /** Backend default_locale override (örn. "de") */
   default_locale?: string;
 }
 

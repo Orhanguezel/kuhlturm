@@ -1,8 +1,8 @@
 import { and, eq, like, or } from "drizzle-orm";
 import { db } from "@/db/client";
-import { products, productI18n } from "@/modules/products/schema";
+import { products, productI18n } from "@ensotek/shared-backend/modules/products/schema";
 import { services, servicesI18n } from "@/modules/services/schema";
-import { customPages, customPagesI18n } from "@/modules/customPages/schema";
+import { customPages, customPagesI18n } from "@ensotek/shared-backend/modules/customPages/schema";
 import { chat_ai_knowledge } from "@/modules/chat/schema";
 
 export type DashboardKnowledgeContext = {
@@ -100,7 +100,7 @@ function extractCustomPageText(content: unknown): string {
 
 export async function buildDashboardKnowledgeContext(
   userText: string,
-  locale = "tr",
+  locale = "de",
 ): Promise<DashboardKnowledgeContext> {
   const tokens = tokenize(userText);
   if (!tokens.length) return { text: "", sourcesCount: 0 };

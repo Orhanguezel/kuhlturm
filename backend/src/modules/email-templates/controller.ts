@@ -14,7 +14,7 @@ import {
   renderTextWithParams,
 } from "./utils";
 import { renderByKeySchema } from "./validation";
-import { siteSettings } from "@/modules/siteSettings/schema";
+import { siteSettings } from "@ensotek/shared-backend/modules/siteSettings/schema";
 
 type ListQuery = {
   locale?: string | null;

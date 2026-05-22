@@ -1,7 +1,7 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/telegram/components/TelegramAutoReplyPanel.tsx
 // AutoReply config (i18n, theme tokens)
-// Ensotek
+// Kühlturm
 // =============================================================
 
 "use client";
@@ -21,7 +21,7 @@ import { useGetTelegramAutoReplyQuery, useUpdateTelegramAutoReplyMutation } from
 import type { TelegramAutoReplyMode, TelegramAutoReplyUpdateBody } from "@/integrations/shared";
 
 const DEFAULT_TEMPLATE =
-  "Vielen Dank für Ihre Nachricht! Wir werden uns schnellstmöglich bei Ihnen melden.\n\nMesajınız için teşekkür ederiz. En kısa sürede size dönüş yapacağız.\n\n- Ensotek Team";
+  "Vielen Dank für Ihre Nachricht! Wir werden uns schnellstmöglich bei Ihnen melden.\n\nMesajınız için teşekkür ederiz. En kısa sürede size dönüş yapacağız.\n\n- Kühlturm Team";
 
 const toStr = (v: unknown): string => (typeof v === "string" ? v : v == null ? "" : String(v));
 

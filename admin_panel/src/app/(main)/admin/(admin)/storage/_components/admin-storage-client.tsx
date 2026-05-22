@@ -77,7 +77,7 @@ function fmtDate(val: string | null | undefined) {
   try {
     const d = new Date(val);
     if (Number.isNaN(d.getTime())) return String(val);
-    return d.toLocaleString("tr-TR", {
+    return d.toLocaleString("de-DE", {
       year: "numeric",
       month: "2-digit",
       day: "2-digit",

@@ -1,6 +1,6 @@
 // ===================================================================
 // FILE: src/integrations/endpoints/admin/telegram_admin.endpoints.ts
-// Telegram admin endpoints (Ensotek)
+// Telegram admin endpoints (Kühlturm)
 // ===================================================================
 
 import type { FetchArgs } from "@reduxjs/toolkit/query";

@@ -55,7 +55,7 @@ function normalizeMediaPath(url: string): string {
   if (!s) return '';
 
   // Rewrite own-domain absolute URLs to relative paths for local dev
-  if (isHttpUrl(s) && (s.includes('kuhlturm.com') || s.includes('ensotek.de'))) {
+  if (isHttpUrl(s) && (s.includes('kuhlturm.com') || s.includes('kuhlturm.com'))) {
     const [pathOnly, suffix = ''] = s.split(/(?=[?#])/);
     const cleaned = String(pathOnly).replace(/^https?:\/\/[^/]+/i, '');
     return normalizeMediaPath(cleaned + suffix);
@@ -86,7 +86,7 @@ export function resolveMediaUrl(url: string | null | undefined): string {
   if (!raw) return '';
 
   if (isHttpUrl(raw)) {
-    if (!raw.includes('kuhlturm.com') && !raw.includes('ensotek.de')) {
+    if (!raw.includes('kuhlturm.com') && !raw.includes('kuhlturm.com')) {
       return raw;
     }
   }

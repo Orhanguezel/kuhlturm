@@ -174,12 +174,12 @@ export function LayoutControls() {
 
             <div className="space-y-1">
               <Label className="font-medium text-xs">{t("admin.sidebar.preferences.language")}</Label>
-              <Select value={adminLocale || "tr"} onValueChange={onAdminLocaleChange}>
+              <Select value={adminLocale || "de"} onValueChange={onAdminLocaleChange}>
                 <SelectTrigger size="sm" className="w-full text-xs">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem className="text-xs" value="tr">Türkçe</SelectItem>
+                  <SelectItem className="text-xs" value="de">Deutsch</SelectItem>
                   <SelectItem className="text-xs" value="en">English</SelectItem>
                   <SelectItem className="text-xs" value="de">Deutsch</SelectItem>
                 </SelectContent>

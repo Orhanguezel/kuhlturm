@@ -57,7 +57,7 @@ export default function AdminCustomPagesClient() {
   const { localeOptions, defaultLocaleFromDb, loading: localesLoading, fetching: localesFetching } = useAdminLocales();
 
   const apiLocale = React.useMemo(() => {
-    return resolveAdminApiLocale(localeOptions as any, defaultLocaleFromDb, "tr");
+    return resolveAdminApiLocale(localeOptions as any, defaultLocaleFromDb, "de");
   }, [localeOptions, defaultLocaleFromDb]);
 
   // Read module_key from URL on mount and when URL changes
@@ -84,7 +84,7 @@ export default function AdminCustomPagesClient() {
 
     setFilters((prev) => {
       if (prev.locale) return prev;
-      return { ...prev, locale: localeShortClientOr(apiLocale, "tr") };
+      return { ...prev, locale: localeShortClientOr(apiLocale, "de") };
     });
   }, [localeOptions, apiLocale]);
 

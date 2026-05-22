@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/i18n/uiText.ts
-// Ensotek – UI text guards (shared)
+// Kühlturm – UI text guards (shared)
 // =============================================================
 
 export function isValidUiText(value: unknown, key: string): boolean {

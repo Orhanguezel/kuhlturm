@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------
 // FILE: modules/projects/admin.controller.ts
-// Ensotek endüstriyel proje modülü — admin CRUD
+// Kühlturm endüstriyel proje modülü — admin CRUD
 // ---------------------------------------------------------------------
 import type { RouteHandler } from 'fastify';
 import { randomUUID } from 'crypto';
@@ -116,7 +116,7 @@ export const createProjectAdmin: RouteHandler<{ Body: UpsertProjectBody }> = asy
           ? (b.featured_image_asset_id ?? null)
           : null,
 
-      // Ensotek industrial fields
+      // Kühlturm industrial fields
       category: typeof b.category !== 'undefined' ? (b.category ?? null) : null,
       product_type: typeof b.product_type !== 'undefined' ? (b.product_type ?? null) : null,
       location: typeof b.location !== 'undefined' ? (b.location ?? null) : null,
@@ -185,7 +185,7 @@ export const updateProjectAdmin: RouteHandler<{
       typeof b.display_order !== 'undefined' ||
       typeof b.featured_image !== 'undefined' ||
       typeof b.featured_image_asset_id !== 'undefined' ||
-      // Ensotek industrial fields
+      // Kühlturm industrial fields
       typeof b.category !== 'undefined' ||
       typeof b.product_type !== 'undefined' ||
       typeof b.location !== 'undefined' ||

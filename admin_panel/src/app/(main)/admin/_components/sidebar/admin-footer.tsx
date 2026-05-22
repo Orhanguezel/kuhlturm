@@ -9,7 +9,7 @@ export function AdminFooter() {
     <footer className="mt-auto border-t bg-background/50 px-6 py-4 backdrop-blur-sm">
       <div className="flex flex-col items-center justify-between gap-4 text-muted-foreground text-xs sm:flex-row">
         <div className="flex items-center gap-2">
-          <span className="font-semibold">{copy.app_name || "Ensotek"}</span>
+          <span className="font-semibold">{copy.app_name || "Kühlturm"}</span>
           <span className="text-border">|</span>
           <span className="font-mono">{copy.app_version || "v1.4.2"}</span>
         </div>

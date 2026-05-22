@@ -65,7 +65,7 @@ export default function LibraryDetailClient({ id }: Props) {
   const isNew = id === "new";
 
   const { localeOptions } = useAdminLocales();
-  const [activeLocale, setActiveLocale] = React.useState<string>(adminLocale || "tr");
+  const [activeLocale, setActiveLocale] = React.useState<string>(adminLocale || "de");
   const [activeTab, setActiveTab] = React.useState<"form" | "json">("form");
 
   // AI
@@ -155,7 +155,7 @@ export default function LibraryDetailClient({ id }: Props) {
   // AI handler
   const handleAIAction = async (action: AIAction) => {
     const targetLocales = (localesForSelect || []).map((l) => l.value).filter(Boolean);
-    if (!targetLocales.length) targetLocales.push(activeLocale || "tr");
+    if (!targetLocales.length) targetLocales.push(activeLocale || "de");
     const result = await aiAssist({
       title: formData.name,
       summary: formData.description,
@@ -601,7 +601,7 @@ function LibraryFormTabs({
           </div>
           <GooglePreview
             title={formData.meta_title || formData.name}
-            url={`https://ensotek.de/bibliothek/${formData.slug || "library-slug"}`}
+            url={`https://kuhlturm.com/bibliothek/${formData.slug || "library-slug"}`}
             description={formData.meta_description || formData.description?.replace(/<[^>]*>/g, "").slice(0, 155)}
             titleFallback={formData.name || "Library Basligi"}
           />

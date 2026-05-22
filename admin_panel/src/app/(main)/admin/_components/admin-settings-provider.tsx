@@ -103,7 +103,7 @@ export function AdminSettingsProvider({ children }: { children: React.ReactNode 
   configRef.current = config;
 
   // 2. Fetch Page Meta
-  const locale = adminLocale || config?.default_locale || "tr";
+  const locale = adminLocale || config?.default_locale || "de";
   const { data: pagesRow, isLoading: pagesLoading } = useGetSiteSettingAdminByKeyQuery({
     key: "ui_admin_pages",
     locale,
@@ -157,7 +157,7 @@ export function AdminSettingsProvider({ children }: { children: React.ReactNode 
     // Admin panel UI is always Turkish. Content locale (for API queries)
     // is separate and controlled by the locale switcher per module.
     if (!adminLocale) {
-      setAdminLocale("tr");
+      setAdminLocale("de");
     }
     if (config.theme) {
       if (config.theme.mode) setThemeMode(config.theme.mode as ThemeMode);

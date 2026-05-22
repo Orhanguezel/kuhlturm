@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/types/slider.types.ts
-// Ensotek – Slider tipleri + normalizer'lar
+// Kühlturm – Slider tipleri + normalizer'lar
 // Parent + i18n (slider + slider_i18n) backend ile uyumlu
 // =============================================================
 
@@ -261,7 +261,7 @@ export interface SliderSetImagePayload {
 export const normalizeSliderAdmin = (api: ApiSliderAdmin): SliderAdminDto => ({
   id: asStr(api.id),
   uuid: asStr(api.uuid),
-  locale: asStr(api.locale || "tr"),
+  locale: asStr(api.locale || "de"),
   name: asStr(api.name),
   slug: asStr(api.slug),
   description: api.description ?? null,
@@ -298,7 +298,7 @@ export const normalizeSliderPublic = (api: ApiSliderPublic): SliderPublicDto => 
   priority: api.priority,
   showOnMobile: api.showOnMobile,
   showOnDesktop: api.showOnDesktop,
-  locale: asStr(api.locale || "tr"),
+  locale: asStr(api.locale || "de"),
 });
 
 /* -------------------- Helper fonksiyonlar (endpoint'ler için) -------------------- */

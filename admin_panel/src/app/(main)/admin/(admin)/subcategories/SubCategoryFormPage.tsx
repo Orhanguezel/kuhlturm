@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/components/admin/subcategories/SubCategoryFormPage.tsx
-// Ensotek – Alt Kategori Form Sayfası (Create/Edit + i18n + JSON + Icon)
+// Kühlturm – Alt Kategori Form Sayfası (Create/Edit + i18n + JSON + Icon)
 // FIXES:
 // - Categories list is locale-dependent (query arg: locale) so it refetches on locale change
 // - Form init updates when initialData changes (not only first mount)
@@ -148,14 +148,14 @@ const SubCategoryFormPage: React.FC<SubCategoryFormPageProps> = ({
 
   // ✅ Form / queries için “effective locale”
   const effectiveLocale = useMemo(() => {
-    const base = coerceLocale(routerLocale, defaultLocaleFromDb) || defaultLocaleFromDb || firstLocaleValue || "tr";
+    const base = coerceLocale(routerLocale, defaultLocaleFromDb) || defaultLocaleFromDb || firstLocaleValue || "de";
 
-    return (base || "tr").toLowerCase();
+    return (base || "de").toLowerCase();
   }, [coerceLocale, routerLocale, defaultLocaleFromDb, firstLocaleValue]);
 
   /* -------------------- Categories (locale-dependent) -------------------- */
   // ✅ KRİTİK: locale arg ver -> dil değişince query arg değişsin -> refetch
-  const categoriesLocale = (formState?.locale || effectiveLocale || "tr").toLowerCase();
+  const categoriesLocale = (formState?.locale || effectiveLocale || "de").toLowerCase();
 
   const { data: categoryRows, isLoading: isCategoriesLoading } = useListCategoriesAdminQuery(
     {
@@ -366,7 +366,7 @@ const SubCategoryFormPage: React.FC<SubCategoryFormPageProps> = ({
 
     const payloadBase = {
       category_id: formState.category_id,
-      locale: (formState.locale || effectiveLocale || "tr").toLowerCase(),
+      locale: (formState.locale || effectiveLocale || "de").toLowerCase(),
       name: formState.name.trim(),
       slug: formState.slug.trim(),
       description: formState.description.trim() || undefined,

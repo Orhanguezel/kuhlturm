@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/components/admin/subcategories/SubCategoryFormJsonSection.tsx
-// Ensotek – Alt Kategori JSON Editör Bölümü
+// Kühlturm – Alt Kategori JSON Editör Bölümü
 // =============================================================
 
 import type React from "react";

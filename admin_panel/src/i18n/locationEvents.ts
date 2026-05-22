@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/i18n/locationEvents.ts
-// Ensotek – SPA navigation detector (no next/router)
+// Kühlturm – SPA navigation detector (no next/router)
 // =============================================================
 "use client";
 

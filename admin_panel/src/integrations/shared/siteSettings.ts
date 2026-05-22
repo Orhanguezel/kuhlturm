@@ -919,7 +919,7 @@ export function normalizeUiHomeSettingValue(value: unknown): UiHomeCopy {
       description: pick(
         home1,
         "description",
-        "Ensotek — Industrial cooling tower solutions. We help businesses with high-quality cooling systems and engineering services.",
+        "Kühlturm — Industrial cooling tower solutions. We help businesses with high-quality cooling systems and engineering services.",
         "home1_description",
       ),
       cta_primary: pick(home1, "cta_primary", "Download CV", "home1_cta_primary"),
@@ -946,7 +946,7 @@ export function normalizeUiHomeSettingValue(value: unknown): UiHomeCopy {
       description_html: pick(
         home2,
         "description_html",
-        '&lt;p&gt;<span class="text-dark">At</span> <span class="text-secondary-2">ensotek.de</span><span class="text-dark">, we provide industrial cooling tower solutions with</span> <span class="text-secondary-2">engineering excellence</span> and <span class="text-secondary-2">reliable service</span><span class="text-dark">.</span>&lt;/p&gt;',
+        '&lt;p&gt;<span class="text-dark">At</span> <span class="text-secondary-2">kuhlturm.com</span><span class="text-dark">, we provide industrial cooling tower solutions with</span> <span class="text-secondary-2">engineering excellence</span> and <span class="text-secondary-2">reliable service</span><span class="text-dark">.</span>&lt;/p&gt;',
         "home2_description_html",
       ),
       more_label: pick(home2, "more_label", "...and more", "home2_more_label"),
@@ -1076,8 +1076,8 @@ export function normalizeUiHome3SettingValue(value: unknown): UiHome3Copy {
       heading: pick(contact, "heading", "Contact me", "contact_heading"),
       form_title: pick(contact, "form_title", "Let's connect", "contact_form_title"),
       phone: pick(contact, "phone", "+49 000 000 00 00", "contact_phone"),
-      email: pick(contact, "email", "info@ensotek.de", "contact_email"),
-      skype: pick(contact, "skype", "Ensotek", "contact_skype"),
+      email: pick(contact, "email", "info@kuhlturm.com", "contact_email"),
+      skype: pick(contact, "skype", "Kühlturm", "contact_skype"),
       address: pick(contact, "address", "Berlin, Germany", "contact_address"),
       map_href: pick(contact, "map_href", "https://www.google.com/maps?q=Berlin", "contact_map_href"),
     },
@@ -1293,7 +1293,7 @@ export function normalizeUiCoporationSettingValue(value: unknown): UiCoporationC
   const avatar_alt = pick(contact, "avatar_alt", "Orhan Guzel", "contact_avatar_alt");
 
   const skype_label = pick(contact, "skype_label", "[skype]", "contact_skype_label");
-  const skype_value = pick(contact, "skype_value", "Ensotek", "contact_skype_value");
+  const skype_value = pick(contact, "skype_value", "Kühlturm", "contact_skype_value");
   const skype_href = pick(contact, "skype_href", "#", "contact_skype_href");
 
   const phone_label = pick(contact, "phone_label", "[phone]", "contact_phone_label");
@@ -1301,8 +1301,8 @@ export function normalizeUiCoporationSettingValue(value: unknown): UiCoporationC
   const phone_href = pick(contact, "phone_href", "tel:+490000000000", "contact_phone_href");
 
   const email_label = pick(contact, "email_label", "[email]", "contact_email_label");
-  const email_value = pick(contact, "email_value", "info@ensotek.de", "contact_email_value");
-  const email_href = pick(contact, "email_href", "mailto:info@ensotek.de", "contact_email_href");
+  const email_value = pick(contact, "email_value", "info@kuhlturm.com", "contact_email_value");
+  const email_href = pick(contact, "email_href", "mailto:info@kuhlturm.com", "contact_email_href");
 
   const journalBadge = pick(journal, "badge", "Git Journaling", "journal_badge");
   const journalItems = normalizeCoporationJournalItems(
@@ -1563,7 +1563,7 @@ export function normalizeDefaultLocalePublic(res: unknown): string {
 // Site Settings UI helpers (brand, locale options, tabs)
 // =============================================================
 
-export const SITE_SETTINGS_BRAND = "ensotek";
+export const SITE_SETTINGS_BRAND = "kuhlturm";
 export const SITE_SETTINGS_BRAND_PREFIX: string = "";
 
 export type SiteSettingsTab =
@@ -1611,7 +1611,7 @@ export function buildSiteSettingsLocalesOptions(rows: AppLocaleLike[]): SiteSett
 }
 
 export function pickInitialSiteSettingsLocale(rows: AppLocaleLike[], preferredLocale?: string): string {
-  if (!Array.isArray(rows) || rows.length === 0) return preferredLocale || "tr";
+  if (!Array.isArray(rows) || rows.length === 0) return preferredLocale || "de";
   // If a preferred locale exists among active rows, use it
   if (preferredLocale) {
     const pref = rows.find(
@@ -1623,7 +1623,7 @@ export function pickInitialSiteSettingsLocale(rows: AppLocaleLike[], preferredLo
   if (def?.code) return def.code.trim();
   const active = rows.find((r) => r.is_active !== false && r.code);
   if (active?.code) return active.code.trim();
-  return rows[0]?.code?.trim() || "tr";
+  return rows[0]?.code?.trim() || "de";
 }
 
 // ── Detail page helpers ──
@@ -1691,7 +1691,7 @@ export function pickInitialSiteSettingsDetailLocale(
     if (localeFromQuery?.trim()) return localeFromQuery.trim();
     if (defaultLocaleFromDb?.trim()) return defaultLocaleFromDb.trim();
     const first = localeOptions?.find((o) => o.value !== "*");
-    return first?.value || "tr";
+    return first?.value || "de";
   }
   // Legacy array-style arg
   if (paramLocale?.trim()) return paramLocale.trim();

@@ -27,7 +27,7 @@ api.interceptors.request.use((config: InternalAxiosRequestConfig) => {
 
   // Locale headers for backend locale resolution
   if (typeof window !== 'undefined') {
-    const locale = document.documentElement.lang || 'tr';
+    const locale = document.documentElement.lang || 'de';
     config.headers['x-locale'] = locale;
     config.headers['accept-language'] = locale;
   }

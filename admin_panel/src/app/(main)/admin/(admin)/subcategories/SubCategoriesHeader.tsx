@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/components/admin/subcategories/SubCategoriesHeader.tsx
-// Ensotek – SubCategory Header + Filtreler
+// Kühlturm – SubCategory Header + Filtreler
 // =============================================================
 
 import React from "react";

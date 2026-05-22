@@ -55,7 +55,7 @@ export function chatController(app: any) {
       const thread = await svc.getOrCreateThread({
         context_type: body.context_type,
         context_id: body.context_id,
-        preferred_locale: String((req as any).locale || "tr"),
+        preferred_locale: String((req as any).locale || "de"),
         created_by: user,
       });
       return { thread };

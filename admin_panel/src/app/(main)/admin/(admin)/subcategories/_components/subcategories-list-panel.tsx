@@ -1,7 +1,7 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/subcategories/_components/subcategories-list-panel.tsx
 // Subcategories List Panel — Shadcn/UI + RTK Query
-// Ensotek Admin Panel Standartı
+// Kühlturm Admin Panel Standartı
 // =============================================================
 
 "use client";
@@ -51,7 +51,7 @@ export default function SubcategoriesListPanel() {
     if (!localeOptions?.length) return;
     setLocale((prev) => {
       if (prev) return prev;
-      return String((defaultLocaleFromDb as string) || localeOptions[0]?.value || "tr");
+      return String((defaultLocaleFromDb as string) || localeOptions[0]?.value || "de");
     });
   }, [localeOptions, defaultLocaleFromDb]);
 
@@ -79,7 +79,7 @@ export default function SubcategoriesListPanel() {
   );
 
   // Categories for filter dropdown
-  const { data: categories = [] } = useListCategoriesAdminQuery({ locale: locale || "tr" }, { skip: !locale });
+  const { data: categories = [] } = useListCategoriesAdminQuery({ locale: locale || "de" }, { skip: !locale });
 
   // Kategori ID → isim haritası
   const categoryNameMap = React.useMemo<Record<string, string>>(() => {

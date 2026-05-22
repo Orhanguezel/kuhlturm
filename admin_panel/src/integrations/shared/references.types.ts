@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/types/references.types.ts
-// Ensotek – References (Referanslar) tipleri
+// Kühlturm – References (Referanslar) tipleri
 // Backend: src/modules/references/*
 // =============================================================
 

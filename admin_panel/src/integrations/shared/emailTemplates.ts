@@ -188,7 +188,7 @@ export function normalizeEmailTemplateAdminList(res: unknown): EmailTemplateAdmi
     id: String(item.id ?? ""),
     template_key: String(item.template_key ?? ""),
     is_active: Boolean(item.is_active),
-    locale: String(item.locale ?? "tr"),
+    locale: String(item.locale ?? "de"),
     template_name: String(item.template_name ?? ""),
     subject: String(item.subject ?? ""),
     content: item.content ?? null,
@@ -214,7 +214,7 @@ export function normalizeEmailTemplateAdminDetail(res: unknown): EmailTemplateAd
     translations: Array.isArray(item.translations)
       ? item.translations.map((t: any) => ({
           id: String(t.id ?? ""),
-          locale: String(t.locale ?? "tr"),
+          locale: String(t.locale ?? "de"),
           template_name: String(t.template_name ?? ""),
           subject: String(t.subject ?? ""),
           content: String(t.content ?? ""),

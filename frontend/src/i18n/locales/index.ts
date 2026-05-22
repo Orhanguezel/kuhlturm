@@ -1,9 +1,11 @@
 import type { AbstractIntlMessages } from 'next-intl';
 import de from '../../../public/locales/de.json';
+import en from '../../../public/locales/en.json';
 
 // Add new locales here when activated from admin panel
 export const LOCALE_MESSAGES: Record<string, AbstractIntlMessages> = {
   de,
+  en,
 };
 
 export const AVAILABLE_LOCALES = Object.keys(LOCALE_MESSAGES);

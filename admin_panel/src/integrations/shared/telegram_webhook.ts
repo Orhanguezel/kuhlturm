@@ -1,6 +1,6 @@
 // ===================================================================
 // FILE: src/integrations/shared/telegram_webhook.ts
-// Telegram webhook types (Ensotek)
+// Telegram webhook types (Kühlturm)
 // ===================================================================
 
 export type TelegramWebhookResponse = {

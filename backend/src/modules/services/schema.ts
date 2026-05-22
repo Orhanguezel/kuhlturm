@@ -15,7 +15,7 @@ import {
   foreignKey,
 } from "drizzle-orm/mysql-core";
 import { sql } from "drizzle-orm";
-import { categories } from "@/modules/categories/schema";
+import { categories } from "@ensotek/shared-backend/modules/categories/schema";
 import { subCategories } from "@/modules/subcategories/schema";
 import { storageAssets } from "@/modules/storage/schema";
 

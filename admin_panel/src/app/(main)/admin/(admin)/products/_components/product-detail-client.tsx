@@ -57,7 +57,7 @@ export default function ProductDetailClient({ id, itemType }: Props) {
   const backUrl = itemType === "sparepart" ? "/admin/products?type=sparepart" : "/admin/products";
 
   const { localeOptions } = useAdminLocales();
-  const [activeLocale, setActiveLocale] = React.useState<string>(adminLocale || "tr");
+  const [activeLocale, setActiveLocale] = React.useState<string>(adminLocale || "de");
   const [activeTab, setActiveTab] = React.useState<"form" | "specs" | "faqs" | "reviews" | "json">("form");
 
   // AI
@@ -152,7 +152,7 @@ export default function ProductDetailClient({ id, itemType }: Props) {
   // AI handler — supports all 4 actions
   const handleAIAction = async (action: AIAction) => {
     const targetLocales = (localesForSelect || []).map((l) => l.value).filter(Boolean);
-    if (!targetLocales.length) targetLocales.push(activeLocale || "tr");
+    if (!targetLocales.length) targetLocales.push(activeLocale || "de");
     const result = await aiAssist({
       title: formData.title,
       summary: formData.description,
@@ -650,7 +650,7 @@ function ProductFormTabs({
           </div>
           <GooglePreview
             title={formData.meta_title || formData.title}
-            url={`https://ensotek.de/produkte/${formData.slug || "urun-slug"}`}
+            url={`https://kuhlturm.com/produkte/${formData.slug || "urun-slug"}`}
             description={formData.meta_description || formData.description?.replace(/<[^>]*>/g, "").slice(0, 155)}
             titleFallback={formData.title || "Urun Basligi"}
           />

@@ -19,7 +19,7 @@ import { storageAssets } from '@/modules/storage/schema';
 import { publicUrlOf } from '@/modules/storage/_util';
 
 // ✅ Dinamik locale listesi / default locale DB’den
-import { getAppLocales, getDefaultLocale } from '@/modules/siteSettings/service';
+import { getAppLocales, getDefaultLocale } from '@ensotek/shared-backend/modules/siteSettings/service';
 
 /* ----------------------- types ----------------------- */
 

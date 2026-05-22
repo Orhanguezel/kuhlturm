@@ -62,7 +62,7 @@ export default function AdminMenuItemDetailClient({ id }: { id: string }) {
   );
 
   const apiLocale = React.useMemo(() => {
-    return resolveAdminApiLocale(localeOptions as any, defaultLocaleFromDb, "tr");
+    return resolveAdminApiLocale(localeOptions as any, defaultLocaleFromDb, "de");
   }, [localeOptions, defaultLocaleFromDb]);
 
   // ✅ FIX: Extract items from response
@@ -92,7 +92,7 @@ export default function AdminMenuItemDetailClient({ id }: { id: string }) {
     section_id: "",
     is_active: true,
     display_order: 0,
-    locale: apiLocale || "tr",
+    locale: apiLocale || "de",
   });
 
   // Load existing data
@@ -109,7 +109,7 @@ export default function AdminMenuItemDetailClient({ id }: { id: string }) {
         section_id: item.section_id || "",
         is_active: item.is_active,
         display_order: item.display_order || 0,
-        locale: item.locale || apiLocale || "tr",
+        locale: item.locale || apiLocale || "de",
       });
     }
   }, [isNew, item, apiLocale]);
@@ -466,11 +466,11 @@ export default function AdminMenuItemDetailClient({ id }: { id: string }) {
               </div>
               <div>
                 <p className="font-medium text-muted-foreground text-sm">{t("form.metaCreatedAt")}</p>
-                <p className="text-sm">{item.created_at ? new Date(item.created_at).toLocaleString("tr-TR") : "-"}</p>
+                <p className="text-sm">{item.created_at ? new Date(item.created_at).toLocaleString("de-DE") : "-"}</p>
               </div>
               <div>
                 <p className="font-medium text-muted-foreground text-sm">{t("form.metaUpdatedAt")}</p>
-                <p className="text-sm">{item.updated_at ? new Date(item.updated_at).toLocaleString("tr-TR") : "-"}</p>
+                <p className="text-sm">{item.updated_at ? new Date(item.updated_at).toLocaleString("de-DE") : "-"}</p>
               </div>
               <div>
                 <p className="font-medium text-muted-foreground text-sm">{t("form.metaLocale")}</p>

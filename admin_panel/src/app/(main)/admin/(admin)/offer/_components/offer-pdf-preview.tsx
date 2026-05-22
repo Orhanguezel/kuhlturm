@@ -51,7 +51,7 @@ function getFileBase(): string {
       .replace(/\/+$/, "");
   }
 
-  return "https://www.ensotek.de";
+  return "https://kuhlturm.com";
 }
 
 function normalizePdfPath(pdfUrl: string): string {

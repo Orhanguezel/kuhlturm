@@ -1,11 +1,11 @@
 
-# CLAUDE.md - Ensotek Admin Panel
+# CLAUDE.md - Kühlturm Admin Panel
 
-Bu dosya, Claude Code için Ensotek Admin Panel projesinde çalışırken izlenmesi gereken kurallar ve standartları içerir.
+Bu dosya, Claude Code için Kühlturm Admin Panel projesinde çalışırken izlenmesi gereken kurallar ve standartları içerir.
 
 ## 📋 Proje Genel Bakış
 
-**Ensotek Admin Panel** - Next.js 16 tabanlı, dinamik tema desteği olan modern admin yönetim paneli.
+**Kühlturm Admin Panel** - Next.js 16 tabanlı, dinamik tema desteği olan modern admin yönetim paneli.
 
 - **Framework:** Next.js 16.1.1 (App Router)
 - **UI Framework:** React 19.2.3
@@ -14,7 +14,7 @@ Bu dosya, Claude Code için Ensotek Admin Panel projesinde çalışırken izlenm
 - **State Management:** Redux Toolkit 2.11.2 + RTK Query
 - **Form Yönetimi:** React Hook Form + Zod validation
 - **İkonlar:** Lucide React
-- **Dil Desteği:** i18n (tr, en, de)
+- **Dil Desteği:** i18n (de, en)
 - **Linter:** Biome 2.3.8
 - **Runtime:** Node.js / Bun
 
@@ -67,26 +67,26 @@ admin_panel/
 
 ### 2. CSS Değişken Sistemi (Design Tokens)
 
-#### Ensotek Marka Renkleri
+#### Kühlturm Marka Renkleri
 
 ```css
 :root {
   /* Logo Primary Colors */
-  --logo-coral-light: #F4BDB3;      /* Highlights, light bg text */
-  --logo-coral: #E8A598;            /* Main brand color */
-  --logo-coral-medium: #D88D7E;     /* Default logo on light */
-  --logo-coral-dark: #C77665;       /* Logo on very light bg */
-  --logo-coral-darkest: #A6604F;    /* Text, details */
+  --logo-coral-light: #CFE8FF;      /* Highlights, light bg text */
+  --logo-coral: #1F6FEB;            /* Main brand color */
+  --logo-coral-medium: #2F81F7;     /* Default logo on light */
+  --logo-coral-dark: #1158C7;       /* Logo on very light bg */
+  --logo-coral-darkest: #0B356D;    /* Text, details */
 
   /* Background Colors for Logo */
   --logo-bg-light: #FDFCFB;         /* Light mode primary */
   --logo-bg-white: #FFFFFF;         /* Pure white */
-  --logo-bg-dark: #1A1512;          /* Dark mode */
-  --logo-bg-black: #0A0806;         /* Pure black */
+  --logo-bg-dark: #0F172A;          /* Dark mode */
+  --logo-bg-black: #020617;         /* Pure black */
 
   /* Logo Accents */
-  --logo-gold: #E8C57A;             /* Accent touch */
-  --logo-shadow: rgba(232, 165, 152, 0.15);  /* Soft glow */
+  --logo-gold: #38BDF8;             /* Accent touch */
+  --logo-shadow: rgba(31, 111, 235, 0.15);  /* Soft glow */
 }
 ```
 
@@ -97,7 +97,7 @@ admin_panel/
 :root {
   --background: oklch(1 0 0);                    /* Beyaz */
   --foreground: oklch(0.141 0.005 285.823);      /* Koyu gri */
-  --primary: var(--logo-coral);                  /* Ensotek Coral */
+  --primary: var(--logo-coral);                  /* Kühlturm Blue */
   --primary-foreground: oklch(0.985 0 0);        /* Açık metin */
   --muted: oklch(0.967 0.001 286.375);           /* Soluk arka plan */
   --border: oklch(0.92 0.004 286.32);            /* Kenarlık */
@@ -321,7 +321,6 @@ Harici projeden komponent alırken:
 
 ```
 src/locale/
-├── tr.json    # Türkçe
 ├── en.json    # İngilizce
 └── de.json    # Almanca
 ```
@@ -719,7 +718,7 @@ npm run generate:presets  # Tema preset dosyalarını güncelle
 ### 3. Dil Desteği
 
 - ✅ **useAdminT** hook kullan
-- ✅ **Tüm dillere ekle** (tr, en, de)
+- ✅ **Tüm dillere ekle** (de, en)
 - ✅ **Nested key yapısı** (`admin.moduleName.section.key`)
 - ✅ **Sidebar için `admin.dashboard.items.modulKey`** ekle
 - ❌ **Hardcoded metin** yazma
@@ -1057,9 +1056,9 @@ src/app/(main)/admin/(admin)/chat/
 ## 🎯 Özet
 
 1. **Stil sistemi dinamik** - CSS değişkenleri ve tema presetleri
-2. **Ensotek marka renkleri** - `--logo-coral` serisi kullan
+2. **Kühlturm marka renkleri** - `--logo-coral` serisi kullan
 3. **Shadcn/UI komponentleri** - Radix UI + CVA
-4. **i18n zorunlu** - tr, en, de
+4. **i18n zorunlu** - de, en
 5. **RTK Query** - API için
 6. **Redux Toolkit** - State için
 7. **TypeScript** - Tip güvenliği

@@ -55,7 +55,7 @@ export default function Layout({ children }: Readonly<{ children: ReactNode }>) 
                 <div className="flex items-center gap-1 lg:gap-2">
                   <SidebarTrigger className="-ml-1" />
                   <Separator orientation="vertical" className="mx-2 data-[orientation=vertical]:h-4" />
-                  <h2 className="hidden font-semibold text-sm tracking-tight sm:block">Ensotek Admin</h2>
+                  <h2 className="hidden font-semibold text-sm tracking-tight sm:block">Kühlturm Admin</h2>
                 </div>
 
                 <div className="flex items-center gap-2">

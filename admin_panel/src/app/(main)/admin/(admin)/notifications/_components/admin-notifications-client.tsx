@@ -52,7 +52,7 @@ function getErrMsg(e: unknown, t: (k: string) => string): string {
 }
 
 const localeMapping: Record<string, string> = {
-  tr: "tr-TR",
+  tr: "de-DE",
   en: "en-US",
   de: "de-DE",
 };
@@ -62,7 +62,7 @@ function fmtDate(val: string | null | undefined, localeStr: string) {
   try {
     const d = new Date(val);
     if (Number.isNaN(d.getTime())) return String(val);
-    const loc = localeMapping[localeStr] || "tr-TR";
+    const loc = localeMapping[localeStr] || "de-DE";
     return d.toLocaleString(loc, {
       year: "numeric",
       month: "2-digit",

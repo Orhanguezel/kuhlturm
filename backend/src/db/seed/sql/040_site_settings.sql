@@ -1,8 +1,8 @@
 -- =============================================================
--- 040_site_settings.sql (Ensotek) – MULTI-LOCALE (Dynamic) [FIXED]
+-- 040_site_settings.sql (Kühlturm) – MULTI-LOCALE (Dynamic) [FIXED]
 --  - app_locales + default_locale => locale='*'
---  - localized settings => locale in ('tr','en','de')
---  - cookie_consent => LOCALIZED (tr/en/de)  ✅ (requested)
+--  - localized settings => locale in ('de','en')
+--  - cookie_consent => LOCALIZED (de/en)
 -- =============================================================
 
 SET NAMES utf8mb4;
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `site_settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- =============================================================
--- GLOBAL: app_locales (locale='*')  ✅ FIX: tr/en/de, uniq
+-- GLOBAL: app_locales (locale='*')  ✅ FIX: de/en, uniq
 -- =============================================================
 INSERT INTO `site_settings` (`id`, `key`, `locale`, `value`, `created_at`, `updated_at`)
 VALUES
@@ -39,9 +39,8 @@ VALUES
   '*',
   CAST(
     JSON_ARRAY(
-      JSON_OBJECT('code','tr','label','Türkçe','is_default', FALSE, 'is_active', TRUE),
-      JSON_OBJECT('code','en','label','English','is_default', FALSE, 'is_active', TRUE),
-      JSON_OBJECT('code','de','label','Deutsch','is_default', TRUE,  'is_active', TRUE)
+      JSON_OBJECT('code','de','label','Deutsch','is_default', TRUE,  'is_active', TRUE),
+      JSON_OBJECT('code','en','label','English','is_default', FALSE, 'is_active', TRUE)
     ) AS CHAR CHARACTER SET utf8mb4
   ),
   NOW(3),

@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/db/fullDb/snapshots-table.tsx
-// Ensotek – Admin DB Snapshot Tablosu
+// Kühlturm – Admin DB Snapshot Tablosu
 // =============================================================
 
 "use client";
@@ -31,7 +31,7 @@ export type SnapshotsTableProps = {
 
 const safeText = (v: unknown) => (v === null || v === undefined ? "" : String(v));
 
-function formatDate(value: string | null | undefined, locale = "tr-TR"): string {
+function formatDate(value: string | null | undefined, locale = "de-DE"): string {
   if (!value) return "-";
   try {
     const d = new Date(value);

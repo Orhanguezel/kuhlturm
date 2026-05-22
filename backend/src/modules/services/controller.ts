@@ -1,6 +1,6 @@
 // src/modules/services/controller.ts
 // =============================================================
-// Ensotek – Public Services Controller (FINAL - core/i18n aware)
+// Kühlturm – Public Services Controller (FINAL - core/i18n aware)
 // =============================================================
 
 import type { RouteHandler } from 'fastify';

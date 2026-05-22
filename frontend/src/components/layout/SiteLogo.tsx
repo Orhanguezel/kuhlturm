@@ -12,7 +12,7 @@ interface Props {
   dark?: boolean;
 }
 
-export function SiteLogo({ src, alt = 'Ensotek', className, height = 32, dark = false }: Props) {
+export function SiteLogo({ src, alt = 'Kühlturm', className, height = 32, dark = false }: Props) {
   if (src) {
     return (
       <Image

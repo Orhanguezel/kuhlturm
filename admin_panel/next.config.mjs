@@ -7,7 +7,7 @@ const nextConfig = {
 
   // Workspace root — bun hoisting nedeniyle next paketi üst dizinde çözümlenir
   turbopack: {
-    root: path.resolve(import.meta.dirname, '..'),
+    root: path.resolve(import.meta.dirname, '../..'),
   },
 
   // ✅ Image optimization config
@@ -15,10 +15,9 @@ const nextConfig = {
     remotePatterns: [
       { protocol: 'https', hostname: 'res.cloudinary.com', pathname: '/**' },
       { protocol: 'https', hostname: 'images.unsplash.com', pathname: '/**' },
-      { protocol: 'https', hostname: 'www.ensotek.de', pathname: '/**' },
-      { protocol: 'https', hostname: 'ensotek.de', pathname: '/**' },
-      { protocol: 'https', hostname: 'cdn.ensotek.de', pathname: '/**' },
-      { protocol: 'http', hostname: 'localhost', port: '8086', pathname: '/**' },
+      { protocol: 'https', hostname: 'kuhlturm.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'cdn.kuhlturm.com', pathname: '/**' },
+      { protocol: 'http', hostname: 'localhost', port: '8089', pathname: '/**' },
       { protocol: 'https', hostname: '**.vercel.app', pathname: '/**' },
     ],
     formats: ['image/avif', 'image/webp'],
@@ -40,18 +39,18 @@ const nextConfig = {
     const apiBase = (
       process.env.PANEL_API_URL ||
       process.env.NEXT_PUBLIC_PANEL_API_URL ||
-      'http://localhost:8086'
+      'http://localhost:8089'
     ).replace(/\/+$/, '');
 
     const csp = [
       "default-src 'self'",
       "script-src 'self' 'unsafe-eval' 'unsafe-inline'",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-      "img-src 'self' blob: data: https://res.cloudinary.com https://images.unsplash.com https://www.ensotek.de https://ensotek.de https://cdn.ensotek.de",
-      `connect-src 'self' ${apiBase} https: http://127.0.0.1:8086 http://localhost:8086`.trim(),
+      "img-src 'self' blob: data: https://res.cloudinary.com https://images.unsplash.com https://kuhlturm.com https://cdn.kuhlturm.com",
+      `connect-src 'self' ${apiBase} https: http://127.0.0.1:8089 http://localhost:8089`.trim(),
       "font-src 'self' https://fonts.gstatic.com data:",
       "object-src 'none'",
-      `frame-src 'self' ${apiBase} https://www.ensotek.de https://ensotek.de`.trim(),
+      `frame-src 'self' ${apiBase} https://kuhlturm.com`.trim(),
       "base-uri 'self'",
       "form-action 'self'",
       "frame-ancestors 'none'",
@@ -67,7 +66,7 @@ const nextConfig = {
 
   async rewrites() {
     const origin =
-      process.env.PANEL_API_URL || process.env.NEXT_PUBLIC_PANEL_API_URL || 'http://localhost:8086';
+      process.env.PANEL_API_URL || process.env.NEXT_PUBLIC_PANEL_API_URL || 'http://localhost:8089';
 
     const base = String(origin).replace(/\/+$/, '');
 

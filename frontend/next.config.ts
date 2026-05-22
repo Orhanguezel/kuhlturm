@@ -16,17 +16,14 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'res.cloudinary.com' },
       { protocol: 'https', hostname: 'kuhlturm.com' },
       { protocol: 'https', hostname: 'www.kuhlturm.com' },
-      { protocol: 'https', hostname: 'ensotek.de' },
-      { protocol: 'https', hostname: 'www.ensotek.de' },
-      { protocol: 'https', hostname: 'cdn.ensotek.de' },
       { protocol: 'https', hostname: 'images.unsplash.com' },
       ...(process.env.NODE_ENV === 'development'
         ? [
             { protocol: 'http' as const, hostname: 'localhost', port: '' },
-            { protocol: 'http' as const, hostname: 'localhost', port: '8086' },
+            { protocol: 'http' as const, hostname: 'localhost', port: '8089' },
             { protocol: 'http' as const, hostname: 'localhost', port: '3010' },
             { protocol: 'http' as const, hostname: '127.0.0.1', port: '' },
-            { protocol: 'http' as const, hostname: '127.0.0.1', port: '8086' },
+            { protocol: 'http' as const, hostname: '127.0.0.1', port: '8089' },
           ]
         : []),
     ],

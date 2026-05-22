@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/components/admin/subcategories/SubCategoryFormImageColumn.tsx
-// Ensotek – Alt Kategori Görsel/Icon Kolonu
+// Kühlturm – Alt Kategori Görsel/Icon Kolonu
 // - FIX: Upload sonrası anlık preview render (local state sync + key remount)
 // =============================================================
 

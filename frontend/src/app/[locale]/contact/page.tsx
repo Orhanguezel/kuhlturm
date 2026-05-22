@@ -270,7 +270,7 @@ export default async function ContactPage({ params }: Props) {
                 </div>
                 <iframe
                   src={map1Url}
-                  title={`${info.address_label || 'Office'} - ${info.company_name || 'Ensotek'}`}
+                  title={`${info.address_label || 'Office'} - ${info.company_name || 'Kühlturm'}`}
                   className="w-full border-0"
                   style={{ height: 400 }}
                   loading="lazy"
@@ -286,7 +286,7 @@ export default async function ContactPage({ params }: Props) {
                 </div>
                 <iframe
                   src={map2Url}
-                  title={`${info.address_2_label || 'Factory'} - ${info.company_name || 'Ensotek'}`}
+                  title={`${info.address_2_label || 'Factory'} - ${info.company_name || 'Kühlturm'}`}
                   className="w-full border-0"
                   style={{ height: 400 }}
                   loading="lazy"

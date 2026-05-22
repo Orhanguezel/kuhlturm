@@ -5,7 +5,7 @@
 import { z } from "zod";
 import { LOCALES } from "@/core/i18n";
 
-// Bool-like pattern (Ensotek)
+// Bool-like pattern (Kühlturm)
 export const boolLike = z.union([
   z.boolean(),
   z.literal(0),

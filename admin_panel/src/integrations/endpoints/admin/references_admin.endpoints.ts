@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/rtk/endpoints/admin/references_admin.endpoints.ts
-// Ensotek – References (admin API) – LOCALE AWARE (FINAL)
+// Kühlturm – References (admin API) – LOCALE AWARE (FINAL)
 // =============================================================
 
 import { baseApi } from "@/integrations/baseApi";

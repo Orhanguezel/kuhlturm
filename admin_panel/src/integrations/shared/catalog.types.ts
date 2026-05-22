@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/types/catalog.types.ts
-// Ensotek – Catalog Request Types (SINGLE SOURCE OF TRUTH)
+// Kühlturm – Catalog Request Types (SINGLE SOURCE OF TRUTH)
 // =============================================================
 
 export const CATALOG_REQUEST_STATUSES = ["new", "sent", "failed", "archived"] as const;

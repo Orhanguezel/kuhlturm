@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/components/admin/subcategories/SubCategoryFormFields.tsx
-// Ensotek – Alt Kategori Form Alanları
+// Kühlturm – Alt Kategori Form Alanları
 // =============================================================
 
 import type React from "react";

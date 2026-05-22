@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/catalog/service.ts
-// Ensotek – Catalog Request Module Service
+// Kühlturm – Catalog Request Module Service
 //   - customer mail: catalog_sent_customer (PDF attachment)
 //   - admin mail: catalog_request_received_admin
 //   - admin notification: catalog_request_created
@@ -20,9 +20,9 @@ import { randomUUID } from "crypto";
 import { eq } from "drizzle-orm";
 
 import { db } from "@/db/client";
-import { siteSettings } from "@/modules/siteSettings/schema";
-import { notifications, type NotificationType } from "@/modules/notifications/schema";
-import { userRoles } from "@/modules/userRoles/schema"; // ✅ role bazlı admin bulma
+import { siteSettings } from "@ensotek/shared-backend/modules/siteSettings/schema";
+import { notifications, type NotificationType } from "@ensotek/shared-backend/modules/notifications/schema";
+import { userRoles } from "@ensotek/shared-backend/modules/userRoles/schema"; // ✅ role bazlı admin bulma
 import { renderEmailTemplateByKey } from "@/modules/email-templates/service";
 import { sendMail } from "@/modules/mail/service";
 import { telegramNotify } from "@/modules/telegram/telegram.notifier";
@@ -123,7 +123,7 @@ async function getCatalogFilename(): Promise<string> {
 async function getSiteTitle(): Promise<string> {
     const raw = await getSiteSettingValue("site_title");
     if (typeof raw === "string" && raw.trim()) return raw.trim();
-    return "Ensotek";
+    return "Kühlturm";
 }
 
 /* -------------------------------------------------------------

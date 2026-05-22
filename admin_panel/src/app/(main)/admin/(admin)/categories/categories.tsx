@@ -1,7 +1,7 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/categories/Categories.tsx
 // Admin Categories — List + Create/Edit
-// Ensotek
+// Kühlturm
 // =============================================================
 
 "use client";

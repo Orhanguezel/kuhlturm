@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/catalog/schema.ts
-// Ensotek – Catalog Request Module Schema (Drizzle ORM)
+// Kühlturm – Catalog Request Module Schema (Drizzle ORM)
 // =============================================================
 
 import {

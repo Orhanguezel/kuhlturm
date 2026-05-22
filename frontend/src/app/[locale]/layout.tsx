@@ -42,7 +42,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ?? 'https://www.kuhlturm.com';
+    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ?? 'https://kuhlturm.com';
 
   const [seoRow, faviconRow] = await Promise.all([
     fetchSetting('seo', locale, { revalidate: 300 }),

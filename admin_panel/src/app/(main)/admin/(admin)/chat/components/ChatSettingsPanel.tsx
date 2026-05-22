@@ -1,7 +1,7 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/chat/components/ChatSettingsPanel.tsx
 // Chat & AI Support Settings Panel
-// Ensotek
+// Kühlturm
 // =============================================================
 
 "use client";
@@ -419,17 +419,7 @@ export default function ChatSettingsPanel() {
               rows={2}
               value={model.chat_ai_welcome_message_de}
               onChange={(e) => setStr("chat_ai_welcome_message_de", e.target.value)}
-              placeholder="Willkommen bei Ensotek! Wie kann ich Ihnen helfen?"
-            />
-          </div>
-
-          <div className="space-y-1">
-            <Label>Türkçe (TR)</Label>
-            <Textarea
-              rows={2}
-              value={model.chat_ai_welcome_message_tr}
-              onChange={(e) => setStr("chat_ai_welcome_message_tr", e.target.value)}
-              placeholder="Ensotek'e hoş geldiniz! Size nasıl yardımcı olabilirim?"
+              placeholder="Willkommen bei Kühlturm! Wie kann ich Ihnen helfen?"
             />
           </div>
 
@@ -439,7 +429,7 @@ export default function ChatSettingsPanel() {
               rows={2}
               value={model.chat_ai_welcome_message_en}
               onChange={(e) => setStr("chat_ai_welcome_message_en", e.target.value)}
-              placeholder="Welcome to Ensotek! How can I help you?"
+              placeholder="Welcome to Kühlturm! How can I help you?"
             />
           </div>
         </CardContent>

@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/rtk/endpoints/admin/categories_admin.endpoints.ts
-// Ensotek – Admin Kategori RTK Endpoints
+// Kühlturm – Admin Kategori RTK Endpoints
 // Base URL: /api/admin (baseApi üzerinden)
 // =============================================================
 

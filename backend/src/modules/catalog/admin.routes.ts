@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/catalog/admin.routes.ts
-// Ensotek – Catalog Request Admin Routes
+// Kühlturm – Catalog Request Admin Routes
 //   - Auth + Admin guard
 // =============================================================
 

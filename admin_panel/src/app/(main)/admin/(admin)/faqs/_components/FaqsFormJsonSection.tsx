@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/components/admin/faqs/FaqsFormJsonSection.tsx
-// Ensotek – FAQ Form – JSON mod alanı (theme-safe, no shadcn/bootstrap)
+// Kühlturm – FAQ Form – JSON mod alanı (theme-safe, no shadcn/bootstrap)
 // =============================================================
 
 "use client";

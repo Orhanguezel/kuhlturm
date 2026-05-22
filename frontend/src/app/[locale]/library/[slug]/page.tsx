@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const item = await getLibraryItemBySlug(API_BASE_URL, slug, locale).catch(() => null);
   if (!item) return { title: 'Wissensdatenbank' };
   return {
-    title: `${item.name} | Wissensdatenbank | Ensotek`,
+    title: `${item.name} | Wissensdatenbank | Kühlturm`,
     description: (item as any).meta_description ?? (item as any).summary ?? undefined,
     keywords: (item as any).meta_keywords ?? undefined,
   };

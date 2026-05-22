@@ -2,7 +2,7 @@
 
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/services/_components/serviceForm/ServiceForm.tsx
-// Ensotek – Admin Service Create/Edit Form (FINAL)
+// Kühlturm – Admin Service Create/Edit Form (FINAL)
 // - shadcn/tailwind theme
 // - Locale source: useAdminLocales()
 // - Canonical cover: image_url (+ legacy featured_image mirror)

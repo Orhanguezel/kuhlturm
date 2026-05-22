@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/components/admin/menuitem/MenuItemHeader.tsx
-// Ensotek – Admin Menu Items Header / Filters (HEADER ONLY)
+// Kühlturm – Admin Menu Items Header / Filters (HEADER ONLY)
 // =============================================================
 
 "use client";
@@ -60,7 +60,7 @@ export const MenuItemHeader: React.FC<MenuItemHeaderProps> = ({
   onCreateClick,
 }) => {
   const t = useAdminT("admin.menuitem");
-  const effectiveDefaultLocale = useMemo(() => toShortLocale(defaultLocale ?? "tr"), [defaultLocale]);
+  const effectiveDefaultLocale = useMemo(() => toShortLocale(defaultLocale ?? "de"), [defaultLocale]);
 
   const localeSelectDisabled = loading || (!!localesLoading && (locales?.length ?? 0) === 0);
 

@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------
 // FILE: modules/projects/validation.ts
-// Ensotek endüstriyel proje alanları
+// Kühlturm endüstriyel proje alanları
 // ---------------------------------------------------------------------
 import { z } from 'zod';
 import { boolLike, LOCALE_ENUM, REL_OR_URL } from '@/modules/_shared';
@@ -37,7 +37,7 @@ export const upsertProjectParentBodySchema = z.object({
   featured_image: REL_OR_URL.nullable().optional(),
   featured_image_asset_id: z.union([z.string().length(36), z.literal('')]).transform(v => v === '' ? null : v).nullable().optional(),
 
-  // Ensotek industrial fields
+  // Kühlturm industrial fields
   category: z.string().max(100).nullable().optional(),          // "Su Soğutma Kulesi", "HVAC"
   product_type: z.string().max(150).nullable().optional(),      // "CTP Kaportalı Açık Tip"
   location: z.string().max(255).nullable().optional(),          // "İstanbul"

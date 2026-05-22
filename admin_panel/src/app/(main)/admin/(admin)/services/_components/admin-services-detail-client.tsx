@@ -46,7 +46,7 @@ export default function AdminServiceDetailClient({ id }: { id: string }) {
   const adminLocale = usePreferencesStore((s) => s.adminLocale);
 
   const { localeOptions } = useAdminLocales();
-  const [activeLocale, setActiveLocale] = React.useState(adminLocale || "tr");
+  const [activeLocale, setActiveLocale] = React.useState(adminLocale || "de");
   const [activeTab, setActiveTab] = React.useState<"form" | "json">("form");
 
   // AI
@@ -64,7 +64,7 @@ export default function AdminServiceDetailClient({ id }: { id: string }) {
 
   // Form state
   const [f, setF] = React.useState({
-    locale: "tr",
+    locale: "de",
     name: "",
     slug: "",
     description: "",
@@ -135,7 +135,7 @@ export default function AdminServiceDetailClient({ id }: { id: string }) {
   // AI handler — supports all 4 actions
   const handleAIAction = async (action: AIAction) => {
     const targets = localesForSelect.map((l) => l.value).filter(Boolean);
-    if (!targets.length) targets.push(activeLocale || "tr");
+    if (!targets.length) targets.push(activeLocale || "de");
     const result = await aiAssist({
       title: f.name,
       summary: f.description,
@@ -523,7 +523,7 @@ function ServiceFormTabs({ f, setF, set, isLoading }: { f: any; setF: any; set: 
           </div>
           <GooglePreview
             title={f.meta_title || f.name}
-            url={`https://ensotek.de/dienstleistungen/${f.slug || "hizmet-slug"}`}
+            url={`https://kuhlturm.com/dienstleistungen/${f.slug || "hizmet-slug"}`}
             description={f.meta_description || f.description?.replace(/<[^>]*>/g, "").slice(0, 155)}
             titleFallback={f.name || "Hizmet"}
           />

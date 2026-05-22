@@ -26,7 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const branding = await fetchBrandingConfig();
 
   return {
-    metadataBase: new URL(branding.meta.og_url || "https://ensotek.de"),
+    metadataBase: new URL(branding.meta.og_url || "https://kuhlturm.com"),
     title: branding.meta.title,
     description: branding.meta.description,
     icons: {
