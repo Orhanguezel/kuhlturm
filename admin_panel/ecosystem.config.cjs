@@ -1,13 +1,13 @@
 // =============================================================
 // Kuhlturm - admin_panel PM2 config (Next.js)
-// cwd: /var/www/kuhlturm/admin_panel
+// cwd: /var/www/Ensotek/kuhlturm/admin_panel
 // =============================================================
 
 module.exports = {
   apps: [
     {
       name: 'kuhlturm-admin-panel',
-      cwd: '/var/www/kuhlturm/admin_panel',
+      cwd: '/var/www/Ensotek/kuhlturm/admin_panel',
       script: '/usr/local/bin/bun',
       args: 'run start -- -p 3023 -H 127.0.0.1',
       exec_mode: 'fork',

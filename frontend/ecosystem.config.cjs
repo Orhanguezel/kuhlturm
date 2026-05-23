@@ -6,7 +6,7 @@ module.exports = {
   apps: [
     {
       name: 'kuhlturm-frontend',
-      cwd: '/var/www/kuhlturm/frontend',
+      cwd: '/var/www/Ensotek/kuhlturm/frontend',
       script: 'node',
       args: '.next/standalone/kuhlturm/frontend/server.js',
       exec_mode: 'fork',
