@@ -85,7 +85,7 @@ async function fetchContent(path: string, locale: string): Promise<ContentMeta> 
 }
 
 export async function fetchCustomPage(slug: string, locale: string): Promise<ContentMeta> {
-  return fetchContent(`custom_pages/by-slug/${encodeURIComponent(slug)}`, locale);
+  return fetchContent(`custom-pages/by-slug/${encodeURIComponent(slug)}`, locale);
 }
 
 /* ------------------------------------------------------------------ */
@@ -119,9 +119,9 @@ export async function fetchCustomPagesByModuleKey(
 ): Promise<CustomPage[]> {
   try {
     const url =
-      `${API_BASE_URL}/custom_pages` +
+      `${API_BASE_URL}/custom-pages` +
       `?module_key=${encodeURIComponent(moduleKey)}` +
-      `&language=${encodeURIComponent(locale)}` +
+      `&locale=${encodeURIComponent(locale)}` +
       `&is_published=1` +
       `&limit=${limit}`;
     const res = await fetch(url, { 

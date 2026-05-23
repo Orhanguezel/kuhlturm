@@ -27,7 +27,7 @@ export default async function NewsPage({ params }: Props) {
   const t = await getTranslations('news');
   const tCommon = await getTranslations('common');
 
-  const articles: CustomPage[] = await apiFetchWithLocale<CustomPage[]>('/custom_pages', locale, {
+  const articles: CustomPage[] = await apiFetchWithLocale<CustomPage[]>('/custom-pages', locale, {
     params: {
       module_key: 'news',
       is_published: 1,

@@ -4,7 +4,7 @@ import { CustomPage, CustomPageListParams, CustomPageListResponse } from './cust
 
 export const customPagesService = {
   getAll: async (params?: CustomPageListParams, config?: AxiosRequestConfig): Promise<CustomPageListResponse> => {
-    const response = await axios.get<CustomPage[] | CustomPageListResponse>('/custom_pages', { 
+    const response = await axios.get<CustomPage[] | CustomPageListResponse>('/custom-pages', { 
       params,
       ...config 
     });
@@ -21,7 +21,7 @@ export const customPagesService = {
   },
 
   getBySlug: async (slug: string, config?: AxiosRequestConfig): Promise<CustomPage> => {
-    const response = await axios.get<CustomPage>(`/custom_pages/by-slug/${slug}`, config);
+    const response = await axios.get<CustomPage>(`/custom-pages/by-slug/${slug}`, config);
     return response.data;
   },
 };

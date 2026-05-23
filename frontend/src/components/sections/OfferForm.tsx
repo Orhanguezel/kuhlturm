@@ -137,7 +137,7 @@ export function OfferForm({ locale, labels, initialTab, initialPartId, initialPa
     // Use direct fetch with headers for reliable locale
     const fetchServices = async () => {
       try {
-        const res = await fetch(`${API_BASE_URL}/services?locale=${locale}&language=${locale}&is_active=1`, fetchOptions);
+        const res = await fetch(`${API_BASE_URL}/services?locale=${locale}&is_active=1`, fetchOptions);
         if (res.ok) {
           const data = await res.json();
           setServices(Array.isArray(data) ? data : (data.data ?? []));
@@ -147,7 +147,7 @@ export function OfferForm({ locale, labels, initialTab, initialPartId, initialPa
 
     const fetchProducts = async (type: string, setter: any) => {
       try {
-        const res = await fetch(`${API_BASE_URL}/products?locale=${locale}&language=${locale}&item_type=${type}&limit=100&is_active=1`, fetchOptions);
+        const res = await fetch(`${API_BASE_URL}/products?locale=${locale}&item_type=${type}&limit=100&is_active=1`, fetchOptions);
         if (res.ok) {
           const data = await res.json();
           setter(Array.isArray(data) ? data : (data.data ?? []));

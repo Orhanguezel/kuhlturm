@@ -16,7 +16,7 @@ interface Props {
 
 async function fetchTeamMember(slug: string, locale: string): Promise<CustomPage | null> {
   try {
-    const url = `${API_BASE_URL}/custom_pages/by-slug/${encodeURIComponent(slug)}?language=${encodeURIComponent(locale)}`;
+    const url = `${API_BASE_URL}/custom-pages/by-slug/${encodeURIComponent(slug)}?locale=${encodeURIComponent(locale)}`;
     const res = await fetch(url, { next: { revalidate: 300 } });
     if (!res.ok) return null;
     const data = await res.json();

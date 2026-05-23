@@ -26,7 +26,7 @@ export default async function BlogPage({ params }: Props) {
 
   const t = await getTranslations('blog');
 
-  const posts: CustomPage[] = await apiFetchWithLocale<CustomPage[]>('/custom_pages', locale, {
+  const posts: CustomPage[] = await apiFetchWithLocale<CustomPage[]>('/custom-pages', locale, {
     params: {
       module_key: 'blog',
       is_published: 1,

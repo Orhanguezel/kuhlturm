@@ -25,7 +25,7 @@ export default async function LegalIndexPage({ params }: Props) {
   const t = await getTranslations('legal');
   const tCommon = await getTranslations('common');
 
-  const pages: CustomPage[] = await apiFetchWithLocale<CustomPage[]>('/custom_pages', locale, {
+  const pages: CustomPage[] = await apiFetchWithLocale<CustomPage[]>('/custom-pages', locale, {
     params: {
       module_key: 'legal',
       is_published: 1,

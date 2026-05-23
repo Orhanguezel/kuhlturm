@@ -27,7 +27,7 @@ export default async function SolutionsPage({ params }: Props) {
   const t = await getTranslations('solutions');
   const tCommon = await getTranslations('common');
 
-  const items: CustomPage[] = await apiFetchWithLocale<CustomPage[]>('/custom_pages', locale, {
+  const items: CustomPage[] = await apiFetchWithLocale<CustomPage[]>('/custom-pages', locale, {
     params: {
       module_key: 'solutions',
       is_published: 1,

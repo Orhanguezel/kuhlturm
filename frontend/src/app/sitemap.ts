@@ -56,7 +56,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       fetchSlugs('/products'),
       fetchSlugs('/projects'),
       fetchSlugs('/library'),
-      fetchSlugs('/custom_pages'),
+      fetchSlugs('/custom-pages'),
     ]);
 
   const entries: MetadataRoute.Sitemap = [];

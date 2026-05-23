@@ -66,7 +66,7 @@ export async function getProductsWithLocale(locale: string, params: Record<strin
 }
 
 export async function getCustomPagesWithLocale(locale: string, params: Record<string, any> = {}) {
-  return apiFetchWithLocale<any[]>('/custom_pages', locale, { params });
+  return apiFetchWithLocale<any[]>('/custom-pages', locale, { params });
 }
 
 export async function getCategoriesWithLocale(locale: string, params: Record<string, any> = {}) {
@@ -78,7 +78,7 @@ export async function getProductBySlugWithLocale(slug: string, locale: string) {
 }
 
 export async function getCustomPageBySlugWithLocale(slug: string, locale: string) {
-  return apiFetchWithLocale<any>(`/custom_pages/by-slug/${slug}`, locale);
+  return apiFetchWithLocale<any>(`/custom-pages/by-slug/${slug}`, locale);
 }
 
 export async function getServiceBySlugWithLocale(slug: string, locale: string) {
