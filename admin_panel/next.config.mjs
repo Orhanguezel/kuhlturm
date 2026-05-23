@@ -2,6 +2,10 @@ import path from 'node:path';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Routes already live under /admin (app/(main)/admin/*). We only need
+  // assets to be served from /admin/_next/static so nginx can proxy
+  // /admin/* to the admin panel without colliding with the public site.
+  assetPrefix: '/admin',
   reactCompiler: true,
   compiler: { removeConsole: process.env.NODE_ENV === 'production' },
 

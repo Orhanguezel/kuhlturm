@@ -2,7 +2,7 @@
 // FILE: src/app/(main)/admin/dashboard/_components/admin-auth-gate.tsx
 // FINAL — Admin Auth Gate (RTK status)
 // - NO manual fetch
-// - Redirects to /auth/login when not admin
+// - Redirects to /admin/auth/login when not admin
 // =============================================================
 
 "use client";
@@ -29,7 +29,7 @@ export default function AdminAuthGate({ children }: { children: React.ReactNode 
     const me = normalizeMeFromStatus(data);
 
     if (!me || me.isAdmin !== true) {
-      router.replace("/auth/login");
+      router.replace("/admin/auth/login");
     }
   }, [q.isFetching, q.isUninitialized, q.data, router]);
 

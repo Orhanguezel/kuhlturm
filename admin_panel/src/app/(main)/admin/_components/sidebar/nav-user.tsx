@@ -40,7 +40,7 @@ export function NavUser({
     } catch {
       // logout fail olsa bile login'e gönder
     } finally {
-      router.replace("/auth/login");
+      router.replace("/admin/auth/login");
       router.refresh();
     }
   }
