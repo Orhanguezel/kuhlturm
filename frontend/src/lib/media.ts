@@ -40,7 +40,7 @@ function getFileBase(): string {
   if (typeof window !== 'undefined') {
     const host = safeStr(window.location.hostname);
     if (host === 'localhost' || host === '127.0.0.1') {
-      return `http://${host}:8086`;
+      return `http://${host}:8089`;
     }
     const origin = stripTrailingSlash(safeStr(window.location.origin));
     if (origin) return origin;

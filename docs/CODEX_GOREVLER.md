@@ -77,15 +77,15 @@
 
 ## I) Build & doğrulama (success criteria)
 
-- [ ] `cd backend && bun install && bun run build` — tip hatasız build
-- [ ] `cd backend && bun run dev` — port 8089'da Fastify ayağa kalkıyor
-- [ ] `cd backend && bun run db:seed` — DB schema + seed kuhlturm DB'sine yazılıyor
+- [x] `cd backend && bun install && bun run build` — tip hatasız build
+- [x] `cd backend && bun run dev` — port 8089'da Fastify ayağa kalkıyor
+- [x] `cd backend && bun run db:seed` — DB schema + seed kuhlturm DB'sine yazılıyor
 - [x] `cd admin_panel && bun install && bun run build`
-- [ ] `cd admin_panel && bun run dev` — port 3023'te Next.js, login ekranı
-- [ ] Admin → backend bağlantısı çalışıyor, seed admin user ile login OK
+- [x] `cd admin_panel && bun run dev` — port 3023'te Next.js, login ekranı
+- [x] Admin → backend bağlantısı çalışıyor, seed admin user ile login OK
 - [x] `cd frontend && bun run build` — tip hatasız
-- [ ] `cd frontend && bun run dev` — DE locale default, EN fallback çalışıyor
-- [ ] Swagger docs erişilebilir: `http://127.0.0.1:8089/documentation`
+- [x] `cd frontend && bun run dev` — DE locale default, EN fallback çalışıyor
+- [x] Swagger docs erişilebilir: `http://127.0.0.1:8089/documentation`
 
 ## J) Repo hijyen — bitirirken
 
@@ -101,5 +101,6 @@
 - **DB schema kuralı**: `ALTER TABLE` yok — `0XX_*.sql` güncellenir + `db:seed:fresh`
 - **`.env` dosyaları**: asla commit edilmez (`.gitignore` ile zaten engelli)
 - **Workspace ortak paketler**: `Ensotek/packages/` — root `bun` workspace üzerinden erişilir
-- **2026-05-23 doğrulama notu**: `admin_panel` ve `frontend` build başarılı. `backend` build şu an shared-backend entegrasyon sınırında kalıyor (`createDbAdminRoutes/registerDbAdmin`, `@/modules/_shared` importları, shared `support` TelegramEvent tipi); bu kısım Claude'a devredilen D kapsamıyla birlikte çözülmeli.
+- **2026-05-23 doğrulama notu**: `backend`, `admin_panel` ve `frontend` build başarılı. `admin_panel` dev 3023'te `/auth/login` için HTTP 200 döndü. `frontend` dev 3025'te `/` → `/de`, `/de` ve `/en` için HTTP 200 döndü.
+- **2026-05-23 DB doğrulama notu**: Yerel MySQL 3307'de `app@%` kullanıcısına `kuhlturm.*` full yetki verildi. `db:seed` fresh çalıştı; backend dev 8089'da MySQL bağlantısıyla ayağa kalktı; `/health`, `/documentation`, `/api/products`, `/api/services` ve seed admin login doğrulandı.
 - **VPS deploy**: poly-repo migration tamamlandıktan sonra `.github/workflows/deploy.yml` (root Ensotek repo) ile manuel tetiklenir

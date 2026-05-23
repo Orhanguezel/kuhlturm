@@ -2,7 +2,7 @@
 import { getRuntimeLocaleSettings } from '@ensotek/core/i18n';
 import { AVAILABLE_LOCALES, FALLBACK_LOCALE } from './locales';
 
-export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://127.0.0.1:8086/api';
+export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://127.0.0.1:8089/api';
 
 export { getRuntimeLocaleSettings };
 

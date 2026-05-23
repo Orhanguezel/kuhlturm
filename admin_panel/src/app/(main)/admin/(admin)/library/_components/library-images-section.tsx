@@ -30,7 +30,7 @@ export type LibraryImagesSectionProps = {
 
 const toStr = (v: unknown) => (v === null || v === undefined ? "" : String(v));
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL?.replace("/api", "") || "http://localhost:8086";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL?.replace("/api", "") || "http://localhost:8089";
 
 function resolveUrl(url: string) {
   if (!url) return "";

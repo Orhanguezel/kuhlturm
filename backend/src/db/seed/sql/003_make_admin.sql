@@ -16,12 +16,14 @@ INSERT INTO users (
   password_hash,
   full_name,
   phone,
+  ecosystem_id,
   is_active,
   email_verified,
   reset_token,
   reset_token_expires,
   created_at,
   updated_at,
+  rules_accepted_at,
   last_sign_in_at
 ) VALUES (
   '{{ADMIN_ID}}',            -- Örn: 4f618a8d-6fdb-498c-898a-395d368b2193
@@ -29,12 +31,14 @@ INSERT INTO users (
   '{{ADMIN_PASSWORD_HASH}}', -- bcrypt hash
   'Orhan Güzel',
   '+905551112233',
+  NULL,                      -- ecosystem_id
   1,                         -- is_active
   1,                         -- email_verified
   NULL,                      -- reset_token
   NULL,                      -- reset_token_expires
   CURRENT_TIMESTAMP(3),
   CURRENT_TIMESTAMP(3),
+  CURRENT_TIMESTAMP(3),      -- rules_accepted_at
   NULL                       -- last_sign_in_at
 )
 ON DUPLICATE KEY UPDATE

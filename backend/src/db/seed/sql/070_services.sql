@@ -17,12 +17,14 @@ CREATE TABLE `services` (
   `id`               CHAR(36)     NOT NULL,
 
   `type`             VARCHAR(32)  NOT NULL DEFAULT 'other',
+  `module_key`       VARCHAR(50)  NOT NULL DEFAULT 'kuhlturm',
 
   -- Kategori ilişkileri (categories / sub_categories)
   `category_id`      CHAR(36)              DEFAULT NULL,
   `sub_category_id`  CHAR(36)              DEFAULT NULL,
 
   `featured`         TINYINT(1)   NOT NULL DEFAULT 0,
+  `is_featured`      TINYINT(1)   NOT NULL DEFAULT 0,
   `is_active`        TINYINT(1)   NOT NULL DEFAULT 1,
   `display_order`    INT          NOT NULL DEFAULT 0,
 
@@ -30,6 +32,7 @@ CREATE TABLE `services` (
   `featured_image`   VARCHAR(500)          DEFAULT NULL, -- legacy
   `image_url`        VARCHAR(500)          DEFAULT NULL,
   `image_asset_id`   CHAR(36)              DEFAULT NULL, -- storage_assets.id
+  `storage_asset_id` CHAR(36)              DEFAULT NULL,
   `images`           JSON                  DEFAULT NULL,
 
   -- Teknik alanlar (non-i18n)
@@ -45,12 +48,15 @@ CREATE TABLE `services` (
 
   PRIMARY KEY (`id`),
 
+  KEY `services_module_key_idx`      (`module_key`),
   KEY `services_active_idx`          (`is_active`),
+  KEY `services_featured_idx`        (`is_featured`),
   KEY `services_order_idx`           (`display_order`),
   KEY `services_type_idx`            (`type`),
   KEY `services_category_id_idx`     (`category_id`),
   KEY `services_sub_category_id_idx` (`sub_category_id`),
   KEY `services_asset_idx`           (`image_asset_id`),
+  KEY `services_storage_asset_idx`   (`storage_asset_id`),
   KEY `services_created_idx`         (`created_at`),
   KEY `services_updated_idx`         (`updated_at`),
 
@@ -76,12 +82,15 @@ CREATE TABLE `services_i18n` (
 
   `slug`             VARCHAR(255)  NOT NULL,
   `name`             VARCHAR(255)  NOT NULL,
+  `title`            VARCHAR(255)  NOT NULL DEFAULT '',
   `description`      TEXT                   DEFAULT NULL,
+  `content`          LONGTEXT               DEFAULT NULL,
   `material`         VARCHAR(255)           DEFAULT NULL,
   `price`            VARCHAR(128)           DEFAULT NULL,
   `includes`         VARCHAR(255)           DEFAULT NULL,
   `warranty`         VARCHAR(128)           DEFAULT NULL,
   `image_alt`        VARCHAR(255)           DEFAULT NULL,
+  `alt`              VARCHAR(255)           DEFAULT NULL,
 
   `tags`             VARCHAR(255)           DEFAULT NULL,
   `meta_title`       VARCHAR(255)           DEFAULT NULL,
@@ -154,4 +163,3 @@ CREATE TABLE `service_images_i18n` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 SET FOREIGN_KEY_CHECKS = 1;
-

@@ -4,7 +4,7 @@
 
 import { type NextRequest, NextResponse } from "next/server";
 
-const BACKEND_URL = process.env.PANEL_API_URL || "http://127.0.0.1:8086";
+const BACKEND_URL = process.env.PANEL_API_URL || "http://127.0.0.1:8089";
 
 export async function POST(request: NextRequest) {
   try {

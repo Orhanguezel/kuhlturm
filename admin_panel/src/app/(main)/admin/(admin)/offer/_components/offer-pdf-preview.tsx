@@ -32,7 +32,7 @@ function getFileBase(): string {
       if (apiUrl) {
         try {
           const u = new URL(apiUrl);
-          return u.origin; // e.g. http://localhost:8086
+          return u.origin; // e.g. http://localhost:8089
         } catch {
           return apiUrl.replace(/\/api\/?$/, "");
         }

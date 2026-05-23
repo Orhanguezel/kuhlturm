@@ -24,7 +24,7 @@ function resolveWsBaseUrl() {
   if (typeof window !== "undefined") {
     return window.location.origin.replace(/^http/, "ws");
   }
-  return "ws://localhost:8086";
+  return "ws://localhost:8089";
 }
 
 export function buildChatWsUrl(threadId: string): string {
@@ -83,4 +83,3 @@ export class ChatWsClient {
     this.socket = null;
   }
 }
-
