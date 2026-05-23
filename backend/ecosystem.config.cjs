@@ -1,13 +1,13 @@
 // =============================================================
 // Kuhlturm - Backend PM2 config (Bun + Fastify)
-// cwd: /var/www/Ensotek/kuhlturm/backend
+// cwd: /var/www/kuhlturm/backend
 // =============================================================
 
 module.exports = {
   apps: [
     {
       name: 'kuhlturm-backend',
-      cwd: '/var/www/Ensotek/kuhlturm/backend',
+      cwd: '/var/www/kuhlturm/backend',
       script: '/usr/local/bin/bun',
       args: 'dist/index.js',
       exec_mode: 'fork',
