@@ -16,6 +16,10 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'res.cloudinary.com' },
       { protocol: 'https', hostname: 'kuhlturm.com' },
       { protocol: 'https', hostname: 'www.kuhlturm.com' },
+      // ensotek DB ortak; bazı kayıtlar (team, project görselleri vb.) hâlâ
+      // ensotek.de domain'inden serve ediliyor.
+      { protocol: 'https', hostname: 'ensotek.de' },
+      { protocol: 'https', hostname: 'www.ensotek.de' },
       { protocol: 'https', hostname: 'images.unsplash.com' },
       ...(process.env.NODE_ENV === 'development'
         ? [
