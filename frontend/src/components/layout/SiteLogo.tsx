@@ -27,14 +27,16 @@ function resolveLogoSrc(src: string) {
 }
 
 export function SiteLogo({ src, alt = 'Kühlturm', className, height = 32, dark = false }: Props) {
+  const width = Math.round(height * 4.85);
+
   if (src) {
     return (
       <Image
         src={resolveLogoSrc(src)}
         alt={alt}
-        width={Math.round(height * 3)}
+        width={width}
         height={height}
-        sizes={`${Math.round(height * 3)}px`}
+        sizes={`${width}px`}
         priority
         className={className}
         style={{ height: `${height}px`, width: 'auto', display: 'block' }}
