@@ -3,6 +3,7 @@ import path from 'node:path';
 
 const root = process.cwd();
 const publicDir = path.join(root, 'public');
+const staticDir = path.join(root, '.next', 'static');
 const standaloneDir = path.join(root, '.next', 'standalone');
 
 function findStandaloneServers(dir, results = []) {
@@ -39,4 +40,10 @@ for (const serverFile of findStandaloneServers(standaloneDir)) {
   const targetPublicDir = path.join(path.dirname(serverFile), 'public');
   cpSync(publicDir, targetPublicDir, { recursive: true, force: true });
   console.log(`Copied public assets to ${path.relative(root, targetPublicDir)}`);
+
+  if (existsSync(staticDir)) {
+    const targetStaticDir = path.join(path.dirname(serverFile), '.next', 'static');
+    cpSync(staticDir, targetStaticDir, { recursive: true, force: true });
+    console.log(`Copied Next static assets to ${path.relative(root, targetStaticDir)}`);
+  }
 }
