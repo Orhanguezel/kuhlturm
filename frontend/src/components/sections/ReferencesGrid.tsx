@@ -23,7 +23,7 @@ export function ReferencesGrid({ references, categories, locale }: Props) {
   const [activeCategory, setActiveCategory] = useState('all');
 
   const usedCategories = useMemo(
-    () => categories.filter((category) => references.some((ref) => ref.sub_category_id === category.id)),
+    () => categories.filter((category) => references.some((ref) => getReferenceCategoryId(ref) === category.id)),
     [categories, references],
   );
   const featuredCount = useMemo(
@@ -34,7 +34,7 @@ export function ReferencesGrid({ references, categories, locale }: Props) {
   const filteredReferences = useMemo(() => {
     if (activeCategory === 'all') return references;
     if (activeCategory === 'featured') return references.filter((reference) => reference.is_featured);
-    return references.filter((reference) => reference.sub_category_id === activeCategory);
+    return references.filter((reference) => getReferenceCategoryId(reference) === activeCategory);
   }, [activeCategory, references]);
 
   return (
@@ -59,7 +59,7 @@ export function ReferencesGrid({ references, categories, locale }: Props) {
             key={category.id}
             active={activeCategory === category.id}
             label={category.name}
-            count={references.filter((reference) => reference.sub_category_id === category.id).length}
+            count={references.filter((reference) => getReferenceCategoryId(reference) === category.id).length}
             onClick={() => setActiveCategory(category.id)}
           />
         ))}
@@ -72,6 +72,27 @@ export function ReferencesGrid({ references, categories, locale }: Props) {
       </div>
     </>
   );
+}
+
+function getReferenceCategoryId(reference: Reference) {
+  const text = `${reference.summary ?? ''} ${reference.content ?? ''}`.toLocaleLowerCase('de-DE');
+
+  if (text.includes('aluminium')) return 'aluminium';
+  if (text.includes('automotive') || text.includes('automobil')) return 'automotive';
+  if (text.includes('cement') || text.includes('zement') || text.includes('mining') || text.includes('bergbau')) {
+    return 'cement-mining';
+  }
+  if (text.includes('chemical') || text.includes('chemie')) return 'chemical';
+  if (text.includes('commercial') || text.includes('gewerbebau')) return 'commercial';
+  if (text.includes('energy') || text.includes('energie')) return 'energy';
+  if (text.includes('engineering') || text.includes('maschinenbau')) return 'engineering';
+  if (text.includes('food') || text.includes('lebensmittel') || text.includes('öl') || text.includes('oil')) return 'food-oil';
+  if (text.includes('packaging') || text.includes('verpackung')) return 'packaging';
+  if (text.includes('plastics') || text.includes('kunststoff')) return 'plastics';
+  if (text.includes('steel') || text.includes('stahl') || text.includes('metal')) return 'steel-metal';
+  if (text.includes('textile') || text.includes('textil')) return 'textile';
+
+  return null;
 }
 
 function FilterButton({
