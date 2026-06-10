@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --port 3025",
-    "build": "next build",
+    "build": "next build && node scripts/copy-standalone-public.mjs",
     "start": "next start --port 3025",
     "lint": "next lint",
     "type-check": "tsc --noEmit"
