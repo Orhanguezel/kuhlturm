@@ -10,6 +10,6 @@ export default createMiddleware({
 export const config = {
   matcher: [
     // Match all pathnames except static files, api routes, and Next.js internals
-    '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|css|js)).*)',
+    '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|googleeeb20ab7ad4cdbbb\\.html|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|css|js)).*)',
   ],
 };
