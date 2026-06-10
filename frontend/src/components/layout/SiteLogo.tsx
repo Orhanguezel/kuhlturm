@@ -12,11 +12,25 @@ interface Props {
   dark?: boolean;
 }
 
+function resolveLogoSrc(src: string) {
+  const trimmed = src.trim();
+  if (
+    trimmed.startsWith('/logo/') ||
+    trimmed.startsWith('/favicon/') ||
+    trimmed === '/favicon.ico' ||
+    trimmed === '/favicon.svg' ||
+    trimmed === '/apple-touch-icon.png'
+  ) {
+    return trimmed;
+  }
+  return resolveMediaUrl(trimmed);
+}
+
 export function SiteLogo({ src, alt = 'Kühlturm', className, height = 32, dark = false }: Props) {
   if (src) {
     return (
       <Image
-        src={resolveMediaUrl(src)}
+        src={resolveLogoSrc(src)}
         alt={alt}
         width={Math.round(height * 3)}
         height={height}

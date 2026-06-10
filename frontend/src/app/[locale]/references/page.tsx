@@ -1,15 +1,15 @@
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
-import Image from 'next/image';
 import Link from 'next/link';
-import { ExternalLink } from 'lucide-react';
 import { PageBanner } from '@/components/ui/PageBanner';
-import { getReferences } from '@ensotek/core/services';
+import { getReferences, getSubCategories } from '@ensotek/core/services';
 import type { Reference } from '@ensotek/core/types';
 import { API_BASE_URL } from '@/lib/utils';
-import { resolveMediaUrl } from '@/lib/media';
+import { ReferencesGrid } from '@/components/sections/ReferencesGrid';
 
 export const dynamic = 'force-dynamic';
+
+const REFERENCES_CATEGORY_ID = 'aaaa5002-1111-4111-8111-aaaaaaaa5002';
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -49,10 +49,17 @@ export default async function ReferencesPage({ params }: Props) {
 
   const t = await getTranslations('references');
 
-  const references: Reference[] = await getAllPublishedReferences(locale).catch(() => []);
+  const [references, subCategories] = await Promise.all([
+    getAllPublishedReferences(locale).catch(() => []),
+    getSubCategories(API_BASE_URL, {
+      category_id: REFERENCES_CATEGORY_ID,
+      language: locale,
+    }).catch(() => []),
+  ]);
 
-  const featured = references.filter((r) => r.is_featured);
-  const rest = references.filter((r) => !r.is_featured);
+  const categories = subCategories
+    .map((category) => ({ id: category.id, name: category.name }))
+    .filter((category) => category.id && category.name);
 
   return (
     <main>
@@ -70,43 +77,11 @@ export default async function ReferencesPage({ params }: Props) {
           </div>
         </section>
       ) : (
-        <>
-          {/* Featured references — large hero cards */}
-          {featured.length > 0 && (
-            <section className="py-(--section-py) bg-white">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {rest.length > 0 && (
-                  <h2 className="font-display text-2xl font-bold text-slate-900 mb-8">
-                    {t('featured')}
-                  </h2>
-                )}
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                  {featured.map((ref) => (
-                    <ReferenceCard key={ref.id} reference={ref} locale={locale} large />
-                  ))}
-                </div>
-              </div>
-            </section>
-          )}
-
-          {/* All other references */}
-          {rest.length > 0 && (
-            <section className={`py-(--section-py) ${featured.length > 0 ? 'bg-slate-50' : 'bg-white'}`}>
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {featured.length > 0 && (
-                  <h2 className="font-display text-2xl font-bold text-slate-900 mb-8">
-                    {t('allReferences')}
-                  </h2>
-                )}
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                  {rest.map((ref) => (
-                    <ReferenceCard key={ref.id} reference={ref} locale={locale} />
-                  ))}
-                </div>
-              </div>
-            </section>
-          )}
-        </>
+        <section className="py-(--section-py) bg-white">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <ReferencesGrid references={references} categories={categories} locale={locale} />
+          </div>
+        </section>
       )}
 
       {/* CTA */}
@@ -123,58 +98,5 @@ export default async function ReferencesPage({ params }: Props) {
         </div>
       </section>
     </main>
-  );
-}
-
-/* ── Reference card component ─────────────────────────────────────── */
-
-function ReferenceCard({
-  reference,
-  locale,
-  large = false,
-}: {
-  reference: Reference;
-  locale: string;
-  large?: boolean;
-}) {
-  return (
-    <Link
-      href={`/${locale}/references/${reference.slug}`}
-      className="group block bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-blue-200 hover:shadow-xl transition-all duration-300"
-    >
-      {/* Image */}
-      <div className="relative overflow-hidden bg-slate-100 aspect-4/3">
-        {reference.featured_image ? (
-          <Image
-            src={resolveMediaUrl(reference.featured_image)}
-            alt={reference.featured_image_alt ?? reference.title}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
-            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-          />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center">
-            <span className="text-slate-200 text-6xl font-display font-bold">K</span>
-          </div>
-        )}
-      </div>
-
-      {/* Content */}
-      <div className="p-3">
-        <h2 className="font-display font-semibold text-sm text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-2 leading-snug">
-          {reference.title}
-        </h2>
-        <div className="mt-2 flex items-center justify-between">
-          <span className="text-xs font-semibold text-blue-600 group-hover:underline">
-            Mehr →
-          </span>
-          {reference.website_url && (
-            <span className="text-slate-300">
-              <ExternalLink size={12} />
-            </span>
-          )}
-        </div>
-      </div>
-    </Link>
   );
 }
