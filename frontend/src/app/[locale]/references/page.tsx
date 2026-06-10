@@ -9,8 +9,31 @@ import type { Reference } from '@ensotek/core/types';
 import { API_BASE_URL } from '@/lib/utils';
 import { resolveMediaUrl } from '@/lib/media';
 
+export const dynamic = 'force-dynamic';
+
 interface Props {
   params: Promise<{ locale: string }>;
+}
+
+const REFERENCES_PAGE_SIZE = 200;
+
+async function getAllPublishedReferences(locale: string): Promise<Reference[]> {
+  const allReferences: Reference[] = [];
+
+  for (let offset = 0; ; offset += REFERENCES_PAGE_SIZE) {
+    const page = await getReferences(API_BASE_URL, {
+      language: locale,
+      is_published: true,
+      limit: REFERENCES_PAGE_SIZE,
+      offset,
+    });
+
+    allReferences.push(...page);
+
+    if (page.length < REFERENCES_PAGE_SIZE) {
+      return allReferences;
+    }
+  }
 }
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -26,11 +49,7 @@ export default async function ReferencesPage({ params }: Props) {
 
   const t = await getTranslations('references');
 
-  const references: Reference[] = await getReferences(API_BASE_URL, {
-    language: locale,
-    is_published: true,
-    limit: 60,
-  }).catch(() => []);
+  const references: Reference[] = await getAllPublishedReferences(locale).catch(() => []);
 
   const featured = references.filter((r) => r.is_featured);
   const rest = references.filter((r) => !r.is_featured);
