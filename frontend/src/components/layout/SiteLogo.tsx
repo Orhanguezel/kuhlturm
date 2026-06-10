@@ -27,7 +27,7 @@ function resolveLogoSrc(src: string) {
 }
 
 export function SiteLogo({ src, alt = 'Kühlturm', className, height = 32, dark = false }: Props) {
-  const width = Math.round(height * 4.85);
+  const width = Math.round(height * (352 / 134));
 
   if (src) {
     return (

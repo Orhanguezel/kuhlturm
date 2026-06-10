@@ -259,11 +259,11 @@ async function applyKuhlturmSeedOverrides(conn: mysql.Connection) {
     maps_lng: '28.8820',
   });
   const media = [
-    ['site_logo', '*', '/logo/ensotek-logo.png'],
-    ['site_logo_dark', '*', '/logo/ensotek-logo.png'],
+    ['site_logo', '*', '/logo/ensotek-logo-main.png'],
+    ['site_logo_dark', '*', '/logo/ensotek-logo-main.png'],
     ['site_favicon', '*', '/favicon/favicon.svg'],
     ['site_apple_touch_icon', '*', '/favicon/apple-touch-icon.png'],
-    ['og_image', '*', '/logo/ensotek-logo.png'],
+    ['og_image', '*', '/logo/ensotek-logo-main.png'],
   ] as const;
 
   for (const locale of ['*', 'de', 'en']) {
