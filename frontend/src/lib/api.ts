@@ -73,8 +73,14 @@ export async function getCategoriesWithLocale(locale: string, params: Record<str
   return apiFetchWithLocale<any[]>('/categories', locale, { params });
 }
 
-export async function getProductBySlugWithLocale(slug: string, locale: string) {
-  return apiFetchWithLocale<any>(`/products/by-slug/${slug}`, locale);
+export async function getProductBySlugWithLocale(
+  slug: string,
+  locale: string,
+  itemType: 'product' | 'sparepart' = 'product',
+) {
+  return apiFetchWithLocale<any>(`/products/by-slug/${slug}`, locale, {
+    params: { item_type: itemType },
+  });
 }
 
 export async function getCustomPageBySlugWithLocale(slug: string, locale: string) {

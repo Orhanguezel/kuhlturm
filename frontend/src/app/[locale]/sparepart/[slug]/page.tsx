@@ -23,7 +23,7 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   try {
-    const raw = await getProductBySlugWithLocale(slug, locale);
+    const raw = await getProductBySlugWithLocale(slug, locale, 'sparepart');
     const part = (raw as unknown as { data?: Product })?.data ?? raw;
     return {
       title: part.meta_title || part.title,
@@ -46,7 +46,7 @@ export default async function SparePartDetailPage({ params }: Props) {
 
   let part: Product;
   try {
-    const raw = await getProductBySlugWithLocale(slug, locale);
+    const raw = await getProductBySlugWithLocale(slug, locale, 'sparepart');
     part = (raw as unknown as { data?: Product })?.data ?? raw;
     if (!part) notFound();
   } catch {
