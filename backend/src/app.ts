@@ -108,8 +108,7 @@ export async function createApp() {
     },
   });
 
-  const cookieSecret =
-    (globalThis as any).Bun?.env?.COOKIE_SECRET ?? process.env.COOKIE_SECRET ?? 'cookie-secret';
+  const cookieSecret = env.COOKIE_SECRET;
 
   await app.register(cookie, {
     secret: cookieSecret,
