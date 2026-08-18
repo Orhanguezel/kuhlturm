@@ -1,15 +1,31 @@
 {
-  "title": "Kühlturm",
-  "slug": "kuhlturm",
-  "summary": "B2B cooling tower platform for the German and English markets — full Fastify + Next.js stack cloned from ensotek_de architecture, with its own database (kuhlturm) and brand.",
-  "category": "B2B PLATFORM",
+  "schemaVersion": 2,
+  "project": {
+    "key": "kuhlturm",
+    "title": "Kühlturm",
+    "summary": "B2B cooling tower platform for the German and English markets — full Fastify + Next.js stack cloned from ensotek_de architecture, with its own database (kuhlturm) and brand.",
+    "description": "B2B cooling tower platform for the German and English markets — full Fastify + Next.js stack cloned from ensotek_de architecture, with its own database (kuhlturm) and brand.",
+    "category": "custom-software",
+    "status": "completed",
+    "ownership": "client",
+    "owner": {
+      "id": "hamdi-yagar",
+      "name": "Hamdi Yağar",
+      "kind": "person"
+    },
+    "group": {
+      "id": "ensotek",
+      "name": "Ensotek"
+    },
+    "productType": "owned-product"
+  },
   "services": [
     "Frontend Development",
     "Backend Development",
     "Architecture & Optimization",
     "DevOps & Deployment"
   ],
-  "techs": [
+  "technologies": [
     "Next.js",
     "React",
     "TypeScript",
@@ -35,24 +51,46 @@
     "Swagger API docs",
     "Shared workspace packages"
   ],
-  "designHighlights": [
-    "Mirrors ensotek_de architecture",
-    "Own database — fully isolated from other sites",
-    "DE/EN locale-aware content flows"
+  "timeline": {
+    "startedAt": "2025-04-01",
+    "targetEndAt": null,
+    "completedAt": "2026-05-23",
+    "progressPercent": null
+  },
+  "links": {
+    "website": "https://kuhlturm.com",
+    "demo": null,
+    "repository": "https://github.com/Orhanguezel/kuhlturm"
+  },
+  "media": [
+    {
+      "id": "legacy-1",
+      "role": "cover",
+      "src": "/assets/imgs/work/projects/kuhlturm.png",
+      "alt": "Kühlturm B2B Cooling Tower Platform",
+      "caption": "",
+      "displayPermission": true,
+      "rightsConfirmed": true
+    }
   ],
-  "featured": false,
-  "displayOrder": 5,
-  "clientName": "Own Project",
-  "status": "live",
-  "startDate": "2025-04-01",
-  "completeDate": "2026-05-23",
-  "completionTimeLabel": "Live",
-  "repoUrl": "https://github.com/Orhanguezel/kuhlturm",
-  "websiteUrl": "https://kuhlturm.com",
-  "demoUrl": null,
-  "featuredImage": "/assets/imgs/work/projects/kuhlturm.png",
-  "featuredImageAlt": "Kühlturm B2B Cooling Tower Platform",
-  "resumeTitle": "Kühlturm",
-  "resumeSubtitle": "B2B Cooling Tower Platform (DE/EN)",
-  "excludeFromPortfolio": false
+  "channels": {
+    "website": {
+      "enabled": false,
+      "disabledReason": "CRM v2 geçişinde web yayın içeriği ve izinleri kullanıcı onayı bekliyor"
+    },
+    "bionluk": {
+      "enabled": false,
+      "disabledReason": "CRM v2 geçişinde Bionluk içeriği ve ticari uygunluk kullanıcı onayı bekliyor"
+    }
+  },
+  "publication": {
+    "privacy": "public",
+    "displayPermission": true
+  },
+  "management": {
+    "priority": "normal",
+    "controlPlane": "gzl-gelir-crm",
+    "lastChangedBy": "orhan"
+  },
+  "updatedAt": "2026-08-18T15:32:49.773Z"
 }
