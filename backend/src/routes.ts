@@ -5,6 +5,7 @@ import { isIpBlocked } from '@/modules/ip-blocklist/service';
 import { shouldSkipAuditLog, writeRequestAuditLog } from '@ensotek/shared-backend/modules/audit/service';
 import { registerSharedAdmin, registerSharedPublic } from './routes/shared';
 import { registerProjectAdmin, registerProjectPublic } from './routes/project';
+import { registerErpServicesAdmin } from './modules/erp-services/admin.routes';
 
 export async function registerAllRoutes(app: FastifyInstance) {
   await app.register(
@@ -40,6 +41,7 @@ export async function registerAllRoutes(app: FastifyInstance) {
         async (adminApi) => {
           await registerSharedAdmin(adminApi);
           await registerProjectAdmin(adminApi);
+          await adminApi.register(registerErpServicesAdmin);
         },
         { prefix: '/admin' },
       );
