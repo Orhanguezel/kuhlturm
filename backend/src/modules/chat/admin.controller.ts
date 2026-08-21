@@ -12,6 +12,7 @@ import {
   ListAiKnowledgeQuerySchema,
   ListMessagesQuerySchema,
   ListThreadsQuerySchema,
+  PostMessageBodySchema,
   ThreadIdParamsSchema,
   UpdateAiKnowledgeBodySchema,
 } from "./validation";
@@ -68,6 +69,15 @@ export function chatAdminController(app: any) {
 
       setListHeaders(reply, total, 0, q.limit);
       return { items: [...rows].reverse() };
+    },
+
+    // POST /admin/chat/threads/:id/messages
+    async adminPostMessage(req: FastifyRequest, _reply: FastifyReply) {
+      const admin = getAdmin(req);
+      const params = ThreadIdParamsSchema.parse((req as any).params ?? {});
+      const body = PostMessageBodySchema.parse((req as any).body ?? {});
+      const message = await svc.adminPostMessage(admin, params.id, body);
+      return { message };
     },
 
     // POST /admin/chat/threads/:id/takeover

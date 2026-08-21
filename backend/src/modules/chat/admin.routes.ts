@@ -21,6 +21,12 @@ export async function registerChatAdmin(app: FastifyInstance) {
     c.adminListMessages,
   );
 
+  app.post(
+    `${BASE}/:id/messages`,
+    { preHandler: [requireAuth, requireAdmin] },
+    c.adminPostMessage,
+  );
+
   app.post(`${BASE}/:id/takeover`, { preHandler: [requireAuth, requireAdmin] }, c.adminTakeOverThread);
 
   app.post(

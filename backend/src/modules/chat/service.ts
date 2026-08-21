@@ -521,6 +521,36 @@ export function chatService(app: FastifyInstance) {
       return thread;
     },
 
+    async adminPostMessage(
+      user: AuthedUser,
+      thread_id: string,
+      body: { text: string; client_id?: string },
+    ) {
+      await assertAdmin(user);
+      await getRequiredThread(thread_id);
+
+      await repo.upsertParticipant({
+        id: randomUUID(),
+        thread_id,
+        user_id: user.id,
+        role: "admin",
+        joined_at: new Date(),
+        last_read_at: null,
+      });
+      await repo.updateThreadRouting(thread_id, {
+        handoff_mode: "admin",
+        assigned_admin_user_id: user.id,
+        updated_at: new Date(),
+      });
+
+      return insertMessage({
+        thread_id,
+        sender_user_id: user.id,
+        text: body.text,
+        client_id: body.client_id ?? null,
+      });
+    },
+
     async adminReleaseThreadToAi(
       user: AuthedUser,
       thread_id: string,
