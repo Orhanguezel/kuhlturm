@@ -501,11 +501,12 @@ export async function updateFaqParent(
 
 export async function deleteFaqParent(id: string) {
   const res = await db.delete(faqs).where(eq(faqs.id, id)).execute();
-  const affected =
-    (res as any)?.affectedRows != null
-      ? Number((res as any).affectedRows)
-      : 0;
-  return affected;
+  // Drizzle'in mysql2 surucusu delete sonucunu surume/cagri bicimine gore
+  // ResultSetHeader veya [ResultSetHeader, fields] olarak dondurebilir.
+  // Gerceklesen silmeyi tuple biciminde 0 saymak, ust katmanda sahte 404
+  // uretilmesine neden olur.
+  const resultHeader = Array.isArray(res) ? res[0] : res;
+  return Number((resultHeader as any)?.affectedRows ?? 0);
 }
 
 export async function getFaqI18nRow(
