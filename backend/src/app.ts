@@ -23,7 +23,6 @@ import { startRetentionJob } from '@ensotek/shared-backend/modules/audit/service
 import {
   jsonSchemaTransform,
   serializerCompiler,
-  validatorCompiler,
 } from 'fastify-type-provider-zod';
 
 function parseCorsOrigins(v?: string | string[]): boolean | string[] {
@@ -47,7 +46,9 @@ export async function createApp() {
     logger: env.NODE_ENV !== 'production',
   }) as FastifyInstance;
 
-  app.setValidatorCompiler(validatorCompiler);
+  // shared-backend rotaları `fromZodSchema` ile JSON Schema üretir; Fastify'ın
+  // varsayılan Ajv doğrulayıcısı kullanılmalıdır. Zod compiler JSON Schema'ya
+  // `.parse()` uygulayıp bütün auth uçlarını 400'e düşürüyordu.
   app.setSerializerCompiler(serializerCompiler);
 
   await app.register(cors, {
