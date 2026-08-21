@@ -232,11 +232,8 @@ export async function updateProjectParent(id: string, patch: Partial<NewProjectR
 
 export async function deleteProjectParent(id: string) {
   const res = await db.delete(projects).where(eq(projects.id, id)).execute();
-  const affected =
-    typeof (res as unknown as { affectedRows?: number }).affectedRows === 'number'
-      ? (res as unknown as { affectedRows: number }).affectedRows
-      : 0;
-  return affected;
+  const header = Array.isArray(res) ? res[0] : res;
+  return Number((header as unknown as { affectedRows?: number })?.affectedRows ?? 0);
 }
 
 /* ================= i18n write ================= */
@@ -371,11 +368,8 @@ export async function updateProjectImageParent(id: string, patch: Partial<NewPro
 
 export async function deleteProjectImageParent(id: string) {
   const res = await db.delete(projectImages).where(eq(projectImages.id, id)).execute();
-  const affected =
-    typeof (res as unknown as { affectedRows?: number }).affectedRows === 'number'
-      ? (res as unknown as { affectedRows: number }).affectedRows
-      : 0;
-  return affected;
+  const header = Array.isArray(res) ? res[0] : res;
+  return Number((header as unknown as { affectedRows?: number })?.affectedRows ?? 0);
 }
 
 export async function upsertProjectImageI18n(
