@@ -1,3 +1,4 @@
+import { withRouteMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
@@ -5,7 +6,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { ChevronRight, ArrowLeft, Tag } from 'lucide-react';
 import { fetchCustomPage, fetchCustomPagesByModuleKey, parseCustomPageContent } from '@/i18n/server';
-import { API_BASE_URL } from '@/lib/utils';
+import { getCustomPageBySlugWithLocale } from '@/lib/api';
 import type { CustomPage } from '@/i18n/server';
 import { resolveMediaUrl } from '@/lib/media';
 
@@ -13,8 +14,9 @@ interface Props {
   params: Promise<{ locale: string; slug: string }>;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale, slug } = await params;
+async function buildMetadata({ params }: Props): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
   const page = await fetchCustomPage(slug, locale);
   if (!page) return { title: 'Über uns' };
   return {
@@ -28,20 +30,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 async function fetchCustomPageBySlug(slug: string, locale: string): Promise<CustomPage | null> {
-  try {
-    const url = `${API_BASE_URL}/custom-pages/by-slug/${encodeURIComponent(slug)}?locale=${encodeURIComponent(locale)}`;
-    const res = await fetch(url, { next: { revalidate: 300 } });
-    if (!res.ok) return null;
-    const data = await res.json();
-    const page = data?.data ?? data;
-    return page?.id ? (page as CustomPage) : null;
-  } catch {
-    return null;
-  }
+  const page = await getCustomPageBySlugWithLocale(slug, locale);
+  return page?.id ? (page as CustomPage) : null;
 }
 
 export default async function AboutDetailPage({ params }: Props) {
-  const { locale, slug } = await params;
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
   setRequestLocale(locale);
 
   const tCommon = await getTranslations('common');
@@ -79,7 +74,7 @@ export default async function AboutDetailPage({ params }: Props) {
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-end pb-10">
             <nav className="flex items-center gap-2 text-sm text-slate-300 mb-4 flex-wrap">
               <Link href={`/${locale}`} className="hover:text-white transition-colors">
-                Startseite
+                {tCommon('home')}
               </Link>
               <ChevronRight size={14} className="shrink-0" />
               <Link href={`/${locale}/about`} className="hover:text-white transition-colors">
@@ -96,7 +91,7 @@ export default async function AboutDetailPage({ params }: Props) {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <nav className="flex items-center gap-2 text-sm text-slate-400 mb-4 flex-wrap">
               <Link href={`/${locale}`} className="hover:text-white transition-colors">
-                Startseite
+                {tCommon('home')}
               </Link>
               <ChevronRight size={14} className="shrink-0" />
               <Link href={`/${locale}/about`} className="hover:text-white transition-colors">
@@ -229,4 +224,10 @@ export default async function AboutDetailPage({ params }: Props) {
       </section>
     </main>
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
+  return withRouteMetadata(await buildMetadata({ params }), locale, `/about/${slug}`);
 }

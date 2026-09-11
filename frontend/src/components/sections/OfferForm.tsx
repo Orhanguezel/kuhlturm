@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { Send, Wrench, Settings2, Box } from 'lucide-react';
-import { createOffer, getProducts, getServices } from '@ensotek/core/services';
+import api from '@/lib/axios';
+import { getProducts, getServices } from '@ensotek/core/services';
 import { API_BASE_URL } from '@/lib/utils';
 import type { Product, Service } from '@ensotek/core/types';
 
@@ -207,7 +208,7 @@ export function OfferForm({ locale, labels, initialTab, initialPartId, initialPa
     }
 
     try {
-      await createOffer(API_BASE_URL, {
+      await api.post('/offers', {
         customer_name: name,
         company_name: company || undefined,
         email,
@@ -269,10 +270,10 @@ export function OfferForm({ locale, labels, initialTab, initialPartId, initialPa
         {/* Common contact fields */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className={labelCls}>
+            <label htmlFor="offerform-required-1" className={labelCls}>
               {labels.nameLabel} <span className="text-red-500">*</span>
             </label>
-            <input
+            <input id="offerform-required-1"
               type="text"
               required
               value={name}
@@ -282,8 +283,8 @@ export function OfferForm({ locale, labels, initialTab, initialPartId, initialPa
             />
           </div>
           <div>
-            <label className={labelCls}>{labels.companyLabel}</label>
-            <input
+            <label htmlFor="offerform-1" className={labelCls}>{labels.companyLabel}</label>
+            <input id="offerform-1"
               type="text"
               value={company}
               onChange={(e) => setCompany(e.target.value)}
@@ -295,10 +296,10 @@ export function OfferForm({ locale, labels, initialTab, initialPartId, initialPa
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className={labelCls}>
+            <label htmlFor="offerform-required-2" className={labelCls}>
               {labels.emailLabel} <span className="text-red-500">*</span>
             </label>
-            <input
+            <input id="offerform-required-2"
               type="email"
               required
               value={email}
@@ -308,8 +309,8 @@ export function OfferForm({ locale, labels, initialTab, initialPartId, initialPa
             />
           </div>
           <div>
-            <label className={labelCls}>{labels.phoneLabel}</label>
-            <input
+            <label htmlFor="offerform-2" className={labelCls}>{labels.phoneLabel}</label>
+            <input id="offerform-2"
               type="tel"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
@@ -323,10 +324,10 @@ export function OfferForm({ locale, labels, initialTab, initialPartId, initialPa
         {activeTab === 'service' && (
           <div className="flex flex-col gap-4 border-t border-slate-100 pt-5">
             <div>
-              <label className={labelCls}>
+              <label htmlFor="offerform-required-3" className={labelCls}>
                 {labels.serviceLabel} <span className="text-red-500">*</span>
               </label>
-              <select
+              <select id="offerform-required-3"
                 required
                 value={serviceId}
                 onChange={(e) => setServiceId(e.target.value)}
@@ -341,8 +342,8 @@ export function OfferForm({ locale, labels, initialTab, initialPartId, initialPa
               </select>
             </div>
             <div>
-              <label className={labelCls}>{labels.serviceDescLabel}</label>
-              <textarea
+              <label htmlFor="offerform-3" className={labelCls}>{labels.serviceDescLabel}</label>
+              <textarea id="offerform-3"
                 rows={5}
                 value={serviceDesc}
                 onChange={(e) => setServiceDesc(e.target.value)}
@@ -357,10 +358,10 @@ export function OfferForm({ locale, labels, initialTab, initialPartId, initialPa
         {activeTab === 'product' && (
           <div className="flex flex-col gap-4 border-t border-slate-100 pt-5">
             <div>
-              <label className={labelCls}>
+              <label htmlFor="offerform-required-4" className={labelCls}>
                 {labels.productLabel} <span className="text-red-500">*</span>
               </label>
-              <select
+              <select id="offerform-required-4"
                 required
                 value={productId}
                 onChange={(e) => setProductId(e.target.value)}
@@ -379,8 +380,8 @@ export function OfferForm({ locale, labels, initialTab, initialPartId, initialPa
             <div className="rounded-xl bg-slate-50 border border-slate-200 p-4 flex flex-col gap-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className={labelCls}>{labels.towerProcessLabel}</label>
-                  <input
+                  <label htmlFor="offerform-4" className={labelCls}>{labels.towerProcessLabel}</label>
+                  <input id="offerform-4"
                     type="text"
                     value={towerProcess}
                     onChange={(e) => setTowerProcess(e.target.value)}
@@ -389,8 +390,8 @@ export function OfferForm({ locale, labels, initialTab, initialPartId, initialPa
                   />
                 </div>
                 <div>
-                  <label className={labelCls}>{labels.towerCityLabel}</label>
-                  <input
+                  <label htmlFor="offerform-5" className={labelCls}>{labels.towerCityLabel}</label>
+                  <input id="offerform-5"
                     type="text"
                     value={towerCity}
                     onChange={(e) => setTowerCity(e.target.value)}
@@ -402,8 +403,8 @@ export function OfferForm({ locale, labels, initialTab, initialPartId, initialPa
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div>
-                  <label className={labelCls}>{labels.waterFlowLabel}</label>
-                  <input
+                  <label htmlFor="offerform-6" className={labelCls}>{labels.waterFlowLabel}</label>
+                  <input id="offerform-6"
                     type="text"
                     value={waterFlow}
                     onChange={(e) => setWaterFlow(e.target.value)}
@@ -412,8 +413,8 @@ export function OfferForm({ locale, labels, initialTab, initialPartId, initialPa
                   />
                 </div>
                 <div>
-                  <label className={labelCls}>{labels.inletTempLabel}</label>
-                  <input
+                  <label htmlFor="offerform-7" className={labelCls}>{labels.inletTempLabel}</label>
+                  <input id="offerform-7"
                     type="text"
                     value={inletTemp}
                     onChange={(e) => setInletTemp(e.target.value)}
@@ -422,8 +423,8 @@ export function OfferForm({ locale, labels, initialTab, initialPartId, initialPa
                   />
                 </div>
                 <div>
-                  <label className={labelCls}>{labels.outletTempLabel}</label>
-                  <input
+                  <label htmlFor="offerform-8" className={labelCls}>{labels.outletTempLabel}</label>
+                  <input id="offerform-8"
                     type="text"
                     value={outletTemp}
                     onChange={(e) => setOutletTemp(e.target.value)}
@@ -435,8 +436,8 @@ export function OfferForm({ locale, labels, initialTab, initialPartId, initialPa
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className={labelCls}>{labels.wetBulbTempLabel}</label>
-                  <input
+                  <label htmlFor="offerform-9" className={labelCls}>{labels.wetBulbTempLabel}</label>
+                  <input id="offerform-9"
                     type="text"
                     value={wetBulbTemp}
                     onChange={(e) => setWetBulbTemp(e.target.value)}
@@ -445,8 +446,8 @@ export function OfferForm({ locale, labels, initialTab, initialPartId, initialPa
                   />
                 </div>
                 <div>
-                  <label className={labelCls}>{labels.capacityLabel}</label>
-                  <input
+                  <label htmlFor="offerform-10" className={labelCls}>{labels.capacityLabel}</label>
+                  <input id="offerform-10"
                     type="text"
                     value={capacity}
                     onChange={(e) => setCapacity(e.target.value)}
@@ -458,8 +459,8 @@ export function OfferForm({ locale, labels, initialTab, initialPartId, initialPa
             </div>
 
             <div>
-              <label className={labelCls}>{labels.notesLabel}</label>
-              <textarea
+              <label htmlFor="offerform-11" className={labelCls}>{labels.notesLabel}</label>
+              <textarea id="offerform-11"
                 rows={4}
                 value={productNotes}
                 onChange={(e) => setProductNotes(e.target.value)}
@@ -475,8 +476,8 @@ export function OfferForm({ locale, labels, initialTab, initialPartId, initialPa
           <div className="flex flex-col gap-4 border-t border-slate-100 pt-5">
             {spareParts.length > 0 && (
               <div>
-                <label className={labelCls}>{labels.productLabel}</label>
-                <select
+                <label htmlFor="offerform-12" className={labelCls}>{labels.productLabel}</label>
+                <select id="offerform-12"
                   value={sparepartId}
                   onChange={(e) => setSparepartId(e.target.value)}
                   className={inputCls}
@@ -491,10 +492,10 @@ export function OfferForm({ locale, labels, initialTab, initialPartId, initialPa
               </div>
             )}
             <div>
-              <label className={labelCls}>
+              <label htmlFor="offerform-required-5" className={labelCls}>
                 {labels.sparepartDescLabel} <span className="text-red-500">*</span>
               </label>
-              <textarea
+              <textarea id="offerform-required-5"
                 required
                 rows={4}
                 value={sparepartDesc}
@@ -505,8 +506,8 @@ export function OfferForm({ locale, labels, initialTab, initialPartId, initialPa
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className={labelCls}>{labels.partNumberLabel}</label>
-                <input
+                <label htmlFor="offerform-13" className={labelCls}>{labels.partNumberLabel}</label>
+                <input id="offerform-13"
                   type="text"
                   value={partNumber}
                   onChange={(e) => setPartNumber(e.target.value)}
@@ -515,10 +516,10 @@ export function OfferForm({ locale, labels, initialTab, initialPartId, initialPa
                 />
               </div>
               <div>
-                <label className={labelCls}>
+                <label htmlFor="offerform-required-6" className={labelCls}>
                   {labels.quantityLabel} <span className="text-red-500">*</span>
                 </label>
-                <input
+                <input id="offerform-required-6"
                   type="text"
                   required
                   value={quantity}
@@ -529,8 +530,8 @@ export function OfferForm({ locale, labels, initialTab, initialPartId, initialPa
               </div>
             </div>
             <div>
-              <label className={labelCls}>{labels.sparepartNotesLabel}</label>
-              <textarea
+              <label htmlFor="offerform-14" className={labelCls}>{labels.sparepartNotesLabel}</label>
+              <textarea id="offerform-14"
                 rows={3}
                 value={sparepartNotes}
                 onChange={(e) => setSparepartNotes(e.target.value)}

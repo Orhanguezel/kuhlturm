@@ -1,3 +1,4 @@
+import { withRouteMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
@@ -13,11 +14,9 @@ interface Props {
   searchParams: Promise<{ category?: string }>;
 }
 
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: 'Produkte',
-    description: 'Hochwertige Kühltürme und Komponenten für Industrie und Gewerbe.',
-  };
+async function buildMetadata(): Promise<Metadata> {
+  const t = await getTranslations('products');
+  return { title: t('title') };
 }
 
 export default async function ProductsPage({ params, searchParams }: Props) {
@@ -75,7 +74,7 @@ export default async function ProductsPage({ params, searchParams }: Props) {
                     : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                 }`}
               >
-                Alle
+                {locale === "en" ? "All" : "Alle"}
               </Link>
               {categories.map((cat) => (
                 <Link
@@ -102,7 +101,7 @@ export default async function ProductsPage({ params, searchParams }: Props) {
                   href={`/${locale}/product`}
                   className="mt-4 inline-block text-sm text-blue-600 hover:underline"
                 >
-                  Alle Produkte anzeigen
+                  {locale === "en" ? "View all products" : "Alle Produkte anzeigen"}
                 </Link>
               )}
             </div>
@@ -153,4 +152,10 @@ export default async function ProductsPage({ params, searchParams }: Props) {
       </section>
     </main>
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
+  return withRouteMetadata(await buildMetadata(), locale, `/product`);
 }

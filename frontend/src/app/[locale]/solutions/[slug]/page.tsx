@@ -1,3 +1,6 @@
+import { withRouteMetadata } from '@/lib/seo';
+import { notFound } from 'next/navigation';
+import { getCustomPageBySlugWithLocale } from '@/lib/api';
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
@@ -18,9 +21,10 @@ interface Props {
   params: Promise<{ locale: string; slug: string }>;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale, slug } = await params;
-  const item = await getCustomPageBySlug(API_BASE_URL, slug, locale).catch(() => null);
+async function buildMetadata({ params }: Props): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
+  const item = await getCustomPageBySlugWithLocale(slug, locale);
   if (!item) return { title: 'Lösungen' };
   return {
     title: item.meta_title ?? item.title,
@@ -32,7 +36,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function SolutionDetailPage({ params }: Props) {
-  const { locale, slug } = await params;
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
   setRequestLocale(locale);
 
   const [t, tCommon, tReviews] = await Promise.all([
@@ -41,37 +46,20 @@ export default async function SolutionDetailPage({ params }: Props) {
     getTranslations('reviews'),
   ]);
 
-  const item = await getCustomPageBySlug(API_BASE_URL, slug, locale).catch(() => null);
+  const item = await getCustomPageBySlugWithLocale(slug, locale);
 
-  if (!item) {
-    return (
-      <main>
-        <div className="min-h-[60vh] flex items-center justify-center">
-          <div className="text-center">
-            <p className="text-slate-400 text-lg mb-6">{t('noResults')}</p>
-            <Link
-              href={`/${locale}/solutions`}
-              className="inline-flex items-center gap-2 text-blue-600 hover:underline font-medium"
-            >
-              <ArrowLeft size={16} />
-              {t('backToSolutions')}
-            </Link>
-          </div>
-        </div>
-      </main>
-    );
-  }
+  if (!item) notFound();
 
-  const htmlContent = parseCustomPageContent(item.content);
+  const htmlContent = parseCustomPageContent(item.content).replace(/<h1(\s[^>]*)?>/gi, '<h2$1>').replace(/<\/h1>/gi, '</h2>');
 
-  const date = new Date(item.created_at).toLocaleDateString('de-DE', {
+  const date = new Date(item.created_at).toLocaleDateString(locale, {
     day: '2-digit',
     month: 'long',
     year: 'numeric',
   });
 
   const tags = item.tags
-    ? item.tags.split(',').map((t) => t.trim()).filter(Boolean)
+    ? item.tags.split(',').map((t: string) => t.trim()).filter(Boolean)
     : [];
 
   // Related solutions (same category, excluding current)
@@ -160,7 +148,7 @@ export default async function SolutionDetailPage({ params }: Props) {
                 <div className="mt-10 pt-8 border-t border-slate-100">
                   <div className="flex items-center gap-2 flex-wrap">
                     <Tag size={14} className="text-slate-400" />
-                    {tags.map((tag) => (
+                    {tags.map((tag: string) => (
                       <span
                         key={tag}
                         className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-full"
@@ -219,7 +207,7 @@ export default async function SolutionDetailPage({ params }: Props) {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {related.map((rel) => {
-                const relDate = new Date(rel.created_at).toLocaleDateString('de-DE', {
+                const relDate = new Date(rel.created_at).toLocaleDateString(locale, {
                   day: '2-digit', month: 'short', year: 'numeric',
                 });
                 return (
@@ -291,4 +279,10 @@ export default async function SolutionDetailPage({ params }: Props) {
       />
     </main>
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
+  return withRouteMetadata(await buildMetadata({ params }), locale, `/solutions/${slug}`);
 }

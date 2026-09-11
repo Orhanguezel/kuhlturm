@@ -1,0 +1,76 @@
+[
+  {
+    "url": "https://www.gohl-ktk.de/",
+    "final": "https://www.gohl-ktk.de/",
+    "status": 200,
+    "title": [
+      "GOHL-KTK – Experte für Rückkühltechnologie &amp; -Service"
+    ],
+    "social": [
+      "https://www.instagram.com/gohl_ktk/",
+      "https://www.linkedin.com/company/gohl-ktk/",
+      "https://www.youtube.com/channel/UCeeIG9qcMgQzEaPLtAYPyGg"
+    ]
+  },
+  {
+    "url": "https://cts-cooling.com/",
+    "final": "https://cts-cooling.com/",
+    "status": 200,
+    "title": [
+      "Startseite - CTS Cooling Tower Solutions"
+    ],
+    "social": []
+  },
+  {
+    "url": "https://kuehltuerme-deutschland.de/ueber-uns/",
+    "final": "https://kuehltuerme-deutschland.de/ueber-uns/",
+    "status": 200,
+    "title": [
+      "Über uns - RCS - Kühltürme Deutschland"
+    ],
+    "social": []
+  },
+  {
+    "url": "https://coolconcept.de/leistungen/kuehlturmtechnik/",
+    "final": "https://coolconcept.de/leistungen/kuehlturmtechnik/",
+    "status": 200,
+    "title": [
+      "coolconcept | Fachbetrieb für Kälte- und Klimatechnik"
+    ],
+    "social": [
+      "https://www.facebook.com/coolconcept.de",
+      "https://www.instagram.com/coolconcept_gmbh/",
+      "https://www.linkedin.com/company/coolconcept-gmbh/",
+      "https://www.youtube.com/@coolconceptgmbh"
+    ]
+  },
+  {
+    "url": "https://www.torraval.com/de/kuehltuerme/",
+    "final": "https://www.torraval.com/de/kuehltuerme/",
+    "status": 200,
+    "title": [
+      "Hersteller von Kühltürmen | Kühltürme mit Offenem Kreislauf"
+    ],
+    "social": []
+  },
+  {
+    "url": "https://kuhlturm.com/de",
+    "final": "https://kuhlturm.com/de",
+    "status": 200,
+    "title": [
+      "Kühlturm — Professionelle Kühllösungen"
+    ],
+    "social": [
+      "https://facebook.com/ensotek\\",
+      "https://instagram.com/ensotek\\",
+      "https://linkedin.com/company/ensotek\\",
+      "https://www.instagram.com/ensotek",
+      "https://www.instagram.com/ensotek\\",
+      "https://www.linkedin.com/company/ensotek",
+      "https://www.linkedin.com/company/ensotek\\",
+      "https://www.youtube.com/@ensotek",
+      "https://www.youtube.com/@ensotek\\",
+      "https://youtube.com/@ensotek\\"
+    ]
+  }
+]

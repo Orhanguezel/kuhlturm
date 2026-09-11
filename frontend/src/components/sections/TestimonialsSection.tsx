@@ -1,5 +1,7 @@
 'use client';
 
+import { useLocale } from 'next-intl';
+
 import { useCallback, useEffect, useRef, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
@@ -58,6 +60,7 @@ function StarRating({ value, onChange }: { value: number; onChange: (v: number) 
 }
 
 export function TestimonialsSection({ reviews, title, subtitle, labels }: Props) {
+  const locale = useLocale();
   const autoplay = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, align: 'start', slidesToScroll: 1 },
@@ -209,7 +212,7 @@ export function TestimonialsSection({ reviews, title, subtitle, labels }: Props)
         <div className="flex items-center justify-center gap-4 mt-8">
           <button
             onClick={scrollPrev}
-            aria-label="Zurück"
+            aria-label={locale === 'en' ? 'Previous' : 'Zurück'}
             className="w-9 h-9 rounded-full border border-slate-300 flex items-center justify-center text-slate-600 hover:border-blue-400 hover:text-blue-600 transition-colors"
           >
             <ChevronLeft size={16} />
@@ -220,7 +223,7 @@ export function TestimonialsSection({ reviews, title, subtitle, labels }: Props)
               <button
                 key={i}
                 onClick={() => scrollTo(i)}
-                aria-label={`Bewertung ${i + 1}`}
+                aria-label={`${locale === 'en' ? 'Review' : 'Bewertung'} ${i + 1}`}
                 className={`h-2 rounded-full transition-all duration-300 ${
                   i === selectedIndex ? 'w-6 bg-blue-600' : 'w-2 bg-slate-300 hover:bg-slate-400'
                 }`}
@@ -230,7 +233,7 @@ export function TestimonialsSection({ reviews, title, subtitle, labels }: Props)
 
           <button
             onClick={scrollNext}
-            aria-label="Weiter"
+            aria-label={locale === 'en' ? 'Next' : 'Weiter'}
             className="w-9 h-9 rounded-full border border-slate-300 flex items-center justify-center text-slate-600 hover:border-blue-400 hover:text-blue-600 transition-colors"
           >
             <ChevronRight size={16} />

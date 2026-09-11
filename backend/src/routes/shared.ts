@@ -6,7 +6,7 @@ import { registerProfiles } from '@ensotek/shared-backend/modules/profiles/route
 import { registerCustomPages } from '@ensotek/shared-backend/modules/customPages/router';
 import { registerSiteSettings } from '@ensotek/shared-backend/modules/siteSettings/router';
 import { registerUserRoles } from '@ensotek/shared-backend/modules/userRoles/router';
-import { registerServices } from '@ensotek/shared-backend/modules/services/router';
+import { registerServices } from '@/modules/services/router';
 import { registerReferences } from '@ensotek/shared-backend/modules/references/router';
 import { registerMenuItems } from '@ensotek/shared-backend/modules/menuItems/router';
 import { registerSlider } from '@ensotek/shared-backend/modules/slider/router';
@@ -18,7 +18,7 @@ import { registerFooterSections } from '@ensotek/shared-backend/modules/footerSe
 import { registerLibrary } from '@ensotek/shared-backend/modules/library/router';
 import { registerNewsletter } from '@ensotek/shared-backend/modules/newsletter/router';
 import { registerNotifications } from '@ensotek/shared-backend/modules/notifications/router';
-import { registerProducts } from '@ensotek/shared-backend/modules/products/router';
+import { registerProducts } from '@/modules/products/router';
 import { registerReviews } from '@ensotek/shared-backend/modules/review/router';
 import { registerSupport } from '@ensotek/shared-backend/modules/support/router';
 import { registerOffer } from '@ensotek/shared-backend/modules/offer/router';
@@ -28,7 +28,7 @@ import { registerTelegram } from '@ensotek/shared-backend/modules/telegram/route
 import { registerCustomPagesAdmin } from '@ensotek/shared-backend/modules/customPages/admin.routes';
 import { registerSiteSettingsAdmin } from '@ensotek/shared-backend/modules/siteSettings/admin.routes';
 import { registerUserAdmin } from '@ensotek/shared-backend/modules/auth/admin.routes';
-import { registerServicesAdmin } from '@ensotek/shared-backend/modules/services/admin.routes';
+import { registerServicesAdmin } from '@/modules/services/admin.routes';
 import { registerReferencesAdmin } from '@ensotek/shared-backend/modules/references/admin.routes';
 import { registerStorageAdmin } from '@ensotek/shared-backend/modules/storage/admin.routes';
 import { registerMenuItemsAdmin } from '@ensotek/shared-backend/modules/menuItems/admin.routes';
@@ -42,7 +42,7 @@ import { registerEmailTemplatesAdmin } from '@ensotek/shared-backend/modules/ema
 import { registerFooterSectionsAdmin } from '@ensotek/shared-backend/modules/footerSections/admin.routes';
 import { registerLibraryAdmin } from '@ensotek/shared-backend/modules/library/admin.routes';
 import { registerNewsletterAdmin } from '@ensotek/shared-backend/modules/newsletter/admin.routes';
-import { registerProductsAdmin } from '@ensotek/shared-backend/modules/products/admin.routes';
+import { registerProductsAdmin } from '@/modules/products/admin.routes';
 import { registerReviewsAdmin } from '@ensotek/shared-backend/modules/review/admin.routes';
 import { registerSupportAdmin } from '@ensotek/shared-backend/modules/support/admin.routes';
 import { registerOfferAdmin } from '@ensotek/shared-backend/modules/offer/admin.routes';

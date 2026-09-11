@@ -24,7 +24,7 @@ export async function fetchSetting(
   try {
     const url = `${API_BASE_URL}/site_settings/${encodeURIComponent(key)}?locale=${encodeURIComponent(locale)}`;
     const res = await fetch(url, {
-      next: options?.revalidate != null ? { revalidate: options.revalidate } : undefined,
+      next: { revalidate: options?.revalidate ?? 300 },
       headers: {
         'x-locale': locale,
         'accept-language': locale,

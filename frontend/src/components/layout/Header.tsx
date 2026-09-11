@@ -189,7 +189,7 @@ export function Header({ menuItems = [], logoSrc }: HeaderProps) {
             <button
               className="lg:hidden flex items-center justify-center h-9 w-9 rounded-md text-slate-600 hover:bg-slate-100 transition-colors"
               onClick={() => setMobileOpen(true)}
-              aria-label="Menü öffnen"
+              aria-label={locale === 'en' ? 'Open menu' : 'Menü öffnen'}
             >
               <Menu size={20} />
             </button>

@@ -15,7 +15,11 @@ const inputCls =
   'w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20';
 const labelCls = 'block text-xs font-semibold text-slate-600 mb-1.5';
 
-export function CatalogModal({ open, onClose, locale }: Props) {
+export function CatalogModal(props: Props) {
+  return props.open ? <CatalogModalContent {...props} /> : null;
+}
+
+function CatalogModalContent({ open, onClose, locale }: Props) {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [name, setName] = useState('');
   const [company, setCompany] = useState('');
@@ -26,20 +30,6 @@ export function CatalogModal({ open, onClose, locale }: Props) {
   const [consentMarketing, setConsentMarketing] = useState(false);
 
   const panelRef = useRef<HTMLDivElement>(null);
-
-  // Reset when opened
-  useEffect(() => {
-    if (open) {
-      setStatus('idle');
-      setName('');
-      setCompany('');
-      setEmail('');
-      setPhone('');
-      setMessage('');
-      setConsentTerms(false);
-      setConsentMarketing(false);
-    }
-  }, [open]);
 
   // Escape key
   useEffect(() => {
@@ -110,16 +100,16 @@ export function CatalogModal({ open, onClose, locale }: Props) {
             </div>
             <div>
               <h2 className="font-display text-lg font-bold text-slate-900">
-                Katalog anfordern
+                {locale === "en" ? "Request catalog" : "Katalog anfordern"}
               </h2>
-              <p className="text-xs text-slate-500">Kostenlos & unverbindlich</p>
+              <p className="text-xs text-slate-500">{locale === "en" ? "Free and without obligation" : "Kostenlos & unverbindlich"}</p>
             </div>
           </div>
           <button
             type="button"
             onClick={onClose}
             className="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors"
-            aria-label="Schließen"
+            aria-label={locale === 'en' ? 'Close' : 'Schließen'}
           >
             <X size={18} />
           </button>
@@ -133,17 +123,17 @@ export function CatalogModal({ open, onClose, locale }: Props) {
                 <span className="text-green-600 text-3xl">✓</span>
               </div>
               <h3 className="font-display text-xl font-bold text-slate-900 mb-2">
-                Vielen Dank!
+                {locale === "en" ? "Thank you!" : "Vielen Dank!"}
               </h3>
               <p className="text-slate-500 text-sm mb-6">
-                Wir haben Ihre Anfrage erhalten und senden Ihnen den Katalog schnellstmöglich zu.
+                {locale === "en" ? "We received your request. Our team will send you the catalog." : "Wir haben Ihre Anfrage erhalten und senden Ihnen den Katalog schnellstmöglich zu."}
               </p>
               <button
                 type="button"
                 onClick={onClose}
                 className="px-6 py-2.5 bg-slate-100 text-slate-700 text-sm font-semibold rounded-xl hover:bg-slate-200 transition-colors"
               >
-                Schließen
+                {locale === "en" ? "Close" : "Schließen"}
               </button>
             </div>
           ) : (
@@ -159,17 +149,17 @@ export function CatalogModal({ open, onClose, locale }: Props) {
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Max Mustermann"
+                    aria-label={locale === "en" ? "Full name" : "Name"} placeholder={locale === "en" ? "Full name" : "Name"}
                     className={inputCls}
                   />
                 </div>
                 <div>
-                  <label className={labelCls}>Unternehmen</label>
+                  <label className={labelCls}>{locale === "en" ? "Company" : "Unternehmen"}</label>
                   <input
                     type="text"
                     value={company}
                     onChange={(e) => setCompany(e.target.value)}
-                    placeholder="Muster GmbH"
+                    aria-label={locale === "en" ? "Company" : "Unternehmen"} placeholder={locale === "en" ? "Company" : "Unternehmen"}
                     className={inputCls}
                   />
                 </div>
@@ -186,17 +176,17 @@ export function CatalogModal({ open, onClose, locale }: Props) {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="max@mustermann.de"
+                    aria-label="Email" placeholder="name@example.com"
                     className={inputCls}
                   />
                 </div>
                 <div>
-                  <label className={labelCls}>Telefon</label>
+                  <label className={labelCls}>{locale === "en" ? "Phone" : "Telefon"}</label>
                   <input
                     type="tel"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    placeholder="+49 000 000 0000"
+                    aria-label={locale === "en" ? "Phone" : "Telefon"} placeholder="+49 …"
                     className={inputCls}
                   />
                 </div>
@@ -204,12 +194,12 @@ export function CatalogModal({ open, onClose, locale }: Props) {
 
               {/* Message */}
               <div>
-                <label className={labelCls}>Nachricht (optional)</label>
+                <label className={labelCls}>{locale === "en" ? "Message (optional)" : "Nachricht (optional)"}</label>
                 <textarea
                   rows={3}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Teilen Sie uns mit, für welchen Bereich Sie den Katalog benötigen…"
+                  aria-label={locale === "en" ? "Message" : "Nachricht"} placeholder={locale === "en" ? "Tell us which product or application you need the catalog for…" : "Teilen Sie uns mit, für welchen Bereich Sie den Katalog benötigen…"}
                   className={`${inputCls} resize-none`}
                 />
               </div>
@@ -225,9 +215,9 @@ export function CatalogModal({ open, onClose, locale }: Props) {
                     className="mt-0.5 h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500 shrink-0"
                   />
                   <span className="text-xs text-slate-600 leading-snug">
-                    Ich stimme den{' '}
-                    <span className="underline cursor-pointer">Datenschutzbestimmungen</span>{' '}
-                    zu und bin mit der Verarbeitung meiner Daten einverstanden.{' '}
+                    {locale === 'en' ? 'I have read the ' : 'Ich habe die '}
+                    <a href={locale === "en" ? "/en/legal/privacy-policy" : "/de/legal/datenschutzerklaerung"} className="underline" target="_blank" rel="noopener noreferrer">{locale === "en" ? "privacy information" : "Datenschutzhinweise"}</a>{' '}
+                    {locale === 'en' ? ' and agree to data processing for my catalog request.' : ' gelesen und stimme der Datenverarbeitung für meine Kataloganfrage zu.'}
                     <span className="text-red-500">*</span>
                   </span>
                 </label>
@@ -239,14 +229,14 @@ export function CatalogModal({ open, onClose, locale }: Props) {
                     className="mt-0.5 h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500 shrink-0"
                   />
                   <span className="text-xs text-slate-600 leading-snug">
-                    Ja, ich möchte Neuigkeiten und Produktinformationen per E-Mail erhalten.
+                    {locale === "en" ? "I would like to receive news and product information by email." : "Ja, ich möchte Neuigkeiten und Produktinformationen per E-Mail erhalten."}
                   </span>
                 </label>
               </div>
 
               {status === 'error' && (
                 <p className="text-sm text-red-600 bg-red-50 rounded-xl px-4 py-3">
-                  Fehler beim Senden. Bitte versuchen Sie es erneut.
+                  {locale === "en" ? "Could not send your request. Please try again." : "Fehler beim Senden. Bitte versuchen Sie es erneut."}
                 </p>
               )}
 
@@ -256,7 +246,7 @@ export function CatalogModal({ open, onClose, locale }: Props) {
                 className="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 bg-blue-600 text-white text-sm font-semibold rounded-xl hover:bg-blue-700 disabled:opacity-60 disabled:cursor-not-allowed transition-colors mt-1"
               >
                 <Send size={15} />
-                {status === 'loading' ? 'Wird gesendet…' : 'Katalog anfordern'}
+                {status === 'loading' ? (locale === 'en' ? 'Sending…' : 'Wird gesendet…') : (locale === 'en' ? 'Request catalog' : 'Katalog anfordern')}
               </button>
             </form>
           )}

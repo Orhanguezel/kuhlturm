@@ -1,0 +1,12 @@
+{
+  "url": "https://kuhlturm.com/de",
+  "width": 1440,
+  "scroll": 1440,
+  "logo": [
+    {
+      "alt": "Kühlturm",
+      "src": "https://kuhlturm.com/_next/image?url=%2Flogo%2Fensotek-logo-main.png&w=128&q=75"
+    }
+  ],
+  "h1": []
+}

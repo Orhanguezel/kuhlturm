@@ -95,9 +95,9 @@ VALUES
   'socials',
   'tr',
   CAST(JSON_OBJECT(
-    'instagram','https://instagram.com/ensotek',
+    'instagram','https://www.instagram.com/ensotek_tr/',
     'facebook','https://facebook.com/ensotek',
-    'youtube','https://youtube.com/@ensotek',
+    'youtube','https://www.youtube.com/channel/UCX22ErWzyT4wDqDRGN9zYmg',
     'linkedin','https://linkedin.com/company/ensotek',
     'x','https://x.com/ensotek',
     'tiktok','https://www.tiktok.com/@ensotek'
@@ -176,9 +176,9 @@ VALUES
   'socials',
   'en',
   CAST(JSON_OBJECT(
-    'instagram','https://instagram.com/ensotek',
+    'instagram','https://www.instagram.com/ensotek_tr/',
     'facebook','https://facebook.com/ensotek',
-    'youtube','https://youtube.com/@ensotek',
+    'youtube','https://www.youtube.com/channel/UCX22ErWzyT4wDqDRGN9zYmg',
     'linkedin','https://linkedin.com/company/ensotek',
     'x','https://x.com/ensotek',
     'tiktok',''
@@ -249,9 +249,9 @@ VALUES
   'socials',
   'de',
   CAST(JSON_OBJECT(
-    'instagram','https://instagram.com/ensotek',
+    'instagram','https://www.instagram.com/ensotek_tr/',
     'facebook','https://facebook.com/ensotek',
-    'youtube','https://youtube.com/@ensotek',
+    'youtube','https://www.youtube.com/channel/UCX22ErWzyT4wDqDRGN9zYmg',
     'linkedin','https://linkedin.com/company/ensotek',
     'x','https://x.com/ensotek',
     'tiktok','https://www.tiktok.com/@ensotek'
@@ -358,8 +358,8 @@ ON DUPLICATE KEY UPDATE
 -- =============================================================
 INSERT INTO `site_settings` (`id`, `key`, `locale`, `value`, `created_at`, `updated_at`)
 VALUES
-(UUID(), 'gtm_container_id',   '*', 'GTM-WV5FRN93', NOW(3), NOW(3)),
-(UUID(), 'ga4_measurement_id', '*', 'G-7S6TW9CNRJ', NOW(3), NOW(3))
+(UUID(), 'kuhlturm_ga4_measurement_id', '*', 'G-KXDKCDY0ET', NOW(3), NOW(3)),
+(UUID(), 'kuhlturm_ga4_property_id', '*', '553360294', NOW(3), NOW(3))
 ON DUPLICATE KEY UPDATE
   `value`      = VALUES(`value`),
   `updated_at` = VALUES(`updated_at`);

@@ -1,6 +1,6 @@
 # Kühlturm — Agent / Codex Girişi
 
-Kühlturm B2B soğutma kulesi sitesi (DE + EN). Mimari: `ensotek_de`'den klonlanmış 3-uygulamalı yapı (frontend + backend + admin_panel), kendi veritabanı (`kuhlturm`).
+Kühlturm B2B soğutma kulesi sitesi (DE + EN). Mimari: `ensotek_de`'den klonlanmış 3-uygulamalı yapı (frontend + backend + admin_panel), kendi canlı veritabanı (`kuhlturm_live`).
 
 ## Önce oku
 
@@ -11,7 +11,7 @@ Kühlturm B2B soğutma kulesi sitesi (DE + EN). Mimari: `ensotek_de`'den klonlan
 
 ## Sıkı kurallar
 
-- `ALTER TABLE` **yok** — `src/db/seed/sql/0XX_*.sql` güncellenir, `db:seed:*:fresh` ile DB sıfırdan kurulur.
+- `ALTER TABLE` **yok** — `src/db/seed/sql/0XX_*.sql` güncellenir, `db:seed:*:fresh` yalnız yeni/izole geliştirme DB’sinde kullanılır. Canlı DB sıfırlanmaz.
 - `.env` repoya commit edilmez (`.gitignore`). Örnek için `.env.example`.
 - Stack/domain/servis değişikliği varsa önce `project.portfolio.json` güncellenir.
 
@@ -21,8 +21,8 @@ Kühlturm B2B soğutma kulesi sitesi (DE + EN). Mimari: `ensotek_de`'den klonlan
 |--------|------|
 | kuhlturm-backend | 8089 |
 | kuhlturm-admin-panel | 3023 |
-| kuhlturm-frontend | (mevcut PM2 — frontend ecosystem.config.cjs yok, oluşturulacak) |
+| kuhlturm-frontend | 3025 (frontend/ecosystem.config.cjs) |
 
 ## Veritabanı
 
-`kuhlturm` — bağımsız MySQL DB. Diğer projelerin DB'leriyle paylaşılmaz.
+`kuhlturm_live` — bağımsız canlı MySQL DB; `kuhlturm_runtime` hesabı yalnız bu DB’ye yetkilidir. Eski `kuhlturm` arşivi ve Ensotek DE `ensotek` DB’si korunur. Geçiş/kabul: [işletim kaydı](docs/runtime-isolation-2026-09-10.md).

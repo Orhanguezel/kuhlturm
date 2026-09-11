@@ -3,8 +3,8 @@
   "project": {
     "key": "kuhlturm",
     "title": "Kühlturm",
-    "summary": "B2B cooling tower platform for the German and English markets — full Fastify + Next.js stack cloned from ensotek_de architecture, with its own database (kuhlturm) and brand.",
-    "description": "B2B cooling tower platform for the German and English markets — full Fastify + Next.js stack cloned from ensotek_de architecture, with its own database (kuhlturm) and brand.",
+    "summary": "Ensotek alt markası: Almanca ve İngilizce B2B soğutma kulesi platformu; bağımsız API, yönetim ve veri alanı.",
+    "description": "Ensotek alt markası: Almanca ve İngilizce B2B soğutma kulesi platformu; bağımsız API, yönetim ve veri alanı. 2026-09-09 izolasyon hedefi: kuhlturm_live MySQL veritabanı; mevcut ensotek ve eski kuhlturm verileri silinmeden korunur.",
     "category": "custom-software",
     "status": "completed",
     "ownership": "client",

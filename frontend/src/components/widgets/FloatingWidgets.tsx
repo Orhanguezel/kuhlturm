@@ -104,7 +104,7 @@ export function FloatingWidgets({ activeLocales = [], socials = {}, contactInfo 
         </div>
       )}
 
-      <div className="fixed right-0 top-1/2 -translate-y-1/2 z-[9000] flex flex-col pointer-events-none">
+      <div className="fixed right-0 top-1/2 -translate-y-1/2 z-[9000] hidden lg:flex flex-col pointer-events-none">
         
         {/* ── FLOATING BAR ── */}
         <div className="flex flex-col pointer-events-auto bg-[#2b2b2b] shadow-2xl mr-0 w-[60px] relative">
@@ -113,7 +113,7 @@ export function FloatingWidgets({ activeLocales = [], socials = {}, contactInfo 
           <div className="relative">
             <button
               onClick={() => toggleTab('search')}
-              aria-label="Ara"
+              aria-label={locale === "en" ? "Search" : "Suchen"}
               className={`w-[60px] h-[60px] flex items-center justify-center transition-colors ${activeTab === 'search' ? 'bg-[var(--color-brand)] text-white' : 'text-white/70 hover:bg-white/5'}`}
             >
               <Search size={22} />
@@ -187,7 +187,7 @@ export function FloatingWidgets({ activeLocales = [], socials = {}, contactInfo 
             )}
             <button
               onClick={() => toggleTab('info')}
-              aria-label="İletişim bilgileri"
+              aria-label={locale === "en" ? "Contact information" : "Kontaktinformationen"}
               className={`w-[60px] h-[60px] flex items-center justify-center transition-colors border-t border-white/5 ${activeTab === 'info' ? 'bg-[var(--color-brand)] text-white' : 'text-white/70 hover:bg-white/5'}`}
             >
               <User size={22} />
@@ -213,7 +213,7 @@ export function FloatingWidgets({ activeLocales = [], socials = {}, contactInfo 
             )}
             <button
               onClick={() => toggleTab('social')}
-              aria-label="Sosyal medya"
+              aria-label={locale === "en" ? "Social media" : "Soziale Medien"}
               className={`w-[60px] h-[60px] flex items-center justify-center transition-colors border-t border-white/5 ${activeTab === 'social' ? 'bg-[var(--color-brand)] text-white' : 'text-white/70 hover:bg-white/5'}`}
             >
               <Share2 size={22} />

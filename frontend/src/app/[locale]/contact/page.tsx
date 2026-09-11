@@ -1,3 +1,4 @@
+import { withRouteMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
@@ -10,11 +11,9 @@ interface Props {
   params: Promise<{ locale: string }>;
 }
 
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: 'Kontakt',
-    description: 'Kontaktieren Sie uns — wir freuen uns auf Ihre Anfrage.',
-  };
+async function buildMetadata(): Promise<Metadata> {
+  const t = await getTranslations('contact');
+  return { title: t('title') };
 }
 
 interface ContactInfo {
@@ -237,19 +236,19 @@ export default async function ContactPage({ params }: Props) {
                     href={`/${locale}/product`}
                     className="text-sm text-blue-600 hover:underline"
                   >
-                    → Unsere Produkte
+                    {locale === "en" ? "\u2192 Our products" : "→ Unsere Produkte"}
                   </Link>
                   <Link
                     href={`/${locale}/service`}
                     className="text-sm text-blue-600 hover:underline"
                   >
-                    → Dienstleistungen
+                    {locale === "en" ? "\u2192 Services" : "→ Dienstleistungen"}
                   </Link>
                   <Link
                     href={`/${locale}/about`}
                     className="text-sm text-blue-600 hover:underline"
                   >
-                    → Über uns
+                    {locale === "en" ? "\u2192 About us" : "→ Über uns"}
                   </Link>
                 </div>
               </div>
@@ -299,4 +298,10 @@ export default async function ContactPage({ params }: Props) {
       )}
     </main>
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
+  return withRouteMetadata(await buildMetadata(), locale, `/contact`);
 }

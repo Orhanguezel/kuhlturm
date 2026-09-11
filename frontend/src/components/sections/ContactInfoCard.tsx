@@ -2,6 +2,10 @@ import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 
 export interface ContactInfo {
   phones?: string[];
+  phone?: string;
+  phone_2?: string;
+  phone_is_whatsapp?: boolean;
+  phone_2_is_whatsapp?: boolean;
   whatsappNumber?: string;
   email?: string;
   companyName?: string;
@@ -24,8 +28,8 @@ interface Props {
 }
 
 export function ContactInfoCard({ info, labels }: Props) {
-  const displayPhone = info.phones?.[0];
-  const whatsappRaw = info.whatsappNumber || displayPhone;
+  const displayPhone = info.phones?.[0] || info.phone;
+  const whatsappRaw = info.whatsappNumber || (info.phone_2_is_whatsapp ? info.phone_2 : info.phone_is_whatsapp ? info.phone : undefined);
   const cleanPhone = whatsappRaw?.replace(/\D/g, '').replace(/^00/, '');
 
   return (

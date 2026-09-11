@@ -1,3 +1,5 @@
+import { apiFetchWithLocale } from '@/lib/api';
+import { withRouteMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Image from 'next/image';
@@ -54,9 +56,9 @@ function parseJsonArray(raw: string | null | undefined): string[] {
   }
 }
 
-function formatDate(iso: string | null | undefined): string {
+function formatDate(iso: string | null | undefined, locale: string): string {
   if (!iso) return '';
-  return new Intl.DateTimeFormat('de-DE', { year: 'numeric', month: 'long' }).format(new Date(iso));
+  return new Intl.DateTimeFormat(locale === 'en' ? 'en-GB' : 'de-DE', { year: 'numeric', month: 'long' }).format(new Date(iso));
 }
 
 function getYoutubeId(url: string): string | null {
@@ -68,9 +70,10 @@ export const dynamic = 'force-dynamic';
 
 /* ── Metadata ──────────────────────────────────────────────────────── */
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale, slug } = await params;
-  const raw = await getProjectBySlug(API_BASE_URL, slug, locale).catch(() => null);
+async function buildMetadata({ params }: Props): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
+  const raw = await apiFetchWithLocale<any>(`/projects/by-slug/${encodeURIComponent(slug)}`, locale, { strict: true });
   const project = (raw as { data?: Project } | null)?.data ?? (raw as Project | null);
   if (!project) return { title: 'Projekt' };
   return {
@@ -82,12 +85,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 /* ── Page ──────────────────────────────────────────────────────────── */
 
 export default async function ProjectDetailPage({ params }: Props) {
-  const { locale, slug } = await params;
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
   setRequestLocale(locale);
 
   const t = await getTranslations('projects');
 
-  const raw = await getProjectBySlug(API_BASE_URL, slug, locale).catch(() => null);
+  const raw = await apiFetchWithLocale<any>(`/projects/by-slug/${encodeURIComponent(slug)}`, locale, { strict: true });
   const project = (raw as { data?: Project } | null)?.data ?? (raw as Project | null);
 
   if (!project) notFound();
@@ -274,7 +278,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                       <div>
                         <p className="text-xs text-slate-400">{t('completionDate')}</p>
                         <p className="text-sm font-medium text-slate-800">
-                          {formatDate(project.complete_date)}
+                          {formatDate(project.complete_date, locale)}
                         </p>
                       </div>
                     </div>
@@ -427,7 +431,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                       </div>
                     )}
                     <span className="mt-3 block text-xs font-semibold text-blue-600">
-                      Mehr erfahren →
+                      {locale === "en" ? "Learn more →" : "Mehr erfahren →"}
                     </span>
                   </div>
                 </Link>
@@ -438,4 +442,10 @@ export default async function ProjectDetailPage({ params }: Props) {
       )}
     </main>
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
+  return withRouteMetadata(await buildMetadata({ params }), locale, `/projects/${slug}`);
 }

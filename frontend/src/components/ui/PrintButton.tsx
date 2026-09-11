@@ -1,8 +1,10 @@
 'use client';
+import { useLocale } from 'next-intl';
 
 import { Printer, Share2 } from 'lucide-react';
 
 export function PrintButton() {
+  const locale = useLocale();
   const handlePrint = () => {
     if (typeof window !== 'undefined') {
       window.print();
@@ -13,7 +15,7 @@ export function PrintButton() {
     <button 
       onClick={handlePrint} 
       className="hover:text-blue-600 transition-colors"
-      title="Artikel drucken"
+      title={locale === "en" ? "Print article" : "Artikel drucken"}
     >
       <Printer size={16} />
     </button>
@@ -21,6 +23,7 @@ export function PrintButton() {
 }
 
 export function ShareButton() {
+  const locale = useLocale();
   const handleShare = () => {
     if (typeof window === 'undefined') return;
     if (navigator.share) {
@@ -30,7 +33,7 @@ export function ShareButton() {
       }).catch(() => {});
     } else {
       navigator.clipboard.writeText(window.location.href);
-      alert('Link in Zwischenablage kopiert');
+      alert(locale === 'en' ? 'Link copied to clipboard' : 'Link in Zwischenablage kopiert');
     }
   };
 
@@ -38,7 +41,7 @@ export function ShareButton() {
     <button 
       onClick={handleShare} 
       className="hover:text-blue-600 transition-colors"
-      title="Artikel teilen"
+      title={locale === "en" ? "Share article" : "Artikel teilen"}
     >
       <Share2 size={16} />
     </button>

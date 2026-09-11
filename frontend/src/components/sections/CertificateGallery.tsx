@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
+import { useLocale } from 'next-intl';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { resolveMediaUrl } from '@/lib/media';
 
@@ -17,6 +18,7 @@ interface Props {
 }
 
 export function CertificateGallery({ items }: Props) {
+  const locale = useLocale();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const open = (i: number) => setActiveIndex(i);
@@ -57,7 +59,7 @@ export function CertificateGallery({ items }: Props) {
             type="button"
             onClick={() => open(i)}
             className="group relative bg-white border border-slate-200 rounded-xl overflow-hidden aspect-3/4 hover:border-amber-300 hover:shadow-md transition-all cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
-            aria-label={`Zertifikat vergrößern: ${item.alt}`}
+            aria-label={`${locale === 'en' ? 'Enlarge certificate' : 'Zertifikat vergrößern'}: ${item.alt}`}
           >
             <Image
               src={resolveMediaUrl(item.src)}
@@ -86,7 +88,7 @@ export function CertificateGallery({ items }: Props) {
               type="button"
               onClick={close}
               className="absolute top-3 right-3 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-black/20 text-white hover:bg-black/40 transition-colors"
-              aria-label="Schließen"
+              aria-label={locale === 'en' ? 'Close' : 'Schließen'}
             >
               <X size={18} />
             </button>
@@ -125,7 +127,7 @@ export function CertificateGallery({ items }: Props) {
                   type="button"
                   onClick={prev}
                   className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center rounded-full bg-black/20 text-white hover:bg-black/40 transition-colors"
-                  aria-label="Vorheriges Zertifikat"
+                  aria-label={locale === 'en' ? 'Previous certificate' : 'Vorheriges Zertifikat'}
                 >
                   <ChevronLeft size={18} />
                 </button>
@@ -133,7 +135,7 @@ export function CertificateGallery({ items }: Props) {
                   type="button"
                   onClick={next}
                   className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center rounded-full bg-black/20 text-white hover:bg-black/40 transition-colors"
-                  aria-label="Nächstes Zertifikat"
+                  aria-label={locale === 'en' ? 'Next certificate' : 'Nächstes Zertifikat'}
                 >
                   <ChevronRight size={18} />
                 </button>
@@ -148,11 +150,10 @@ export function CertificateGallery({ items }: Props) {
                     key={i}
                     type="button"
                     onClick={() => setActiveIndex(i)}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      i === activeIndex ? 'bg-amber-500 w-4' : 'bg-slate-300 hover:bg-slate-400'
-                    }`}
-                    aria-label={`Zertifikat ${i + 1}`}
-                  />
+                    className="inline-flex h-8 w-8 items-center justify-center"
+                    aria-label={`${locale === 'en' ? 'Certificate' : 'Zertifikat'} ${i + 1}`}
+                    aria-current={i === activeIndex ? 'true' : undefined}
+                  ><span className={`block h-2 rounded-full ${i === activeIndex ? 'bg-amber-500 w-4' : 'bg-slate-300 w-2'}`} /></button>
                 ))}
               </div>
             )}

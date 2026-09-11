@@ -1,3 +1,4 @@
+import { withRouteMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
@@ -13,11 +14,9 @@ interface Props {
   params: Promise<{ locale: string }>;
 }
 
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: 'Blog',
-    description: 'Technische Artikel, Brancheninformationen und Wissenswertes rund um Kühltürme.',
-  };
+async function buildMetadata(): Promise<Metadata> {
+  const t = await getTranslations('blog');
+  return { title: t('title') };
 }
 
 export default async function BlogPage({ params }: Props) {
@@ -108,7 +107,7 @@ function BlogCard({
   locale: string;
   large?: boolean;
 }) {
-  const date = new Date(post.created_at).toLocaleDateString('de-DE', {
+  const date = new Date(post.created_at).toLocaleDateString(locale, {
     day: '2-digit',
     month: 'long',
     year: 'numeric',
@@ -162,7 +161,7 @@ function BlogCard({
 
         <div className="mt-3 flex items-center justify-between">
           <span className="text-xs font-semibold text-blue-600 group-hover:underline">
-            Weiterlesen →
+            {locale === "en" ? "Read more →" : "Weiterlesen →"}
           </span>
           {post.tags && (
             <span className="flex items-center gap-1 text-slate-300">
@@ -173,4 +172,10 @@ function BlogCard({
       </div>
     </Link>
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
+  return withRouteMetadata(await buildMetadata(), locale, `/blog`);
 }

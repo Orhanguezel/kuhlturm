@@ -1,3 +1,5 @@
+import { ProductStructuredData } from '@/components/ui/ProductStructuredData';
+import { withRouteMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
@@ -20,8 +22,9 @@ interface Props {
   params: Promise<{ locale: string; slug: string }>;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale, slug } = await params;
+async function buildMetadata({ params }: Props): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
   try {
     const raw = await getProductBySlugWithLocale(slug, locale, 'sparepart');
     const part = (raw as unknown as { data?: Product })?.data ?? raw;
@@ -35,7 +38,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function SparePartDetailPage({ params }: Props) {
-  const { locale, slug } = await params;
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
   setRequestLocale(locale);
 
   const [t, tCommon, tReviews] = await Promise.all([
@@ -44,14 +48,9 @@ export default async function SparePartDetailPage({ params }: Props) {
     getTranslations('reviews'),
   ]);
 
-  let part: Product;
-  try {
-    const raw = await getProductBySlugWithLocale(slug, locale, 'sparepart');
-    part = (raw as unknown as { data?: Product })?.data ?? raw;
-    if (!part) notFound();
-  } catch {
-    notFound();
-  }
+  const raw = await getProductBySlugWithLocale(slug, locale, 'sparepart');
+  const part: Product = (raw as unknown as { data?: Product })?.data ?? raw;
+  if (!part) notFound();
 
   // Guard: must be a spare part
   if (part.item_type !== 'sparepart') notFound();
@@ -74,8 +73,8 @@ export default async function SparePartDetailPage({ params }: Props) {
   // Contact info
   const contactInfoRaw = await fetchSetting('contact_info', locale, { revalidate: 3600 });
   const contactInfo: any = contactInfoRaw?.value || {};
-  const whatsappPhone = contactInfo.whatsappNumber || contactInfo.phones?.[0] || '';
-  const waMessage = `Guten Tag! Ich benötige ein Ersatzteil: ${part.title}${part.product_code ? ` (Art.-Nr.: ${part.product_code})` : ''}. Bitte um Angebot.`;
+  const whatsappPhone = contactInfo.whatsappNumber || (contactInfo.phone_2_is_whatsapp ? contactInfo.phone_2 : contactInfo.phone_is_whatsapp ? contactInfo.phone : '') || '';
+  const waMessage = locale === 'en' ? `Hello! I need the spare part ${part.title}. Please send me a quotation.` : `Guten Tag! Ich benötige ein Ersatzteil: ${part.title}${part.product_code ? ` (Art.-Nr.: ${part.product_code})` : ''}. Bitte um Angebot.`;
 
   const galleryImages: string[] = [];
   if (part.image_url) galleryImages.push(part.image_url);
@@ -87,6 +86,7 @@ export default async function SparePartDetailPage({ params }: Props) {
 
   return (
     <main>
+      <ProductStructuredData item={part} locale={locale} section="sparepart" />
       <PageBanner
         locale={locale}
         variant="compact"
@@ -143,7 +143,7 @@ export default async function SparePartDetailPage({ params }: Props) {
             <div>
               {/* Type badge */}
               <span className="inline-block px-3 py-1 rounded-full bg-amber-50 text-amber-700 text-xs font-bold uppercase tracking-wide mb-3">
-                Ersatzteil
+                {locale === "en" ? "Spare part" : "Ersatzteil"}
               </span>
 
               {part.category && (
@@ -359,4 +359,10 @@ export default async function SparePartDetailPage({ params }: Props) {
       </section>
     </main>
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
+  return withRouteMetadata(await buildMetadata({ params }), locale, `/sparepart/${slug}`);
 }

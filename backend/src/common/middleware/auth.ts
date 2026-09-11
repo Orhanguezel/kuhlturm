@@ -15,7 +15,7 @@ export interface JwtUser {
 }
 
 function looksAdmin(u: JwtUser | undefined): boolean {
-  if (!u) return false;
+  if (!u || u.purpose) return false;
   if (u.is_admin === true) return true;
   if (u.role === "admin") return true;
   if (Array.isArray(u.roles) && u.roles.includes("admin")) return true;
@@ -32,28 +32,23 @@ export async function requireAuth(req: FastifyRequest, reply: FastifyReply) {
   try {
     const cookies = (req.cookies ?? {}) as Record<string, string | undefined>;
     const cookieToken = cookies.access_token ?? cookies.accessToken;
-
     if (cookieToken) {
       const payload = (await req.server.jwt.verify(cookieToken)) as JwtUser;
+      if (payload.purpose) throw new Error('invalid_access_token');
       (req as unknown as { user: JwtUser }).user = payload;
       return;
     }
-
     const auth = req.headers.authorization;
-    if (typeof auth === "string" && auth.startsWith("Bearer ")) {
+    if (typeof auth === 'string' && auth.startsWith('Bearer ')) {
       await req.jwtVerify<JwtUser>();
-      // fastify-jwt zaten req.user set eder; tip güvenliği için fallback:
       const u = (req as unknown as { user?: JwtUser }).user;
-      if (!u) {
-        return reply.code(401).send({ error: { message: "invalid_token" } });
-      }
+      if (!u || u.purpose) return reply.code(401).send({error:{message:'invalid_token'}});
       return;
     }
-
-    return reply.code(401).send({ error: { message: "no_token" } });
+    return reply.code(401).send({error:{message:'no_token'}});
   } catch (err) {
-    req.log.warn({ err }, "auth_failed");
-    return reply.code(401).send({ error: { message: "invalid_token" } });
+    req.log.warn({err}, 'auth_failed');
+    return reply.code(401).send({error:{message:'invalid_token'}});
   }
 }
 

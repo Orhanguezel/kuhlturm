@@ -1,0 +1,2 @@
+exit=1
+Invalid project directory provided, no such directory: /home/orhan/Documents/Projeler/Ensotek/kuhlturm/frontend/lint

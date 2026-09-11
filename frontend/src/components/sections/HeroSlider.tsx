@@ -41,7 +41,13 @@ function asNum(v: unknown): number {
   return typeof v === 'number' && Number.isFinite(v) ? v : 0;
 }
 
-function normalizeSlides(rows: unknown[]): HeroSlide[] {
+function localLink(link: string | null, locale: string): string | null {
+  if (!link || /^(https?:|mailto:|tel:|#)/i.test(link)) return link;
+  const path = '/' + link.replace(/^\//, '').replace(/^(de|en|tr)\//, '').replace(/^services\//, 'service/');
+  return `/${locale}${path === '/solutions/water-cooling-towers' ? '/solutions' : path}`;
+}
+
+function normalizeSlides(rows: unknown[], locale: string): HeroSlide[] {
   return rows
     .filter((row): row is SliderApiItem => typeof row === 'object' && row !== null)
     .filter((row) => row.is_active !== false && row.isActive !== false)
@@ -52,7 +58,7 @@ function normalizeSlides(rows: unknown[]): HeroSlide[] {
       description: asText(row.description),
       alt: asText(row.alt),
       buttonText: asText(row.button_text ?? row.buttonText),
-      buttonLink: asText(row.button_link ?? row.buttonLink),
+      buttonLink: localLink(asText(row.button_link ?? row.buttonLink), locale),
       order: asNum(row.display_order ?? row.order),
     }))
     .sort((a, b) => a.order - b.order)
@@ -69,11 +75,11 @@ export async function HeroSlider({
   let slides: HeroSlide[] = [];
   try {
     const url = `${API_BASE_URL}/sliders?locale=${encodeURIComponent(locale)}`;
-    const res = await fetch(url, { cache: 'no-store' });
+    const res = await fetch(url, { next: { revalidate: 60 }, headers: { 'x-locale': locale, 'accept-language': locale } });
     if (res.ok) {
       const data = await res.json();
       const rawRows = Array.isArray(data) ? data : Array.isArray(data?.data) ? data.data : [];
-      slides = normalizeSlides(rawRows);
+      slides = normalizeSlides(rawRows, locale);
     }
   } catch {
     // API not available — fall through to static hero
@@ -98,7 +104,7 @@ export async function HeroSlider({
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-44">
         <div className="max-w-2xl">
           <span className="inline-block text-blue-400 text-sm font-semibold uppercase tracking-widest mb-6">
-            Kühlturm GmbH
+            Kühlturm · Ensotek
           </span>
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6">
             {title}

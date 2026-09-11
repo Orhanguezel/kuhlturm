@@ -1,3 +1,4 @@
+import { withRouteMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
@@ -14,11 +15,9 @@ interface Props {
   searchParams: Promise<{ category?: string }>;
 }
 
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: 'Ersatzteile — Kühlturm Kühlturm',
-    description: 'Original-Ersatzteile und Komponenten für Kühltürme — schnelle Lieferung und hohe Qualität.',
-  };
+async function buildMetadata(): Promise<Metadata> {
+  const t = await getTranslations('spareParts');
+  return { title: t('title') };
 }
 
 export default async function SparePartsPage({ params, searchParams }: Props) {
@@ -161,4 +160,10 @@ export default async function SparePartsPage({ params, searchParams }: Props) {
       </section>
     </main>
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
+  return withRouteMetadata(await buildMetadata(), locale, `/sparepart`);
 }

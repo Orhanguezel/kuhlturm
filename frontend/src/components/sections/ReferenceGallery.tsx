@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
+import { useLocale } from 'next-intl';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { resolveMediaUrl } from '@/lib/media';
 
@@ -16,6 +17,7 @@ interface Props {
 }
 
 export function ReferenceGallery({ images }: Props) {
+  const locale = useLocale();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const open = (i: number) => setActiveIndex(i);
@@ -55,7 +57,7 @@ export function ReferenceGallery({ images }: Props) {
             type="button"
             onClick={() => open(i)}
             className="group relative block rounded-xl overflow-hidden aspect-4/3 bg-slate-100 border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
-            aria-label={`Bild vergrößern: ${img.alt}`}
+            aria-label={`${locale === 'en' ? 'Enlarge image' : 'Bild vergrößern'}: ${img.alt}`}
           >
             <Image
               src={resolveMediaUrl(img.src)}
@@ -83,7 +85,7 @@ export function ReferenceGallery({ images }: Props) {
               type="button"
               onClick={close}
               className="absolute -top-10 right-0 w-9 h-9 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors z-10"
-              aria-label="Schließen"
+              aria-label={locale === 'en' ? 'Close' : 'Schließen'}
             >
               <X size={18} />
             </button>
@@ -120,7 +122,7 @@ export function ReferenceGallery({ images }: Props) {
                   type="button"
                   onClick={prev}
                   className="absolute left-2 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors"
-                  aria-label="Vorheriges Bild"
+                  aria-label={locale === 'en' ? 'Previous image' : 'Vorheriges Bild'}
                 >
                   <ChevronLeft size={22} />
                 </button>
@@ -128,7 +130,7 @@ export function ReferenceGallery({ images }: Props) {
                   type="button"
                   onClick={next}
                   className="absolute right-2 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors"
-                  aria-label="Nächstes Bild"
+                  aria-label={locale === 'en' ? 'Next image' : 'Nächstes Bild'}
                 >
                   <ChevronRight size={22} />
                 </button>

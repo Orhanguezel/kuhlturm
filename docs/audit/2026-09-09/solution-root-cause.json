@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://kuhlturm.com/api/custom_pages/by-slug/industrial-cooling-solutions?language=en",
+    "status": 404,
+    "title": null,
+    "slug": null,
+    "error": {
+      "code": "NOT_FOUND",
+      "message": "Not Found",
+      "path": "/api/custom_pages/by-slug/industrial-cooling-solutions?language=en"
+    },
+    "message": null
+  },
+  {
+    "url": "https://kuhlturm.com/api/custom-pages/by-slug/industrial-cooling-solutions?locale=en",
+    "status": 200,
+    "title": "Industrial Cooling Solutions",
+    "slug": "industrial-cooling-solutions",
+    "error": null,
+    "message": null
+  }
+]

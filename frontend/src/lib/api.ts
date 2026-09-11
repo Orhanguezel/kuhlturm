@@ -5,6 +5,7 @@ export interface FetchOptions {
   cache?: RequestCache;
   revalidate?: number;
   headers?: Record<string, string>;
+  strict?: boolean;
 }
 
 /**
@@ -32,8 +33,10 @@ export async function apiFetchWithLocale<T>(
     }
 
     const fetchOptions: RequestInit = {
-      cache: options.cache || (options.revalidate ? undefined : 'no-store'),
-      next: options.revalidate ? { revalidate: options.revalidate } : undefined,
+      cache: options.cache,
+      // Public catalogue/navigation reads are shared across renders for one minute.
+      // Explicit no-store callers retain fresh reads; failed upstream responses are never empty 200s.
+      next: options.cache === 'no-store' ? undefined : { revalidate: options.revalidate ?? 60 },
       headers: {
         'Accept': 'application/json',
         'x-locale': locale,
@@ -45,6 +48,7 @@ export async function apiFetchWithLocale<T>(
     const res = await fetch(url.toString(), fetchOptions);
 
     if (!res.ok) {
+      if (options.strict && res.status !== 404) throw new Error(`Upstream API returned ${res.status} for ${path}`);
       console.warn(`[API] ${res.status} ${res.statusText} - ${url.toString()}`);
       return null;
     }
@@ -53,6 +57,7 @@ export async function apiFetchWithLocale<T>(
     // Support both direct array/object and { data: ... } wrapped responses
     return (json?.data ?? json) as T;
   } catch (error) {
+    if (options.strict) throw error;
     console.error(`[API ERROR] ${path}:`, error);
     return null;
   }
@@ -79,16 +84,16 @@ export async function getProductBySlugWithLocale(
   itemType: 'product' | 'sparepart' = 'product',
 ) {
   return apiFetchWithLocale<any>(`/products/by-slug/${slug}`, locale, {
-    params: { item_type: itemType },
+    params: { item_type: itemType }, strict: true,
   });
 }
 
 export async function getCustomPageBySlugWithLocale(slug: string, locale: string) {
-  return apiFetchWithLocale<any>(`/custom-pages/by-slug/${slug}`, locale);
+  return apiFetchWithLocale<any>(`/custom-pages/by-slug/${encodeURIComponent(slug)}`, locale, { strict: true });
 }
 
 export async function getServiceBySlugWithLocale(slug: string, locale: string) {
-  return apiFetchWithLocale<any>(`/services/by-slug/${slug}`, locale);
+  return apiFetchWithLocale<any>(`/services/by-slug/${encodeURIComponent(slug)}`, locale, { strict: true });
 }
 
 export async function getServicesWithLocale(locale: string, params: Record<string, any> = {}) {

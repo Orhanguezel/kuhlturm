@@ -22,11 +22,11 @@ const TYPE_STYLES: Record<string, { label: string; className: string }> = {
   whitepaper: { label: 'Whitepaper',className: 'bg-slate-100 text-slate-700' },
 };
 
-function TypeBadge({ type }: { type: string }) {
+function TypeBadge({ type, locale }: { type: string; locale: string }) {
   const style = TYPE_STYLES[type] ?? { label: type, className: 'bg-slate-100 text-slate-600' };
   return (
     <span className={`inline-block px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide ${style.className}`}>
-      {style.label}
+      {locale === 'en' ? ({ article: 'Article', guide: 'Guide', manual: 'Manual', faq: 'FAQ', whitepaper: 'Whitepaper' }[type] || type) : style.label}
     </span>
   );
 }
@@ -73,7 +73,7 @@ export function LibrarySection({ items, locale, title, subtitle, viewAllLabel }:
                 {/* Top row: icon + type badge */}
                 <div className="flex items-center justify-between">
                   <TypeIcon type={item.type} />
-                  <TypeBadge type={item.type} />
+                  <TypeBadge type={item.type} locale={locale} />
                 </div>
 
                 {/* Title */}
@@ -107,7 +107,7 @@ export function LibrarySection({ items, locale, title, subtitle, viewAllLabel }:
                   {item.views > 0 ? (
                     <span className="flex items-center gap-1 text-xs text-slate-400">
                       <Eye size={12} />
-                      {item.views.toLocaleString('de-DE')}
+                      {item.views.toLocaleString(locale === 'en' ? 'en-GB' : 'de-DE')}
                     </span>
                   ) : (
                     <span />

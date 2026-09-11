@@ -1,0 +1,149 @@
+[
+  {
+    "id": "T01",
+    "priority": "P0",
+    "title": "Canlı veritabanı, bağımsızlık doktrininin aksine ensotek.de ile ortak",
+    "status": "open",
+    "report": "../../../DENETIM-RAPORU-2026-09-09.md"
+  },
+  {
+    "id": "T02",
+    "priority": "P0",
+    "title": "Alt sayfa canonical ve hreflang’ları ana sayfaya işaret ediyor",
+    "status": "open",
+    "report": "../../../DENETIM-RAPORU-2026-09-09.md"
+  },
+  {
+    "id": "T03",
+    "priority": "P0",
+    "title": "Çözüm detayları yanlış API adresi nedeniyle içeriksiz",
+    "status": "open",
+    "report": "../../../DENETIM-RAPORU-2026-09-09.md"
+  },
+  {
+    "id": "T04",
+    "priority": "P1",
+    "title": "Eksik veri ve API arızası HTTP 200 “bulunamadı” sayfasına dönüşüyor",
+    "status": "open",
+    "report": "../../../DENETIM-RAPORU-2026-09-09.md"
+  },
+  {
+    "id": "T05",
+    "priority": "P1",
+    "title": "İngilizce arayüz dosyası bütünüyle Almanca",
+    "status": "open",
+    "report": "../../../DENETIM-RAPORU-2026-09-09.md"
+  },
+  {
+    "id": "T06",
+    "priority": "P1",
+    "title": "İngilizce footer dört çalışmayan yasal sayfaya götürüyor",
+    "status": "open",
+    "report": "../../../DENETIM-RAPORU-2026-09-09.md"
+  },
+  {
+    "id": "T07",
+    "priority": "P1",
+    "title": "Ana sayfa ve referanslardan sekiz bozuk hizmet hedefi",
+    "status": "open",
+    "report": "../../../DENETIM-RAPORU-2026-09-09.md"
+  },
+  {
+    "id": "T08",
+    "priority": "P1",
+    "title": "Sitemap API limit hataları nedeniyle birçok içerik türünü dışarıda bırakıyor",
+    "status": "open",
+    "report": "../../../DENETIM-RAPORU-2026-09-09.md"
+  },
+  {
+    "id": "T09",
+    "priority": "P2",
+    "title": "Sitemap locale gözetmeden aynı slug kümesini iki dile basıyor",
+    "status": "open",
+    "report": "../../../DENETIM-RAPORU-2026-09-09.md"
+  },
+  {
+    "id": "T10",
+    "priority": "P2",
+    "title": "Sitemap lastmod içerik değişimini yansıtmıyor",
+    "status": "open",
+    "report": "../../../DENETIM-RAPORU-2026-09-09.md"
+  },
+  {
+    "id": "T11",
+    "priority": "P1",
+    "title": "www/non-www host tek yönlendirmede birleşmiyor",
+    "status": "open",
+    "report": "../../../DENETIM-RAPORU-2026-09-09.md"
+  },
+  {
+    "id": "T12",
+    "priority": "P1",
+    "title": "Yapılandırılmış veri yok",
+    "status": "open",
+    "report": "../../../DENETIM-RAPORU-2026-09-09.md"
+  },
+  {
+    "id": "T13",
+    "priority": "P2",
+    "title": "llms.txt erişilemiyor",
+    "status": "open",
+    "report": "../../../DENETIM-RAPORU-2026-09-09.md"
+  },
+  {
+    "id": "T14",
+    "priority": "P1",
+    "title": "Mobil hero içeriği ve teklif CTA’sı kesiliyor",
+    "status": "open",
+    "report": "../../../DENETIM-RAPORU-2026-09-09.md"
+  },
+  {
+    "id": "T15",
+    "priority": "P2",
+    "title": "Marka adı ile gösterilen logo/içerik tutarsız",
+    "status": "open",
+    "report": "../../../DENETIM-RAPORU-2026-09-09.md"
+  },
+  {
+    "id": "T16",
+    "priority": "P1",
+    "title": "Mobil görsel yükleme ve JavaScript maliyeti yüksek",
+    "status": "open",
+    "report": "../../../DENETIM-RAPORU-2026-09-09.md"
+  },
+  {
+    "id": "T17",
+    "priority": "P2",
+    "title": "Form kontrolleri erişilebilir etiketle bağlı değil",
+    "status": "open",
+    "report": "../../../DENETIM-RAPORU-2026-09-09.md"
+  },
+  {
+    "id": "T18",
+    "priority": "P2",
+    "title": "Slider dokunma hedefleri çok küçük",
+    "status": "open",
+    "report": "../../../DENETIM-RAPORU-2026-09-09.md"
+  },
+  {
+    "id": "T19",
+    "priority": "P1",
+    "title": "Analitik çerezleri tercih verilmeden yazılıyor",
+    "status": "open",
+    "report": "../../../DENETIM-RAPORU-2026-09-09.md"
+  },
+  {
+    "id": "T20",
+    "priority": "P2",
+    "title": "İki ana sayfada H1 yok",
+    "status": "open",
+    "report": "../../../DENETIM-RAPORU-2026-09-09.md"
+  },
+  {
+    "id": "T21",
+    "priority": "P2",
+    "title": "Repo işletim ve kalite belgeleri güncel değil",
+    "status": "open",
+    "report": "../../../DENETIM-RAPORU-2026-09-09.md"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "repo": "kuhlturm",
+    "url": "https://kuhlturm.com/_next/static/chunks/4373b020652abf38.css",
+    "status": 200,
+    "encoding": "gzip",
+    "vary": "Accept-Encoding",
+    "bytes_decoded": 103421
+  },
+  {
+    "repo": "kuhlturm",
+    "url": "https://kuhlturm.com/_next/static/chunks/4c8835d34fb4ab7f.css",
+    "status": 200,
+    "encoding": "gzip",
+    "vary": "Accept-Encoding",
+    "bytes_decoded": 3240
+  }
+]

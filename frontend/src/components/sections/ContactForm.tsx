@@ -1,5 +1,6 @@
 'use client';
 
+import { leadFetch } from '../../../../../packages/shared-ui/public/lib/lead-tracking';
 import { useState } from 'react';
 import { Send, Loader2, CheckCircle2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
@@ -64,7 +65,7 @@ export function ContactForm() {
 
     setStatus('loading');
     try {
-      const res = await fetch(`${API_BASE_URL}/contacts`, {
+      const res = await leadFetch(`${API_BASE_URL}/contacts`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -131,10 +132,10 @@ export function ContactForm() {
       {/* Name + Phone */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-1.5">
+          <label htmlFor="contactform-required-1" className="block text-sm font-medium text-slate-700 mb-1.5">
             {t('name')} <span className="text-red-400">*</span>
           </label>
-          <input
+          <input id="contactform-required-1"
             type="text"
             value={form.name}
             onChange={set('name')}
@@ -145,10 +146,10 @@ export function ContactForm() {
           {errors.name && <p className="mt-1 text-xs text-red-500">{errors.name}</p>}
         </div>
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-1.5">
+          <label htmlFor="contactform-required-2" className="block text-sm font-medium text-slate-700 mb-1.5">
             {t('phone')} <span className="text-red-400">*</span>
           </label>
-          <input
+          <input id="contactform-required-2"
             type="tel"
             value={form.phone}
             onChange={set('phone')}
@@ -162,10 +163,10 @@ export function ContactForm() {
 
       {/* Email */}
       <div>
-        <label className="block text-sm font-medium text-slate-700 mb-1.5">
+        <label htmlFor="contactform-required-3" className="block text-sm font-medium text-slate-700 mb-1.5">
           {t('email')} <span className="text-red-400">*</span>
         </label>
-        <input
+        <input id="contactform-required-3"
           type="email"
           value={form.email}
           onChange={set('email')}
@@ -178,10 +179,10 @@ export function ContactForm() {
 
       {/* Subject */}
       <div>
-        <label className="block text-sm font-medium text-slate-700 mb-1.5">
+        <label htmlFor="contactform-required-4" className="block text-sm font-medium text-slate-700 mb-1.5">
           {t('subject')} <span className="text-red-400">*</span>
         </label>
-        <input
+        <input id="contactform-required-4"
           type="text"
           value={form.subject}
           onChange={set('subject')}
@@ -193,10 +194,10 @@ export function ContactForm() {
 
       {/* Message */}
       <div>
-        <label className="block text-sm font-medium text-slate-700 mb-1.5">
+        <label htmlFor="contactform-required-5" className="block text-sm font-medium text-slate-700 mb-1.5">
           {t('message')} <span className="text-red-400">*</span>
         </label>
-        <textarea
+        <textarea id="contactform-required-5"
           rows={5}
           value={form.message}
           onChange={set('message')}

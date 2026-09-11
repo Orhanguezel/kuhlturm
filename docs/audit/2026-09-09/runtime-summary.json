@@ -1,0 +1,61 @@
+{
+  "checked_at_utc": "2026-09-09T18:01:11.648049+00:00",
+  "database": {
+    "kompozit": {
+      "DB_NAME": "kompozit",
+      "PORT": "8186"
+    },
+    "kuhlturm": {
+      "DB_NAME": "ensotek",
+      "PORT": "8089"
+    },
+    "ensotek_de": {
+      "DB_NAME": "ensotek",
+      "PORT": "8086"
+    }
+  },
+  "processes": [
+    {
+      "name": "kompozit-admin-panel",
+      "status": "online",
+      "restarts": 19,
+      "uptime_ms": 1785266860402,
+      "cwd": "/var/www/Ensotek/kompozit/admin_panel"
+    },
+    {
+      "name": "kompozit-frontend",
+      "status": "online",
+      "restarts": 43,
+      "uptime_ms": 1788966708889,
+      "cwd": "/var/www/Ensotek/kompozit/frontend"
+    },
+    {
+      "name": "kuhlturm-backend",
+      "status": "online",
+      "restarts": 165,
+      "uptime_ms": 1788976528376,
+      "cwd": "/var/www/Ensotek/kuhlturm/backend"
+    },
+    {
+      "name": "kuhlturm-admin-panel",
+      "status": "online",
+      "restarts": 2,
+      "uptime_ms": 1779572395258,
+      "cwd": "/var/www/Ensotek/kuhlturm/admin_panel"
+    },
+    {
+      "name": "kuhlturm-frontend",
+      "status": "online",
+      "restarts": 37,
+      "uptime_ms": 1788964983215,
+      "cwd": "/var/www/Ensotek/kuhlturm/frontend"
+    },
+    {
+      "name": "kompozit-backend",
+      "status": "online",
+      "restarts": 264,
+      "uptime_ms": 1788976528778,
+      "cwd": "/var/www/Ensotek/kompozit/backend"
+    }
+  ]
+}

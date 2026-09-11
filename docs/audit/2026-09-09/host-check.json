@@ -1,0 +1,44 @@
+[
+  {
+    "url": "https://kuhlturm.com/de",
+    "status": 200,
+    "canonical": [
+      "https://kuhlturm.com/de"
+    ]
+  },
+  {
+    "url": "https://kuhlturm.com/api/custom-pages/by-slug/industrial-cooling-solutions?language=en",
+    "status": 200,
+    "slug": "industrial-cooling-solutions",
+    "title": "Endüstriyel Soğutma Çözümleri",
+    "error": null
+  },
+  {
+    "url": "https://kuhlturm.com/api/custom-pages/by-slug/industrial-cooling-solutions?locale=en",
+    "status": 200,
+    "slug": "industrial-cooling-solutions",
+    "title": "Industrial Cooling Solutions",
+    "error": null
+  },
+  {
+    "url": "https://www.kuhlturm.com/de",
+    "status": 200,
+    "canonical": [
+      "https://kuhlturm.com/de"
+    ]
+  },
+  {
+    "url": "https://www.kuhlturm.com/api/custom-pages/by-slug/industrial-cooling-solutions?language=en",
+    "status": 200,
+    "slug": "industrial-cooling-solutions",
+    "title": "Endüstriyel Soğutma Çözümleri",
+    "error": null
+  },
+  {
+    "url": "https://www.kuhlturm.com/api/custom-pages/by-slug/industrial-cooling-solutions?locale=en",
+    "status": 200,
+    "slug": "industrial-cooling-solutions",
+    "title": "Industrial Cooling Solutions",
+    "error": null
+  }
+]

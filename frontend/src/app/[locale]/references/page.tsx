@@ -1,3 +1,4 @@
+import { withRouteMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
@@ -97,11 +98,9 @@ const REFERENCE_CATEGORIES = [
   },
 ] as const;
 
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: 'Referenzen',
-    description: 'Unsere Projekte und Referenzen — Kühltürme und Kühlanlagen weltweit.',
-  };
+async function buildMetadata(): Promise<Metadata> {
+  const t = await getTranslations('references');
+  return { title: t('title') };
 }
 
 export default async function ReferencesPage({ params }: Props) {
@@ -155,4 +154,10 @@ export default async function ReferencesPage({ params }: Props) {
       </section>
     </main>
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
+  return withRouteMetadata(await buildMetadata(), locale, `/references`);
 }

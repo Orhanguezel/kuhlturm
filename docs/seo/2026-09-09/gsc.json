@@ -1,0 +1,1567 @@
+{
+  "siteUrl": "https://kuhlturm.com/",
+  "range": {
+    "startDate": "2026-08-10",
+    "endDate": "2026-09-06",
+    "range": 28
+  },
+  "previousRange": {
+    "startDate": "2026-07-13",
+    "endDate": "2026-08-09",
+    "range": 28
+  },
+  "fetchedAt": "2026-09-09T16:41:59.522Z",
+  "type": "web",
+  "capabilities": {
+    "queries": true,
+    "position": true
+  },
+  "property": {
+    "type": "url_prefix",
+    "siteUrl": "https://kuhlturm.com/",
+    "propertyHost": "kuhlturm.com",
+    "websiteHost": "kuhlturm.com",
+    "hostMatches": true,
+    "protocolMatches": true,
+    "variantNote": null,
+    "valid": true
+  },
+  "dataFreshness": {
+    "delayDays": 3,
+    "lastCompleteDate": "2026-09-06"
+  },
+  "coverage": {
+    "current": {
+      "rows": [
+        {
+          "keys": [
+            "???"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 3
+        },
+        {
+          "keys": [
+            "askale cimento"
+          ],
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0,
+          "position": 8.8
+        },
+        {
+          "keys": [
+            "aşkale çimento ankara"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 11
+        },
+        {
+          "keys": [
+            "hersteller von kühltürmen"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 40.666666666666664
+        },
+        {
+          "keys": [
+            "kuhltur"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 56.5
+        },
+        {
+          "keys": [
+            "kuhlturm"
+          ],
+          "clicks": 0,
+          "impressions": 16,
+          "ctr": 0,
+          "position": 10
+        },
+        {
+          "keys": [
+            "kühlturm"
+          ],
+          "clicks": 0,
+          "impressions": 19,
+          "ctr": 0,
+          "position": 56.68421052631579
+        },
+        {
+          "keys": [
+            "kühlturm automation"
+          ],
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0,
+          "position": 4.833333333333334
+        },
+        {
+          "keys": [
+            "kühlturm automatisierung"
+          ],
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0,
+          "position": 18.333333333333332
+        },
+        {
+          "keys": [
+            "kühlturm hersteller"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 49
+        },
+        {
+          "keys": [
+            "kühlturm pumpensteuerung"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 43
+        },
+        {
+          "keys": [
+            "kühlturmservice"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 45
+        },
+        {
+          "keys": [
+            "offene kühltürme"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 41
+        },
+        {
+          "keys": [
+            "zatel pres döküm"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 44
+        }
+      ],
+      "fetched": 14,
+      "truncated": false,
+      "maxRows": 5000
+    },
+    "previous": {
+      "rows": [
+        {
+          "keys": [
+            "askale cimento"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 8.5
+        },
+        {
+          "keys": [
+            "atesoglu"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 6
+        },
+        {
+          "keys": [
+            "avestakurd"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 92.5
+        },
+        {
+          "keys": [
+            "cooling tower modernization"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 55.333333333333336
+        },
+        {
+          "keys": [
+            "dienstleister kühlturm"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 37
+        },
+        {
+          "keys": [
+            "geschlossener kühlturm"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 24
+        },
+        {
+          "keys": [
+            "hersteller von kühltürmen"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 44
+        },
+        {
+          "keys": [
+            "kuhltur"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 71.5
+        },
+        {
+          "keys": [
+            "kuhlturm"
+          ],
+          "clicks": 0,
+          "impressions": 14,
+          "ctr": 0,
+          "position": 9.142857142857142
+        },
+        {
+          "keys": [
+            "kühlturm"
+          ],
+          "clicks": 0,
+          "impressions": 60,
+          "ctr": 0,
+          "position": 60.55
+        },
+        {
+          "keys": [
+            "kühlturm automation"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 9.666666666666666
+        },
+        {
+          "keys": [
+            "kühlturm automatisierung"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 13.666666666666666
+        },
+        {
+          "keys": [
+            "kühlturm hersteller"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 47
+        },
+        {
+          "keys": [
+            "kühlturmhersteller"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 47
+        },
+        {
+          "keys": [
+            "kühlturmservice"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 44
+        },
+        {
+          "keys": [
+            "kühltürme hersteller"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 47
+        },
+        {
+          "keys": [
+            "offener kühlturm"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 31.666666666666668
+        }
+      ],
+      "fetched": 17,
+      "truncated": false,
+      "maxRows": 5000
+    }
+  },
+  "status": "ok",
+  "errors": {},
+  "insights": {
+    "queryType": {
+      "branded": {
+        "queries": 0,
+        "clicks": 0,
+        "impressions": 0
+      },
+      "nonBranded": {
+        "queries": 14,
+        "clicks": 0,
+        "impressions": 64
+      }
+    },
+    "positionCtrCurve": [
+      {
+        "band": "3",
+        "label": "3,0 – 3,9",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "reliable": false
+      },
+      {
+        "band": "4-5",
+        "label": "4,0 – 5,9",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "reliable": false
+      },
+      {
+        "band": "6-10",
+        "label": "6,0 – 10,9",
+        "clicks": 0,
+        "impressions": 21,
+        "ctr": 0,
+        "reliable": false
+      },
+      {
+        "band": "11+",
+        "label": "11 ve sonrasi",
+        "clicks": 0,
+        "impressions": 36,
+        "ctr": 0,
+        "reliable": false
+      }
+    ],
+    "opportunityQueue": [],
+    "ctrOpportunities": [],
+    "strikingDistance": [
+      {
+        "keys": [
+          "https://kuhlturm.com/references/arcelik"
+        ],
+        "clicks": 0,
+        "impressions": 9,
+        "ctr": 0,
+        "position": 8.11111111111111
+      },
+      {
+        "keys": [
+          "https://kuhlturm.com/references/askale-cimento"
+        ],
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 8.625
+      },
+      {
+        "keys": [
+          "https://kuhlturm.com/de/legal/nutzungsbedingungen"
+        ],
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "keys": [
+          "https://kuhlturm.com/about/unsere-mission"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "keys": [
+          "https://kuhlturm.com/de/news/hotel-tech-antalya-messe-erfolgreich-abgeschlossen"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "keys": [
+          "https://kuhlturm.com/references/aves"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      }
+    ],
+    "cannibalization": [
+      {
+        "query": "kühlturm automation",
+        "pages": [
+          "https://kuhlturm.com/",
+          "https://kuhlturm.com/en/service/automation-scada"
+        ],
+        "pageCount": 2
+      }
+    ],
+    "zeroClick": [
+      {
+        "keys": [
+          "kühlturm"
+        ],
+        "clicks": 0,
+        "impressions": 19,
+        "ctr": 0,
+        "position": 56.68421052631579
+      },
+      {
+        "keys": [
+          "kuhlturm"
+        ],
+        "clicks": 0,
+        "impressions": 16,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "keys": [
+          "kühlturm automation"
+        ],
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 4.833333333333334
+      },
+      {
+        "keys": [
+          "kühlturm automatisierung"
+        ],
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 18.333333333333332
+      },
+      {
+        "keys": [
+          "askale cimento"
+        ],
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 8.8
+      },
+      {
+        "keys": [
+          "hersteller von kühltürmen"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 40.666666666666664
+      },
+      {
+        "keys": [
+          "kuhltur"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 56.5
+      },
+      {
+        "keys": [
+          "???"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "keys": [
+          "aşkale çimento ankara"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "keys": [
+          "kühlturm hersteller"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 49
+      },
+      {
+        "keys": [
+          "kühlturm pumpensteuerung"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 43
+      },
+      {
+        "keys": [
+          "kühlturmservice"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 45
+      },
+      {
+        "keys": [
+          "offene kühltürme"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 41
+      },
+      {
+        "keys": [
+          "zatel pres döküm"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 44
+      }
+    ],
+    "rising": [],
+    "falling": [],
+    "fallingPages": [],
+    "newQueries": [
+      {
+        "keys": [
+          "???"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3,
+        "previousClicks": 0,
+        "clickDelta": 0,
+        "isNew": true
+      },
+      {
+        "keys": [
+          "aşkale çimento ankara"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 11,
+        "previousClicks": 0,
+        "clickDelta": 0,
+        "isNew": true
+      },
+      {
+        "keys": [
+          "kühlturm pumpensteuerung"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 43,
+        "previousClicks": 0,
+        "clickDelta": 0,
+        "isNew": true
+      },
+      {
+        "keys": [
+          "offene kühltürme"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 41,
+        "previousClicks": 0,
+        "clickDelta": 0,
+        "isNew": true
+      },
+      {
+        "keys": [
+          "zatel pres döküm"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 44,
+        "previousClicks": 0,
+        "clickDelta": 0,
+        "isNew": true
+      }
+    ],
+    "breakdownDeviations": [
+      {
+        "keys": [
+          "MOBILE"
+        ],
+        "clicks": 0,
+        "impressions": 42,
+        "ctr": 0,
+        "position": 18.142857142857142,
+        "dimension": "device",
+        "ctrGapPct": -100
+      },
+      {
+        "keys": [
+          "deu"
+        ],
+        "clicks": 0,
+        "impressions": 59,
+        "ctr": 0,
+        "position": 25.847457627118644,
+        "dimension": "country",
+        "ctrGapPct": -100
+      },
+      {
+        "keys": [
+          "Diğer landing"
+        ],
+        "clicks": 0,
+        "impressions": 28,
+        "weightedPosition": 305,
+        "ctr": 0,
+        "position": 10.892857142857142,
+        "dimension": "page_type",
+        "ctrGapPct": -100
+      },
+      {
+        "keys": [
+          "DESKTOP"
+        ],
+        "clicks": 1,
+        "impressions": 59,
+        "ctr": 0.01694915254237288,
+        "position": 26.271186440677965,
+        "dimension": "device",
+        "ctrGapPct": 71.1864406779661
+      },
+      {
+        "keys": [
+          "Ana sayfa"
+        ],
+        "clicks": 1,
+        "impressions": 73,
+        "weightedPosition": 2025,
+        "ctr": 0.0136986301369863,
+        "position": 27.73972602739726,
+        "dimension": "page_type",
+        "ctrGapPct": 43.83561643835615
+      }
+    ]
+  },
+  "totals": {
+    "current": {
+      "clicks": 1,
+      "impressions": 101,
+      "ctr": 0.009900990099009901,
+      "position": 22.89108910891089
+    },
+    "previous": {
+      "clicks": 0,
+      "impressions": 156,
+      "ctr": 0,
+      "position": 35.61538461538461
+    },
+    "comparable": true,
+    "source": "ungrouped",
+    "aggregation": "byProperty",
+    "deltaPct": {
+      "clicks": null,
+      "impressions": -35.256410256410255,
+      "ctr": null,
+      "position": -35.72696362508821
+    }
+  },
+  "queryRows": [
+    {
+      "keys": [
+        "???"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "keys": [
+        "askale cimento"
+      ],
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 8.8
+    },
+    {
+      "keys": [
+        "aşkale çimento ankara"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11
+    },
+    {
+      "keys": [
+        "hersteller von kühltürmen"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 40.666666666666664
+    },
+    {
+      "keys": [
+        "kuhltur"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 56.5
+    },
+    {
+      "keys": [
+        "kuhlturm"
+      ],
+      "clicks": 0,
+      "impressions": 16,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "keys": [
+        "kühlturm"
+      ],
+      "clicks": 0,
+      "impressions": 19,
+      "ctr": 0,
+      "position": 56.68421052631579
+    },
+    {
+      "keys": [
+        "kühlturm automation"
+      ],
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 4.833333333333334
+    },
+    {
+      "keys": [
+        "kühlturm automatisierung"
+      ],
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 18.333333333333332
+    },
+    {
+      "keys": [
+        "kühlturm hersteller"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 49
+    },
+    {
+      "keys": [
+        "kühlturm pumpensteuerung"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 43
+    },
+    {
+      "keys": [
+        "kühlturmservice"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 45
+    },
+    {
+      "keys": [
+        "offene kühltürme"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 41
+    },
+    {
+      "keys": [
+        "zatel pres döküm"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 44
+    }
+  ],
+  "pageRows": [
+    {
+      "keys": [
+        "https://kuhlturm.com/"
+      ],
+      "clicks": 1,
+      "impressions": 73,
+      "ctr": 0.0136986301369863,
+      "position": 27.73972602739726
+    },
+    {
+      "keys": [
+        "https://kuhlturm.com/about/unsere-mission"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "keys": [
+        "https://kuhlturm.com/de/legal/nutzungsbedingungen"
+      ],
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 6
+    },
+    {
+      "keys": [
+        "https://kuhlturm.com/de/news/hotel-tech-antalya-messe-erfolgreich-abgeschlossen"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 6
+    },
+    {
+      "keys": [
+        "https://kuhlturm.com/de/references/aves"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 61
+    },
+    {
+      "keys": [
+        "https://kuhlturm.com/de/references/zatel"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 44
+    },
+    {
+      "keys": [
+        "https://kuhlturm.com/en/service/automation-scada"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2
+    },
+    {
+      "keys": [
+        "https://kuhlturm.com/legal/informationspflicht"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "keys": [
+        "https://kuhlturm.com/references/arcelik"
+      ],
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0,
+      "position": 8.11111111111111
+    },
+    {
+      "keys": [
+        "https://kuhlturm.com/references/askale-cimento"
+      ],
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 8.625
+    },
+    {
+      "keys": [
+        "https://kuhlturm.com/references/aves"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 9
+    },
+    {
+      "keys": [
+        "https://kuhlturm.com/service/engineering-support"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 2.666666666666667
+    }
+  ],
+  "queryPageRows": [
+    {
+      "keys": [
+        "???",
+        "https://kuhlturm.com/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "keys": [
+        "askale cimento",
+        "https://kuhlturm.com/references/askale-cimento"
+      ],
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 8.8
+    },
+    {
+      "keys": [
+        "aşkale çimento ankara",
+        "https://kuhlturm.com/references/askale-cimento"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11
+    },
+    {
+      "keys": [
+        "hersteller von kühltürmen",
+        "https://kuhlturm.com/"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 40.666666666666664
+    },
+    {
+      "keys": [
+        "kuhltur",
+        "https://kuhlturm.com/"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 56.5
+    },
+    {
+      "keys": [
+        "kuhlturm",
+        "https://kuhlturm.com/"
+      ],
+      "clicks": 0,
+      "impressions": 16,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "keys": [
+        "kühlturm",
+        "https://kuhlturm.com/"
+      ],
+      "clicks": 0,
+      "impressions": 19,
+      "ctr": 0,
+      "position": 56.68421052631579
+    },
+    {
+      "keys": [
+        "kühlturm automation",
+        "https://kuhlturm.com/"
+      ],
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 5.4
+    },
+    {
+      "keys": [
+        "kühlturm automation",
+        "https://kuhlturm.com/en/service/automation-scada"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2
+    },
+    {
+      "keys": [
+        "kühlturm automatisierung",
+        "https://kuhlturm.com/"
+      ],
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 18.333333333333332
+    },
+    {
+      "keys": [
+        "kühlturm hersteller",
+        "https://kuhlturm.com/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 49
+    },
+    {
+      "keys": [
+        "kühlturm pumpensteuerung",
+        "https://kuhlturm.com/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 43
+    },
+    {
+      "keys": [
+        "kühlturmservice",
+        "https://kuhlturm.com/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 45
+    },
+    {
+      "keys": [
+        "offene kühltürme",
+        "https://kuhlturm.com/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 41
+    },
+    {
+      "keys": [
+        "zatel pres döküm",
+        "https://kuhlturm.com/de/references/zatel"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 44
+    }
+  ],
+  "dateRows": [
+    {
+      "keys": [
+        "2026-08-10"
+      ],
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 40
+    },
+    {
+      "keys": [
+        "2026-08-11"
+      ],
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 11.5
+    },
+    {
+      "keys": [
+        "2026-08-12"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 40.333333333333336
+    },
+    {
+      "keys": [
+        "2026-08-13"
+      ],
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 46
+    },
+    {
+      "keys": [
+        "2026-08-14"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 8.5
+    },
+    {
+      "keys": [
+        "2026-08-15"
+      ],
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 24.833333333333332
+    },
+    {
+      "keys": [
+        "2026-08-16"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 31
+    },
+    {
+      "keys": [
+        "2026-08-17"
+      ],
+      "clicks": 0,
+      "impressions": 0,
+      "ctr": 0,
+      "position": 0
+    },
+    {
+      "keys": [
+        "2026-08-18"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 9.5
+    },
+    {
+      "keys": [
+        "2026-08-19"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 42
+    },
+    {
+      "keys": [
+        "2026-08-20"
+      ],
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 15
+    },
+    {
+      "keys": [
+        "2026-08-21"
+      ],
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 11.875
+    },
+    {
+      "keys": [
+        "2026-08-22"
+      ],
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 10.4
+    },
+    {
+      "keys": [
+        "2026-08-23"
+      ],
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 13
+    },
+    {
+      "keys": [
+        "2026-08-24"
+      ],
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "keys": [
+        "2026-08-25"
+      ],
+      "clicks": 0,
+      "impressions": 0,
+      "ctr": 0,
+      "position": 0
+    },
+    {
+      "keys": [
+        "2026-08-26"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 9.666666666666666
+    },
+    {
+      "keys": [
+        "2026-08-27"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "keys": [
+        "2026-08-28"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 8.5
+    },
+    {
+      "keys": [
+        "2026-08-29"
+      ],
+      "clicks": 0,
+      "impressions": 0,
+      "ctr": 0,
+      "position": 0
+    },
+    {
+      "keys": [
+        "2026-08-30"
+      ],
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 25.571428571428573
+    },
+    {
+      "keys": [
+        "2026-08-31"
+      ],
+      "clicks": 1,
+      "impressions": 7,
+      "ctr": 0.14285714285714285,
+      "position": 17.428571428571427
+    },
+    {
+      "keys": [
+        "2026-09-01"
+      ],
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 31.333333333333332
+    },
+    {
+      "keys": [
+        "2026-09-02"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 57
+    },
+    {
+      "keys": [
+        "2026-09-03"
+      ],
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 46
+    },
+    {
+      "keys": [
+        "2026-09-04"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 6.333333333333333
+    },
+    {
+      "keys": [
+        "2026-09-05"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 29.333333333333332
+    },
+    {
+      "keys": [
+        "2026-09-06"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 27
+    }
+  ],
+  "deviceRows": [
+    {
+      "keys": [
+        "DESKTOP"
+      ],
+      "clicks": 1,
+      "impressions": 59,
+      "ctr": 0.01694915254237288,
+      "position": 26.271186440677965
+    },
+    {
+      "keys": [
+        "MOBILE"
+      ],
+      "clicks": 0,
+      "impressions": 42,
+      "ctr": 0,
+      "position": 18.142857142857142
+    }
+  ],
+  "countryRows": [
+    {
+      "keys": [
+        "pol"
+      ],
+      "clicks": 1,
+      "impressions": 2,
+      "ctr": 0.5,
+      "position": 5.5
+    },
+    {
+      "keys": [
+        "alb"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 51
+    },
+    {
+      "keys": [
+        "aut"
+      ],
+      "clicks": 0,
+      "impressions": 16,
+      "ctr": 0,
+      "position": 9.4375
+    },
+    {
+      "keys": [
+        "bel"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "keys": [
+        "bgd"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 55
+    },
+    {
+      "keys": [
+        "bih"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "keys": [
+        "bol"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 57
+    },
+    {
+      "keys": [
+        "bra"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "keys": [
+        "che"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 10.5
+    },
+    {
+      "keys": [
+        "cod"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 61
+    },
+    {
+      "keys": [
+        "deu"
+      ],
+      "clicks": 0,
+      "impressions": 59,
+      "ctr": 0,
+      "position": 25.847457627118644
+    },
+    {
+      "keys": [
+        "dza"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 69
+    },
+    {
+      "keys": [
+        "fra"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11
+    },
+    {
+      "keys": [
+        "gbr"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 6
+    },
+    {
+      "keys": [
+        "grc"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 5.5
+    },
+    {
+      "keys": [
+        "ind"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 57
+    },
+    {
+      "keys": [
+        "rus"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 44
+    },
+    {
+      "keys": [
+        "tur"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 35
+    },
+    {
+      "keys": [
+        "usa"
+      ],
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 20
+    },
+    {
+      "keys": [
+        "vnm"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 3
+    }
+  ]
+}

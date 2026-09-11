@@ -1,3 +1,5 @@
+import { StructuredData } from '@/components/ui/StructuredData';
+import { withRouteMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
@@ -11,12 +13,9 @@ interface Props {
   params: Promise<{ locale: string }>;
 }
 
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: 'FAQ – Häufig gestellte Fragen',
-    description:
-      'Antworten auf häufig gestellte Fragen zu Kühltürmen, Kühltechnik und unseren Dienstleistungen.',
-  };
+async function buildMetadata(): Promise<Metadata> {
+  const t = await getTranslations('faqs');
+  return { title: t('title') };
 }
 
 export default async function FaqsPage({ params }: Props) {
@@ -32,6 +31,7 @@ export default async function FaqsPage({ params }: Props) {
 
   return (
     <main>
+      {faqs.length > 0 && <StructuredData data={{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) }} />}
       <PageBanner
         locale={locale}
         breadcrumbs={[{ label: t('title') }]}
@@ -89,4 +89,10 @@ export default async function FaqsPage({ params }: Props) {
       </section>
     </main>
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
+  return withRouteMetadata(await buildMetadata(), locale, `/faqs`);
 }

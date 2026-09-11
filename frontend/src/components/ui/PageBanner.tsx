@@ -1,3 +1,5 @@
+import { StructuredData } from './StructuredData';
+import { SITE_URL } from '@/lib/seo';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 import type { ReactNode } from 'react';
@@ -20,7 +22,7 @@ interface PageBannerProps {
 export function PageBanner({
   locale,
   breadcrumbs,
-  homeLabel = 'Startseite',
+  homeLabel,
   title,
   subtitle,
   variant = 'default',
@@ -30,10 +32,14 @@ export function PageBanner({
 
   return (
     <div className={`bg-slate-900 text-white ${py}`}>
+      <StructuredData data={{ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+        { '@type': 'ListItem', position: 1, name: homeLabel || (locale === 'en' ? 'Home' : 'Startseite'), item: `${SITE_URL}/${locale}` },
+        ...breadcrumbs.map((item, index) => ({ '@type': 'ListItem', position: index + 2, name: item.label, ...(item.href ? { item: new URL(item.href, SITE_URL).href } : {}) })),
+      ] }} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center gap-2 text-sm text-slate-400 flex-wrap mb-4">
           <Link href={`/${locale}`} className="hover:text-white transition-colors">
-            {homeLabel}
+            {homeLabel || (locale === 'en' ? 'Home' : 'Startseite')}
           </Link>
           {breadcrumbs.map((item, i) => (
             <span key={i} className="contents">

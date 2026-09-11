@@ -5,4 +5,4 @@ export function cn(...inputs: ClassValue[]): string {
   return twMerge(clsx(inputs));
 }
 
-export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://127.0.0.1:8089/api';
+export const API_BASE_URL = (typeof window === 'undefined' ? process.env.API_INTERNAL_URL : undefined) ?? process.env.NEXT_PUBLIC_API_URL ?? 'https://kuhlturm.com/api';

@@ -1,3 +1,5 @@
+import { sendCatalogRequestMail, sendCatalogRequestAdminMail } from "@ensotek/shared-backend/modules/catalogRequests/mailer";
+import { resolveCatalogUrl as resolveConfiguredCatalogUrl } from "@ensotek/shared-backend/modules/catalogRequests/repository";
 // =============================================================
 // FILE: src/modules/catalog/service.ts
 // Kühlturm – Catalog Request Module Service
@@ -108,16 +110,12 @@ async function getAdminUserIdsByRole(): Promise<string[]> {
     return Array.from(new Set(rows.map((r) => String(r.user_id)).filter(Boolean)));
 }
 
-async function getCatalogUrl(): Promise<string | null> {
-    const raw = await getSiteSettingValue("catalog_pdf_url");
-    if (typeof raw === "string" && raw.trim()) return raw.trim();
-    return null;
-}
+async function getCatalogUrl(locale?: string | null): Promise<string> { return resolveConfiguredCatalogUrl(locale); }
 
 async function getCatalogFilename(): Promise<string> {
     const raw = await getSiteSettingValue("catalog_pdf_filename");
     if (typeof raw === "string" && raw.trim()) return raw.trim();
-    return "ensotek-catalog.pdf";
+    return "catalog.pdf";
 }
 
 async function getSiteTitle(): Promise<string> {
@@ -190,50 +188,10 @@ Telefon: ${ctx.phone ?? "-"}`;
         console.error("catalog_request_telegram_failed", err);
     }
 
-    // ✅ Admin mail (site_settings üzerinden)
     try {
-        const adminEmails = await getCatalogAdminEmails();
-        if (!adminEmails.length) return;
+        await sendCatalogRequestAdminMail({ ...ctx, catalog_url: await getCatalogUrl(ctx.locale) } as any);
+    } catch (err) { console.error("catalog_request_admin_mail_failed", err); }
 
-        const site_title = await getSiteTitle();
-        const catalog_url = await getCatalogUrl();
-
-        const params: Record<string, unknown> = {
-            site_title,
-            site_name: site_title,
-            customer_name: ctx.customer_name,
-            company_name: ctx.company_name ?? null,
-            email: ctx.email,
-            phone: ctx.phone ?? null,
-            message: ctx.message ?? null,
-            locale: ctx.locale ?? "en",
-            country_code: ctx.country_code ?? null,
-            catalog_url,
-            catalog_request_id: ctx.id ?? null,
-        };
-
-        const rendered = await renderEmailTemplateByKey(
-            "catalog_request_received_admin",
-            params,
-            ctx.locale ?? "en",
-        );
-
-        // missing varsa sessizce geçme yerine logla (debug kolaylaşır)
-        if (!rendered) {
-            console.error("catalog_request_admin_mail_template_not_found");
-            return;
-        }
-        if (rendered.missing_variables.length > 0) {
-            console.error("catalog_request_admin_mail_missing_variables", rendered.missing_variables);
-            return;
-        }
-
-        for (const to of adminEmails) {
-            await sendMail({ to, subject: rendered.subject, html: rendered.html });
-        }
-    } catch (err) {
-        console.error("catalog_request_admin_mail_failed", err);
-    }
 }
 
 /* -------------------------------------------------------------
@@ -242,7 +200,7 @@ Telefon: ${ctx.phone ?? "-"}`;
  * ------------------------------------------------------------- */
 
 export async function sendCatalogToCustomer(ctx: CatalogRequestContext): Promise<boolean> {
-    const catalog_url = await getCatalogUrl();
+    const catalog_url = await getCatalogUrl(ctx.locale);
 
     if (!catalog_url) {
         if (ctx.id) {
@@ -254,56 +212,9 @@ export async function sendCatalogToCustomer(ctx: CatalogRequestContext): Promise
         return false;
     }
 
-    const site_title = await getSiteTitle();
     const catalog_filename = await getCatalogFilename();
-
-    const params: Record<string, unknown> = {
-        site_title,
-        site_name: site_title,
-        customer_name: ctx.customer_name,
-        company_name: ctx.company_name ?? null,
-        email: ctx.email,
-        phone: ctx.phone ?? null,
-        catalog_url, // yedek link
-        catalog_filename,
-    };
-
-    const locale = ctx.locale ?? "en";
-    const rendered = await renderEmailTemplateByKey("catalog_sent_customer", params, locale);
-
-    if (!rendered) {
-        if (ctx.id) {
-            await updateCatalogRequest(ctx.id, {
-                status: "failed" as any,
-                admin_notes: "email template catalog_sent_customer not found" as any,
-            } as any);
-        }
-        return false;
-    }
-
-    if (rendered.missing_variables.length > 0) {
-        if (ctx.id) {
-            await updateCatalogRequest(ctx.id, {
-                status: "failed" as any,
-                admin_notes: `missing variables: ${rendered.missing_variables.join(", ")}` as any,
-            } as any);
-        }
-        return false;
-    }
-
     try {
-        await sendMail({
-            to: ctx.email,
-            subject: rendered.subject,
-            html: rendered.html,
-            attachments: [
-                {
-                    filename: catalog_filename,
-                    path: catalog_url, // URL veya local path
-                    contentType: "application/pdf",
-                },
-            ],
-        });
+        await sendCatalogRequestMail({ ...ctx, catalog_url } as any, { attachmentFilename: catalog_filename });
 
         if (ctx.id) {
             await updateCatalogRequest(ctx.id, {

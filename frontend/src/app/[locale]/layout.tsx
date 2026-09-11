@@ -1,5 +1,10 @@
+import { LeadEvents } from '../../../../../packages/shared-ui/public/components/analytics/LeadEvents';
+import { StructuredData } from '@/components/ui/StructuredData';
+import { SITE_URL } from '@/lib/seo';
+import { ConsentGate } from '../../../../../packages/shared-ui/public/components/analytics/ConsentGate';
 import type { ReactNode } from 'react';
 import type { Metadata, Viewport } from 'next';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -69,15 +74,8 @@ export async function generateMetadata({
     description,
     authors: [{ name: siteName }],
     publisher: siteName,
-    alternates: {
-      canonical: `${siteUrl}/${locale}`,
-      languages: Object.fromEntries(
-        AVAILABLE_LOCALES.map((l) => [l, `${siteUrl}/${l}`]),
-      ),
-    },
     openGraph: {
       type: 'website',
-      url: `/${locale}`,
       siteName,
       title,
       description,
@@ -129,7 +127,7 @@ export default async function LocaleLayout({
 
   const messages = getLocaleMessages(locale);
 
-  const [menuItems, footerSections, footerLinks, logoSetting, contactSetting, socialSetting, { activeLocales }] = await Promise.all([
+  const [menuItems, footerSections, footerLinks, logoSetting, contactSetting, socialSetting, { activeLocales }, analyticsSetting] = await Promise.all([
     apiFetchWithLocale<MenuItem[]>('/menu_items', locale, { params: { location: 'header' } }).then(d => d ?? []),
     apiFetchWithLocale<FooterSection[]>('/footer_sections', locale, { params: { is_active: true } }).then(d => d ?? []),
     apiFetchWithLocale<MenuItem[]>('/menu_items', locale, { params: { location: 'footer' } }).then(d => d ?? []),
@@ -137,7 +135,11 @@ export default async function LocaleLayout({
     fetchSetting('contact_info', locale, { revalidate: 3600 }),
     fetchSetting('socials', locale, { revalidate: 3600 }),
     getLocaleSettings(),
+    fetchSetting('kuhlturm_ga4_measurement_id', locale, { revalidate: 300 }),
   ]);
+
+  const measurementId = typeof analyticsSetting?.value === 'string'
+    ? analyticsSetting.value.trim() : '';
 
   // Extract logo URL from setting value (may be a string URL or { url: string })
   const logoSrc = (() => {
@@ -157,6 +159,10 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${inter.variable} ${syne.variable}`} suppressHydrationWarning>
       <body suppressHydrationWarning>
+        <StructuredData data={{ '@context': 'https://schema.org', '@graph': [
+          { '@type': 'Organization', '@id': `${SITE_URL}/#organization`, name: 'Ensotek', legalName: contactInfo.company_name || undefined, telephone: contactInfo.phone || undefined, email: contactInfo.email || undefined, sameAs: Object.values(socials).filter((value): value is string => typeof value === 'string' && /^https:\/\//.test(value)), url: 'https://ensotek.de', ...(logoSrc ? { logo: new URL(logoSrc, SITE_URL).href } : {}), brand: { '@type': 'Brand', name: 'Kühlturm' } },
+          { '@type': 'WebSite', '@id': `${SITE_URL}/#website`, url: SITE_URL, name: 'Kühlturm · Ensotek', inLanguage: locale, publisher: { '@id': `${SITE_URL}/#organization` } },
+        ] }} />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header menuItems={menuItems} logoSrc={logoSrc} />
           {children}
@@ -171,6 +177,7 @@ export default async function LocaleLayout({
           <ClientToaster />
         </NextIntlClientProvider>
       </body>
+      {/^G-[A-Z0-9]+$/.test(measurementId) && <ConsentGate locale={locale}><LeadEvents measurementId={measurementId} locale={locale} /><GoogleAnalytics gaId={measurementId} /></ConsentGate>}
     </html>
   );
 }

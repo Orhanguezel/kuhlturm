@@ -1,3 +1,5 @@
+import { registerTanitioContent } from '@ensotek/shared-backend/integrations/tanitio';
+import { pool as contentPool } from './db/client';
 // =============================================================
 // FILE: src/app.ts
 // FIX: Audit module single-entry mount (registerAudit) + remove duplicate stream mount
@@ -147,6 +149,8 @@ export async function createApp() {
 
   // Audit log retention cleanup (runs daily)
   startRetentionJob();
+
+  await registerTanitioContent(app, { site: 'kuhlturm', apiKey: () => process.env.TANITIO_CONTENT_API_KEY, query: async (sql, values) => { const [rows] = await contentPool.query(sql, values); return rows as any[]; } });
 
   return app;
 }

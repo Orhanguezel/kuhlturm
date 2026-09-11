@@ -1,4 +1,5 @@
 'use client';
+import { useLocale } from 'next-intl';
 
 import { ExternalLink } from 'lucide-react';
 
@@ -9,6 +10,7 @@ interface Props {
 }
 
 export function PdfPreview({ src, title = 'PDF', height = 700 }: Props) {
+  const locale = useLocale();
   if (!src) return null;
 
   const iframeSrc = `${src}#toolbar=1&navpanes=0`;
@@ -30,7 +32,7 @@ export function PdfPreview({ src, title = 'PDF', height = 700 }: Props) {
           <p>
             PDF kann nicht angezeigt werden.{' '}
             <a href={src} target="_blank" rel="noopener noreferrer">
-              PDF herunterladen
+              {locale === "en" ? "Download PDF" : "PDF herunterladen"}
             </a>
           </p>
         </iframe>
@@ -43,7 +45,7 @@ export function PdfPreview({ src, title = 'PDF', height = 700 }: Props) {
           className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white text-sm font-semibold rounded-xl hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20"
         >
           <ExternalLink size={16} />
-          PDF öffnen / herunterladen
+          {locale === "en" ? "Open or download PDF" : "PDF öffnen / herunterladen"}
         </a>
       </div>
     </div>

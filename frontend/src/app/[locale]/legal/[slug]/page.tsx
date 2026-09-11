@@ -1,3 +1,5 @@
+import { withRouteMetadata } from '@/lib/seo';
+import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
@@ -14,8 +16,9 @@ interface Props {
   params: Promise<{ locale: string; slug: string }>;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale, slug } = await params;
+async function buildMetadata({ params }: Props): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
   const page = await getCustomPageBySlugWithLocale(slug, locale);
   if (!page) return { title: 'Rechtliches' };
   return {
@@ -25,7 +28,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function LegalDetailPage({ params }: Props) {
-  const { locale, slug } = await params;
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
   setRequestLocale(locale);
 
   const t = await getTranslations('legal');
@@ -45,27 +49,11 @@ export default async function LegalDetailPage({ params }: Props) {
 
   const allPages: CustomPage[] = (allPagesRaw as any[] ?? []);
 
-  if (!page) {
-    return (
-      <main>
-        <div className="min-h-[60vh] flex items-center justify-center">
-          <div className="text-center">
-            <p className="text-slate-400 text-lg mb-6">{t('noResults')}</p>
-            <Link
-              href={`/${locale}/legal`}
-              className="inline-flex items-center gap-2 text-blue-600 hover:underline font-medium"
-            >
-              {t('backToLegal')}
-            </Link>
-          </div>
-        </div>
-      </main>
-    );
-  }
+  if (!page) notFound();
 
-  const htmlContent = parseCustomPageContent(page.content);
+  const htmlContent = parseCustomPageContent(page.content).replace(/<h1(\s[^>]*)?>/gi, '<h2$1>').replace(/<\/h1>/gi, '</h2>');
 
-  const updatedAt = new Date(page.updated_at).toLocaleDateString('de-DE', {
+  const updatedAt = new Date(page.updated_at).toLocaleDateString(locale, {
     day: '2-digit',
     month: 'long',
     year: 'numeric',
@@ -141,4 +129,10 @@ export default async function LegalDetailPage({ params }: Props) {
       </div>
     </main>
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
+  return withRouteMetadata(await buildMetadata({ params }), locale, `/legal/${slug}`);
 }

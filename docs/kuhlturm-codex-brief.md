@@ -1,5 +1,7 @@
 # Kühlturm — Codex Brief
 
+> **Tarihsel Mayıs 2026 brief’i. 10 Eylül 2026 kararı:** Kühlturm Ensotek alt markasıdır; Ensotek logosu/şirket kimliği korunur. Genel isim silme ve ayrı marka yaratma görevleri geçerli değildir. Canlı DB `kuhlturm_live`, kullanıcı `kuhlturm_runtime`, API 8089; ürün/servis native yerel modüllerdir. Güncel kabul ve rollback için [işletim kaydı](runtime-isolation-2026-09-10.md) esas alınır.
+
 > Bağlam: kuhlturm/backend ve kuhlturm/admin_panel iskeletleri 2026-05-23'te
 > `ensotek_de`'den kopyalandı (rsync; node_modules/uploads/.env hariç). Kritik
 > configler (paket isimleri, portlar, ecosystem cwd, .env.example, DB adı)

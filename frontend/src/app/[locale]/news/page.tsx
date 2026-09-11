@@ -1,3 +1,4 @@
+import { withRouteMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
@@ -13,11 +14,9 @@ interface Props {
   params: Promise<{ locale: string }>;
 }
 
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: 'Nachrichten',
-    description: 'Aktuelle Neuigkeiten, Ankündigungen und Unternehmensnachrichten von Kühlturm.',
-  };
+async function buildMetadata(): Promise<Metadata> {
+  const t = await getTranslations('news');
+  return { title: t('title') };
 }
 
 export default async function NewsPage({ params }: Props) {
@@ -112,7 +111,7 @@ function ArticleCard({
   tCommon: any;
   large?: boolean;
 }) {
-  const date = new Date(article.created_at).toLocaleDateString('de-DE', {
+  const date = new Date(article.created_at).toLocaleDateString(locale, {
     day: '2-digit',
     month: 'long',
     year: 'numeric',
@@ -178,4 +177,10 @@ function ArticleCard({
       </div>
     </Link>
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
+  return withRouteMetadata(await buildMetadata(), locale, `/news`);
 }

@@ -59,7 +59,7 @@ VALUES
   (
     @REV_MISSION, 'custom_page', @PAGE_MISSION,
     'Ahmet Yılmaz', 'ahmet@example.com',
-    5, 1, 1, 10,
+    5, 1, 0, 10,
     3, 0, 3,
     'tr',
     NOW(3), NOW(3)
@@ -67,7 +67,7 @@ VALUES
   (
     @REV_ABOUT, 'custom_page', @PAGE_ABOUT,
     'Mehmet Kara', 'mehmet.kara@example.com',
-    5, 1, 1, 30,
+    5, 1, 0, 30,
     5, 0, 5,
     'tr',
     NOW(3), NOW(3)
@@ -75,7 +75,7 @@ VALUES
   (
     @REV_BLOG, 'custom_page', @BLOG_MAINT_1,
     'Serkan Demir', 'serkan.demir@example.com',
-    4, 1, 1, 50,
+    4, 1, 0, 50,
     0, 0, 0,
     'tr',
     NOW(3), NOW(3)
@@ -83,7 +83,7 @@ VALUES
   (
     @REV_CT_OVERVIEW, 'custom_page', @PAGE_COOLING_TOWERS,
     'Murat Akın', 'murat.akin@example.com',
-    5, 1, 1, 110,
+    5, 1, 0, 110,
     7, 0, 6,
     'tr',
     NOW(3), NOW(3)
@@ -91,7 +91,7 @@ VALUES
   (
     @REV_CT_TYPES, 'custom_page', @PAGE_COOLING_TOWER_TYPES,
     'Elif Şahin', 'elif.sahin@example.com',
-    5, 1, 1, 120,
+    5, 1, 0, 120,
     4, 0, 4,
     'tr',
     NOW(3), NOW(3)
@@ -99,7 +99,7 @@ VALUES
   (
     @REV_CT_MAINT, 'custom_page', @PAGE_COOLING_TOWER_MAINT,
     'Kemal Öz', 'kemal.oz@example.com',
-    4, 1, 1, 130,
+    4, 1, 0, 130,
     2, 0, 2,
     'tr',
     NOW(3), NOW(3)
@@ -107,7 +107,7 @@ VALUES
   (
     @REV_CT_PROJECTS, 'custom_page', @PAGE_COOLING_TOWER_PROJECT,
     'Zeynep Kılıç', 'zeynep.kilic@example.com',
-    5, 1, 1, 140,
+    5, 1, 0, 140,
     3, 0, 3,
     'tr',
     NOW(3), NOW(3)
@@ -115,7 +115,7 @@ VALUES
   (
     @REV_CT_NOISE, 'custom_page', @PAGE_COOLING_TOWERS,
     'Tolga Demir', 'tolga.demir@example.com',
-    5, 1, 1, 150,
+    5, 1, 0, 150,
     1, 0, 1,
     'tr',
     NOW(3), NOW(3)
@@ -123,7 +123,7 @@ VALUES
   (
     @REV_CT_WATER, 'custom_page', @PAGE_COOLING_TOWERS,
     'Seda Arslan', 'seda.arslan@example.com',
-    4, 1, 1, 160,
+    4, 1, 0, 160,
     1, 0, 1,
     'tr',
     NOW(3), NOW(3)

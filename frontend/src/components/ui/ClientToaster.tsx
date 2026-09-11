@@ -1,11 +1,12 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useSyncExternalStore } from 'react';
 import { Toaster } from 'sonner';
 
+const subscribe = () => () => {};
+
 export function ClientToaster() {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  const mounted = useSyncExternalStore(subscribe, () => true, () => false);
   if (!mounted) return null;
   return <Toaster position="bottom-right" richColors />;
 }

@@ -1,3 +1,5 @@
+import { notFound } from 'next/navigation';
+import { withRouteMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
@@ -19,8 +21,9 @@ interface Props {
   params: Promise<{ locale: string; slug: string }>;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale, slug } = await params;
+async function buildMetadata({ params }: Props): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
   const article = await getCustomPageBySlugWithLocale(slug, locale);
   if (!article) return { title: 'Nachricht' };
   return {
@@ -33,7 +36,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function NewsDetailPage({ params }: Props) {
-  const { locale, slug } = await params;
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
   setRequestLocale(locale);
 
   const [t, tCommon, tReviews] = await Promise.all([
@@ -44,28 +48,11 @@ export default async function NewsDetailPage({ params }: Props) {
 
   const article = await getCustomPageBySlugWithLocale(slug, locale);
 
-  if (!article) {
-    return (
-      <main>
-        <div className="min-h-[60vh] flex items-center justify-center">
-          <div className="text-center">
-            <p className="text-slate-400 text-lg mb-6">{t('noResults')}</p>
-            <Link
-              href={`/${locale}/news`}
-              className="inline-flex items-center gap-2 text-blue-600 hover:underline font-medium"
-            >
-              <ArrowLeft size={16} />
-              {t('backToNews')}
-            </Link>
-          </div>
-        </div>
-      </main>
-    );
-  }
+  if (!article) notFound();
 
-  const htmlContent = parseCustomPageContent(article.content);
+  const htmlContent = parseCustomPageContent(article.content).replace(/<h1(\s[^>]*)?>/gi, '<h2$1>').replace(/<\/h1>/gi, '</h2>');
 
-  const date = new Date(article.created_at).toLocaleDateString('de-DE', {
+  const date = new Date(article.created_at).toLocaleDateString(locale, {
     day: '2-digit',
     month: 'long',
     year: 'numeric',
@@ -218,7 +205,7 @@ export default async function NewsDetailPage({ params }: Props) {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {related.map((rel) => {
-                const relDate = new Date(rel.created_at).toLocaleDateString('de-DE', {
+                const relDate = new Date(rel.created_at).toLocaleDateString(locale, {
                   day: '2-digit', month: 'short', year: 'numeric',
                 });
                 return (
@@ -290,4 +277,10 @@ export default async function NewsDetailPage({ params }: Props) {
       />
     </main>
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
+  return withRouteMetadata(await buildMetadata({ params }), locale, `/news/${slug}`);
 }

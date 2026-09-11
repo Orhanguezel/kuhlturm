@@ -1,0 +1,7 @@
+{
+  "command": "node_modules/.bin/tsc --noEmit --incremental false --pretty false",
+  "frontend": 0,
+  "backend": 0,
+  "admin_panel": 0,
+  "note": "Existing working tree; no production builds or DB mutations."
+}

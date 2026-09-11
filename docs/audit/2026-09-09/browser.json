@@ -1,0 +1,452 @@
+[
+  {
+    "url": "https://kuhlturm.com/en/contact",
+    "lang": "en",
+    "title": "Kontakt | Kühlturm",
+    "width": 390,
+    "scroll": 390,
+    "h1": [
+      "Kontakt"
+    ],
+    "brokenImages": [],
+    "scripts": [
+      "https://www.googletagmanager.com/gtag/js?id=G-KXDKCDY0ET"
+    ],
+    "cookieNames": [
+      "_ga",
+      "NEXT_LOCALE",
+      "_ga_KXDKCDY0ET"
+    ],
+    "formFields": [
+      {
+        "name": "website",
+        "type": "text",
+        "id": "",
+        "labels": [],
+        "aria": null,
+        "placeholder": null
+      },
+      {
+        "name": "",
+        "type": "text",
+        "id": "",
+        "labels": [],
+        "aria": null,
+        "placeholder": "Max Mustermann"
+      },
+      {
+        "name": "",
+        "type": "tel",
+        "id": "",
+        "labels": [],
+        "aria": null,
+        "placeholder": "+49 000 0000000"
+      },
+      {
+        "name": "",
+        "type": "email",
+        "id": "",
+        "labels": [],
+        "aria": null,
+        "placeholder": "max@beispiel.de"
+      },
+      {
+        "name": "",
+        "type": "text",
+        "id": "",
+        "labels": [],
+        "aria": null,
+        "placeholder": "z. B. Anfrage Kühlturm Typ XY"
+      },
+      {
+        "name": "",
+        "type": "textarea",
+        "id": "",
+        "labels": [],
+        "aria": null,
+        "placeholder": "Beschreiben Sie Ihre Anfrage oder Ihr Projekt ..."
+      }
+    ],
+    "nav": [
+      {
+        "ttfb": 152.09999999403954,
+        "dom": 313.80000001192093,
+        "load": 717
+      }
+    ],
+    "resources": [
+      {
+        "url": "https://kuhlturm.com/_next/static/media/0c795a286deabae8-s.p.b6c48e4e.woff2",
+        "bytes": 0,
+        "duration": 4.199999988079071
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+        "bytes": 0,
+        "duration": 8.599999994039536
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/4373b020652abf38.css",
+        "bytes": 0,
+        "duration": 6.9000000059604645
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/4c8835d34fb4ab7f.css",
+        "bytes": 0,
+        "duration": 7.800000011920929
+      },
+      {
+        "url": "https://kuhlturm.com/_next/image?url=%2Flogo%2Fensotek-logo-main.png&w=128&q=75",
+        "bytes": 0,
+        "duration": 13.700000017881393
+      },
+      {
+        "url": "https://kuhlturm.com/_next/image?url=%2Flogo%2Fensotek-logo-main.png&w=96&q=75",
+        "bytes": 0,
+        "duration": 23.19999998807907
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/538c6f1fdc57b776.js",
+        "bytes": 0,
+        "duration": 36.900000005960464
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/82abf2d65f5428ae.js",
+        "bytes": 0,
+        "duration": 40.80000001192093
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/d702a24e2b6c48fa.js",
+        "bytes": 0,
+        "duration": 51.599999994039536
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/c5ef3c97112751d3.js",
+        "bytes": 0,
+        "duration": 51.80000001192093
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/turbopack-efaf4bf88173a1e9.js",
+        "bytes": 0,
+        "duration": 46.20000001788139
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/ff1a16fafef87110.js",
+        "bytes": 0,
+        "duration": 45.80000001192093
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/d2be314c3ece3fbe.js",
+        "bytes": 0,
+        "duration": 45.89999997615814
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/16a602bf6a48ebcb.js",
+        "bytes": 0,
+        "duration": 45.900000005960464
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/3a2e45f98aadd0d0.js",
+        "bytes": 0,
+        "duration": 46.599999994039536
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/c551fd954f19c2f8.js",
+        "bytes": 0,
+        "duration": 46.70000001788139
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/502578592318f455.js",
+        "bytes": 0,
+        "duration": 46.89999997615814
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/9295fa26d0cd3f2e.js",
+        "bytes": 0,
+        "duration": 49.79999998211861
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/a35d673f43c1653c.js",
+        "bytes": 0,
+        "duration": 47.30000001192093
+      },
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-KXDKCDY0ET",
+        "bytes": 0,
+        "duration": 10.700000017881393
+      },
+      {
+        "url": "https://www.google.com/maps?q=41.0436,28.8820&z=15&output=embed",
+        "bytes": 0,
+        "duration": 449.7000000178814
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/media/1bffadaabf893a1e-s.7cd81963.woff2",
+        "bytes": 0,
+        "duration": 1.7000000178813934
+      },
+      {
+        "url": "https://kuhlturm.com/en/offer?_rsc=1792e",
+        "bytes": 468,
+        "duration": 39.5
+      },
+      {
+        "url": "https://kuhlturm.com/en?_rsc=1792e",
+        "bytes": 461,
+        "duration": 40.599999994039536
+      },
+      {
+        "url": "https://kuhlturm.com/en/offer?_rsc=9aizx",
+        "bytes": 1385,
+        "duration": 69.59999999403954
+      },
+      {
+        "url": "https://kuhlturm.com/en?_rsc=9aizx",
+        "bytes": 1303,
+        "duration": 69
+      },
+      {
+        "url": "https://kuhlturm.com/favicon.ico",
+        "bytes": 300,
+        "duration": 39
+      }
+    ],
+    "errors": [],
+    "screenshot": "mobile-0.png"
+  },
+  {
+    "url": "https://kuhlturm.com/en/offer",
+    "lang": "en",
+    "title": "Angebot anfordern — Kühlturm Kühlturm | Kühlturm",
+    "width": 390,
+    "scroll": 390,
+    "h1": [
+      "Angebot anfordern"
+    ],
+    "brokenImages": [],
+    "scripts": [
+      "https://www.googletagmanager.com/gtag/js?id=G-KXDKCDY0ET"
+    ],
+    "cookieNames": [
+      "_ga",
+      "NEXT_LOCALE",
+      "_ga_KXDKCDY0ET"
+    ],
+    "formFields": [
+      {
+        "name": "",
+        "type": "text",
+        "id": "",
+        "labels": [],
+        "aria": null,
+        "placeholder": "Max Mustermann"
+      },
+      {
+        "name": "",
+        "type": "text",
+        "id": "",
+        "labels": [],
+        "aria": null,
+        "placeholder": "Muster GmbH"
+      },
+      {
+        "name": "",
+        "type": "email",
+        "id": "",
+        "labels": [],
+        "aria": null,
+        "placeholder": "max@mustermann.de"
+      },
+      {
+        "name": "",
+        "type": "tel",
+        "id": "",
+        "labels": [],
+        "aria": null,
+        "placeholder": "+49 000 000 0000"
+      },
+      {
+        "name": "",
+        "type": "select-one",
+        "id": "",
+        "labels": [],
+        "aria": null,
+        "placeholder": null
+      },
+      {
+        "name": "",
+        "type": "textarea",
+        "id": "",
+        "labels": [],
+        "aria": null,
+        "placeholder": "Beschreiben Sie Ihr Projekt, die Anlage und Ihre Anforderungen…"
+      },
+      {
+        "name": "",
+        "type": "checkbox",
+        "id": "",
+        "labels": [
+          "Ich stimme den Allgemeinen Geschäftsbedingungen und der Datenschutzerklärung zu."
+        ],
+        "aria": null,
+        "placeholder": null
+      }
+    ],
+    "nav": [
+      {
+        "ttfb": 182.10000002384186,
+        "dom": 270.80000001192093,
+        "load": 302.59999999403954
+      }
+    ],
+    "resources": [
+      {
+        "url": "https://kuhlturm.com/_next/static/media/0c795a286deabae8-s.p.b6c48e4e.woff2",
+        "bytes": 0,
+        "duration": 0
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+        "bytes": 0,
+        "duration": 0
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/4373b020652abf38.css",
+        "bytes": 0,
+        "duration": 0
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/4c8835d34fb4ab7f.css",
+        "bytes": 0,
+        "duration": 0
+      },
+      {
+        "url": "https://kuhlturm.com/_next/image?url=%2Flogo%2Fensotek-logo-main.png&w=128&q=75",
+        "bytes": 0,
+        "duration": 0
+      },
+      {
+        "url": "https://kuhlturm.com/_next/image?url=%2Flogo%2Fensotek-logo-main.png&w=96&q=75",
+        "bytes": 0,
+        "duration": 2.300000011920929
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/538c6f1fdc57b776.js",
+        "bytes": 0,
+        "duration": 0
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/82abf2d65f5428ae.js",
+        "bytes": 0,
+        "duration": 0
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/c5ef3c97112751d3.js",
+        "bytes": 0,
+        "duration": 0
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/d702a24e2b6c48fa.js",
+        "bytes": 0,
+        "duration": 0
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/turbopack-efaf4bf88173a1e9.js",
+        "bytes": 0,
+        "duration": 0
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/ff1a16fafef87110.js",
+        "bytes": 0,
+        "duration": 0
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/d2be314c3ece3fbe.js",
+        "bytes": 0,
+        "duration": 0
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/16a602bf6a48ebcb.js",
+        "bytes": 0,
+        "duration": 0
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/3a2e45f98aadd0d0.js",
+        "bytes": 0,
+        "duration": 0
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/c551fd954f19c2f8.js",
+        "bytes": 0,
+        "duration": 0
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/502578592318f455.js",
+        "bytes": 0,
+        "duration": 0
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/9295fa26d0cd3f2e.js",
+        "bytes": 0,
+        "duration": 0
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/chunks/63c4baf3825712bb.js",
+        "bytes": 0,
+        "duration": 2.5999999940395355
+      },
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-KXDKCDY0ET",
+        "bytes": 0,
+        "duration": 0
+      },
+      {
+        "url": "https://kuhlturm.com/_next/static/media/1bffadaabf893a1e-s.7cd81963.woff2",
+        "bytes": 0,
+        "duration": 0
+      },
+      {
+        "url": "https://kuhlturm.com/favicon.ico",
+        "bytes": 300,
+        "duration": 39.30000001192093
+      },
+      {
+        "url": "https://kuhlturm.com/api/services?locale=en&is_active=1",
+        "bytes": 13051,
+        "duration": 56.900000005960464
+      },
+      {
+        "url": "https://kuhlturm.com/api/products?locale=en&item_type=product&limit=100&is_active=1",
+        "bytes": 9020,
+        "duration": 57.80000001192093
+      },
+      {
+        "url": "https://kuhlturm.com/api/products?locale=en&item_type=sparepart&limit=100&is_active=1",
+        "bytes": 33953,
+        "duration": 96.90000000596046
+      },
+      {
+        "url": "https://kuhlturm.com/en/offer?_rsc=zy4q2",
+        "bytes": 468,
+        "duration": 93.80000001192093
+      },
+      {
+        "url": "https://kuhlturm.com/en?_rsc=zy4q2",
+        "bytes": 461,
+        "duration": 94.2000000178814
+      },
+      {
+        "url": "https://kuhlturm.com/en/offer?_rsc=1nj14",
+        "bytes": 1382,
+        "duration": 68.2999999821186
+      },
+      {
+        "url": "https://kuhlturm.com/en?_rsc=1nj14",
+        "bytes": 1303,
+        "duration": 64.7999999821186
+      }
+    ],
+    "errors": [],
+    "screenshot": "mobile-1.png"
+  }
+]

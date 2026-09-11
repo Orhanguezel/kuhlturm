@@ -6,12 +6,13 @@
     "dev": "next dev --port 3025",
     "build": "next build && node scripts/copy-standalone-public.mjs",
     "start": "next start --port 3025",
-    "lint": "next lint",
+    "lint": "eslint .",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@ensotek/core": "workspace:*",
     "@hookform/resolvers": "^5.2.2",
+    "@next/third-parties": "16.1.6",
     "@radix-ui/react-dialog": "^1.1.15",
     "@tailwindcss/typography": "^0.5.19",
     "@tanstack/react-query": "^5.90.20",

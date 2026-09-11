@@ -1,3 +1,4 @@
+import { withRouteMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
@@ -14,9 +15,10 @@ import type { LibraryItem } from '@ensotek/core/types';
 import { apiFetchWithLocale } from '@/lib/api';
 import { fetchSetting } from '@/i18n/server';
 
-export const metadata: Metadata = {
-  title: 'Kühlturm — Professionelle Kühllösungen',
-};
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  return withRouteMetadata({ title: locale === 'en' ? 'Industrial Cooling Towers — Ensotek' : 'Industrielle Kühltürme — Ensotek' }, locale, '');
+}
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -225,10 +227,10 @@ export default async function HomePage({ params }: Props) {
       <section className="py-(--section-py) bg-slate-900 text-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-            Haben Sie Fragen?
+            {locale === "en" ? "Do you have questions?" : "Haben Sie Fragen?"}
           </h2>
           <p className="text-slate-300 text-lg mb-10 max-w-xl mx-auto">
-            Unser Team berät Sie gerne persönlich zu unseren Produkten und Dienstleistungen.
+            {locale === "en" ? "Our team can advise you on our products and services." : "Unser Team berät Sie gerne persönlich zu unseren Produkten und Dienstleistungen."}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link

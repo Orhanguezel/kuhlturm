@@ -1,3 +1,4 @@
+import { installLeadTracking } from '../../../../packages/shared-ui/public/lib/lead-tracking';
 // =============================================================
 // lib/axios.ts — Axios HTTP client
 // =============================================================
@@ -133,5 +134,7 @@ function normalizeError(error: AxiosError) {
     error: 'NETWORK_ERROR',
   };
 }
+
+installLeadTracking(api);
 
 export default api;

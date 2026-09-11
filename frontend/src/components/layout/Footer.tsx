@@ -1,3 +1,5 @@
+import { ConsentPreferences } from '../../../../../packages/shared-ui/public/components/analytics/ConsentGate';
+import { getSeoRecords } from '@/lib/seo';
 import Link from 'next/link';
 import type { FooterSection, MenuItem } from '@ensotek/core/types';
 import { SiteLogo } from './SiteLogo';
@@ -9,7 +11,12 @@ interface FooterProps {
   logoSrc?: string | null;
 }
 
-export function Footer({ locale, footerSections = [], footerLinks = [], logoSrc }: FooterProps) {
+export async function Footer({ locale, footerSections = [], footerLinks = [], logoSrc }: FooterProps) {
+  const [legalPages, germanLegal] = await Promise.all([getSeoRecords('legal', locale), getSeoRecords('legal', 'de')]);
+  const legalSlugMap = new Map(germanLegal.flatMap(page => {
+    const translated = legalPages.find(other => other.id === page.id);
+    return translated ? [[page.slug, translated.slug]] : [];
+  }));
   const year = new Date().getFullYear();
 
   // Group footer menu links by section_id
@@ -27,9 +34,11 @@ export function Footer({ locale, footerSections = [], footerLinks = [], logoSrc 
 
   // Helper to ensure links are prefixed with locale
   const toHref = (url: string) => {
-    if (url.startsWith('http') || url.startsWith('//')) return url;
-    const clean = url.startsWith('/') ? url : `/${url}`;
-    if (clean.startsWith(`/${locale}/`) || clean === `/${locale}`) return clean;
+    if (/^(https?:|mailto:|tel:|#|\/\/)/.test(url)) return url;
+    let clean = '/' + url.replace(/^\//, '').replace(/^(de|en|tr)\//, '').replace(/^services\//, 'service/');
+    const legalSlug = clean.match(/^\/legal\/([^/?#]+)/)?.[1];
+    if (legalSlug && legalSlugMap.has(legalSlug)) clean = `/legal/${legalSlugMap.get(legalSlug)}`;
+    clean = clean.replace(/regelmaessige-wartung-reparatur-kuehltuerme|cooling-tower-maintenance-repair/, 'maintenance-repair');
     return `/${locale}${clean}`;
   };
 
@@ -49,11 +58,11 @@ export function Footer({ locale, footerSections = [], footerLinks = [], logoSrc 
           <div>
             <SiteLogo src={logoSrc} dark height={36} />
             <p className="mt-3 text-sm leading-relaxed">
-              Professionelle Kühltürme und Kühllösungen für Industrie und Gewerbe.
+              {locale === 'en' ? 'Kühlturm is an Ensotek brand for industrial cooling solutions.' : 'Kühlturm ist eine Marke von Ensotek für industrielle Kühllösungen.'}
             </p>
             <div className="mt-6 space-y-3 text-xs md:text-sm leading-relaxed text-slate-300">
               <p className="flex items-start gap-2">
-                <span className="shrink-0 font-bold text-slate-400 uppercase tracking-widest text-[10px]">Anschrift:</span>
+                <span className="shrink-0 font-bold text-slate-400 uppercase tracking-widest text-[10px]">{locale === 'en' ? 'Office:' : 'Anschrift:'}</span>
                 <span>
                   {locale === 'de' 
                     ? 'Oruçreis Mah., Tekstilkent Sit., A17 Blok No:41, 34235 Esenler / Istanbul, Türkei'
@@ -62,7 +71,7 @@ export function Footer({ locale, footerSections = [], footerLinks = [], logoSrc 
                 </span>
               </p>
               <p className="flex items-start gap-2">
-                <span className="shrink-0 font-bold text-slate-400 uppercase tracking-widest text-[10px]">Werk:</span>
+                <span className="shrink-0 font-bold text-slate-400 uppercase tracking-widest text-[10px]">{locale === 'en' ? 'Factory:' : 'Werk:'}</span>
                 <span>
                   {locale === 'de'
                     ? 'Saray Mah., Gimat Cad. No:6A, 06980 Kahramankazan / Ankara, Türkei'
@@ -108,69 +117,69 @@ export function Footer({ locale, footerSections = [], footerLinks = [], logoSrc 
                   <ul className="space-y-2 text-sm">
                     <li>
                       <Link href={`/${locale}/product`} className="hover:text-white transition-colors">
-                        {locale === 'de' ? 'Produkte' : 'Ürünler'}
+                        {locale === 'de' ? 'Produkte' : 'Products'}
                       </Link>
                     </li>
                     <li>
-                      <Link href={`/${locale}/service/${locale === 'de' ? 'regelmaessige-wartung-reparatur-kuehltuerme' : locale === 'en' ? 'cooling-tower-maintenance-repair' : 'periyodik-bakim-ve-onarim'}`} className="hover:text-white transition-colors">
-                        {locale === 'de' ? 'Wartung & Instandsetzung' : 'Bakım & Onarım'}
+                      <Link href={toHref('/service/maintenance-repair')} className="hover:text-white transition-colors">
+                        {locale === 'de' ? 'Wartung & Instandsetzung' : 'Maintenance and repair'}
                       </Link>
                     </li>
                     <li>
                       <Link href={`/${locale}/service/modernization-retrofit`} className="hover:text-white transition-colors">
-                        {locale === 'de' ? 'Modernisierung & Retrofit' : 'Modernizasyon'}
+                        {locale === 'de' ? 'Modernisierung & Retrofit' : 'Modernisation'}
                       </Link>
                     </li>
                     <li>
                       <Link href={`/${locale}/service/spare-parts-components`} className="hover:text-white transition-colors">
-                        {locale === 'de' ? 'Ersatzteile & Komponenten' : 'Yedek Parça'}
+                        {locale === 'de' ? 'Ersatzteile & Komponenten' : 'Spare parts'}
                       </Link>
                     </li>
                     <li>
                       <Link href={`/${locale}/service/automation-scada`} className="hover:text-white transition-colors">
-                        {locale === 'de' ? 'Automation / SCADA' : 'Otomasyon'}
+                        {locale === 'de' ? 'Automation / SCADA' : 'Automation'}
                       </Link>
                     </li>
                     <li>
                       <Link href={`/${locale}/service/engineering-support`} className="hover:text-white transition-colors">
-                        {locale === 'de' ? 'Engineering & Support' : 'Mühendislik'}
+                        {locale === 'de' ? 'Engineering & Support' : 'Engineering'}
                       </Link>
                     </li>
                     <li>
                       <Link href={`/${locale}/service/site-survey-engineering`} className="hover:text-white transition-colors">
-                        {locale === 'de' ? 'Planung & Analyse' : 'Keşif & Proje'}
+                        {locale === 'de' ? 'Planung & Analyse' : 'Planning and surveys'}
                       </Link>
                     </li>
                     <li>
                       <Link href={`/${locale}/contact`} className="hover:text-white transition-colors">
-                        {locale === 'de' ? 'Kontakt' : 'İletişim'}
+                        {locale === 'de' ? 'Kontakt' : 'Contact'}
                       </Link>
                     </li>
                   </ul>
                 </div>
                 <div>
                   <h3 className="text-white text-sm font-semibold uppercase tracking-widest mb-4">
-                    Rechtliches
+                    {locale === 'en' ? 'Legal information' : 'Rechtliches'}
                   </h3>
                   <ul className="space-y-2 text-sm">
                     <li>
-                      <Link href={`/${locale}/legal/impressum-rechtliche-hinweise`} className="hover:text-white transition-colors">
-                        {locale === 'de' ? 'Impressum & Rechtliche Hinweise' : 'Künye & Yasal Uyarılar'}
+                      <Link href={toHref('/legal/impressum-rechtliche-hinweise')} className="hover:text-white transition-colors">
+                        {locale === 'de' ? 'Impressum & Rechtliche Hinweise' : 'Legal notice'}
                       </Link>
                     </li>
                     <li>
-                      <Link href={`/${locale}/legal/datenschutzerklaerung`} className="hover:text-white transition-colors">
-                        {locale === 'de' ? 'Datenschutzerklärung' : 'Gizlilik Politikası'}
+                      <Link href={toHref('/legal/datenschutzerklaerung')} className="hover:text-white transition-colors">
+                        {locale === 'de' ? 'Datenschutzerklärung' : 'Privacy policy'}
                       </Link>
                     </li>
                     <li>
-                      <Link href={`/${locale}/legal/cookie-richtlinie`} className="hover:text-white transition-colors">
-                        {locale === 'de' ? 'Cookie-Richtlinie' : 'Çerez Politikası'}
+                      <Link href={toHref('/legal/cookie-richtlinie')} className="hover:text-white transition-colors">
+                        {locale === 'de' ? 'Cookie-Richtlinie' : 'Cookie policy'}
                       </Link>
                     </li>
                     <li>
-                      <Link href={`/${locale}/legal/informationspflicht`} className="hover:text-white transition-colors">
-                        {locale === 'de' ? 'Informationspflicht' : 'Bilgilendirme Yükümlülüğü'}
+                      <Link href={toHref('/legal/informationspflicht')} className="hover:text-white transition-colors">
+                        {locale === 'de' ? 'Informationspflicht' : 'Information notice'}
                       </Link>
                     </li>
                   </ul>
@@ -195,7 +204,8 @@ export function Footer({ locale, footerSections = [], footerLinks = [], logoSrc 
 
         {/* Copyright */}
         <div className="pt-8 border-t border-slate-800 text-sm text-center flex flex-col md:flex-row items-center justify-between gap-4">
-          <p>© {year} Kühlturm. Alle Rechte vorbehalten.</p>
+          <ConsentPreferences locale={locale} />
+          <p>© {year} Kühlturm. {locale === 'en' ? 'All rights reserved.' : 'Alle Rechte vorbehalten.'}</p>
           <p className="text-xs text-slate-400 flex items-center gap-1">
             Design & Build by 
             <a 

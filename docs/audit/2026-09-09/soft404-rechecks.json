@@ -1,0 +1,842 @@
+[
+  {
+    "url": "https://kuhlturm.com/de/legal/codex-audit-nonexistent-20260909",
+    "status": 200,
+    "empty": true,
+    "text_sample": "Keine Seiten gefunden. Zurück zu Rechtliches"
+  },
+  {
+    "url": "https://kuhlturm.com/en/legal/codex-audit-nonexistent-20260909",
+    "status": 200,
+    "empty": true,
+    "text_sample": "Keine Seiten gefunden. Zurück zu Rechtliches"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/engin-group",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Engin Group Engin Group Unternehmensreferenz für Kühlturmanwendung im Bereich Zement & Bergbau. Engin Group ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Zement & B"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/ephesus-min",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Ephesus Min Ephesus Min Unternehmensreferenz für Kühlturmanwendung im Bereich Chemie. Ephesus Min ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Chemie. Ihr Projekt "
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/er-demir",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Er Demir Er Demir Unternehmensreferenz für Kühlturmanwendung im Bereich Stahl & Metall. Er Demir ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Stahl & Metall. Ihr P"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/erbosan",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Erbosan Erbosan Unternehmensreferenz für Kühlturmanwendung im Bereich Stahl & Metall. Erbosan ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Stahl & Metall. Ihr Proj"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/erc",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Erc Erc Unternehmensreferenz für Kühlturmanwendung im Bereich Chemie. Erc ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Chemie. Ihr Projekt mit uns Interesse an ein"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/erciyas",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Erciyas Erciyas Unternehmensreferenz für Kühlturmanwendung im Bereich Stahl & Metall. Erciyas ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Stahl & Metall. Ihr Proj"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/erel-sert-krom",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Erel Sert Krom Erel Sert Krom Unternehmensreferenz für Kühlturmanwendung im Bereich Stahl & Metall. Erel Sert Krom ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Sta"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/erel-uluslararasi",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Erel Uluslararasi Erel Uluslararasi Unternehmensreferenz für Kühlturmanwendung im Bereich Stahl & Metall. Erel Uluslararasi ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Be"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/erkon",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Erkon Erkon Unternehmensreferenz für Kühlturmanwendung im Bereich Stahl & Metall. Erkon ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Stahl & Metall. Ihr Projekt mi"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/ersan-ambalaj-ve-yalitim-san-tic-as",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Ersan Ambalaj Ve Yalitim San Tic As Ersan Ambalaj Ve Yalitim San Tic As Unternehmensreferenz für Kühlturmanwendung im Bereich Verpackung. Ersan Ambalaj Ve Yalitim San Tic As ist ein Referenzprojekt "
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/eryap-grup",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Eryap Grup Eryap Grup Unternehmensreferenz für Kühlturmanwendung im Bereich Kunststoff. Eryap Grup ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Kunststoff. Ihr Pro"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/esa-kompozit",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Esa Kompozit Esa Kompozit Unternehmensreferenz für Kühlturmanwendung im Bereich Chemie. Esa Kompozit ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Chemie. Ihr Proje"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/esen-mikronize-maden-san-ve-tic-as",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Esen Mikronize Maden San Ve Tic As Esen Mikronize Maden San Ve Tic As Unternehmensreferenz für Kühlturmanwendung im Bereich Chemie. Esen Mikronize Maden San Ve Tic As ist ein Referenzprojekt im Rahm"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/euas",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Euas Euas Unternehmensreferenz für Kühlturmanwendung im Bereich Stahl & Metall. Euas ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Stahl & Metall. Ihr Projekt mit u"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/euas-1",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Euas_1 Euas_1 Unternehmensreferenz für Kühlturmanwendung im Bereich Energie. Euas_1 ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Energie. Ihr Projekt mit uns Inter"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/fabal-aluminyum",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Fabal Aluminyum Fabal Aluminyum Unternehmensreferenz für Kühlturmanwendung im Bereich Aluminium. Fabal Aluminyum ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Alumi"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/falken",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Falken Falken Unternehmensreferenz für Kühlturmanwendung im Bereich Automobil. Falken ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Automobil. Ihr Projekt mit uns I"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/fatih-profil-min",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Fatih Profil Min Fatih Profil Min Unternehmensreferenz für Kühlturmanwendung im Bereich Stahl & Metall. Fatih Profil Min ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Berei"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/fenis-aluminyum",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Fenis Aluminyum Fenis Aluminyum Unternehmensreferenz für Kühlturmanwendung im Bereich Aluminium. Fenis Aluminyum ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Alumi"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/festival-hali",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Festival Hali Festival Hali Unternehmensreferenz für Kühlturmanwendung im Bereich Textil. Festival Hali ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Textil. Ihr Pr"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/flokser-textile",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Flokser Textile Flokser Textile Unternehmensreferenz für Kühlturmanwendung im Bereich Textil. Flokser Textile ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Textil. "
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/fmc-hydraulic",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Fmc Hydraulic Fmc Hydraulic Unternehmensreferenz für Kühlturmanwendung im Bereich Automobil. Fmc Hydraulic ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Automobil. "
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/formal-aluminyum",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Formal Aluminyum Formal Aluminyum Unternehmensreferenz für Kühlturmanwendung im Bereich Aluminium. Formal Aluminyum ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Al"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/fourkim-min",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Fourkim Min Fourkim Min Unternehmensreferenz für Kühlturmanwendung im Bereich Textil. Fourkim Min ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Textil. Ihr Projekt "
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/galleria-avm",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Galleria Avm Galleria Avm Unternehmensreferenz für Kühlturmanwendung im Bereich Gewerbebau. Galleria Avm ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Gewerbebau. I"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/gbs-gentas",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Gbs Gentas Gbs Gentas Unternehmensreferenz für Kühlturmanwendung im Bereich Stahl & Metall. Gbs Gentas ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Stahl & Metall."
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/gedik",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Gedik Gedik Unternehmensreferenz für Kühlturmanwendung im Bereich Stahl & Metall. Gedik ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Stahl & Metall. Ihr Projekt mi"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/gemciler",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Gemciler Gemciler Unternehmensreferenz für Kühlturmanwendung im Bereich Aluminium. Gemciler ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Aluminium. Ihr Projekt mit"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/gencer",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Gencer Gencer Unternehmensreferenz für Kühlturmanwendung im Bereich Aluminium. Gencer ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Aluminium. Ihr Projekt mit uns I"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/gentas",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Gentas Gentas Unternehmensreferenz für Kühlturmanwendung im Bereich Stahl & Metall. Gentas ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Stahl & Metall. Ihr Projekt"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/gentas-kimya",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Gentas Kimya Gentas Kimya Unternehmensreferenz für Kühlturmanwendung im Bereich Chemie. Gentas Kimya ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Chemie. Ihr Proje"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/gimsan",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Gimsan Gimsan Unternehmensreferenz für Kühlturmanwendung im Bereich Stahl & Metall. Gimsan ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Stahl & Metall. Ihr Projekt"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/giptas-iplik-san-tic-as",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Giptas Iplik San Tic As Giptas Iplik San Tic As Unternehmensreferenz für Kühlturmanwendung im Bereich Textil. Giptas Iplik San Tic As ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösu"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/gkn",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Gkn Gkn Unternehmensreferenz für Kühlturmanwendung im Bereich Stahl & Metall. Gkn ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Stahl & Metall. Ihr Projekt mit uns "
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/global-holding",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Global Holding Global Holding Unternehmensreferenz für Kühlturmanwendung im Bereich Energie. Global Holding ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Energie. I"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/green-park-hotels",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Green Park Hotels Green Park Hotels Unternehmensreferenz für Kühlturmanwendung im Bereich Gewerbebau. Green Park Hotels ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereic"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/greeneco-enerji-elektrik-uretim-as",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Greeneco Enerji Elektrik Uretim As Greeneco Enerji Elektrik Uretim As Unternehmensreferenz für Kühlturmanwendung im Bereich Energie. Greeneco Enerji Elektrik Uretim As ist ein Referenzprojekt im Rah"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/grinballs",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Grinballs Grinballs Unternehmensreferenz für Kühlturmanwendung im Bereich Stahl & Metall. Grinballs ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Stahl & Metall. Ih"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/guney-celik-hasir-ve-demir-mamulleri-san-tic-as",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Guney Celik Hasir Ve Demir Mamulleri San Tic As Guney Celik Hasir Ve Demir Mamulleri San Tic As Unternehmensreferenz für Kühlturmanwendung im Bereich Stahl & Metall. Guney Celik Hasir Ve Demir Mamul"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/guryag",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Guryag Guryag Unternehmensreferenz für Kühlturmanwendung im Bereich Lebensmittel & Öl. Guryag ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Lebensmittel & Öl. Ihr P"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/guven-iplik",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Guven Iplik Guven Iplik Unternehmensreferenz für Kühlturmanwendung im Bereich Textil. Guven Iplik ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Textil. Ihr Projekt "
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/halavet-gida",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Halavet Gida Halavet Gida Unternehmensreferenz für Kühlturmanwendung im Bereich Lebensmittel & Öl. Halavet Gida ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Lebens"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/hasan-kucukarslan-metal",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Hasan Kucukarslan Metal Hasan Kucukarslan Metal Unternehmensreferenz für Kühlturmanwendung im Bereich Aluminium. Hasan Kucukarslan Metal ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturml"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/hascelik-group",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Hascelik Group Hascelik Group Unternehmensreferenz für Kühlturmanwendung im Bereich Aluminium. Hascelik Group ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Aluminiu"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/hatboru",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Hatboru Hatboru Unternehmensreferenz für Kühlturmanwendung im Bereich Stahl & Metall. Hatboru ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Stahl & Metall. Ihr Proj"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/hayat-kagit",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Hayat Kagit Hayat Kagit Unternehmensreferenz für Kühlturmanwendung im Bereich Verpackung. Hayat Kagit ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Verpackung. Ihr "
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/hellenic",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Hellenic Hellenic Unternehmensreferenz für Kühlturmanwendung im Bereich Stahl & Metall. Hellenic ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Stahl & Metall. Ihr P"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/hes-hacilar",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Hes Hacilar Hes Hacilar Unternehmensreferenz für Kühlturmanwendung im Bereich Aluminium. Hes Hacilar ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Aluminium. Ihr Pr"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/hilton-avanos",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Hilton Avanos Hilton Avanos Unternehmensreferenz für Kühlturmanwendung im Bereich Gewerbebau. Hilton Avanos ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Gewerbebau"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/ho-won-otomotiv",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Ho Won Otomotiv Ho Won Otomotiv Unternehmensreferenz für Kühlturmanwendung im Bereich Automobil. Ho Won Otomotiv ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Autom"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/hwaseung",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Hwaseung Hwaseung Unternehmensreferenz für Kühlturmanwendung im Bereich Automobil. Hwaseung ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Automobil. Ihr Projekt mit"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/hwaseung-otomotiv",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Hwaseung Otomotiv Hwaseung Otomotiv Unternehmensreferenz für Kühlturmanwendung im Bereich Automobil. Hwaseung Otomotiv ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/ic-hotels",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Ic Hotels Ic Hotels Unternehmensreferenz für Kühlturmanwendung im Bereich Gewerbebau. Ic Hotels ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Gewerbebau. Ihr Projek"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/icdas",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Icdas Icdas Unternehmensreferenz für Kühlturmanwendung im Bereich Stahl & Metall. Icdas ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Stahl & Metall. Ihr Projekt mi"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/ilci-holding",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Ilci Holding Ilci Holding Unternehmensreferenz für Kühlturmanwendung im Bereich Stahl & Metall. Ilci Holding ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Stahl & M"
+  },
+  {
+    "url": "https://kuhlturm.com/de/references/iltekno",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Iltekno Iltekno Unternehmensreferenz für Kühlturmanwendung im Bereich Gewerbebau. Iltekno ist ein Referenzprojekt im Rahmen der Ensotek-Wasserkühlturmlösungen im Bereich Gewerbebau. Ihr Projekt mit "
+  },
+  {
+    "url": "https://kuhlturm.com/de/solutions/hvac-cooling-solutions",
+    "status": 200,
+    "empty": true,
+    "text_sample": "Keine Lösungen gefunden. Zurück zu Lösungen"
+  },
+  {
+    "url": "https://kuhlturm.com/de/solutions/industrial-cooling-solutions",
+    "status": 200,
+    "empty": true,
+    "text_sample": "Keine Lösungen gefunden. Zurück zu Lösungen"
+  },
+  {
+    "url": "https://kuhlturm.com/de/solutions/loesungen",
+    "status": 200,
+    "empty": true,
+    "text_sample": "Keine Lösungen gefunden. Zurück zu Lösungen"
+  },
+  {
+    "url": "https://kuhlturm.com/de/solutions/process-cooling-solutions",
+    "status": 200,
+    "empty": true,
+    "text_sample": "Keine Lösungen gefunden. Zurück zu Lösungen"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/akcansa",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Akcansa Akcansa Corporate reference for cooling tower application in the cement & mining sector. Akcansa is a reference project within Ensotek water cooling tower solutions in the cement & mining se"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/akdas-dokum",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Akdas Dokum Akdas Dokum Corporate reference for cooling tower application in the steel & metal sector. Akdas Dokum is a reference project within Ensotek water cooling tower solutions in the steel & "
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/akim-metal",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Akim Metal Akim Metal Corporate reference for cooling tower application in the steel & metal sector. Akim Metal is a reference project within Ensotek water cooling tower solutions in the steel & met"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/akkardan",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Akkardan Akkardan Corporate reference for cooling tower application in the automotive sector. Akkardan is a reference project within Ensotek water cooling tower solutions in the automotive sector. I"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/akoni-kimya-as",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Akoni Kimya As Akoni Kimya As Corporate reference for cooling tower application in the chemical sector. Akoni Kimya As is a reference project within Ensotek water cooling tower solutions in the chem"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/al-asim-aluminyum",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Al Asim Aluminyum Al Asim Aluminyum Corporate reference for cooling tower application in the aluminium sector. Al Asim Aluminyum is a reference project within Ensotek water cooling tower solutions i"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/albayrak-branda",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Albayrak Branda Albayrak Branda Corporate reference for cooling tower application in the aluminium sector. Albayrak Branda is a reference project within Ensotek water cooling tower solutions in the "
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/alemdar",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Alemdar Alemdar Corporate reference for cooling tower application in the chemical sector. Alemdar is a reference project within Ensotek water cooling tower solutions in the chemical sector. Ihr Proj"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/alfa-metal",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Alfa Metal Alfa Metal Corporate reference for cooling tower application in the steel & metal sector. Alfa Metal is a reference project within Ensotek water cooling tower solutions in the steel & met"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/altaca-enerji",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Altaca Enerji Altaca Enerji Corporate reference for cooling tower application in the energy sector. Altaca Enerji is a reference project within Ensotek water cooling tower solutions in the energy se"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/altinsu-tekstil",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Altinsu Tekstil Altinsu Tekstil Corporate reference for cooling tower application in the textile sector. Altinsu Tekstil is a reference project within Ensotek water cooling tower solutions in the te"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/altinyag",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Altinyag Altinyag Corporate reference for cooling tower application in the food & oil sector. Altinyag is a reference project within Ensotek water cooling tower solutions in the food & oil sector. I"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/alubond",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Alubond Alubond Corporate reference for cooling tower application in the aluminium sector. Alubond is a reference project within Ensotek water cooling tower solutions in the aluminium sector. Ihr Pr"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/alumati",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Alumati Alumati Corporate reference for cooling tower application in the aluminium sector. Alumati is a reference project within Ensotek water cooling tower solutions in the aluminium sector. Ihr Pr"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/alumina",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Alumina Alumina Corporate reference for cooling tower application in the aluminium sector. Alumina is a reference project within Ensotek water cooling tower solutions in the aluminium sector. Ihr Pr"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/aluminco",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Aluminco Aluminco Corporate reference for cooling tower application in the aluminium sector. Aluminco is a reference project within Ensotek water cooling tower solutions in the aluminium sector. Ihr"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/alutek",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Alutek Alutek Corporate reference for cooling tower application in the aluminium sector. Alutek is a reference project within Ensotek water cooling tower solutions in the aluminium sector. Ihr Proje"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/alyans-yag",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Alyans Yag Alyans Yag Corporate reference for cooling tower application in the food & oil sector. Alyans Yag is a reference project within Ensotek water cooling tower solutions in the food & oil sec"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/amana-foods-min",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Amana Foods Min Amana Foods Min Corporate reference for cooling tower application in the food & oil sector. Amana Foods Min is a reference project within Ensotek water cooling tower solutions in the"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/amcor",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Amcor Amcor Corporate reference for cooling tower application in the packaging sector. Amcor is a reference project within Ensotek water cooling tower solutions in the packaging sector. Ihr Projekt "
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/anatel",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Anatel Anatel Corporate reference for cooling tower application in the steel & metal sector. Anatel is a reference project within Ensotek water cooling tower solutions in the steel & metal sector. I"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/anka",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Anka Anka Corporate reference for cooling tower application in the steel & metal sector. Anka is a reference project within Ensotek water cooling tower solutions in the steel & metal sector. Ihr Pro"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/ara-makina",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Ara Makina Ara Makina Corporate reference for cooling tower application in the aluminium sector. Ara Makina is a reference project within Ensotek water cooling tower solutions in the aluminium secto"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/ara-makina-min",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Ara Makina Min Ara Makina Min Corporate reference for cooling tower application in the engineering sector. Ara Makina Min is a reference project within Ensotek water cooling tower solutions in the e"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/arcelik",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Arcelik Arcelik Corporate reference for cooling tower application in the steel & metal sector. Arcelik is a reference project within Ensotek water cooling tower solutions in the steel & metal sector"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/ardokum-merdane",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Ardokum Merdane Ardokum Merdane Corporate reference for cooling tower application in the steel & metal sector. Ardokum Merdane is a reference project within Ensotek water cooling tower solutions in "
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/aref-sogutma-min",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Aref Sogutma Min Aref Sogutma Min Corporate reference for cooling tower application in the engineering sector. Aref Sogutma Min is a reference project within Ensotek water cooling tower solutions in"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/arfen-aluminyum",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Arfen Aluminyum Arfen Aluminyum Corporate reference for cooling tower application in the aluminium sector. Arfen Aluminyum is a reference project within Ensotek water cooling tower solutions in the "
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/ark-emre",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Ark Emre Ark Emre Corporate reference for cooling tower application in the steel & metal sector. Ark Emre is a reference project within Ensotek water cooling tower solutions in the steel & metal sec"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/arslan-aluminyum",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Arslan Aluminyum Arslan Aluminyum Corporate reference for cooling tower application in the aluminium sector. Arslan Aluminyum is a reference project within Ensotek water cooling tower solutions in t"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/as-cimento",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen As Cimento As Cimento Corporate reference for cooling tower application in the cement & mining sector. As Cimento is a reference project within Ensotek water cooling tower solutions in the cement & "
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/aschem",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Aschem Aschem Corporate reference for cooling tower application in the chemical sector. Aschem is a reference project within Ensotek water cooling tower solutions in the chemical sector. Ihr Projekt"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/asico",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Asico Asico Corporate reference for cooling tower application in the food & oil sector. Asico is a reference project within Ensotek water cooling tower solutions in the food & oil sector. Ihr Projek"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/askale-cimento",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Askale Cimento Askale Cimento Corporate reference for cooling tower application in the cement & mining sector. Askale Cimento is a reference project within Ensotek water cooling tower solutions in t"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/aslanli-tel-sanayi",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Aslanli Tel Sanayi Aslanli Tel Sanayi Corporate reference for cooling tower application in the aluminium sector. Aslanli Tel Sanayi is a reference project within Ensotek water cooling tower solution"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/assan-aluminyum",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Assan Aluminyum Assan Aluminyum Corporate reference for cooling tower application in the aluminium sector. Assan Aluminyum is a reference project within Ensotek water cooling tower solutions in the "
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/atak-ambalaj",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Atak Ambalaj Atak Ambalaj Corporate reference for cooling tower application in the packaging sector. Atak Ambalaj is a reference project within Ensotek water cooling tower solutions in the packaging"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/atesoglu",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Atesoglu Atesoglu Corporate reference for cooling tower application in the food & oil sector. Atesoglu is a reference project within Ensotek water cooling tower solutions in the food & oil sector. I"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/aves",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Aves Aves Corporate reference for cooling tower application in the food & oil sector. Aves is a reference project within Ensotek water cooling tower solutions in the food & oil sector. Ihr Projekt m"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/kale-kimya-kimyevi-mad-san-ve-tic-as",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Kale Kimya Kimyevi Mad San Ve Tic As Kale Kimya Kimyevi Mad San Ve Tic As Corporate reference for cooling tower application in the chemical sector. Kale Kimya Kimyevi Mad San Ve Tic As is a referenc"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/kale-sac",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Kale Sac Kale Sac Corporate reference for cooling tower application in the steel & metal sector. Kale Sac is a reference project within Ensotek water cooling tower solutions in the steel & metal sec"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/kalkanci",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Kalkanci Kalkanci Corporate reference for cooling tower application in the automotive sector. Kalkanci is a reference project within Ensotek water cooling tower solutions in the automotive sector. I"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/kalyon",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Kalyon Kalyon Corporate reference for cooling tower application in the steel & metal sector. Kalyon is a reference project within Ensotek water cooling tower solutions in the steel & metal sector. I"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/kar-group",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Kar Group Kar Group Corporate reference for cooling tower application in the cement & mining sector. Kar Group is a reference project within Ensotek water cooling tower solutions in the cement & min"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/kar-yapi-tasarim-as",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Kar Yapi Tasarim As Kar Yapi Tasarim As Corporate reference for cooling tower application in the packaging sector. Kar Yapi Tasarim As is a reference project within Ensotek water cooling tower solut"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/karakoc-tekstil-san-ve-tic-as",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Karakoc Tekstil San Ve Tic As Karakoc Tekstil San Ve Tic As Corporate reference for cooling tower application in the textile sector. Karakoc Tekstil San Ve Tic As is a reference project within Ensot"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/karam-yag",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Karam Yag Karam Yag Corporate reference for cooling tower application in the food & oil sector. Karam Yag is a reference project within Ensotek water cooling tower solutions in the food & oil sector"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/karsan",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Karsan Karsan Corporate reference for cooling tower application in the automotive sector. Karsan is a reference project within Ensotek water cooling tower solutions in the automotive sector. Ihr Pro"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/kartonsan",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Kartonsan Kartonsan Corporate reference for cooling tower application in the packaging sector. Kartonsan is a reference project within Ensotek water cooling tower solutions in the packaging sector. "
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/kat-company",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Kat Company Kat Company Corporate reference for cooling tower application in the chemical sector. Kat Company is a reference project within Ensotek water cooling tower solutions in the chemical sect"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/kavsan",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Kavsan Kavsan Corporate reference for cooling tower application in the cement & mining sector. Kavsan is a reference project within Ensotek water cooling tower solutions in the cement & mining secto"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/kay-star",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Kay Star Kay Star Corporate reference for cooling tower application in the aluminium sector. Kay Star is a reference project within Ensotek water cooling tower solutions in the aluminium sector. Ihr"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/kaya-aksesuar-ve-aluminyum",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Kaya Aksesuar Ve Aluminyum Kaya Aksesuar Ve Aluminyum Corporate reference for cooling tower application in the aluminium sector. Kaya Aksesuar Ve Aluminyum is a reference project within Ensotek wate"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/kaya-hotels",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Kaya Hotels Kaya Hotels Corporate reference for cooling tower application in the commercial buildings sector. Kaya Hotels is a reference project within Ensotek water cooling tower solutions in the c"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/kayalar",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Kayalar Kayalar Corporate reference for cooling tower application in the plastics sector. Kayalar is a reference project within Ensotek water cooling tower solutions in the plastics sector. Ihr Proj"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/kayseri-seker-fabrikasi",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Kayseri Seker Fabrikasi Kayseri Seker Fabrikasi Corporate reference for cooling tower application in the food & oil sector. Kayseri Seker Fabrikasi is a reference project within Ensotek water coolin"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/kayseri-stropor",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Kayseri Stropor Kayseri Stropor Corporate reference for cooling tower application in the packaging sector. Kayseri Stropor is a reference project within Ensotek water cooling tower solutions in the "
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/kervansaray",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Kervansaray Kervansaray Corporate reference for cooling tower application in the commercial buildings sector. Kervansaray is a reference project within Ensotek water cooling tower solutions in the c"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/keskinoglu",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Keskinoglu Keskinoglu Corporate reference for cooling tower application in the food & oil sector. Keskinoglu is a reference project within Ensotek water cooling tower solutions in the food & oil sec"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/kfs-kucukcalik",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Kfs Kucukcalik Kfs Kucukcalik Corporate reference for cooling tower application in the textile sector. Kfs Kucukcalik is a reference project within Ensotek water cooling tower solutions in the texti"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/kilic",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Kilic Kilic Corporate reference for cooling tower application in the food & oil sector. Kilic is a reference project within Ensotek water cooling tower solutions in the food & oil sector. Ihr Projek"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/kimflor-kimya-san-ve-tic-as",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Kimflor Kimya San Ve Tic As Kimflor Kimya San Ve Tic As Corporate reference for cooling tower application in the chemical sector. Kimflor Kimya San Ve Tic As is a reference project within Ensotek wa"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/kipas-holding",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Kipas Holding Kipas Holding Corporate reference for cooling tower application in the energy sector. Kipas Holding is a reference project within Ensotek water cooling tower solutions in the energy se"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/kirpart",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Kirpart Kirpart Corporate reference for cooling tower application in the automotive sector. Kirpart is a reference project within Ensotek water cooling tower solutions in the automotive sector. Ihr "
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/kombassan",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Kombassan Kombassan Corporate reference for cooling tower application in the packaging sector. Kombassan is a reference project within Ensotek water cooling tower solutions in the packaging sector. "
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/kompen",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Kompen Kompen Corporate reference for cooling tower application in the plastics sector. Kompen is a reference project within Ensotek water cooling tower solutions in the plastics sector. Ihr Projekt"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/konya-cimento",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Konya Cimento Konya Cimento Corporate reference for cooling tower application in the cement & mining sector. Konya Cimento is a reference project within Ensotek water cooling tower solutions in the "
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/korel-elektronik",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Korel Elektronik Korel Elektronik Corporate reference for cooling tower application in the engineering sector. Korel Elektronik is a reference project within Ensotek water cooling tower solutions in"
+  },
+  {
+    "url": "https://kuhlturm.com/en/references/korfez-dokum",
+    "status": 200,
+    "empty": false,
+    "text_sample": "Startseite Referenzen Korfez Dokum Korfez Dokum Corporate reference for cooling tower application in the steel & metal sector. Korfez Dokum is a reference project within Ensotek water cooling tower solutions in the steel"
+  },
+  {
+    "url": "https://kuhlturm.com/en/solutions/hvac-cooling-solutions",
+    "status": 200,
+    "empty": true,
+    "text_sample": "Keine Lösungen gefunden. Zurück zu Lösungen"
+  },
+  {
+    "url": "https://kuhlturm.com/en/solutions/industrial-cooling-solutions",
+    "status": 200,
+    "empty": true,
+    "text_sample": "Keine Lösungen gefunden. Zurück zu Lösungen"
+  },
+  {
+    "url": "https://kuhlturm.com/en/solutions/process-cooling-solutions",
+    "status": 200,
+    "empty": true,
+    "text_sample": "Keine Lösungen gefunden. Zurück zu Lösungen"
+  },
+  {
+    "url": "https://kuhlturm.com/en/solutions/solutions",
+    "status": 200,
+    "empty": true,
+    "text_sample": "Keine Lösungen gefunden. Zurück zu Lösungen"
+  },
+  {
+    "url": "https://kuhlturm.com/solutions/water-cooling-towers",
+    "status": 200,
+    "empty": true,
+    "text_sample": "Keine Lösungen gefunden. Zurück zu Lösungen"
+  },
+  {
+    "url": "https://kuhlturm.com/en/legal/cookie-richtlinie",
+    "status": 200,
+    "empty": true,
+    "text_sample": "Keine Seiten gefunden. Zurück zu Rechtliches"
+  },
+  {
+    "url": "https://kuhlturm.com/en/legal/datenschutzerklaerung",
+    "status": 200,
+    "empty": true,
+    "text_sample": "Keine Seiten gefunden. Zurück zu Rechtliches"
+  },
+  {
+    "url": "https://kuhlturm.com/en/legal/impressum-rechtliche-hinweise",
+    "status": 200,
+    "empty": true,
+    "text_sample": "Keine Seiten gefunden. Zurück zu Rechtliches"
+  },
+  {
+    "url": "https://kuhlturm.com/en/legal/informationspflicht",
+    "status": 200,
+    "empty": true,
+    "text_sample": "Keine Seiten gefunden. Zurück zu Rechtliches"
+  }
+]

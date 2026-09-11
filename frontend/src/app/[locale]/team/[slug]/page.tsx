@@ -1,3 +1,4 @@
+import { withRouteMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
@@ -7,7 +8,7 @@ import { ArrowLeft, Tag } from 'lucide-react';
 import { PageBanner } from '@/components/ui/PageBanner';
 import { fetchCustomPagesByModuleKey, parseCustomPageContent } from '@/i18n/server';
 import type { CustomPage } from '@/i18n/server';
-import { API_BASE_URL } from '@/lib/utils';
+import { getCustomPageBySlugWithLocale } from '@/lib/api';
 import { resolveMediaUrl } from '@/lib/media';
 
 interface Props {
@@ -15,22 +16,15 @@ interface Props {
 }
 
 async function fetchTeamMember(slug: string, locale: string): Promise<CustomPage | null> {
-  try {
-    const url = `${API_BASE_URL}/custom-pages/by-slug/${encodeURIComponent(slug)}?locale=${encodeURIComponent(locale)}`;
-    const res = await fetch(url, { next: { revalidate: 300 } });
-    if (!res.ok) return null;
-    const data = await res.json();
-    const page = data?.data ?? data;
-    return page?.id ? (page as CustomPage) : null;
-  } catch {
-    return null;
-  }
+  const page = await getCustomPageBySlugWithLocale(slug, locale);
+  return page?.id ? (page as CustomPage) : null;
 }
 
 export const dynamic = 'force-dynamic';
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale, slug } = await params;
+async function buildMetadata({ params }: Props): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
   const member = await fetchTeamMember(slug, locale);
   if (!member) return { title: 'Team' };
   return {
@@ -43,7 +37,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function TeamDetailPage({ params }: Props) {
-  const { locale, slug } = await params;
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
   setRequestLocale(locale);
 
   const [t, tCommon] = await Promise.all([
@@ -55,7 +50,7 @@ export default async function TeamDetailPage({ params }: Props) {
   if (!member) notFound();
 
   const photo = member.featured_image ?? member.image_url;
-  const htmlContent = parseCustomPageContent(member.content);
+  const htmlContent = parseCustomPageContent(member.content).replace(/<h1(\s[^>]*)?>/gi, '<h2$1>').replace(/<\/h1>/gi, '</h2>');
   const tags = member.tags
     ? member.tags.split(',').map((tag) => tag.trim()).filter(Boolean)
     : [];
@@ -232,4 +227,10 @@ export default async function TeamDetailPage({ params }: Props) {
       </section>
     </main>
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
+  return withRouteMetadata(await buildMetadata({ params }), locale, `/team/${slug}`);
 }

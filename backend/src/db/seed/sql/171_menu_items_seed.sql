@@ -315,8 +315,8 @@ VALUES
 
 -- FOOTER: SOCIAL (TR)
 (UUID(),'a9b1c2d3-e4f5-4a66-8b11-111111111111','tr','LinkedIn','https://www.linkedin.com/company/ensotek','2024-01-01 00:00:00.000','2024-01-01 00:00:00.000'),
-(UUID(),'a9b1c2d3-e4f5-4a66-8b11-222222222222','tr','Instagram','https://www.instagram.com/ensotek','2024-01-01 00:00:00.000','2024-01-01 00:00:00.000'),
-(UUID(),'a9b1c2d3-e4f5-4a66-8b11-333333333333','tr','YouTube','https://www.youtube.com/@ensotek','2024-01-01 00:00:00.000','2024-01-01 00:00:00.000'),
+(UUID(),'a9b1c2d3-e4f5-4a66-8b11-222222222222','tr','Instagram','https://www.instagram.com/ensotek_tr/','2024-01-01 00:00:00.000','2024-01-01 00:00:00.000'),
+(UUID(),'a9b1c2d3-e4f5-4a66-8b11-333333333333','tr','YouTube','https://www.youtube.com/channel/UCX22ErWzyT4wDqDRGN9zYmg','2024-01-01 00:00:00.000','2024-01-01 00:00:00.000'),
 (UUID(),'a9b1c2d3-e4f5-4a66-8b11-444444444444','tr','X','https://x.com/ensotek','2024-01-01 00:00:00.000','2024-01-01 00:00:00.000')
 ON DUPLICATE KEY UPDATE
   `title`      = VALUES(`title`),
@@ -390,8 +390,8 @@ VALUES
 
 -- FOOTER: SOCIAL (EN)
 (UUID(),'a9b1c2d3-e4f5-4a66-8b11-111111111111','en','LinkedIn','https://www.linkedin.com/company/ensotek','2024-01-01 00:00:00.000','2024-01-01 00:00:00.000'),
-(UUID(),'a9b1c2d3-e4f5-4a66-8b11-222222222222','en','Instagram','https://www.instagram.com/ensotek','2024-01-01 00:00:00.000','2024-01-01 00:00:00.000'),
-(UUID(),'a9b1c2d3-e4f5-4a66-8b11-333333333333','en','YouTube','https://www.youtube.com/@ensotek','2024-01-01 00:00:00.000','2024-01-01 00:00:00.000'),
+(UUID(),'a9b1c2d3-e4f5-4a66-8b11-222222222222','en','Instagram','https://www.instagram.com/ensotek_tr/','2024-01-01 00:00:00.000','2024-01-01 00:00:00.000'),
+(UUID(),'a9b1c2d3-e4f5-4a66-8b11-333333333333','en','YouTube','https://www.youtube.com/channel/UCX22ErWzyT4wDqDRGN9zYmg','2024-01-01 00:00:00.000','2024-01-01 00:00:00.000'),
 (UUID(),'a9b1c2d3-e4f5-4a66-8b11-444444444444','en','X','https://x.com/ensotek','2024-01-01 00:00:00.000','2024-01-01 00:00:00.000')
 ON DUPLICATE KEY UPDATE
   `title`      = VALUES(`title`),
@@ -465,8 +465,8 @@ VALUES
 
 -- FOOTER: SOCIAL (DE)
 (UUID(),'a9b1c2d3-e4f5-4a66-8b11-111111111111','de','LinkedIn','https://www.linkedin.com/company/ensotek','2024-01-01 00:00:00.000','2024-01-01 00:00:00.000'),
-(UUID(),'a9b1c2d3-e4f5-4a66-8b11-222222222222','de','Instagram','https://www.instagram.com/ensotek','2024-01-01 00:00:00.000','2024-01-01 00:00:00.000'),
-(UUID(),'a9b1c2d3-e4f5-4a66-8b11-333333333333','de','YouTube','https://www.youtube.com/@ensotek','2024-01-01 00:00:00.000','2024-01-01 00:00:00.000'),
+(UUID(),'a9b1c2d3-e4f5-4a66-8b11-222222222222','de','Instagram','https://www.instagram.com/ensotek_tr/','2024-01-01 00:00:00.000','2024-01-01 00:00:00.000'),
+(UUID(),'a9b1c2d3-e4f5-4a66-8b11-333333333333','de','YouTube','https://www.youtube.com/channel/UCX22ErWzyT4wDqDRGN9zYmg','2024-01-01 00:00:00.000','2024-01-01 00:00:00.000'),
 (UUID(),'a9b1c2d3-e4f5-4a66-8b11-444444444444','de','X','https://x.com/ensotek','2024-01-01 00:00:00.000','2024-01-01 00:00:00.000')
 ON DUPLICATE KEY UPDATE
   `title`      = VALUES(`title`),

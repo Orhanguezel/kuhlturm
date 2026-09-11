@@ -26,7 +26,7 @@ function resolveLogoSrc(src: string) {
   return resolveMediaUrl(trimmed);
 }
 
-export function SiteLogo({ src, alt = 'Kühlturm', className, height = 32, dark = false }: Props) {
+export function SiteLogo({ src, alt = 'Ensotek — Kühlturm', className, height = 32, dark = false }: Props) {
   const width = Math.round(height * (352 / 134));
 
   if (src) {

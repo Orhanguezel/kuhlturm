@@ -1,3 +1,6 @@
+import { apiFetchWithLocale } from '@/lib/api';
+import { withRouteMetadata } from '@/lib/seo';
+import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
@@ -33,9 +36,10 @@ interface Props {
   params: Promise<{ locale: string; slug: string }>;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale, slug } = await params;
-  const item = await getLibraryItemBySlug(API_BASE_URL, slug, locale).catch(() => null);
+async function buildMetadata({ params }: Props): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
+  const item = await apiFetchWithLocale<any>(`/library/by-slug/${encodeURIComponent(slug)}`, locale, { strict: true });
   if (!item) return { title: 'Wissensdatenbank' };
   return {
     title: `${item.name} | Wissensdatenbank | Kühlturm`,
@@ -45,35 +49,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function LibraryDetailPage({ params }: Props) {
-  const { locale, slug } = await params;
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
   setRequestLocale(locale);
 
   const t = await getTranslations('library');
   const tCommon = await getTranslations('common');
 
   // Fetch current item
-  const item = await getLibraryItemBySlug(API_BASE_URL, slug, locale).catch(() => null);
+  const item = await apiFetchWithLocale<any>(`/library/by-slug/${encodeURIComponent(slug)}`, locale, { strict: true });
 
-  if (!item) {
-    return (
-      <main className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
-        <div className="text-center max-w-md">
-          <div className="w-20 h-20 bg-slate-100 rounded-3xl flex items-center justify-center mx-auto mb-6 text-slate-300">
-            <BookOpen size={40} />
-          </div>
-          <h1 className="text-2xl font-bold text-slate-900 mb-2">Inhalt nicht gefunden</h1>
-          <p className="text-slate-500 mb-8">{t('noResults')}</p>
-          <Link
-            href={`/${locale}/library`}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/20"
-          >
-            <ChevronLeft size={18} />
-            {t('backToLibrary')}
-          </Link>
-        </div>
-      </main>
-    );
-  }
+  if (!item) notFound();
 
   // Fetch other library data for sidebar and detail assets in parallel
   const [images, files, allItems] = await Promise.all([
@@ -82,7 +68,7 @@ export default async function LibraryDetailPage({ params }: Props) {
     getLibraryItems(API_BASE_URL, { locale, limit: 100, is_active: 1 }).catch((): LibraryItem[] => []),
   ]);
 
-  const updatedAt = new Date(item.updated_at).toLocaleDateString('de-DE', {
+  const updatedAt = new Date(item.updated_at).toLocaleDateString(locale, {
     day: '2-digit',
     month: 'long',
     year: 'numeric',
@@ -103,7 +89,7 @@ export default async function LibraryDetailPage({ params }: Props) {
       <div className="border-b border-slate-100 bg-slate-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <nav className="flex items-center gap-2 text-sm text-slate-500 mb-0 whitespace-nowrap overflow-x-auto no-scrollbar">
-            <Link href={`/${locale}`} className="hover:text-blue-600 transition-colors">Startseite</Link>
+            <Link href={`/${locale}`} className="hover:text-blue-600 transition-colors">{locale === "en" ? "Home" : "Startseite"}</Link>
             <ChevronRight size={14} className="shrink-0" />
             <Link href={`/${locale}/library`} className="hover:text-blue-600 transition-colors">{t('title')}</Link>
             <ChevronRight size={14} className="shrink-0" />
@@ -134,7 +120,7 @@ export default async function LibraryDetailPage({ params }: Props) {
               <div className="bg-slate-50 border border-slate-200 rounded-3xl p-6 md:p-8">
                 <h3 className="font-display font-bold text-slate-900 mb-6 text-lg flex items-center gap-2">
                   <BookOpen size={20} className="text-blue-600" />
-                  Weitere Artikel
+                  {locale === "en" ? "More articles" : "Weitere Artikel"}
                 </h3>
                 <nav className="space-y-1">
                   {sidebarItems.map((sItem) => (
@@ -155,7 +141,7 @@ export default async function LibraryDetailPage({ params }: Props) {
                 <div className="mt-8 pt-8 border-t border-slate-200">
                    <Link href={`/${locale}/library`} className="flex items-center gap-2 text-sm font-bold text-slate-900 hover:text-blue-600 transition-colors">
                       <ChevronLeft size={16} />
-                      Alle Beiträge ansehen
+                      {locale === "en" ? "View all articles" : "Alle Beiträge ansehen"}
                    </Link>
                 </div>
               </div>
@@ -165,7 +151,7 @@ export default async function LibraryDetailPage({ params }: Props) {
                 <div className="bg-blue-50/50 border border-blue-100 rounded-3xl p-6 md:p-8">
                   <h3 className="font-display font-bold text-blue-900 mb-6 text-lg flex items-center gap-2">
                     <Download size={20} className="text-blue-600" />
-                    Dokumente
+                    {locale === "en" ? "Documents" : "Dokumente"}
                   </h3>
                   <div className="space-y-4">
                     {files.map((file) => (
@@ -249,7 +235,7 @@ export default async function LibraryDetailPage({ params }: Props) {
                 <div dangerouslySetInnerHTML={{ __html: item.description }} />
               ) : (
                 <div className="bg-slate-50 border border-slate-100 rounded-2xl p-8 text-center">
-                   <p className="text-slate-400 italic">Für diesen Artikel stehen derzeit nur die Basisinformationen zur Verfügung.</p>
+                   <p className="text-slate-400 italic">{locale === "en" ? "Only basic information is currently available for this article." : "Für diesen Artikel stehen derzeit nur die Basisinformationen zur Verfügung."}</p>
                 </div>
               )}
             </div>
@@ -303,4 +289,10 @@ function formatBytes(bytes: number): string {
   const sizes = ['B', 'KB', 'MB', 'GB'];
   const i = Math.floor(Math.log(bytes) / Math.log(k));
   return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
+  return withRouteMetadata(await buildMetadata({ params }), locale, `/library/${slug}`);
 }

@@ -2,10 +2,10 @@
 import { getRuntimeLocaleSettings } from '@ensotek/core/i18n';
 import { AVAILABLE_LOCALES, FALLBACK_LOCALE } from './locales';
 
-export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://127.0.0.1:8089/api';
+export const API_BASE_URL = (typeof window === 'undefined' ? process.env.API_INTERNAL_URL : undefined) ?? process.env.NEXT_PUBLIC_API_URL ?? 'https://kuhlturm.com/api';
 
 export { getRuntimeLocaleSettings };
 
 export function getLocaleSettings() {
-  return getRuntimeLocaleSettings(API_BASE_URL, AVAILABLE_LOCALES, FALLBACK_LOCALE);
+  return getRuntimeLocaleSettings(API_BASE_URL, AVAILABLE_LOCALES, FALLBACK_LOCALE, { next: { revalidate: 300 } });
 }

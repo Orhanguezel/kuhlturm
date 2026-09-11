@@ -1,3 +1,4 @@
+import { withRouteMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
@@ -22,12 +23,9 @@ interface Props {
   }>;
 }
 
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: 'Angebot anfordern — Kühlturm Kühlturm',
-    description:
-      'Fordern Sie ein kostenloses und unverbindliches Angebot für Kühltürme, Wartung oder Engineering-Leistungen an.',
-  };
+async function buildMetadata(): Promise<Metadata> {
+  const t = await getTranslations('offer');
+  return { title: t('title') };
 }
 
 export default async function OfferPage({ params, searchParams }: Props) {
@@ -174,4 +172,10 @@ export default async function OfferPage({ params, searchParams }: Props) {
       </section>
     </main>
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
+  return withRouteMetadata(await buildMetadata(), locale, `/offer`);
 }

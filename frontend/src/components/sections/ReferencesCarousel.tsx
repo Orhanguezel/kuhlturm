@@ -119,7 +119,7 @@ export function ReferencesCarousel({ references, locale, title, subtitle, viewAl
           <div className="flex items-center gap-4 ml-auto">
             <button
               onClick={scrollPrev}
-              aria-label="Zurück"
+              aria-label={locale === 'en' ? 'Previous' : 'Zurück'}
               className="w-9 h-9 rounded-full border border-slate-300 flex items-center justify-center text-slate-600 hover:border-blue-400 hover:text-blue-600 transition-colors"
             >
               <ChevronLeft size={16} />
@@ -130,15 +130,14 @@ export function ReferencesCarousel({ references, locale, title, subtitle, viewAl
                   key={i}
                   onClick={() => scrollTo(i)}
                   aria-label={`Slide ${i + 1}`}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    i === selectedIndex ? 'w-6 bg-blue-600' : 'w-2 bg-slate-300 hover:bg-slate-400'
-                  }`}
-                />
+                  className="inline-flex h-8 w-8 items-center justify-center"
+                  aria-current={i === selectedIndex ? 'true' : undefined}
+                ><span className={`block h-2 rounded-full transition-all duration-300 ${i === selectedIndex ? 'w-6 bg-blue-600' : 'w-2 bg-slate-300'}`} /></button>
               ))}
             </div>
             <button
               onClick={scrollNext}
-              aria-label="Weiter"
+              aria-label={locale === 'en' ? 'Next' : 'Weiter'}
               className="w-9 h-9 rounded-full border border-slate-300 flex items-center justify-center text-slate-600 hover:border-blue-400 hover:text-blue-600 transition-colors"
             >
               <ChevronRight size={16} />

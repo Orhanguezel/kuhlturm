@@ -2,6 +2,8 @@
 
 > kuhlturm/backend ve kuhlturm/admin_panel iskeletleri **ensotek_de'den klonlandı** (Claude Code, 2026-05-23). Codex kapsamı: branding/locale/env/PM2/seed doğrulama ve build. `backend/src/modules` içindeki modül tekrarlarını kaldırma ve `packages/shared-backend/modules` kullanımına geçirme işi Claude kapsamındadır. Detay bağlam: [`kuhlturm-codex-brief.md`](kuhlturm-codex-brief.md).
 
+> **10 Eylül 2026 güncel durum:** Aşağıdaki Mayıs işaretleri tarihsel uygulama kayıtlarıdır; bugünkü canlı kabul yerine geçmez. [İşletim kaydı](runtime-isolation-2026-09-10.md) ve kök aile checklist’i esas alınır. Ürün/servis için genel shared modüle geçiş iptal edilmiştir; native API sözleşmesi yerel modüllerle korunur. Kühlturm Ensotek alt markasıdır; TR geçmiş verisi silinmeden public dil kapsamı DE/EN tutulur.
+
 İlerleme bittikçe `[ ]` → `[x]` olarak işaretle.
 
 ---

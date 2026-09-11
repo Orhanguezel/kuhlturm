@@ -1,9 +1,10 @@
 'use client';
 
 import Link from 'next/link';
+import { useLocale } from 'next-intl';
 import Image from 'next/image';
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight, Play, Pause } from 'lucide-react';
 import { resolveMediaUrl } from '@/lib/media';
 
 export interface HeroSlide {
@@ -21,18 +22,20 @@ interface HeroSliderClientProps {
 }
 
 export function HeroSliderClient({ slides }: HeroSliderClientProps) {
+  const locale = useLocale();
   const [current, setCurrent] = useState(0);
+  const [autoPlay, setAutoPlay] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
   const startAutoPlay = useCallback(() => {
-    if (slides.length <= 1) return;
+    if (!autoPlay || slides.length <= 1 || timerRef.current || document.hidden || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     timerRef.current = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
+      if (!document.hidden) setCurrent((prev) => (prev + 1) % slides.length);
     }, 8000);
-  }, [slides.length]);
+  }, [slides.length, autoPlay]);
 
   const stopAutoPlay = useCallback(() => {
     if (timerRef.current) {
@@ -62,6 +65,7 @@ export function HeroSliderClient({ slides }: HeroSliderClientProps) {
 
   const onTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0]?.clientX ?? 0;
+    touchEndX.current = touchStartX.current;
     stopAutoPlay();
   };
 
@@ -106,8 +110,9 @@ export function HeroSliderClient({ slides }: HeroSliderClientProps) {
           {slides.map((slide, i) => (
             <div
               key={slide.id}
-              className="relative w-full shrink-0"
-              style={{ height: 'clamp(520px, 65vw, 760px)' }}
+              className="relative w-full shrink-0 min-h-[520px] lg:min-h-[640px]"
+              aria-hidden={i !== current}
+              inert={i !== current}
             >
               <div
                 className="absolute inset-0 opacity-5"
@@ -119,14 +124,12 @@ export function HeroSliderClient({ slides }: HeroSliderClientProps) {
               />
 
               {/* Content */}
-              <div className="relative z-10 mx-auto grid h-full w-full max-w-7xl grid-cols-1 items-center gap-8 px-4 py-8 sm:px-6 md:py-10 lg:grid-cols-2 lg:gap-12 lg:px-8">
+              <div className="relative z-10 mx-auto grid h-full w-full max-w-7xl grid-cols-1 items-center gap-8 px-4 pt-8 pb-20 sm:px-6 md:py-10 lg:grid-cols-2 lg:gap-12 lg:px-8">
                 {/* Mobile: image first, text below. Desktop: text left, image right */}
                 <div className="order-2 text-white lg:order-1">
                   <div className="max-w-2xl">
                     {slide.title && (
-                      <h2 className="font-display mb-5 text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
-                        {slide.title}
-                      </h2>
+                      i === 0 ? <h1 className="font-display mb-5 text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">{slide.title}</h1> : <h2 className="font-display mb-5 text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">{slide.title}</h2>
                     )}
                     {slide.description && (
                       <div
@@ -147,15 +150,16 @@ export function HeroSliderClient({ slides }: HeroSliderClientProps) {
                 </div>
 
                 <div className="order-1 lg:order-2">
-                  {slide.imageUrl ? (
+                  {slide.imageUrl && (i === 0 || i === current) ? (
                     <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl h-60 sm:h-75 md:h-90 lg:h-115">
                       <Image
                         src={resolveMediaUrl(slide.imageUrl)}
                         alt={slide.alt ?? slide.title ?? ''}
                         fill
                         className="object-cover"
-                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        sizes="(max-width: 1024px) calc(100vw - 32px), 50vw"
                         priority={i === 0}
+                        fetchPriority={i === 0 ? "high" : "auto"}
                       />
                       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/35 via-transparent to-slate-900/10" />
                     </div>
@@ -169,20 +173,23 @@ export function HeroSliderClient({ slides }: HeroSliderClientProps) {
         </div>
       </div>
 
+      {slides.length > 1 && <button type="button" onClick={() => setAutoPlay(value => !value)} aria-label={locale === 'en' ? (autoPlay ? 'Pause slideshow' : 'Play slideshow') : (autoPlay ? 'Diashow pausieren' : 'Diashow starten')} aria-pressed={autoPlay} className="absolute bottom-6 right-6 z-20 rounded-full border border-white/30 bg-slate-900/80 p-3 text-white">
+        {autoPlay ? <Pause size={18} /> : <Play size={18} />}
+      </button>}
       {/* Navigation arrows — only when multiple slides */}
       {slides.length > 1 && (
         <>
           <button
             onClick={prev}
-            aria-label="Vorherige Folie"
-            className="absolute left-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm transition-all hover:bg-white/20"
+            aria-label={locale === 'en' ? 'Previous slide' : 'Vorherige Folie'}
+            className="absolute left-4 top-[160px] sm:top-[190px] lg:top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm transition-all hover:bg-white/20"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
           <button
             onClick={next}
-            aria-label="Nächste Folie"
-            className="absolute right-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm transition-all hover:bg-white/20"
+            aria-label={locale === 'en' ? 'Next slide' : 'Nächste Folie'}
+            className="absolute right-4 top-[160px] sm:top-[190px] lg:top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm transition-all hover:bg-white/20"
           >
             <ChevronRight className="h-5 w-5" />
           </button>
@@ -193,7 +200,8 @@ export function HeroSliderClient({ slides }: HeroSliderClientProps) {
               <button
                 key={i}
                 onClick={() => goTo(i)}
-                aria-label={`Folie ${i + 1}`}
+                aria-label={`${locale === 'en' ? 'Slide' : 'Folie'} ${i + 1}`}
+                aria-current={i === current ? 'true' : undefined}
                 className="relative mx-0.5 flex h-6 w-6 items-center justify-center"
               >
                 <span

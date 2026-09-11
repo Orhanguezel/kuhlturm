@@ -14,7 +14,8 @@ module.exports = {
       instances: 1,
       watch: false,
       autorestart: true,
-      max_memory_restart: '350M',
+      // 2026-09-09: normal ~350-400 MiB RSS caused restart/502 loops at 350M.
+      max_memory_restart: '512M',
       min_uptime: '30s',
       max_restarts: 10,
       restart_delay: 5000,

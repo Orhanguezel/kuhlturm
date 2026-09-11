@@ -33,6 +33,12 @@ const nextConfig: NextConfig = {
     ],
   },
 
+  async redirects() {
+    return ['de', 'en'].flatMap(locale => [
+      { source: `/${locale}/services/:slug`, destination: `/${locale}/service/:slug`, permanent: true },
+      ...['regelmaessige-wartung-reparatur-kuehltuerme', 'cooling-tower-maintenance-repair'].map(slug => ({ source: `/${locale}/service/${slug}`, destination: `/${locale}/service/maintenance-repair`, permanent: true })),
+    ]);
+  },
   async rewrites() {
     return {
       beforeFiles: [

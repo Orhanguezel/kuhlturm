@@ -1,7 +1,7 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { usePathname, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { AVAILABLE_LOCALES } from '@/i18n/locales';
 import { ChevronDown, Check } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
@@ -19,7 +19,6 @@ interface LanguageSwitcherProps {
 
 export function LanguageSwitcher({ iconOnly = false, variant = 'light' }: LanguageSwitcherProps) {
   const locale = useLocale();
-  const pathname = usePathname();
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -33,9 +32,11 @@ export function LanguageSwitcher({ iconOnly = false, variant = 'light' }: Langua
   }, []);
 
   const handleSwitch = (newLocale: string) => {
-    const segments = pathname.split('/');
-    segments[1] = newLocale;
-    router.push(segments.join('/'));
+    const alternate = Array.from(document.querySelectorAll<HTMLLinkElement>('link[rel="alternate"][hreflang]'))
+      .find(link => link.hreflang === newLocale);
+    // Metadata resolves translations by content ID, not by copying a foreign slug.
+    const destination = alternate ? new URL(alternate.href).pathname : `/${newLocale}`;
+    router.push(destination);
     setOpen(false);
   };
 

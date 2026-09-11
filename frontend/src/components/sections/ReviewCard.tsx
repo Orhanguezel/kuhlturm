@@ -1,3 +1,4 @@
+import { useLocale } from 'next-intl';
 import type { Review } from '@ensotek/core/types';
 import { HelpfulButton } from './HelpfulButton';
 
@@ -9,9 +10,9 @@ interface Props {
   };
 }
 
-function StarRating({ rating }: { rating: number }) {
+function StarRating({ rating, locale }: { rating: number; locale: string }) {
   return (
-    <div className="flex gap-0.5" aria-label={`${rating} von 5 Sternen`}>
+    <div className="flex gap-0.5" aria-label={locale === 'en' ? `${rating} out of 5 stars` : `${rating} von 5 Sternen`}>
       {Array.from({ length: 5 }).map((_, i) => (
         <span
           key={i}
@@ -24,25 +25,26 @@ function StarRating({ rating }: { rating: number }) {
   );
 }
 
-function formatDate(iso: string): string {
+function formatDate(iso: string, locale: string): string {
   try {
-    return new Intl.DateTimeFormat('de-DE', { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(iso));
+    return new Intl.DateTimeFormat(locale === 'en' ? 'en-GB' : 'de-DE', { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(iso));
   } catch {
     return iso;
   }
 }
 
 export function ReviewCard({ review, labels }: Props) {
+  const locale = useLocale();
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-5 flex flex-col gap-3">
       {/* Header */}
       <div className="flex items-start justify-between gap-3">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <StarRating rating={review.rating} />
+            <StarRating rating={review.rating} locale={locale} />
           </div>
           <p className="font-semibold text-slate-800 text-sm">{review.name}</p>
-          <p className="text-xs text-slate-400">{formatDate(review.created_at)}</p>
+          <p className="text-xs text-slate-400">{formatDate(review.created_at, locale)}</p>
         </div>
       </div>
 

@@ -1,0 +1,274 @@
+[
+  {
+    "url": "https://kuhlturm.com/",
+    "status": 200,
+    "final": "https://kuhlturm.com/de",
+    "chain": [
+      {
+        "url": "https://kuhlturm.com/",
+        "status": 307,
+        "location": "/de"
+      }
+    ]
+  },
+  {
+    "url": "https://kuhlturm.com/api/health",
+    "status": 200,
+    "final": "https://kuhlturm.com/api/health",
+    "chain": [],
+    "data": {
+      "count": null,
+      "shape": [
+        "ok"
+      ],
+      "items": null
+    }
+  },
+  {
+    "url": "https://kuhlturm.com/api/custom-pages?limit=500&locale=de",
+    "status": 400,
+    "final": "https://kuhlturm.com/api/custom-pages?limit=500&locale=de",
+    "chain": [],
+    "data": {
+      "error": {
+        "message": "validation_error",
+        "details": [
+          {
+            "code": "too_big",
+            "maximum": 250,
+            "type": "number",
+            "inclusive": true,
+            "exact": false,
+            "message": "Number must be less than or equal to 250",
+            "path": [
+              "limit"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "url": "https://kuhlturm.com/api/custom-pages?limit=200&locale=de",
+    "status": 200,
+    "final": "https://kuhlturm.com/api/custom-pages?limit=200&locale=de",
+    "chain": [],
+    "data": {
+      "count": 25,
+      "shape": "list",
+      "items": [
+        {
+          "slug": "datenschutzerklaerung",
+          "locale": "de",
+          "module_key": "legal"
+        },
+        {
+          "slug": "unsere-mission",
+          "locale": "de",
+          "module_key": "mission"
+        },
+        {
+          "slug": "dsgvo-kvkk",
+          "locale": "de",
+          "module_key": "legal"
+        },
+        {
+          "slug": "unsere-vision",
+          "locale": "de",
+          "module_key": "vision"
+        },
+        {
+          "slug": "ensotek-wasserkuehltuerme",
+          "locale": "de",
+          "module_key": "about"
+        },
+        {
+          "slug": "nutzungsbedingungen",
+          "locale": "de",
+          "module_key": "legal"
+        },
+        {
+          "slug": "cookie-richtlinie",
+          "locale": "de",
+          "module_key": "legal"
+        },
+        {
+          "slug": "loesungen",
+          "locale": "de",
+          "module_key": "solutions"
+        },
+        {
+          "slug": "qualitaetszertifikate-qualitaetsstandards",
+          "locale": "de",
+          "module_key": "quality"
+        },
+        {
+          "slug": "industrial-cooling-solutions",
+          "locale": "de",
+          "module_key": "solutions"
+        },
+        {
+          "slug": "hvac-cooling-solutions",
+          "locale": "de",
+          "module_key": "solutions"
+        },
+        {
+          "slug": "process-cooling-solutions",
+          "locale": "de",
+          "module_key": "solutions"
+        },
+        {
+          "slug": "informationspflicht",
+          "locale": "de",
+          "module_key": "legal"
+        },
+        {
+          "slug": "impressum-rechtliche-hinweise",
+          "locale": "de",
+          "module_key": "legal"
+        },
+        {
+          "slug": "egypt-hvacr-messe-erfolgreich-abgeschlossen",
+          "locale": "de",
+          "module_key": "news"
+        },
+        {
+          "slug": "aquatherm-baku-messe-erfolgreich-abgeschlossen",
+          "locale": "de",
+          "module_key": "news"
+        },
+        {
+          "slug": "hotel-tech-antalya-messe-erfolgreich-abgeschlossen",
+          "locale": "de",
+          "module_key": "news"
+        },
+        {
+          "slug": "aluexpo-2025-wir-nehmen-an-der-internationalen-aluminium-messe-teil",
+          "locale": "de",
+          "module_key": "news"
+        },
+        {
+          "slug": "regelmaessige-wartung-wasserkuehltuerme",
+          "locale": "de",
+          "module_key": "blog"
+        },
+        {
+          "slug": "kuehlturm-layout-industrieanlagen",
+          "locale": "de",
+          "module_key": "blog"
+        },
+        {
+          "slug": "grundlagen-waermeuebertragung-frp-kuehltuerme",
+          "locale": "de",
+          "module_key": "blog"
+        },
+        {
+          "slug": "ibrahim-yagar-geschaeftsfuehrer-und-gruender",
+          "locale": "de",
+          "module_key": "team"
+        },
+        {
+          "slug": "hamdi-yagar-operations-management",
+          "locale": "de",
+          "module_key": "team"
+        },
+        {
+          "slug": "ahmet-gokhan-yagar-business-development",
+          "locale": "de",
+          "module_key": "team"
+        },
+        {
+          "slug": "can-zemheri-aussenhandel",
+          "locale": "de",
+          "module_key": "team"
+        }
+      ]
+    }
+  },
+  {
+    "url": "https://kuhlturm.com/api/services?limit=500&is_published=true",
+    "status": 400,
+    "final": "https://kuhlturm.com/api/services?limit=500&is_published=true",
+    "chain": [],
+    "data": {
+      "statusCode": 400,
+      "code": "FST_ERR_VALIDATION",
+      "error": "Bad Request",
+      "message": "[\n  {\n    \"code\": \"too_big\",\n    \"maximum\": 200,\n    \"type\": \"number\",\n    \"inclusive\": true,\n    \"exact\": false,\n    \"message\": \"Number must be less than or equal to 200\",\n    \"path\": [\n      \"limit\"\n    ]\n  }\n]"
+    }
+  },
+  {
+    "url": "https://kuhlturm.com/api/library?limit=500&is_published=true",
+    "status": 400,
+    "final": "https://kuhlturm.com/api/library?limit=500&is_published=true",
+    "chain": [],
+    "data": {
+      "error": {
+        "message": "invalid_query",
+        "issues": [
+          {
+            "code": "too_big",
+            "maximum": 200,
+            "type": "number",
+            "inclusive": true,
+            "exact": false,
+            "message": "Number must be less than or equal to 200",
+            "path": [
+              "limit"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "url": "https://kuhlturm.com/api/products?limit=500&is_published=true",
+    "status": 200,
+    "final": "https://kuhlturm.com/api/products?limit=500&is_published=true",
+    "chain": [],
+    "data": {
+      "count": 4,
+      "shape": "list",
+      "items": [
+        {
+          "slug": "offene-kuehltuerme-dreifachzelle-tctp-serie",
+          "locale": "de",
+          "module_key": null
+        },
+        {
+          "slug": "offene-kuehltuerme-doppelzelle-dctp-serie",
+          "locale": "de",
+          "module_key": null
+        },
+        {
+          "slug": "offene-kuehltuerme-einzelzelle-ctp-serie",
+          "locale": "de",
+          "module_key": null
+        },
+        {
+          "slug": "geschlossene-kuehltuerme-cc-ctp-cc-dctp",
+          "locale": "de",
+          "module_key": null
+        }
+      ]
+    }
+  },
+  {
+    "url": "http://kuhlturm.com/de",
+    "status": 200,
+    "final": "https://kuhlturm.com/de",
+    "chain": [
+      {
+        "url": "http://kuhlturm.com/de",
+        "status": 301,
+        "location": "https://kuhlturm.com/de"
+      }
+    ]
+  },
+  {
+    "url": "https://www.kuhlturm.com/de",
+    "status": 200,
+    "final": "https://www.kuhlturm.com/de",
+    "chain": []
+  }
+]

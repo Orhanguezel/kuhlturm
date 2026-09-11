@@ -35,3 +35,6 @@ next-env.d.ts
 .DS_Store
 Thumbs.db
 *.pem
+
+# GZL private project manifest
+project.portfolio.private.json

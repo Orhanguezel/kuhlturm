@@ -1,3 +1,5 @@
+import { ProductStructuredData } from '@/components/ui/ProductStructuredData';
+import { withRouteMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
@@ -21,8 +23,9 @@ interface Props {
   params: Promise<{ locale: string; slug: string }>;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale, slug } = await params;
+async function buildMetadata({ params }: Props): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
   try {
     const raw = await getProductBySlugWithLocale(slug, locale);
     const product = (raw as unknown as { data?: Product })?.data ?? raw;
@@ -36,7 +39,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ProductDetailPage({ params }: Props) {
-  const { locale, slug } = await params;
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
   setRequestLocale(locale);
 
   const [tProducts, tCommon, tReviews] = await Promise.all([
@@ -45,14 +49,9 @@ export default async function ProductDetailPage({ params }: Props) {
     getTranslations('reviews'),
   ]);
 
-  let product: Product;
-  try {
-    const raw = await getProductBySlugWithLocale(slug, locale);
-    product = (raw as unknown as { data?: Product })?.data ?? raw;
-    if (!product) notFound();
-  } catch {
-    notFound();
-  }
+  const raw = await getProductBySlugWithLocale(slug, locale);
+  const product: Product = (raw as unknown as { data?: Product })?.data ?? raw;
+  if (!product) notFound();
 
   // Related products (same category, excluding current)
   const relatedRaw = await getProductsWithLocale(locale, {
@@ -72,8 +71,8 @@ export default async function ProductDetailPage({ params }: Props) {
   // Contact info (for WhatsApp + ContactInfoCard)
   const contactInfoRaw = await fetchSetting('contact_info', locale, { revalidate: 3600 });
   const contactInfo: any = contactInfoRaw?.value || {};
-  const whatsappPhone = contactInfo.whatsappNumber || contactInfo.phones?.[0] || '';
-  const waMessage = `Guten Tag! Ich interessiere mich für das Produkt: ${product.title}. Könnten Sie mir bitte mehr Informationen geben?`;
+  const whatsappPhone = contactInfo.whatsappNumber || (contactInfo.phone_2_is_whatsapp ? contactInfo.phone_2 : contactInfo.phone_is_whatsapp ? contactInfo.phone : '') || '';
+  const waMessage = locale === 'en' ? `Hello! I am interested in ${product.title}. Could you send me more information?` : `Guten Tag! Ich interessiere mich für das Produkt: ${product.title}. Könnten Sie mir bitte mehr Informationen geben?`;
 
   // Build gallery
   const galleryImages: string[] = [];
@@ -86,6 +85,7 @@ export default async function ProductDetailPage({ params }: Props) {
 
   return (
     <main>
+      <ProductStructuredData item={product} locale={locale} section="product" />
       <PageBanner
         locale={locale}
         variant="compact"
@@ -326,4 +326,10 @@ export default async function ProductDetailPage({ params }: Props) {
       </section>
     </main>
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
+  return withRouteMetadata(await buildMetadata({ params }), locale, `/product/${slug}`);
 }

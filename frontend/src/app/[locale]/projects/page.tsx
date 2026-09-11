@@ -1,3 +1,4 @@
+import { withRouteMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Image from 'next/image';
@@ -13,11 +14,9 @@ interface Props {
   params: Promise<{ locale: string }>;
 }
 
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: 'Projekte',
-    description: 'Realisierte Kühlturmprojekte weltweit — von der Planung bis zur Inbetriebnahme.',
-  };
+async function buildMetadata(): Promise<Metadata> {
+  const t = await getTranslations('projects');
+  return { title: t('title') };
 }
 
 export default async function ProjectsPage({ params }: Props) {
@@ -149,9 +148,15 @@ function ProjectCard({ project, locale }: { project: Project; locale: string }) 
           </div>
         )}
         <span className="mt-3 block text-xs font-semibold text-blue-600 group-hover:underline">
-          Mehr erfahren →
+          {locale === "en" ? "Learn more →" : "Mehr erfahren →"}
         </span>
       </div>
     </Link>
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
+  return withRouteMetadata(await buildMetadata(), locale, `/projects`);
 }

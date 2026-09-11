@@ -1,0 +1,8 @@
+User-Agent: *
+Allow: /
+Disallow: /*/login
+Disallow: /*/register
+Disallow: /*/logout
+Disallow: /*/dashboard
+
+Sitemap: https://kuhlturm.com/sitemap.xml

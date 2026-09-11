@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link2, Check, MessageCircle, Facebook, Linkedin, Twitter } from 'lucide-react';
 
 interface Props {
@@ -15,12 +15,7 @@ interface Props {
 
 export function SocialShareCard({ path, title, labels }: Props) {
   const [copied, setCopied] = useState(false);
-  const [origin, setOrigin] = useState('');
-
-  useEffect(() => {
-    setOrigin(window.location.origin);
-  }, []);
-
+  const origin = (process.env.NEXT_PUBLIC_SITE_URL || 'https://kuhlturm.com').replace(/\/$/, '');
   const getUrl = () => `${origin}${path}`;
 
   const handleCopy = async () => {

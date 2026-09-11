@@ -1,3 +1,4 @@
+import { withRouteMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
@@ -14,11 +15,9 @@ interface Props {
   searchParams: Promise<{ q?: string; type?: string }>;
 }
 
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: 'Wissensdatenbank (Knowledge Base) | Kühlturm',
-    description: 'Technische Artikel, Anleitationsvideos, Fachinformationen und Whitepapers rund um Kühlturmtechnik.',
-  };
+async function buildMetadata(): Promise<Metadata> {
+  const t = await getTranslations('library');
+  return { title: t('title') };
 }
 
 export default async function LibraryPage({ params, searchParams }: Props) {
@@ -55,7 +54,7 @@ export default async function LibraryPage({ params, searchParams }: Props) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10">
           <nav className="flex items-center gap-2 text-sm text-slate-400 mb-8 whitespace-nowrap overflow-x-auto">
             <Link href={`/${locale}`} className="hover:text-white transition-colors">
-              Startseite
+              {locale === "en" ? "Home" : "Startseite"}
             </Link>
             <ChevronRight size={14} className="shrink-0" />
             <span className="text-white shrink-0">{t('title')}</span>
@@ -63,10 +62,10 @@ export default async function LibraryPage({ params, searchParams }: Props) {
 
           <div className="max-w-3xl">
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
-              Wie können wir Ihnen <span className="text-blue-500">helfen?</span>
+              {locale === "en" ? "How can we" : "Wie können wir Ihnen"} <span className="text-blue-500">{locale === "en" ? "help you?" : "helfen?"}</span>
             </h1>
             <p className="text-slate-400 text-xl md:text-2xl mb-10 leading-relaxed">
-              Finden Sie technische Dokumentationen, Expertenwissen und Anleitungen in unserer Wissensdatenbank.
+              {locale === "en" ? "Find technical documentation, expertise and guides in our knowledge base." : "Finden Sie technische Dokumentationen, Expertenwissen und Anleitungen in unserer Wissensdatenbank."}
             </p>
 
             {/* Simple Search Form (Native submit) */}
@@ -83,20 +82,20 @@ export default async function LibraryPage({ params, searchParams }: Props) {
                 type="submit"
                 className="absolute right-3 top-1/2 -translate-y-1/2 px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold transition-colors shadow-lg shadow-blue-900/20"
               >
-                Suchen
+                {locale === "en" ? "Search" : "Suchen"}
               </button>
             </form>
 
             {/* Quick Badges */}
             <div className="mt-8 flex flex-wrap gap-2 text-sm text-slate-500">
-              <span className="py-1 px-1.5 uppercase font-bold text-[10px] tracking-widest text-slate-600">Häufige Themen:</span>
-              <Link href={`/${locale}/library?q=Kühlturm`} className="hover:text-blue-400 border-b border-transparent hover:border-blue-400/30 transition-all font-medium">Kühlturm</Link>
+              <span className="py-1 px-1.5 uppercase font-bold text-[10px] tracking-widest text-slate-600">{locale === "en" ? "Popular topics:" : "Häufige Themen:"}</span>
+              <Link href={`/${locale}/library?q=${encodeURIComponent(locale === "en" ? "Cooling tower" : "Kühlturm")}`} className="hover:text-blue-400 border-b border-transparent hover:border-blue-400/30 transition-all font-medium">{locale === "en" ? "Cooling tower" : "Kühlturm"}</Link>
               <span className="text-slate-700 font-medium">•</span>
-              <Link href={`/${locale}/library?q=Kühlung`} className="hover:text-blue-400 border-b border-transparent hover:border-blue-400/30 transition-all font-medium">Kühlung</Link>
+              <Link href={`/${locale}/library?q=${encodeURIComponent(locale === "en" ? "Cooling" : "Kühlung")}`} className="hover:text-blue-400 border-b border-transparent hover:border-blue-400/30 transition-all font-medium">{locale === "en" ? "Cooling" : "Kühlung"}</Link>
               <span className="text-slate-700 font-medium">•</span>
-              <Link href={`/${locale}/library?q=Ersatzteile`} className="hover:text-blue-400 border-b border-transparent hover:border-blue-400/30 transition-all font-medium">Ersatzteile</Link>
+              <Link href={`/${locale}/library?q=${encodeURIComponent(locale === "en" ? "Spare parts" : "Ersatzteile")}`} className="hover:text-blue-400 border-b border-transparent hover:border-blue-400/30 transition-all font-medium">{locale === "en" ? "Spare parts" : "Ersatzteile"}</Link>
               <span className="text-slate-700 font-medium">•</span>
-              <Link href={`/${locale}/library?q=Wartung`} className="hover:text-blue-400 border-b border-transparent hover:border-blue-400/30 transition-all font-medium">Wartung</Link>
+              <Link href={`/${locale}/library?q=${encodeURIComponent(locale === "en" ? "Maintenance" : "Wartung")}`} className="hover:text-blue-400 border-b border-transparent hover:border-blue-400/30 transition-all font-medium">{locale === "en" ? "Maintenance" : "Wartung"}</Link>
             </div>
           </div>
         </div>
@@ -128,7 +127,7 @@ export default async function LibraryPage({ params, searchParams }: Props) {
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
             <div>
               <h2 className="font-display text-3xl font-bold text-slate-900">
-                {q ? `Ergebnisse für "${q}"` : t('allItems')}
+                {q ? (locale === "en" ? `Results for "${q}"` : `Ergebnisse für "${q}"`) : t('allItems')}
               </h2>
               <p className="text-slate-500 mt-1">{items.length} {t('allItems').toLowerCase()}</p>
             </div>
@@ -160,13 +159,13 @@ export default async function LibraryPage({ params, searchParams }: Props) {
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">{t('noResults')}</h3>
               <p className="text-slate-500 max-w-sm mx-auto mb-8">
-                Versuchen Sie es mit allgemeineren Begriffen oder setzen Sie die Filter zurück.
+                {locale === "en" ? "Try broader search terms or clear the filters." : "Versuchen Sie es mit allgemeineren Begriffen oder setzen Sie die Filter zurück."}
               </p>
               <Link
                 href={`/${locale}/library`}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800 transition-colors font-semibold"
               >
-                Zurück zur Übersicht
+                {locale === "en" ? "Back to overview" : "Zurück zur Übersicht"}
               </Link>
             </div>
           ) : (
@@ -185,15 +184,15 @@ export default async function LibraryPage({ params, searchParams }: Props) {
           <div className="w-16 h-16 bg-blue-50 flex items-center justify-center rounded-2xl mb-8">
             <HelpCircle size={32} className="text-blue-600" />
           </div>
-          <h2 className="text-3xl font-display font-bold text-slate-900 mb-4">Brauchen Sie persönliche Unterstützung?</h2>
+          <h2 className="text-3xl font-display font-bold text-slate-900 mb-4">{locale === "en" ? "Need help with your project?" : "Brauchen Sie persönliche Unterstützung?"}</h2>
           <p className="text-slate-500 text-lg mb-10 max-w-2xl">
-            Sollten Sie in unserer Wissensdatenbank nicht fündig werden, steht Ihnen unser Expertenteam gerne für technische Anfragen zur Verfügung.
+            {locale === "en" ? "If you cannot find what you need in our knowledge base, contact our team with your technical questions." : "Sollten Sie in unserer Wissensdatenbank nicht fündig werden, steht Ihnen unser Expertenteam gerne für technische Anfragen zur Verfügung."}
           </p>
           <Link
             href={`/${locale}/contact`}
             className="px-8 py-4 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition-all hover:-translate-y-1 shadow-xl shadow-blue-500/20"
           >
-            Technischen Support kontaktieren
+            {locale === "en" ? "Contact technical support" : "Technischen Support kontaktieren"}
           </Link>
         </div>
       </section>
@@ -242,7 +241,7 @@ function LibraryFeaturedCard({ item, locale }: { item: LibraryItem, locale: stri
           {(item as any).summary || 'Erfahren Sie mehr über herstellerunabhängige Lösungen und technische Innovationen in unserer Datenbank.'}
         </p>
         <div className="inline-flex items-center gap-2 py-3 px-6 rounded-xl bg-white/10 hover:bg-white/20 text-white backdrop-blur-md font-bold transition-all border border-white/20">
-          Beitrag lesen
+          {locale === "en" ? "Read article" : "Beitrag lesen"}
           <ArrowRight size={18} />
         </div>
       </div>
@@ -292,7 +291,7 @@ function LibraryCard({
         <div className="flex items-center gap-3 text-xs text-slate-400 mb-4">
            <span className="flex items-center gap-1"><Eye size={12} /> {item.views}</span>
            <span className="w-1 h-1 rounded-full bg-slate-200" />
-           <span>{new Date(item.created_at).toLocaleDateString('de-DE', { month: 'short', year: 'numeric' })}</span>
+           <span>{new Date(item.created_at).toLocaleDateString(locale, { month: 'short', year: 'numeric' })}</span>
         </div>
 
         <h3 className="text-xl md:text-2xl font-display font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-4 line-clamp-2 leading-tight">
@@ -306,7 +305,7 @@ function LibraryCard({
         )}
 
         <div className="mt-auto pt-4 flex items-center gap-2 text-sm font-bold text-blue-600 group-hover:text-blue-500">
-          <span>Weiterlesen</span>
+          <span>{locale === "en" ? "Read more" : "Weiterlesen"}</span>
           <div className="w-8 h-8 rounded-full border border-blue-100 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all transform group-hover:translate-x-1">
              <ArrowRight size={14} />
           </div>
@@ -314,4 +313,10 @@ function LibraryCard({
       </div>
     </Link>
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
+  return withRouteMetadata(await buildMetadata(), locale, `/library`);
 }

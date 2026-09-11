@@ -1,3 +1,4 @@
+import { withRouteMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
@@ -11,12 +12,9 @@ interface Props {
   params: Promise<{ locale: string }>;
 }
 
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: 'Über uns',
-    description:
-      'Erfahren Sie mehr über Kühlturm — unsere Mission, Vision und unser Qualitätsversprechen.',
-  };
+async function buildMetadata(): Promise<Metadata> {
+  const t = await getTranslations('about');
+  return { title: t('title') };
 }
 
 export default async function AboutPage({ params }: Props) {
@@ -208,4 +206,10 @@ export default async function AboutPage({ params }: Props) {
       </section>
     </main>
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug: encodedSlug } = await params;
+  const slug = decodeURIComponent(encodedSlug);
+  return withRouteMetadata(await buildMetadata(), locale, `/about`);
 }

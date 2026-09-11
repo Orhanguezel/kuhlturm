@@ -23,7 +23,7 @@ export const authService = {
   },
 
   forgotPassword: async (data: { email: string }): Promise<void> => {
-    await axios.post('/auth/forgot-password', data);
+    await axios.post('/auth/password-reset/request', data);
   },
 
   getMe: async (): Promise<User> => {

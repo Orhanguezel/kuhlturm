@@ -20,6 +20,10 @@ CREATE TABLE IF NOT EXISTS `offers` (
 
   `offer_no`          VARCHAR(100)   NULL,
 
+  -- Teklifin geldigi kaynak site/marka. Paylasilan offer modulu bu kolonu
+  -- bekliyor; eksikligi kuhlturm.com'da teklif formunu 500'e dusuruyordu.
+  `source`            VARCHAR(64)    NOT NULL DEFAULT 'ensotek',
+
   `status`            VARCHAR(32)    NOT NULL DEFAULT 'new',
 
   `locale`            VARCHAR(10)    NULL,

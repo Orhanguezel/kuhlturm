@@ -1,14 +1,4 @@
--- 072_services_shared_backend_compat.sql
--- shared-backend services router expects these canonical columns.
-
-UPDATE services
-SET
-  module_key = COALESCE(NULLIF(module_key, ''), 'kuhlturm'),
-  is_featured = featured,
-  storage_asset_id = image_asset_id;
-
-UPDATE services_i18n
-SET
-  title = COALESCE(NULLIF(title, ''), name),
-  content = COALESCE(content, includes, description),
-  alt = COALESCE(alt, image_alt);
+-- 2026-09-10: Kühlturm uses its native services module and legacy contract.
+-- Generic shared-backend service columns are intentionally not populated.
+-- Schema is defined by 070_services.sql; never run fresh seeds on live data.
+SELECT 1;

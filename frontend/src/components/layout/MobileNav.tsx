@@ -47,7 +47,7 @@ export function MobileNav({ open, onClose, onCatalogOpen, items, locale, logoSrc
           <button
             onClick={onClose}
             className="flex h-8 w-8 items-center justify-center rounded-md text-slate-300 hover:bg-white/15 hover:text-white transition-colors"
-            aria-label="Menü schließen"
+            aria-label={locale === 'en' ? 'Close menu' : 'Menü schließen'}
           >
             <X className="h-5 w-5" />
           </button>
@@ -110,7 +110,7 @@ export function MobileNav({ open, onClose, onCatalogOpen, items, locale, logoSrc
               onClick={() => { onClose(); onCatalogOpen(); }}
               className="flex w-full items-center justify-center rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 transition-colors"
             >
-              Katalog anfordern
+              {locale === "en" ? "Request catalog" : "Katalog anfordern"}
             </button>
           </div>
         </nav>
